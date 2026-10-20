@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ateliê Lume | Modelo de demonstração</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../kit.css">
+  <style>
+    :root {
+      --carvao: #1F1E1C;
+      --caramelo: #8A6A4F;
+      --areia: #F3F0EB;
+      --areia-2: #E7E1D8;
+      --cinza: #75706A;
+      --linha: #E4DFD7;
+    }
+
+    body { background: #fff; color: var(--carvao); }
+    h1, h2, h3 { font-family: 'Gabarito', system-ui, sans-serif; font-weight: 500; letter-spacing: -0.03em; }
+
+    .botao { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3.1rem; padding: 0.75rem 1.6rem; border: 1px solid var(--carvao); border-radius: 0; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color 0.2s, color 0.2s; }
+    .botao-cheio { background: var(--carvao); color: #fff; }
+    .botao-cheio:hover { background: #3A3835; }
+    .botao-linha { background: transparent; color: var(--carvao); }
+    .botao-linha:hover { background: var(--carvao); color: #fff; }
+
+    .faixa-topo { padding: 0.55rem 1rem; border-bottom: 1px solid var(--linha); color: var(--cinza); font-size: 0.85rem; text-align: center; }
+    .menu-topo { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--linha); background: #fff; }
+    .menu-topo .caixa { display: flex; align-items: center; gap: 2rem; min-height: 4.25rem; }
+    .logo { margin-right: auto; color: var(--carvao); font-family: 'Gabarito'; font-size: 1.35rem; font-weight: 400; letter-spacing: 0.18em; text-decoration: none; }
+    .links { display: none; gap: 1.75rem; }
+    .links a { color: var(--cinza); text-decoration: none; }
+    .links a:hover { color: var(--carvao); }
+    @media (min-width: 52em) { .links { display: inline-flex; } }
+    .reservas { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.95rem; }
+    .reservas b { min-width: 1.4rem; padding: 0 0.35rem; border-radius: 999px; background: var(--carvao); color: #fff; font-size: 0.78rem; text-align: center; }
+
+    .foto { position: relative; display: grid; place-items: center; align-content: center; gap: 0.5rem; color: rgba(31, 30, 28, 0.35); }
+    .foto .ic { width: 2rem; height: 2rem; }
+    .foto span { font-size: 0.78rem; }
+
+    .hero .caixa { display: grid; gap: 2.5rem; align-items: center; padding-block: clamp(3rem, 1.5rem + 6vw, 6rem); }
+    @media (min-width: 56em) { .hero .caixa { grid-template-columns: 0.9fr 1.1fr; gap: 4rem; } }
+    .hero small { color: var(--caramelo); letter-spacing: 0.08em; }
+    .hero h1 { margin-top: 1rem; font-size: clamp(2.8rem, 1.5rem + 5vw, 5rem); line-height: 0.98; }
+    .hero p.linha { max-width: 26rem; margin-top: 1.25rem; color: var(--cinza); font-size: 1.15rem; }
+    .hero .acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+    .vitrine-hero { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .vitrine-hero .foto { aspect-ratio: 3 / 4; }
+    .vitrine-hero .foto:first-child { background: var(--areia); }
+    .vitrine-hero .foto:last-child { margin-top: 3rem; background: var(--areia-2); }
+    .foto-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .vitrine-hero .foto-img { aspect-ratio: 3 / 4; }
+    .vitrine-hero .foto-img:first-child { object-position: 30% center; }
+    .vitrine-hero .foto-img:last-child { margin-top: 3rem; }
+    .produto .foto-img { aspect-ratio: 3 / 4; margin-bottom: 0.6rem; background: var(--areia); transition: opacity 0.2s; }
+    .produto:hover .foto-img { opacity: 0.88; }
+    .produto .etiqueta { position: absolute; top: 0.75rem; left: 0.75rem; padding: 0.15rem 0.5rem; background: #fff; font-size: 0.75rem; }
+    .produto .moldura { position: relative; }
+    .peca-grade .foto-img { min-height: 20rem; max-height: 34rem; }
+
+    .secao { padding-block: clamp(4rem, 2.5rem + 5vw, 7rem); }
+    .titulo { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+    .titulo h2 { font-size: clamp(2.2rem, 1.4rem + 2.8vw, 3.4rem); line-height: 1; }
+    .titulo p { color: var(--cinza); }
+    .filtros { display: flex; flex-wrap: wrap; gap: 0.25rem 1.75rem; margin-bottom: 2rem; border-bottom: 1px solid var(--linha); }
+    .filtros button { min-height: 2.75rem; padding: 0.5rem 0; border: 0; border-bottom: 1px solid transparent; margin-bottom: -1px; background: none; color: var(--cinza); cursor: pointer; }
+    .filtros button[aria-pressed='true'] { border-bottom-color: var(--carvao); color: var(--carvao); }
+    .produtos { display: grid; gap: 2.5rem 1.25rem; grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr)); }
+    .produto { display: grid; gap: 0.35rem; padding: 0; border: 0; background: none; color: inherit; text-align: left; cursor: pointer; }
+    .produto .foto { aspect-ratio: 3 / 4; margin-bottom: 0.6rem; transition: opacity 0.2s; }
+    .produto:hover .foto { opacity: 0.85; }
+    .produto .foto i { position: absolute; top: 0.75rem; left: 0.75rem; color: var(--carvao); font-size: 0.75rem; font-style: normal; letter-spacing: 0.04em; }
+    .produto strong { font-weight: 500; }
+    .produto .preco { color: var(--cinza); }
+    .cores { display: flex; gap: 0.35rem; margin-top: 0.2rem; }
+    .cores i { width: 0.75rem; height: 0.75rem; border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.15); }
+
+    .beneficios { display: grid; gap: 2rem; padding-top: 3rem; border-top: 1px solid var(--linha); }
+    @media (min-width: 48em) { .beneficios { grid-template-columns: repeat(3, 1fr); } }
+    .beneficios .ic { width: 1.5rem; height: 1.5rem; }
+    .beneficios h3 { margin-top: 0.9rem; font-size: 1.2rem; }
+    .beneficios p { margin-top: 0.3rem; color: var(--cinza); }
+
+    .janela-peca { width: min(52rem, calc(100% - 2rem)); padding: 0; border: 0; background: #fff; color: var(--carvao); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25); }
+    .janela-peca::backdrop { background: rgba(31, 30, 28, 0.5); }
+    .janela-peca[open] { animation: subir 0.25s ease-out; }
+    .peca-grade { display: grid; }
+    @media (min-width: 44em) { .peca-grade { grid-template-columns: 1fr 1fr; } }
+    .peca-grade .foto { min-height: 18rem; }
+    .peca-info { display: grid; gap: 1.25rem; align-content: start; padding: 2rem 1.5rem 1.5rem; }
+    .peca-info h3 { font-size: 1.8rem; }
+    .peca-info .preco { color: var(--cinza); font-size: 1.15rem; }
+    .escolha { display: grid; gap: 0.5rem; margin: 0; padding: 0; border: 0; }
+    .escolha legend { margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; }
+    .escolha div { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .escolha label { position: relative; }
+    .escolha input { position: absolute; opacity: 0; }
+    .escolha span { display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; min-width: 3rem; min-height: 2.75rem; padding: 0.4rem 0.85rem; border: 1px solid var(--linha); cursor: pointer; }
+    .escolha input:checked + span { border-color: var(--carvao); box-shadow: inset 0 0 0 1px var(--carvao); }
+    .escolha input:disabled + span { color: #BDB6AD; text-decoration: line-through; cursor: not-allowed; }
+    .escolha input:focus-visible + span { outline: 2px solid var(--carvao); outline-offset: 2px; }
+    .escolha span i { width: 0.9rem; height: 0.9rem; border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.15); }
+    .fechar { position: absolute; top: 0.75rem; right: 0.75rem; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border: 0; border-radius: 50%; background: #fff; color: var(--carvao); cursor: pointer; }
+
+    .rodape { padding-block: 2rem 4.5rem; border-top: 1px solid var(--linha); color: var(--cinza); font-size: 0.875rem; }
+    .rodape .caixa { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+  </style>
+</head>
+<body>
+  <p class="faixa-topo">Troca fácil em até 30 dias · Pix com 5% de desconto</p>
+  <header class="menu-topo">
+    <div class="caixa">
+      <a class="logo" href="#inicio">ATELIÊ LUME</a>
+      <nav class="links" aria-label="Menu"><a href="#vitrine">Vitrine</a><a href="#vitrine" data-ir-filtro="Vestidos">Vestidos</a><a href="#vitrine" data-ir-filtro="Calças">Calças</a><a href="#vitrine" data-ir-filtro="Blusas">Blusas</a></nav>
+      <span class="reservas"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#heart"></use></svg>Reservas <b data-reservas>0</b></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="caixa">
+        <div>
+          <small>Coleção primavera</small>
+          <h1>Peças leves para dias longos.</h1>
+          <p class="linha">Do P ao GG. Escolha a peça, o tamanho e a cor, e reserve pelo WhatsApp.</p>
+          <div class="acoes">
+            <a class="botao botao-cheio" href="#vitrine">Ver a vitrine</a>
+            <a class="botao botao-linha" href="#" data-whats="Oi! Vi o site do Ateliê Lume e quero ajuda para escolher uma peça.">Ajuda pelo WhatsApp</a>
+          </div>
+        </div>
+        <div class="vitrine-hero" aria-hidden="true">
+          <img class="foto-img" src="fotos/colecao-1.jpg" alt="" width="1200" height="800">
+          <img class="foto-img" src="fotos/colecao-2.jpg" alt="" width="1200" height="800">
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="vitrine" style="padding-top:1rem">
+      <div class="caixa">
+        <div class="titulo revela">
+          <h2>Vitrine</h2>
+          <p>Toque numa peça para escolher tamanho e cor.</p>
+        </div>
+        <div class="filtros" role="group" aria-label="Filtrar peças" data-filtros></div>
+        <div class="produtos" data-produtos aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-top:0">
+      <div class="caixa beneficios">
+        <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#repeat"></use></svg><h3>Troca fácil</h3><p>Aqui a loja explica a política de troca.</p></div>
+        <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#truck"></use></svg><h3>Entrega no Centro</h3><p>Combinada pelo WhatsApp, no mesmo dia.</p></div>
+        <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#credit-card"></use></svg><h3>Pix ou cartão</h3><p>Pix com desconto e cartão em até 3x.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="janela-peca" data-janela-peca aria-labelledby="peca-nome">
+    <button class="fechar" type="button" data-fechar aria-label="Fechar"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#x"></use></svg></button>
+    <div class="peca-grade">
+      <img class="foto-img" data-peca-foto alt="">
+      <form class="peca-info" data-peca-form method="dialog">
+        <h3 id="peca-nome" data-peca-nome></h3>
+        <span class="preco" data-peca-preco></span>
+        <fieldset class="escolha"><legend>Cor</legend><div data-peca-cores></div></fieldset>
+        <fieldset class="escolha"><legend>Tamanho</legend><div data-peca-tamanhos></div></fieldset>
+        <div><button class="botao botao-cheio" type="button" data-reservar><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>Reservar pelo WhatsApp</button></div>
+      </form>
+    </div>
+  </dialog>
+
+  <footer class="rodape"><div class="caixa"><span>© <span data-ano>2026</span> Ateliê Lume (nome fictício)</span><span>Site feito pela Atalho Studio</span></div></footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

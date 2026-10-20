@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fora do Google até os dados [PREENCHER] estarem prontos: tirar esta linha no lançamento -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Atalho Studio | Sites, WhatsApp automático e sistemas</title>
+  <meta name="description" content="Sites, atendimento automático no WhatsApp e sistemas sob medida para negócios de qualquer área. Estúdio de Governador Valadares (MG).">
+  <meta name="theme-color" content="#F6F4F0">
+  <link rel="icon" href="assets/logo/atalho-simbolo-escuro.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fontes/gabarito-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fontes/figtree-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body class="pagina" data-pagina="inicio">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header data-topo></header>
+
+  <main id="conteudo">
+    <!-- Primeira tela: frase à esquerda, imagens à direita -->
+    <section class="hero hero-dividido hero-areia" aria-labelledby="hero-titulo">
+      <div class="recipiente hero-grade">
+        <div>
+          <h1 id="hero-titulo" class="revelar">O caminho mais curto entre o seu negócio e <span class="cor">o seu cliente.</span></h1>
+          <p class="hero-linha revelar revelar-2">Site, atendimento automático no WhatsApp e sistemas para o seu cliente encontrar você, ser respondido na hora e comprar de você, não do concorrente.</p>
+          <div class="acoes revelar revelar-3">
+            <a class="botao botao-whats" href="#contato" data-wa="geral" data-posicao="hero"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#whatsapp"></use></svg>Falar no WhatsApp</a>
+            <a class="link-seta" href="#diagnostico">Descobrir o que meu negócio precisa <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a>
+          </div>
+          <p class="hero-micro revelar revelar-3">Conversa sem compromisso. Você recebe a proposta por escrito antes de decidir.</p>
+          <div class="hero-provas revelar revelar-3">
+            <span><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#check"></use></svg>Resposta na hora, 24h</span>
+            <span><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#check"></use></svg>Rápido no celular</span>
+            <span><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#check"></use></svg>Feito para o seu negócio</span>
+          </div>
+        </div>
+
+        <!-- Símbolo da marca no tom do fundo: o balão se desenha e a seta "pega o atalho" -->
+        <div class="hero-simbolo" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false">
+            <defs>
+              <mask id="hero-corte" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+                <rect width="64" height="64" fill="#fff"/>
+                <path d="M24 40L54 10M42 10H54V22" fill="none" stroke="#000" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+              </mask>
+            </defs>
+            <g mask="url(#hero-corte)">
+              <path class="simbolo-balao" pathLength="1" d="M22 8.5H42A13.5 13.5 0 0 1 55.5 22V42A13.5 13.5 0 0 1 42 55.5H11A2.5 2.5 0 0 1 8.5 53V22A13.5 13.5 0 0 1 22 8.5Z"/>
+            </g>
+            <g class="simbolo-seta">
+              <path pathLength="1" d="M24 40L54 10M42 10H54V22"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faixa com os tipos de negócio (anda devagar) -->
+    <div class="faixa-areas" role="region" aria-label="Para negócios como">
+      <div class="faixa-trilho">
+        <ul role="list">
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#stethoscope"></use></svg>Clínicas</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#utensils"></use></svg>Restaurantes</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#shirt"></use></svg>Lojas</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#house"></use></svg>Imobiliárias</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#dumbbell"></use></svg>Academias</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#briefcase"></use></svg>Contabilidade</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#scissors"></use></svg>Salões e estética</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#wrench"></use></svg>Oficinas</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#graduation-cap"></use></svg>Escolas e cursos</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#paw-print"></use></svg>Pet shops</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#car"></use></svg>Lojas de carros</li>
+          <li><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#scale"></use></svg>Advocacia</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fatos rápidos -->
+    <section class="secao" style="padding-block:3rem" aria-label="Em resumo">
+      <div class="recipiente fatos">
+        <div class="revelar"><strong>3 serviços</strong><span>Site, WhatsApp automático e sistema</span></div>
+        <div class="revelar revelar-2"><strong>24h</strong><span>de atendimento automático no WhatsApp</span></div>
+        <div class="revelar revelar-3"><strong>Teste antes</strong><span>Exemplos que você mexe aqui no site</span></div>
+        <div class="revelar revelar-3"><strong>Por escrito</strong><span>Proposta com preço e prazo antes de começar</span></div>
+      </div>
+    </section>
+
+    <!-- O que se perde sem resposta e sem site -->
+    <section class="secao secao-grafite" aria-labelledby="perdas-titulo">
+      <div class="recipiente">
+        <h2 id="perdas-titulo" class="frase-efeito revelar">Cliente que espera, <span class="cor">compra do concorrente.</span></h2>
+        <div class="numeros-impacto">
+          <div class="revelar">
+            <strong>7×</strong>
+            <p>mais chance de ter uma conversa de verdade com o cliente quando a empresa responde em até 1 hora, em vez de esperar mais.</p>
+            <cite>Harvard Business Review, 2011 · <a href="https://scholarsarchive.byu.edu/facpub/9711" target="_blank" rel="noopener">fonte</a></cite>
+          </div>
+          <div class="revelar revelar-2">
+            <strong>23%</strong>
+            <p>das empresas testadas nunca responderam o contato de um cliente interessado.</p>
+            <cite>Harvard Business Review, 2011 · <a href="https://scholarsarchive.byu.edu/facpub/9711" target="_blank" rel="noopener">fonte</a></cite>
+          </div>
+          <div class="revelar revelar-3">
+            <strong>79,5%</strong>
+            <p>dos brasileiros conversaram com empresas por aplicativo de mensagem no último ano.</p>
+            <cite>Mobile Time / Opinion Box, 2026 · <a href="https://www.mobiletime.com.br/noticias/09/06/2026/whatsapp-super-panorama/" target="_blank" rel="noopener">fonte</a></cite>
+          </div>
+          <div class="revelar revelar-3">
+            <strong>76%</strong>
+            <p>de quem procura algo perto pelo celular visita um negócio em até um dia.</p>
+            <cite>Google · <a href="https://thinkwithgoogle.com/data/mobile-near-me-searches" target="_blank" rel="noopener">fonte</a></cite>
+          </div>
+        </div>
+        <p class="conclusao revelar">Seu cliente pesquisa no Google, pergunta para a IA e chama no WhatsApp. Se ele não encontra você ou fica sem resposta, ele não espera: chama o próximo da lista.</p>
+      </div>
+    </section>
+
+    <!-- Antes e depois: a mesma mensagem com e sem atendimento automático -->
+    <section class="secao" aria-labelledby="contraste-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="contraste-titulo">A mesma mensagem. Dois finais.</h2>
+          <p>Terça-feira, 22h14. O mesmo cliente manda a mesma pergunta para dois negócios. Veja o que acontece.</p>
+        </div>
+        <div class="contraste" data-contraste>
+          <div class="contraste-lado contraste-sem">
+            <h3><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#clock"></use></svg>Sem atendimento automático</h3>
+            <ol class="linha-tempo" role="list">
+              <li class="lt-cliente" style="--i:1"><time>22:14</time><p>Oi! Vocês têm horário amanhã?</p></li>
+              <li class="lt-nada" style="--i:2"><time>22:14 a 08:30</time><p>Ninguém responde. O negócio está fechado.</p></li>
+              <li class="lt-fato" style="--i:3"><time>07:52</time><p>O cliente chama outro lugar, que responde na hora. Ele marca lá.</p></li>
+              <li class="lt-voce" style="--i:4"><time>08:30</time><p>Bom dia! Temos sim, qual horário?</p></li>
+              <li class="lt-cliente" style="--i:5"><time>08:41</time><p>Obrigado, já marquei em outro lugar.</p></li>
+            </ol>
+            <p class="contraste-fim" style="--i:6"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#x"></use></svg>Cliente perdido para o concorrente</p>
+          </div>
+          <div class="contraste-lado contraste-com">
+            <h3><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#message-circle"></use></svg>Com atendimento automático</h3>
+            <ol class="linha-tempo" role="list">
+              <li class="lt-cliente" style="--i:1"><time>22:14</time><p>Oi! Vocês têm horário amanhã?</p></li>
+              <li class="lt-auto" style="--i:2"><time>22:14</time><p>Temos sim! Prefere manhã ou tarde?</p></li>
+              <li class="lt-cliente" style="--i:3"><time>22:15</time><p>Manhã, por favor.</p></li>
+              <li class="lt-auto" style="--i:4"><time>22:15</time><p>Anotado! A recepção confirma o horário às 8h.</p></li>
+              <li class="lt-fato" style="--i:5"><time>08:05</time><p>Você só confirma. O cliente já é seu.</p></li>
+            </ol>
+            <p class="contraste-fim" style="--i:6"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#check"></use></svg>Cliente atendido enquanto você dormia</p>
+          </div>
+        </div>
+        <p class="legenda">Exemplo ilustrativo.</p>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="secao secao-linha" aria-labelledby="servicos-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="servicos-titulo">Três jeitos de o seu cliente chegar até você</h2>
+          <p>Use um, dois ou os três juntos. Cada um tem uma página com exemplo para você testar.</p>
+        </div>
+        <div class="servicos">
+          <a class="servico revelar" href="sites.html">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#monitor"></use></svg>
+            <h3>Sites</h3>
+            <p>Rápido no celular, com a cara do seu negócio e botão de WhatsApp com a mensagem pronta.</p>
+            <span class="link-seta">Ver modelos <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></span>
+          </a>
+          <a class="servico revelar revelar-2" href="whatsapp.html">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#message-circle"></use></svg>
+            <h3>WhatsApp automático</h3>
+            <p>Responde na hora, 24h, e passa a conversa para uma pessoa quando o cliente pede.</p>
+            <span class="link-seta">Testar uma conversa <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></span>
+          </a>
+          <a class="servico revelar revelar-3" href="sistemas.html">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#layout-dashboard"></use></svg>
+            <h3>Sistemas</h3>
+            <p>Um painel para organizar agenda, pedidos, estoque, cobranças ou vendas, do jeito que você trabalha.</p>
+            <span class="link-seta">Mexer num painel <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Era da IA -->
+    <section class="secao secao-azul" aria-labelledby="ia-titulo">
+      <div class="recipiente">
+        <h2 id="ia-titulo" class="frase-efeito revelar">Na era da IA, site e atendimento automático são <span class="cor">o mínimo.</span></h2>
+        <div class="argumentos">
+          <div class="revelar">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#monitor"></use></svg>
+            <h3>A IA recomenda quem ela encontra</h3>
+            <p>O ChatGPT, o Gemini e o resumo com IA do Google montam as respostas lendo o que está publicado na internet. Sem um site com seus serviços, preços e endereço, a IA tem pouco o que dizer sobre o seu negócio.</p>
+            <p class="destaque">Quem não está na internet não entra na resposta.</p>
+            <cite>O resumo com IA do Google chega a mais de 1,5 bilhão de pessoas por mês (Google, 2025) · <a href="https://techcrunch.com/2025/04/25/googles-ai-search-numbers-are-growing-and-thats-by-design/" target="_blank" rel="noopener">fonte</a></cite>
+          </div>
+          <div class="revelar revelar-2">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#trending-up"></use></svg>
+            <h3>Anúncio precisa de um destino</h3>
+            <p>No Google Ads, no Instagram ou no Facebook, o anúncio leva a pessoa para algum lugar. Um site rápido, com botão de WhatsApp, é esse lugar. Site lento ou sem site é pagar pelo clique e perder o cliente na chegada.</p>
+            <p class="destaque">Metade das visitas vai embora se a página demora.</p>
+            <cite>53% das visitas no celular são abandonadas quando a página leva mais de 3 segundos (Google) · <a href="https://thinkwithgoogle.com/consumer-insights/consumer-trends/mobile-site-load-time-statistics/" target="_blank" rel="noopener">fonte</a></cite>
+          </div>
+          <div class="revelar revelar-3">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#message-circle"></use></svg>
+            <h3>Seu cliente chama às 22h</h3>
+            <p>O cliente manda mensagem quando lembra, não no seu horário. O atendimento automático responde na hora, tira as dúvidas de sempre e passa para você só o que precisa de uma pessoa.</p>
+            <p class="destaque">Seu WhatsApp não dorme. Seu atendimento também não precisa dormir.</p>
+            <cite>73% dos pequenos negócios já vendem por canais digitais (Sebrae, 2026) · <a href="https://agenciasebrae.com.br/dados/whatsapp-se-consolida-nas-vendas-on-line-enquanto-facebook-e-lojas-proprias-perdem-folego/" target="_blank" rel="noopener">fonte</a></cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exemplo de atendimento -->
+    <section class="secao secao-salvia" aria-labelledby="exemplo-titulo">
+      <div class="recipiente demo-inicio">
+        <div class="cabeca cabeca-centro revelar">
+          <h2 id="exemplo-titulo">Veja um atendimento acontecendo</h2>
+          <p>Escolha uma área. A conversa é só um exemplo: toque em enviar e nos botões do celular para responder como se fosse o cliente.</p>
+        </div>
+        <div class="chips-areas" role="group" aria-label="Escolha a área do exemplo" data-areas-inicio></div>
+        <div class="celular" data-whats="hero"></div>
+        <p class="legenda">Exemplo com dados fictícios. Serve para qualquer negócio que atende pelo WhatsApp.</p>
+      </div>
+    </section>
+
+    <!-- Quanto você deixa de ganhar -->
+    <section class="secao secao-argila" id="simulador" aria-labelledby="simulador-titulo">
+      <div class="recipiente simulador-grade">
+        <div class="cabeca revelar">
+          <h2 id="simulador-titulo">Quanto você deixa de ganhar por mês?</h2>
+          <p>Coloque os números do seu negócio e veja quanto pode estar indo embora por falta de resposta rápida. A conta acontece só no seu navegador: nada é enviado.</p>
+        </div>
+        <form class="simulador revelar" data-simulador novalidate>
+          <div class="campo">
+            <label for="sim-contatos">Quantas pessoas chamam no seu WhatsApp por mês?</label>
+            <div class="campo-entrada"><input id="sim-contatos" name="contatos" type="text" inputmode="numeric" autocomplete="off" placeholder="ex.: 120" aria-describedby="sim-contatos-erro"></div>
+            <p class="campo-erro" id="sim-contatos-erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="sim-esfriam">Dessas, quantas desistem porque a resposta demorou? (em %)</label>
+            <div class="campo-entrada"><input id="sim-esfriam" name="esfriam" type="text" inputmode="decimal" autocomplete="off" placeholder="ex.: 20" aria-describedby="sim-esfriam-erro"><span class="campo-unidade" aria-hidden="true">%</span></div>
+            <p class="campo-erro" id="sim-esfriam-erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="sim-fecham">De quem é respondido na hora, quantos compram? (em %)</label>
+            <div class="campo-entrada"><input id="sim-fecham" name="fecham" type="text" inputmode="decimal" autocomplete="off" placeholder="ex.: 15" aria-describedby="sim-fecham-erro"><span class="campo-unidade" aria-hidden="true">%</span></div>
+            <p class="campo-erro" id="sim-fecham-erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="sim-valor">Quanto vale, em média, cada venda? (em reais)</label>
+            <div class="campo-entrada campo-entrada-antes"><span class="campo-unidade" aria-hidden="true">R$</span><input id="sim-valor" name="valor" type="text" inputmode="decimal" autocomplete="off" placeholder="ex.: 300" aria-describedby="sim-valor-erro"></div>
+            <p class="campo-erro" id="sim-valor-erro" hidden></p>
+          </div>
+          <div class="simulador-resultado">
+            <p data-vazio>Preencha os 4 campos para ver a estimativa.</p>
+            <div data-resultado hidden>
+              <p>Pode estar deixando de entrar, por estimativa:</p>
+              <p class="simulador-valor" aria-live="polite" aria-atomic="true"><span data-valor></span> por mês</p>
+              <p>Em um ano: <strong data-por-ano></strong></p>
+              <p class="simulador-conta" data-conta></p>
+              <p class="simulador-aviso">É uma estimativa feita com os seus números, não uma promessa.</p>
+              <a class="botao botao-whats simulador-acao" href="#contato" data-wa="geral" data-posicao="simulador" data-wa-mensagem="Oi! Fiz a conta no site da Atalho Studio de quanto posso estar perdendo com resposta demorada. Quero entender como o atendimento automático funcionaria no meu negócio."><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#whatsapp"></use></svg>Quero parar de perder esses clientes</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Modelos de site -->
+    <section class="secao" aria-labelledby="modelos-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="modelos-titulo">Modelos de site para você mexer</h2>
+          <p>Sites completos, de exemplo, para 21 tipos de negócio. Abra um, clique nos botões e veja no computador ou no celular.</p>
+        </div>
+        <div class="modelos-inicio">
+          <a class="modelo-cartao revelar" href="ver.html?modelo=clinica">
+            <img src="modelos/clinica/fotos/consultorio.jpg" alt="" width="1400" height="933" loading="lazy">
+            <small>Clínica odontológica</small>
+            <h3>Clínica Sorriso Vivo</h3>
+            <span class="link-seta">Abrir e mexer <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></span>
+          </a>
+          <a class="modelo-cartao revelar revelar-2" href="ver.html?modelo=restaurante">
+            <img src="modelos/restaurante/fotos/prato-do-dia.jpg" alt="" width="1400" height="933" loading="lazy">
+            <small>Restaurante</small>
+            <h3>Cantina da Praça</h3>
+            <span class="link-seta">Abrir e mexer <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></span>
+          </a>
+          <a class="modelo-cartao revelar revelar-3" href="ver.html?modelo=loja">
+            <img src="modelos/loja/fotos/colecao-2.jpg" alt="" width="1200" height="800" loading="lazy">
+            <small>Loja de roupas</small>
+            <h3>Ateliê Lume</h3>
+            <span class="link-seta">Abrir e mexer <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></span>
+          </a>
+          <a class="modelo-cartao revelar" href="ver.html?modelo=imobiliaria">
+            <img src="modelos/imobiliaria/fotos/casa-quintal.jpg" alt="" width="900" height="601" loading="lazy">
+            <small>Imobiliária</small>
+            <h3>Morada Imóveis</h3>
+            <span class="link-seta">Abrir e mexer <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></span>
+          </a>
+          <a class="modelo-cartao revelar revelar-2" href="ver.html?modelo=academia">
+            <img src="modelos/academia/fotos/salao.jpg" alt="" width="1400" height="933" loading="lazy">
+            <small>Academia</small>
+            <h3>Academia Pulso</h3>
+            <span class="link-seta">Abrir e mexer <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></span>
+          </a>
+          <a class="modelo-cartao revelar revelar-3" href="ver.html?modelo=contabilidade">
+            <img src="modelos/contabilidade/fotos/equipe.jpg" alt="" width="1000" height="668" loading="lazy">
+            <small>Escritório de contabilidade</small>
+            <h3>Contábil Prisma</h3>
+            <span class="link-seta">Abrir e mexer <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></span>
+          </a>
+        </div>
+        <p class="acoes"><a class="botao botao-contorno" href="sites.html">Ver os 21 modelos: saúde, beleza, alimentação e mais <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a></p>
+      </div>
+    </section>
+
+    <!-- Por que a Atalho -->
+    <section class="secao secao-grafite secao-aco" aria-labelledby="diferenciais-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="diferenciais-titulo">Como a Atalho Studio trabalha</h2>
+        </div>
+        <div class="diferenciais">
+          <div class="revelar">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#mouse-pointer-click"></use></svg>
+            <h3>Você testa antes</h3>
+            <p>Os exemplos deste site funcionam. Você vê como fica antes de decidir.</p>
+          </div>
+          <div class="revelar revelar-2">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#file-text"></use></svg>
+            <h3>Tudo por escrito</h3>
+            <p>A proposta traz o que vai ser feito, o preço e o prazo.</p>
+          </div>
+          <div class="revelar revelar-3">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#message-circle"></use></svg>
+            <h3>Fala direto com quem faz</h3>
+            <p>Sem intermediário: quem conversa com você é quem monta o seu projeto.</p>
+          </div>
+          <div class="revelar revelar-3">
+            <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#shield-check"></use></svg>
+            <h3>Suporte depois</h3>
+            <p>Cuidado mensal opcional, com ajustes, suporte e hospedagem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tipos de sistema -->
+    <section class="secao" aria-labelledby="sistemas-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="sistemas-titulo">Sistemas que organizam o seu dia</h2>
+          <p>Alguns dos tipos mais usados por pequenos negócios. Toque em um para ver o exemplo funcionando.</p>
+        </div>
+        <div class="lista-sistemas">
+          <a class="revelar" href="sistemas.html"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#calendar"></use></svg><span><strong>Agenda online</strong><small>Salões, clínicas e estética</small></span><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a>
+          <a class="revelar" href="sistemas.html"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#users"></use></svg><span><strong>Mensalidades</strong><small>Academias, escolas e cursos</small></span><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a>
+          <a class="revelar" href="sistemas.html"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#chef-hat"></use></svg><span><strong>Pedidos</strong><small>Restaurantes e delivery</small></span><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a>
+          <a class="revelar" href="sistemas.html"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#package"></use></svg><span><strong>Estoque</strong><small>Lojas e distribuidoras</small></span><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a>
+          <a class="revelar" href="sistemas.html"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#wrench"></use></svg><span><strong>Ordens de serviço</strong><small>Oficinas e assistência técnica</small></span><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a>
+          <a class="revelar" href="sistemas.html"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#trending-up"></use></svg><span><strong>Funil de vendas</strong><small>Imobiliárias e lojas de carros</small></span><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="secao secao-pedra" aria-labelledby="como-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="como-titulo">Como funciona</h2>
+        </div>
+        <ol class="passos" role="list">
+          <li class="revelar">
+            <h3>Conversa</h3>
+            <p>Você conta como o seu negócio atende hoje. Pode ser pelo WhatsApp.</p>
+          </li>
+          <li class="revelar revelar-2">
+            <h3>Proposta</h3>
+            <p>Você recebe por escrito o que vai ser feito, o preço e o prazo.</p>
+          </li>
+          <li class="revelar revelar-3">
+            <h3>Entrega</h3>
+            <p>O site, o atendimento ou o sistema é entregue funcionando.</p>
+            <p data-se-preenchido="prazos.entrega">Prazo: <span data-config="prazos.entrega"></span>.</p>
+          </li>
+          <li class="revelar revelar-3">
+            <h3>Suporte</h3>
+            <p data-se-preenchido="prazos.ajustes">Ajustes incluídos por <span data-config="prazos.ajustes"></span> depois da entrega.</p>
+            <p>Se quiser, o cuidado mensal cuida de ajustes, suporte e hospedagem.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Planos em resumo -->
+    <section class="secao secao-areia" aria-labelledby="planos-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="planos-titulo">Planos</h2>
+          <p>Valores de entrada. O preço final sai na proposta, depois da conversa.</p>
+        </div>
+        <div class="planos-resumo">
+          <div class="revelar"><small>Site</small><h3 data-plano-nome="inicio"></h3><p>a partir de <strong data-plano-preco="inicio"></strong></p></div>
+          <div class="revelar revelar-2"><small>Site + WhatsApp automático</small><h3 data-plano-nome="atendimento"></h3><p>a partir de <strong data-plano-preco="atendimento"></strong></p></div>
+          <div class="revelar revelar-3"><small>Sistema</small><h3 data-plano-nome="sobmedida"></h3><p>a partir de <strong data-plano-preco="sobmedida"></strong></p></div>
+        </div>
+        <p class="acoes"><a class="link-seta" href="planos.html">Ver o que cada plano inclui <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a></p>
+      </div>
+    </section>
+
+    <!-- Perguntas -->
+    <section class="secao" aria-labelledby="perguntas-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="perguntas-titulo">Perguntas frequentes</h2>
+        </div>
+        <div class="perguntas" style="margin-inline:0">
+          <details class="pergunta"><summary>Vocês atendem qualquer tipo de negócio?</summary><div class="resposta"><p>As demonstrações mostram algumas áreas como exemplo. O que for feito para você parte de como o seu negócio funciona hoje.</p></div></details>
+          <details class="pergunta"><summary>Fica no meu número de WhatsApp?</summary><div class="resposta"><p>Depende de como o seu WhatsApp está hoje. Isso é visto na primeira conversa, antes da proposta, e fica escrito nela.</p></div></details>
+          <details class="pergunta"><summary>O cliente sabe que está falando com um atendimento automático?</summary><div class="resposta"><p>Sim. Ele se apresenta como assistente automático, e uma pessoa entra quando o cliente pede.</p></div></details>
+        </div>
+        <p class="acoes"><a class="link-seta" href="planos.html#duvidas">Ver todas as perguntas <svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#arrow-right"></use></svg></a></p>
+      </div>
+    </section>
+
+    <!-- Diagnóstico em 3 toques: termina numa sugestão e numa mensagem pronta -->
+    <section class="secao secao-areia" id="diagnostico" aria-labelledby="diagnostico-titulo">
+      <div class="recipiente diagnostico-grade">
+        <div class="cabeca revelar">
+          <h2 id="diagnostico-titulo">Qual é o atalho do seu negócio?</h2>
+          <p>Responda 3 perguntas rápidas e veja o que faz mais diferença para você agora. No fim, a mensagem para o WhatsApp já vai pronta.</p>
+          <p class="diagnostico-alternativa">Prefere conversar direto? <a href="#contato" data-wa="geral" data-posicao="diagnostico-direto">Falar no WhatsApp</a></p>
+        </div>
+        <div class="diagnostico revelar" data-diagnostico>
+          <noscript><p>Para fazer o diagnóstico, ative o JavaScript. Ou chame direto no WhatsApp.</p></noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-rodape></footer>
+</body>
+</html>

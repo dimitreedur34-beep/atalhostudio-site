@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clínica Sorriso Vivo | Modelo de demonstração</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../kit.css">
+  <style>
+    :root {
+      --salvia: #4F7A6E;
+      --salvia-escura: #3D6157;
+      --areia: #F4F2EE;
+      --tinta: #1E2422;
+      --cinza: #66706C;
+      --linha: #E3E0DA;
+    }
+
+    body { background: #fff; color: var(--tinta); }
+    h1, h2, h3 { font-family: 'Gabarito', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.03em; }
+
+    .botao { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3.1rem; padding: 0.75rem 1.4rem; border: 1px solid transparent; border-radius: 999px; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color 0.2s, border-color 0.2s; }
+    .botao-cheio { background: var(--salvia); color: #fff; }
+    .botao-cheio:hover { background: var(--salvia-escura); }
+    .botao-linha { border-color: var(--linha); color: var(--tinta); }
+    .botao-linha:hover { border-color: var(--tinta); }
+
+    .aviso { border-bottom: 1px solid var(--linha); color: var(--cinza); font-size: 0.85rem; }
+    .aviso .caixa { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem; padding-block: 0.5rem; }
+    .aviso span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .aviso .ic { width: 1rem; height: 1rem; }
+
+    .menu-topo { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--linha); background: #fff; }
+    .menu-topo .caixa { display: flex; align-items: center; gap: 2rem; min-height: 4.25rem; }
+    .logo { margin-right: auto; color: var(--tinta); text-decoration: none; line-height: 1.1; }
+    .logo strong { display: block; font-family: 'Gabarito'; font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em; }
+    .logo small { color: var(--cinza); font-size: 0.75rem; }
+    .links { display: none; gap: 1.75rem; }
+    .links a { color: var(--cinza); text-decoration: none; }
+    .links a:hover { color: var(--tinta); }
+    .menu-topo .botao { display: none; min-height: 2.6rem; padding: 0.5rem 1.1rem; }
+    .menu-celular-botao { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid var(--linha); border-radius: 12px; background: #fff; cursor: pointer; }
+    .gaveta { display: none; border-top: 1px solid var(--linha); }
+    .gaveta.aberto { display: grid; }
+    .gaveta a { padding: 1rem clamp(1rem, 0.5rem + 2.5vw, 2rem); border-bottom: 1px solid var(--linha); color: var(--tinta); text-decoration: none; }
+    @media (min-width: 56em) {
+      .links, .menu-topo .botao { display: inline-flex; }
+      .menu-celular-botao, .gaveta, .gaveta.aberto { display: none; }
+    }
+
+    .foto { position: relative; display: grid; place-items: center; align-content: center; gap: 0.5rem; background: var(--areia); color: #A8A39A; }
+    .foto .ic { width: 2.2rem; height: 2.2rem; }
+    .foto span { font-size: 0.8rem; }
+
+    .hero .caixa { display: grid; gap: 2.5rem; align-items: center; padding-block: clamp(3rem, 1.5rem + 6vw, 6.5rem); }
+    @media (min-width: 56em) { .hero .caixa { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+    .hero small.local { display: block; margin-bottom: 1.25rem; color: var(--cinza); }
+    .hero h1 { font-size: clamp(2.6rem, 1.4rem + 4.6vw, 4.6rem); line-height: 1; }
+    .hero p.linha { max-width: 30rem; margin-top: 1.25rem; color: var(--cinza); font-size: 1.15rem; }
+    .hero .acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+    .numeros { display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 2.75rem; padding-top: 1.5rem; border-top: 1px solid var(--linha); }
+    .numeros strong { display: block; font-family: 'Gabarito'; font-size: 1.3rem; font-weight: 600; }
+    .numeros span { color: var(--cinza); font-size: 0.875rem; }
+    .hero .foto { min-height: 26rem; border-radius: 4px; }
+    .hero .foto-img { min-height: 26rem; max-height: 34rem; border-radius: 4px; }
+    .foto-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .contato .foto-img { min-height: 20rem; border-radius: 4px; object-position: top; }
+
+    .secao { padding-block: clamp(4rem, 2.5rem + 5vw, 7rem); }
+    .secao-areia { background: var(--areia); }
+    .titulo { max-width: 38rem; margin-bottom: 3rem; }
+    .titulo h2 { font-size: clamp(2rem, 1.3rem + 2.5vw, 3rem); line-height: 1.05; }
+    .titulo p { margin-top: 0.75rem; color: var(--cinza); font-size: 1.1rem; }
+
+    .tratamentos { display: grid; border-top: 1px solid var(--linha); }
+    @media (min-width: 48em) { .tratamentos { grid-template-columns: repeat(2, 1fr); column-gap: 3rem; } }
+    @media (min-width: 72em) { .tratamentos { grid-template-columns: repeat(3, 1fr); } }
+    .tratamento { display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 1rem; padding-block: 1.5rem; border-bottom: 1px solid var(--linha); }
+    .tratamento .ic { grid-row: span 3; width: 1.6rem; height: 1.6rem; color: var(--salvia); }
+    .tratamento h3 { font-size: 1.2rem; }
+    .tratamento p { color: var(--cinza); font-size: 0.95rem; }
+    .tratamento .rodape-item { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; margin-top: 0.4rem; }
+    .tratamento .preco { font-size: 0.9rem; font-weight: 600; }
+    .tratamento button { display: inline-flex; align-items: center; gap: 0.3rem; min-height: 2.5rem; padding: 0; border: 0; background: none; color: var(--salvia-escura); font-weight: 600; cursor: pointer; }
+    .tratamento button .ic { grid-row: auto; width: 1rem; height: 1rem; color: currentColor; }
+    .tratamento button:hover { text-decoration: underline; }
+
+    .agenda { display: grid; gap: 2.5rem; align-items: start; }
+    @media (min-width: 56em) { .agenda { grid-template-columns: 1fr 0.85fr; gap: 4rem; } }
+    .formulario { display: grid; gap: 1.25rem; }
+    .campo { display: grid; gap: 0.45rem; }
+    .campo label, .campo legend { font-size: 0.9rem; font-weight: 600; }
+    .campo input, .campo select { min-height: 3rem; padding: 0.6rem 0.9rem; border: 1px solid #C9C5BE; border-radius: 10px; background: #fff; }
+    fieldset.campo { margin: 0; padding: 0; border: 0; }
+    .opcoes { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .opcoes label { position: relative; }
+    .opcoes input { position: absolute; opacity: 0; }
+    .opcoes span { display: inline-flex; padding: 0.55rem 1.2rem; border: 1px solid #C9C5BE; border-radius: 999px; cursor: pointer; }
+    .opcoes input:checked + span { border-color: var(--tinta); background: var(--tinta); color: #fff; }
+    .opcoes input:focus-visible + span { outline: 2px solid var(--tinta); outline-offset: 2px; }
+    .previa { position: sticky; top: 6rem; display: grid; gap: 0.75rem; padding: 1.5rem; border-radius: 16px; background: #EFEAE2; }
+    .previa > p { color: #54656F; font-size: 0.85rem; }
+    .previa .bolha { justify-self: end; max-width: 95%; padding: 0.7rem 0.85rem; border-radius: 12px 0 12px 12px; background: #D9FDD3; color: #111B21; white-space: pre-line; box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13); }
+
+    .passos { display: grid; gap: 2rem; counter-reset: passo; }
+    @media (min-width: 48em) { .passos { grid-template-columns: repeat(3, 1fr); } }
+    .passos li { padding-top: 1rem; border-top: 1px solid var(--tinta); counter-increment: passo; }
+    .passos li::before { content: '0' counter(passo); display: block; margin-bottom: 1.25rem; color: var(--cinza); font-size: 0.85rem; }
+    .passos h3 { font-size: 1.2rem; }
+    .passos p { margin-top: 0.4rem; color: var(--cinza); }
+
+    .avaliacoes { display: grid; gap: 1.5rem; }
+    @media (min-width: 48em) { .avaliacoes { grid-template-columns: repeat(3, 1fr); } }
+    .avaliacao { margin: 0; padding: 1.75rem; border-radius: 4px; background: #fff; }
+    .estrelas { display: flex; gap: 0.15rem; color: var(--tinta); }
+    .estrelas .ic { width: 1rem; height: 1rem; fill: currentColor; }
+    .avaliacao p { margin-block: 0.9rem; font-size: 1.05rem; }
+    .avaliacao small { color: var(--cinza); }
+    .exemplo { display: inline-block; margin-top: 1rem; color: var(--cinza); font-size: 0.85rem; }
+
+    .duvidas { max-width: 46rem; border-top: 1px solid var(--linha); }
+    .duvidas details { border-bottom: 1px solid var(--linha); }
+    .duvidas summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.2rem; font-weight: 600; cursor: pointer; list-style: none; }
+    .duvidas summary::-webkit-details-marker { display: none; }
+    .duvidas summary .ic { width: 1.1rem; height: 1.1rem; transition: transform 0.2s; }
+    .duvidas details[open] summary .ic { transform: rotate(180deg); }
+    .duvidas details p { padding-bottom: 1.2rem; color: var(--cinza); }
+
+    .contato { display: grid; gap: 2.5rem; }
+    @media (min-width: 56em) { .contato { grid-template-columns: 1fr 1.2fr; align-items: stretch; } }
+    .contato-dados { display: grid; gap: 1.5rem; align-content: start; }
+    .contato-dados div { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; align-items: start; }
+    .contato-dados .ic { margin-top: 0.15rem; color: var(--salvia); }
+    .contato-dados strong { display: block; font-size: 0.9rem; }
+    .contato-dados span { color: var(--cinza); }
+    .contato .foto { min-height: 20rem; border-radius: 4px; }
+
+    .rodape { padding-block: 2rem 4.5rem; border-top: 1px solid var(--linha); color: var(--cinza); font-size: 0.875rem; }
+    .rodape .caixa { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+    .whats-fixo { position: fixed; right: 1rem; bottom: 1rem; z-index: 80; display: grid; place-items: center; width: 3.4rem; height: 3.4rem; border-radius: 50%; background: var(--salvia); color: #fff; box-shadow: 0 6px 18px rgba(30, 36, 34, 0.2); }
+    .whats-fixo .ic { width: 1.5rem; height: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="aviso">
+    <div class="caixa">
+      <span><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#clock"></use></svg>Seg a sex, 8h às 18h · Sáb, 8h às 12h</span>
+      <span><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#map-pin"></use></svg>Rua Exemplo, 123 · Centro</span>
+    </div>
+  </div>
+
+  <header class="menu-topo">
+    <div class="caixa">
+      <a class="logo" href="#inicio"><strong>Sorriso Vivo</strong><small>Clínica odontológica</small></a>
+      <nav class="links" aria-label="Menu"><a href="#tratamentos">Tratamentos</a><a href="#horario">Pedir horário</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+      <a class="botao botao-cheio" href="#horario">Agendar</a>
+      <button class="menu-celular-botao" type="button" data-menu-botao aria-expanded="false" aria-controls="gaveta" aria-label="Abrir menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#menu"></use></svg></button>
+    </div>
+    <nav class="gaveta" id="gaveta" data-menu aria-label="Menu do celular"><a href="#tratamentos">Tratamentos</a><a href="#horario">Pedir horário</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="caixa">
+        <div>
+          <small class="local">Odontologia no Centro</small>
+          <h1>Seu sorriso cuidado de perto, sem pressa.</h1>
+          <p class="linha">Limpeza, clareamento e implante com hora marcada. Peça seu horário pelo WhatsApp em menos de um minuto.</p>
+          <div class="acoes">
+            <a class="botao botao-cheio" href="#horario">Pedir horário</a>
+            <a class="botao botao-linha" href="#tratamentos">Ver tratamentos</a>
+          </div>
+          <div class="numeros">
+            <div><strong>Seg a sáb</strong><span>com hora marcada</span></div>
+            <div><strong>R$ 80</strong><span>avaliação</span></div>
+            <div><strong>Até 10x</strong><span>nos tratamentos</span></div>
+          </div>
+        </div>
+        <img class="foto-img" src="fotos/consultorio.jpg" alt="Consultório da clínica, claro e organizado" width="1400" height="933">
+      </div>
+    </section>
+
+    <section class="secao secao-areia" id="tratamentos">
+      <div class="caixa">
+        <div class="titulo revela">
+          <h2>Tratamentos</h2>
+          <p>Toque em "Quero esse" e o pedido de horário já vem preenchido.</p>
+        </div>
+        <div class="tratamentos" data-tratamentos></div>
+      </div>
+    </section>
+
+    <section class="secao" id="horario">
+      <div class="caixa agenda">
+        <div>
+          <div class="titulo revela">
+            <h2>Peça seu horário</h2>
+            <p>A mensagem vai pronta para o WhatsApp da clínica. A recepção confirma com você.</p>
+          </div>
+          <form class="formulario" data-formulario novalidate>
+            <div class="campo">
+              <label for="nome">Seu nome</label>
+              <input id="nome" name="nome" autocomplete="off" placeholder="Ex.: Mariana">
+            </div>
+            <div class="campo">
+              <label for="tratamento">Tratamento</label>
+              <select id="tratamento" name="tratamento" data-select-tratamento></select>
+            </div>
+            <fieldset class="campo">
+              <legend>Período</legend>
+              <div class="opcoes">
+                <label><input type="radio" name="periodo" value="manhã" checked><span>Manhã</span></label>
+                <label><input type="radio" name="periodo" value="tarde"><span>Tarde</span></label>
+              </div>
+            </fieldset>
+            <div class="campo">
+              <label for="dia">Dia preferido</label>
+              <select id="dia" name="dia">
+                <option>segunda-feira</option><option>terça-feira</option><option>quarta-feira</option>
+                <option>quinta-feira</option><option>sexta-feira</option><option>sábado</option>
+              </select>
+            </div>
+            <div><button class="botao botao-cheio" type="submit"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>Enviar pelo WhatsApp</button></div>
+          </form>
+        </div>
+        <aside class="previa" aria-live="polite">
+          <p>Mensagem que vai para a clínica</p>
+          <p class="bolha" data-previa></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="secao secao-areia">
+      <div class="caixa">
+        <div class="titulo revela"><h2>Como é a primeira consulta</h2></div>
+        <ol class="passos" role="list">
+          <li><h3>Você pede o horário</h3><p>Pelo WhatsApp, a qualquer hora. A recepção confirma.</p></li>
+          <li><h3>Avaliação</h3><p>A dentista examina e explica tudo, sem pressa.</p></li>
+          <li><h3>Plano de tratamento</h3><p>Você recebe o plano por escrito, com valores e prazos.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="caixa">
+        <div class="titulo revela">
+          <h2>O que os pacientes dizem</h2>
+          <span class="exemplo">Exemplo: aqui entram as avaliações reais dos seus clientes.</span>
+        </div>
+        <div class="avaliacoes" data-avaliacoes></div>
+      </div>
+    </section>
+
+    <section class="secao secao-areia" id="duvidas">
+      <div class="caixa">
+        <div class="titulo revela"><h2>Dúvidas</h2></div>
+        <div class="duvidas" data-duvidas></div>
+      </div>
+    </section>
+
+    <section class="secao" id="contato">
+      <div class="caixa contato">
+        <div class="contato-dados">
+          <div class="titulo" style="margin:0;display:block"><h2>Onde estamos</h2></div>
+          <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#map-pin"></use></svg><p><strong>Endereço</strong><span>Rua Exemplo, 123 · Centro</span></p></div>
+          <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#clock"></use></svg><p><strong>Horário</strong><span>Seg a sex, 8h às 18h · Sáb, 8h às 12h</span></p></div>
+          <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#phone"></use></svg><p><strong>Telefone</strong><span>(33) 0000-0000</span></p></div>
+          <p><a class="botao botao-cheio" href="#" data-whats="Oi! Vi o site da Clínica Sorriso Vivo e quero tirar uma dúvida."><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>Falar no WhatsApp</a></p>
+        </div>
+        <img class="foto-img" src="fotos/sala.jpg" alt="Sala de atendimento da clínica" width="1400" height="2100" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape"><div class="caixa"><span>© <span data-ano>2026</span> Clínica Sorriso Vivo (nome fictício)</span><span>Site feito pela Atalho Studio</span></div></footer>
+
+  <a class="whats-fixo" href="#" aria-label="Falar no WhatsApp da clínica" data-whats="Oi! Vi o site da Clínica Sorriso Vivo e quero marcar um horário."><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg></a>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

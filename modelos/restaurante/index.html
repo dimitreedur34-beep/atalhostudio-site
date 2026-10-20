@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cantina da Praça | Modelo de demonstração</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../kit.css">
+  <style>
+    :root {
+      --vinho: #7E3522;
+      --vinho-escuro: #652A1B;
+      --creme: #FAF6F0;
+      --creme-2: #F1EADF;
+      --cafe: #2A211C;
+      --cinza: #75695F;
+      --linha: #E6DDD0;
+    }
+
+    body { background: var(--creme); color: var(--cafe); }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -0.01em; }
+
+    .botao { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3.1rem; padding: 0.75rem 1.4rem; border: 1px solid transparent; border-radius: 4px; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color 0.2s, border-color 0.2s; }
+    .botao-cheio { background: var(--vinho); color: #fff; }
+    .botao-cheio:hover { background: var(--vinho-escuro); }
+    .botao-linha { border-color: var(--cafe); color: var(--cafe); }
+    .botao-linha:hover { background: var(--cafe); color: var(--creme); }
+
+    .menu-topo { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--linha); background: var(--creme); }
+    .menu-topo .caixa { display: flex; align-items: center; gap: 2rem; min-height: 4.25rem; }
+    .logo { margin-right: auto; color: var(--cafe); font-family: Georgia, serif; font-size: 1.45rem; font-style: italic; text-decoration: none; }
+    .links { display: none; gap: 1.75rem; }
+    .links a { color: var(--cinza); text-decoration: none; }
+    .links a:hover { color: var(--cafe); }
+    @media (min-width: 52em) { .links { display: inline-flex; } }
+    .sacola { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1rem; border: 1px solid var(--cafe); border-radius: 4px; background: transparent; color: var(--cafe); font-weight: 600; cursor: pointer; }
+    .sacola b { min-width: 1.4rem; padding: 0 0.35rem; border-radius: 999px; background: var(--cafe); color: var(--creme); font-size: 0.8rem; text-align: center; }
+
+    .foto { display: grid; place-items: center; align-content: center; gap: 0.5rem; background: var(--creme-2); color: #B3A797; }
+    .foto .ic { width: 2.2rem; height: 2.2rem; }
+    .foto span { font-size: 0.8rem; }
+
+    .hero .caixa { display: grid; gap: 2.5rem; align-items: center; padding-block: clamp(3rem, 1.5rem + 6vw, 6.5rem); }
+    @media (min-width: 56em) { .hero .caixa { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+    .hero small.dia { display: block; margin-bottom: 1.25rem; color: var(--cinza); }
+    .hero h1 { font-size: clamp(2.8rem, 1.5rem + 5vw, 5rem); line-height: 1; }
+    .hero p.linha { max-width: 30rem; margin-top: 1.25rem; color: var(--cinza); font-size: 1.15rem; }
+    .hero .acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+    .hero .foto { aspect-ratio: 4 / 5; max-height: 34rem; }
+    .foto-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .hero .foto-img { aspect-ratio: 4 / 5; max-height: 36rem; }
+    .foto-larga { aspect-ratio: 21 / 9; margin-bottom: 3rem; }
+
+    .secao { padding-block: clamp(4rem, 2.5rem + 5vw, 7rem); }
+    .titulo { max-width: 38rem; margin-bottom: 2.5rem; }
+    .titulo h2 { font-size: clamp(2.2rem, 1.4rem + 2.8vw, 3.4rem); line-height: 1.05; }
+    .titulo p { margin-top: 0.75rem; color: var(--cinza); font-size: 1.1rem; }
+
+    .cardapio-grade { display: grid; gap: 3rem; align-items: start; }
+    @media (min-width: 60em) { .cardapio-grade { grid-template-columns: 1fr 21rem; gap: 4rem; } }
+    .categorias { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--linha); }
+    .categorias button { min-height: 2.75rem; padding: 0.5rem 0; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--cinza); font-weight: 600; cursor: pointer; }
+    .categorias button[aria-pressed='true'] { border-bottom-color: var(--cafe); color: var(--cafe); }
+    .itens { display: grid; }
+    .item { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; padding-block: 1.25rem; border-bottom: 1px solid var(--linha); }
+    .item h3 { font-size: 1.3rem; }
+    .item p { margin-top: 0.15rem; color: var(--cinza); font-size: 0.95rem; }
+    .item .preco { margin-top: 0.35rem; font-weight: 600; }
+    .controle { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .controle button { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border: 1px solid var(--cafe); border-radius: 4px; background: transparent; color: var(--cafe); cursor: pointer; }
+    .controle button.cheio { background: var(--cafe); color: var(--creme); }
+    .controle .ic { width: 1.1rem; height: 1.1rem; }
+    .controle b { min-width: 1.5rem; text-align: center; }
+
+    .pedido { position: sticky; top: 5.5rem; display: grid; gap: 1rem; padding: 1.5rem; border: 1px solid var(--linha); background: #fff; }
+    .pedido h3 { font-size: 1.5rem; }
+    .pedido-lista { display: grid; gap: 0.5rem; max-height: 14rem; overflow: auto; }
+    .pedido-lista li { display: flex; justify-content: space-between; gap: 0.5rem; font-size: 0.95rem; }
+    .pedido-vazio { color: var(--cinza); font-size: 0.95rem; }
+    .total { display: flex; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid var(--linha); font-size: 1.1rem; font-weight: 600; }
+    .entrega { display: flex; gap: 0.4rem; }
+    .entrega label { flex: 1; position: relative; }
+    .entrega input { position: absolute; opacity: 0; }
+    .entrega span { display: grid; place-items: center; min-height: 2.6rem; border: 1px solid var(--linha); font-weight: 600; cursor: pointer; }
+    .entrega input:checked + span { border-color: var(--cafe); background: var(--cafe); color: var(--creme); }
+    .entrega input:focus-visible + span { outline: 2px solid var(--cafe); outline-offset: 2px; }
+    .pedido input[type='text'] { min-height: 2.9rem; padding: 0.55rem 0.8rem; border: 1px solid #D5C9B8; background: #fff; }
+    .pedido .botao { width: 100%; }
+    .pedido .botao:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .sobre { display: grid; gap: 2rem; }
+    @media (min-width: 48em) { .sobre { grid-template-columns: repeat(3, 1fr); } }
+    .sobre div { padding-top: 1.25rem; border-top: 1px solid var(--cafe); }
+    .sobre .ic { width: 1.6rem; height: 1.6rem; }
+    .sobre h3 { margin-top: 1rem; font-size: 1.4rem; }
+    .sobre p { margin-top: 0.4rem; color: var(--cinza); }
+
+    .horarios { display: grid; gap: 2rem; padding-block: 3rem; border-block: 1px solid var(--linha); }
+    @media (min-width: 52em) { .horarios { grid-template-columns: 1fr 1fr; align-items: center; } }
+    .horarios h2 { font-size: clamp(2rem, 1.3rem + 2vw, 2.8rem); }
+    .horarios p { margin-top: 0.6rem; color: var(--cinza); }
+    .horarios ul { display: grid; gap: 0.6rem; }
+    .horarios li { display: flex; justify-content: space-between; padding-bottom: 0.6rem; border-bottom: 1px solid var(--linha); }
+
+    .rodape { padding-block: 2rem 4.5rem; color: var(--cinza); font-size: 0.875rem; }
+    .rodape .caixa { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+  </style>
+</head>
+<body>
+  <header class="menu-topo">
+    <div class="caixa">
+      <a class="logo" href="#inicio">Cantina da Praça</a>
+      <nav class="links" aria-label="Menu"><a href="#cardapio">Cardápio</a><a href="#sobre">Sobre</a><a href="#horarios">Horários</a></nav>
+      <button class="sacola" type="button" data-ir-pedido aria-label="Ver o pedido"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#shopping-bag"></use></svg>Pedido <b data-contador>0</b></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="caixa">
+        <div>
+          <small class="dia">Almoço de segunda a sábado</small>
+          <h1>Comida caseira, do jeito que você gosta.</h1>
+          <p class="linha">Prato do dia, marmita e sobremesa feitos na hora. Monte seu pedido aqui e envie pelo WhatsApp.</p>
+          <div class="acoes">
+            <a class="botao botao-cheio" href="#cardapio">Ver o cardápio</a>
+            <a class="botao botao-linha" href="#" data-whats="Oi! Vi o site da Cantina da Praça e quero saber o prato de hoje.">Perguntar no WhatsApp</a>
+          </div>
+        </div>
+        <img class="foto-img" src="fotos/prato-do-dia.jpg" alt="Prato do dia com arroz, carne, batatas e vagem" width="1400" height="933">
+      </div>
+    </section>
+
+    <section class="secao" id="cardapio" style="padding-top:2rem">
+      <div class="caixa">
+        <div class="titulo revela">
+          <h2>Cardápio de hoje</h2>
+          <p>Toque em + para montar seu pedido. Ele vai pronto para o WhatsApp do restaurante.</p>
+        </div>
+        <div class="cardapio-grade">
+          <div>
+            <div class="categorias" role="group" aria-label="Categorias" data-categorias></div>
+            <div class="itens" data-itens aria-live="polite"></div>
+          </div>
+          <aside class="pedido" id="pedido" aria-labelledby="pedido-titulo">
+            <h3 id="pedido-titulo">Seu pedido</h3>
+            <ul class="pedido-lista" role="list" data-lista></ul>
+            <p class="pedido-vazio" data-vazio>Nenhum item ainda.</p>
+            <div class="total"><span>Total</span><span data-total>R$ 0,00</span></div>
+            <div class="entrega" role="radiogroup" aria-label="Entrega ou retirada">
+              <label><input type="radio" name="entrega" value="Entrega" checked><span>Entrega</span></label>
+              <label><input type="radio" name="entrega" value="Retirada"><span>Retirada</span></label>
+            </div>
+            <label class="oculto" for="endereco">Endereço</label>
+            <input type="text" id="endereco" placeholder="Endereço para entrega" autocomplete="off" data-endereco>
+            <button class="botao botao-cheio" type="button" data-enviar disabled><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>Enviar pedido</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="sobre">
+      <div class="caixa">
+        <div class="titulo revela"><h2>Feito aqui, todo dia</h2><p>Aqui o restaurante conta a sua história.</p></div>
+        <img class="foto-img foto-larga" src="fotos/prato-2.jpg" alt="Prato com carne, purê e legumes servido na mesa de madeira" width="1200" height="800" loading="lazy">
+        <div class="sobre">
+          <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#chef-hat"></use></svg><h3>Comida do dia</h3><p>O cardápio muda todo dia e é atualizado no site.</p></div>
+          <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#truck"></use></svg><h3>Entrega no Centro</h3><p>Pedido pelo WhatsApp, entrega no horário do almoço.</p></div>
+          <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#package"></use></svg><h3>Marmita para levar</h3><p>Para quem almoça no trabalho ou em casa.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="horarios" style="padding-top:0">
+      <div class="caixa">
+        <div class="horarios">
+          <div><h2>Horários e endereço</h2><p>Praça Exemplo, 45 · Centro</p></div>
+          <ul role="list">
+            <li><span>Segunda a sexta</span><span>11h às 15h</span></li>
+            <li><span>Sábado</span><span>11h às 14h</span></li>
+            <li><span>Domingo</span><span>Fechado</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape"><div class="caixa"><span>© <span data-ano>2026</span> Cantina da Praça (nome fictício)</span><span>Site feito pela Atalho Studio</span></div></footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

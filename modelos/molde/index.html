@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modelo de demonstração</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../kit.css">
+  <link rel="stylesheet" href="molde.css">
+</head>
+<body>
+  <!-- Molde de site: o negócio vem de ?negocio=<id> (lista em negocios.js) -->
+  <div class="aviso"><div class="caixa" data-aviso></div></div>
+
+  <header class="menu-topo">
+    <div class="caixa">
+      <a class="logo" href="#inicio" data-logo></a>
+      <nav class="links" aria-label="Menu" data-links></nav>
+      <a class="botao botao-cheio" href="#acao" data-cta-topo></a>
+      <button class="menu-celular-botao" type="button" data-menu-botao aria-expanded="false" aria-controls="gaveta" aria-label="Abrir menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#menu"></use></svg></button>
+    </div>
+    <nav class="gaveta" id="gaveta" data-menu aria-label="Menu do celular"></nav>
+  </header>
+
+  <main data-conteudo></main>
+
+  <footer class="rodape"><div class="caixa"><span>© <span data-ano>2026</span> <span data-rodape-nome></span></span><span>Site feito pela Atalho Studio</span></div></footer>
+
+  <a class="whats-fixo" href="#" aria-label="Falar no WhatsApp" data-whats-fixo><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg></a>
+
+  <script type="module" src="molde.js"></script>
+</body>
+</html>

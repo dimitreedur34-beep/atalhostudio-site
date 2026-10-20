@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fora do Google até os dados [PREENCHER] estarem prontos: tirar esta linha no lançamento -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sistemas sob medida | Atalho Studio</title>
+  <meta name="description" content="Mexa num painel de demonstração: mensalidades, agenda e estoque, com lembretes pelo WhatsApp.">
+  <meta name="theme-color" content="#F6F4F0">
+  <link rel="icon" href="assets/logo/atalho-simbolo-escuro.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fontes/gabarito-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fontes/figtree-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body class="pagina" data-pagina="sistemas">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header data-topo></header>
+
+  <main id="conteudo">
+    <section class="topo-pagina secao-pedra">
+      <div class="recipiente cabeca">
+        <h1 class="titulo-pagina revelar">Um sistema para cada tipo de negócio</h1>
+        <p class="linha-pagina revelar revelar-2">Escolha o tipo de sistema e mexa no painel: avance pedidos, envie lembretes, simule vendas. O seu é feito do jeito que o seu negócio funciona.</p>
+        <p class="aviso-exemplo revelar revelar-3"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#info"></use></svg>Painel de exemplo, com dados fictícios · pode clicar em tudo</p>
+      </div>
+    </section>
+
+    <section class="secao secao-pedra" style="padding-top:0" aria-label="Painel de demonstração">
+      <div class="recipiente">
+        <div class="tipos" role="group" aria-label="Tipos de sistema" data-tipos></div>
+        <div class="janela">
+          <div class="janela-barra" aria-hidden="true">
+            <span class="janela-pontos"><i></i><i></i><i></i></span>
+            <span class="janela-url">painel.seunegocio.com.br</span>
+          </div>
+          <div class="pn" data-painel></div>
+        </div>
+        <p class="legenda" style="margin-top:1.25rem">Painel de demonstração com dados fictícios. Nenhuma mensagem é enviada.</p>
+      </div>
+    </section>
+
+    <!-- Vídeo de demonstração -->
+    <section class="secao" aria-labelledby="video-sis-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="video-sis-titulo">Planilha e caderno não avisam ninguém. <span class="cor">Sistema avisa.</span></h2>
+          <p>Em 55 segundos: agenda que pede confirmação, lembrete de mensalidade, pedido que avisa o cliente, relatório do mês e acesso por pessoa da equipe.</p>
+        </div>
+        <div class="video-moldura video-deitado revelar">
+          <video data-video-auto controls muted playsinline loop preload="none" width="1920" height="1080" poster="assets/videos/sistema-avisa.jpg" aria-label="Vídeo: o que um sistema faz pelo seu negócio, com o painel em uso">
+            <source src="assets/videos/sistema-avisa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="legenda">Vídeo de demonstração com dados fictícios. Toque no som para ouvir.</p>
+      </div>
+    </section>
+
+    <!-- Como o sistema funciona no dia a dia -->
+    <section class="secao" aria-labelledby="dia-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="dia-titulo">Como o sistema trabalha no seu dia</h2>
+          <p>Tudo que entra vai para o lugar certo, avisa quem precisa saber e vira número para você decidir.</p>
+        </div>
+        <ol class="etapas etapas-4" role="list" data-etapas>
+          <li style="--i:0"><span class="etapa-numero">1</span><h3>Entra</h3><p>Pedido, horário ou pagamento chega pelo WhatsApp, pelo site ou você cadastra em segundos.</p></li>
+          <li style="--i:1"><span class="etapa-numero">2</span><h3>Organiza</h3><p>Cada coisa vai para o lugar certo: agenda, fila de pedidos, lista de cobrança.</p></li>
+          <li style="--i:2"><span class="etapa-numero">3</span><h3>Avisa</h3><p>Lembrete para o cliente e aviso para a equipe, na hora certa.</p></li>
+          <li style="--i:3"><span class="etapa-numero">4</span><h3>Mostra</h3><p>Resumo do dia e do mês, para você decidir com números e não no chute.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Você no controle -->
+    <section class="secao secao-areia" aria-labelledby="controle-sis-titulo">
+      <div class="recipiente controle-grade">
+        <div>
+          <div class="cabeca revelar">
+            <h2 id="controle-sis-titulo">Você no controle de tudo</h2>
+            <p>O sistema é seu: você decide quem vê o quê, acompanha cada mudança e leva os dados para onde quiser.</p>
+          </div>
+          <ul class="controle-lista" role="list">
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#users"></use></svg><div><strong>Cada pessoa com o seu acesso</strong><span>Login próprio. A recepção vê a agenda, o financeiro fica com você.</span></div></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#clipboard-list"></use></svg><div><strong>Histórico de tudo</strong><span>Quem mudou o quê, e quando. Nada some sem explicação.</span></div></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#file-text"></use></svg><div><strong>Seus dados são seus</strong><span>Exporte para planilha quando quiser.</span></div></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#smartphone"></use></svg><div><strong>No celular e no computador</strong><span>Você confere o dia de qualquer lugar.</span></div></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#bell"></use></svg><div><strong>Você decide os avisos</strong><span>Quais mensagens o sistema manda, para quem e quando.</span></div></li>
+          </ul>
+          <p class="controle-nota">O que entra no seu sistema é combinado e fica escrito na proposta.</p>
+        </div>
+
+        <div class="controle-painel revelar" data-papeis>
+          <div class="controle-topo"><strong>Ver o painel como</strong><small>Exemplo</small></div>
+          <div class="segmentos" role="group" aria-label="Ver o painel como" data-papel>
+            <button type="button" aria-pressed="true" data-valor="dono">Dono</button>
+            <button type="button" aria-pressed="false" data-valor="recepcao">Recepção</button>
+          </div>
+          <ul class="papel-menu" role="list" data-papel-menu aria-live="polite"></ul>
+          <div class="historico">
+            <strong>Últimas mudanças</strong>
+            <ul role="list">
+              <li><time>14:02</time>Ana (recepção) remarcou o horário de Paulo</li>
+              <li><time>15:20</time>Você aprovou o desconto de Rita</li>
+              <li><time>16:45</time>Sistema enviou 6 lembretes de amanhã</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Números que ajudam a entender o negócio -->
+    <section class="secao secao-argila" aria-labelledby="numeros-sis-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="numeros-sis-titulo">Números que mostram como o seu negócio vai</h2>
+          <p>Sem planilha e sem conta de cabeça. Toque nos dias do gráfico para ver o detalhe.</p>
+        </div>
+        <div class="relatorio revelar" data-relatorio>
+          <div class="relatorio-topo">
+            <strong>Resumo de atendimentos</strong>
+            <div class="segmentos" role="group" aria-label="Período" data-relatorio-periodo>
+              <button type="button" aria-pressed="true" data-valor="atual">Este mês</button>
+              <button type="button" aria-pressed="false" data-valor="anterior">Mês passado</button>
+            </div>
+          </div>
+          <div class="relatorio-kpis" data-kpis></div>
+          <div class="relatorio-corpo">
+            <div class="barras" role="group" aria-label="Atendimentos por dia da semana" data-barras></div>
+            <div class="relatorio-detalhe" aria-live="polite" data-detalhe></div>
+          </div>
+          <ul class="relatorio-dicas" role="list" data-dicas></ul>
+          <p class="legenda">Números fictícios, só para mostrar como o relatório funciona.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao-grafite secao-terra" aria-labelledby="sistemas-titulo">
+      <div class="recipiente">
+        <h2 id="sistemas-titulo" class="frase-efeito revelar">Planilha e caderno não avisam ninguém. <span class="cor">Sistema avisa.</span></h2>
+        <p class="conclusao revelar">Enquanto o controle fica no papel, na planilha ou na memória, o cliente esquece o horário, a mensalidade atrasa e o pedido se perde no meio das conversas. Um sistema faz o lembrete, a conta e o aviso por você.</p>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="sistemas-recursos-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="sistemas-recursos-titulo">O que muda no seu dia</h2>
+          <p>Cada tipo de sistema resolve uma dor diferente. O seu pode juntar mais de um.</p>
+        </div>
+        <ul class="recursos" role="list">
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#calendar"></use></svg><strong>Agenda que lembra o cliente</strong><span>Lembrete pelo WhatsApp antes do horário, para ninguém esquecer.</span></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#users"></use></svg><strong>Cobrança sem constrangimento</strong><span>O sistema avisa quem está pendente. Você não precisa cobrar.</span></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#chef-hat"></use></svg><strong>Pedido que não se perde</strong><span>Do WhatsApp para a cozinha, com etapa e aviso ao cliente.</span></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#package"></use></svg><strong>Estoque que avisa antes de faltar</strong><span>Você vê o que está acabando antes de perder a venda.</span></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#wrench"></use></svg><strong>Cliente avisado na hora certa</strong><span>Carro ou aparelho pronto, mensagem enviada.</span></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#trending-up"></use></svg><strong>Nenhuma venda esquecida</strong><span>Cada cliente numa etapa, com o próximo passo claro.</span></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#wallet"></use></svg><strong>Dinheiro sob controle</strong><span>Quanto entra, quanto sai e o que está atrasado.</span></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#chart-column"></use></svg><strong>Relatórios simples</strong><span>Números claros para decidir sem adivinhar.</span></li>
+            <li class="revelar"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#shield-check"></use></svg><strong>Acesso para a sua equipe</strong><span>Cada pessoa vê o que precisa, de qualquer lugar.</span></li>
+          </ul>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="recipiente">
+        <div class="chamada revelar">
+          <h2>Quer um painel assim para o seu negócio?</h2>
+          <p>Conte como você organiza tudo hoje. O sistema pode juntar mais de um tipo, como agenda com financeiro. A proposta sai por escrito, com preço e prazo.</p>
+          <div class="acoes"><a class="botao botao-whats" href="#contato" data-wa="geral" data-wa-mensagem="Oi! Vi o painel de demonstração no site da Atalho Studio e quero um sistema para o meu negócio." data-posicao="sistemas-chamada"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#whatsapp"></use></svg>Falar no WhatsApp</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-rodape></footer>
+</body>
+</html>

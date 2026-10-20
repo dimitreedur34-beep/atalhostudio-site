@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contábil Prisma | Modelo de demonstração</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../kit.css">
+  <style>
+    :root {
+      --azul: #23395B;
+      --azul-escuro: #192A44;
+      --verde: #2F6F5E;
+      --nevoa: #F3F5F8;
+      --tinta: #18202B;
+      --cinza: #586271;
+      --linha: #DDE2E9;
+    }
+
+    body { background: #fff; color: var(--tinta); }
+    h1, h2, h3 { font-family: 'Gabarito', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.03em; }
+
+    .botao { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3rem; padding: 0.7rem 1.35rem; border: 1px solid transparent; border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color 0.2s, border-color 0.2s, transform 0.2s; }
+    .botao:hover { transform: translateY(-1px); }
+    .botao-cheio { background: var(--azul); color: #fff; }
+    .botao-cheio:hover { background: var(--azul-escuro); }
+    .botao-linha { border-color: var(--linha); background: #fff; color: var(--tinta); }
+    .botao-linha:hover { border-color: var(--tinta); }
+
+    .aviso { border-bottom: 1px solid var(--linha); color: var(--cinza); font-size: 0.85rem; }
+    .aviso .caixa { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem; padding-block: 0.5rem; }
+    .aviso span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .aviso .ic { width: 1rem; height: 1rem; }
+
+    .menu-topo { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--linha); background: #fff; }
+    .menu-topo .caixa { display: flex; align-items: center; gap: 2rem; min-height: 4.25rem; }
+    .logo { display: inline-flex; align-items: center; gap: 0.6rem; margin-right: auto; color: var(--tinta); text-decoration: none; }
+    .logo-marca { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 8px 8px 8px 2px; background: var(--azul); color: #fff; font-family: 'Gabarito'; font-weight: 700; }
+    .logo strong { display: block; font-family: 'Gabarito'; font-size: 1.2rem; font-weight: 600; line-height: 1; }
+    .logo small { color: var(--cinza); font-size: 0.75rem; }
+    .links { display: none; gap: 1.75rem; }
+    .links a { color: var(--cinza); text-decoration: none; }
+    .links a:hover { color: var(--tinta); }
+    .menu-topo .botao { display: none; min-height: 2.6rem; padding: 0.5rem 1.1rem; }
+    .menu-celular-botao { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid var(--linha); border-radius: 8px; background: #fff; cursor: pointer; }
+    .gaveta { display: none; border-top: 1px solid var(--linha); }
+    .gaveta.aberto { display: grid; }
+    .gaveta a { padding: 1rem clamp(1rem, 0.5rem + 2.5vw, 2rem); border-bottom: 1px solid var(--linha); color: var(--tinta); text-decoration: none; }
+    @media (min-width: 60em) {
+      .links, .menu-topo .botao { display: inline-flex; }
+      .menu-celular-botao, .gaveta, .gaveta.aberto { display: none; }
+    }
+
+    .hero .caixa { display: grid; gap: 2.5rem; align-items: center; padding-block: clamp(3rem, 1.5rem + 5vw, 6rem); }
+    @media (min-width: 56em) { .hero .caixa { grid-template-columns: 1.15fr 0.85fr; gap: 4rem; } }
+    .hero small.local { display: block; margin-bottom: 1.1rem; color: var(--verde); font-weight: 700; }
+    .hero h1 { font-size: clamp(2.5rem, 1.4rem + 4.2vw, 4.4rem); line-height: 1.02; }
+    .hero p.linha { max-width: 32rem; margin-top: 1.2rem; color: var(--cinza); font-size: 1.15rem; }
+    .hero .acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+    .confianca { display: flex; flex-wrap: wrap; gap: 0.6rem 1.75rem; margin-top: 2.5rem; color: var(--cinza); font-size: 0.92rem; }
+    .confianca span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .confianca .ic { width: 1.05rem; height: 1.05rem; color: var(--verde); }
+    .hero-foto { position: relative; }
+    .hero-foto img { display: block; width: 100%; aspect-ratio: 1; max-height: 32rem; border-radius: 20px 20px 20px 4px; object-fit: cover; }
+    .cartao-flutuante { position: absolute; right: -0.5rem; bottom: 1.25rem; display: grid; gap: 0.15rem; max-width: 15rem; padding: 0.9rem 1rem; border: 1px solid var(--linha); border-radius: 12px; background: #fff; box-shadow: 0 14px 30px -16px rgba(24, 32, 43, 0.4); font-size: 0.9rem; animation: flutuar 5s ease-in-out infinite; }
+    .cartao-flutuante strong { display: flex; align-items: center; gap: 0.35rem; color: var(--verde); }
+    .cartao-flutuante .ic { width: 1rem; height: 1rem; }
+    .cartao-flutuante span { color: var(--cinza); }
+    @keyframes flutuar { 50% { transform: translateY(-6px); } }
+    @media (prefers-reduced-motion: reduce) { .cartao-flutuante { animation: none; } }
+
+    .secao { padding-block: clamp(3.5rem, 2.5rem + 4vw, 6.5rem); }
+    .secao-nevoa { background: var(--nevoa); }
+    .titulo { max-width: 42rem; margin-bottom: 2.5rem; }
+    .titulo h2 { font-size: clamp(1.9rem, 1.3rem + 2.3vw, 2.9rem); line-height: 1.05; }
+    .titulo p { margin-top: 0.7rem; color: var(--cinza); font-size: 1.08rem; }
+
+    .casos { display: grid; gap: 1.5rem; }
+    @media (min-width: 56em) { .casos { grid-template-columns: 17rem 1fr; gap: 2.5rem; align-items: start; } }
+    .casos-lista { display: grid; gap: 0.5rem; }
+    .casos-lista button { display: flex; align-items: center; gap: 0.7rem; min-height: 3.4rem; padding: 0.7rem 1rem; border: 1px solid var(--linha); border-radius: 10px; background: #fff; color: var(--tinta); font: 600 1rem/1.2 'Figtree', sans-serif; text-align: left; cursor: pointer; transition: border-color 0.2s, background-color 0.2s; }
+    .casos-lista button:hover { border-color: var(--azul); }
+    .casos-lista button[aria-selected='true'] { border-color: var(--azul); background: var(--azul); color: #fff; }
+    .casos-lista .ic { flex: none; width: 1.2rem; height: 1.2rem; }
+    .caso { padding: clamp(1.25rem, 1rem + 2vw, 2.25rem); border: 1px solid var(--linha); border-radius: 16px 16px 16px 4px; background: #fff; animation: entrar 0.35s ease both; }
+    .caso h3 { font-size: 1.6rem; }
+    .caso > p { margin-top: 0.5rem; color: var(--cinza); }
+    .caso ul { display: grid; gap: 0.7rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+    @media (min-width: 40em) { .caso ul { grid-template-columns: 1fr 1fr; } }
+    .caso li { display: flex; gap: 0.55rem; }
+    .caso li .ic { flex: none; width: 1.15rem; height: 1.15rem; margin-top: 0.2rem; color: var(--verde); }
+    .caso-rodape { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--linha); }
+    .caso-rodape small { display: block; color: var(--cinza); }
+    .caso-rodape strong { font-family: 'Gabarito'; font-size: 1.6rem; }
+    @keyframes entrar { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    .passos { display: grid; gap: 1.5rem; counter-reset: passo; }
+    @media (min-width: 56em) { .passos { grid-template-columns: repeat(4, 1fr); } }
+    .passos li { position: relative; padding-top: 3.2rem; counter-increment: passo; }
+    .passos li::before { content: counter(passo); position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--azul); color: #fff; font-family: 'Gabarito'; font-weight: 700; }
+    .passos h3 { font-size: 1.15rem; }
+    .passos p { margin-top: 0.4rem; color: var(--cinza); }
+
+    .prazos-grade { display: grid; gap: 2.5rem; align-items: start; }
+    @media (min-width: 56em) { .prazos-grade { grid-template-columns: 0.9fr 1.1fr; gap: 4rem; } }
+    .prazos-grade img { display: block; width: 100%; border-radius: 16px 16px 16px 4px; object-fit: cover; }
+    .prazos { display: grid; border-top: 1px solid var(--linha); }
+    .prazo { display: grid; grid-template-columns: 3.6rem 1fr auto; gap: 1rem; align-items: center; padding-block: 1rem; border-bottom: 1px solid var(--linha); }
+    .prazo .dia { display: grid; place-items: center; height: 3.6rem; border-radius: 10px; background: var(--nevoa); line-height: 1; text-align: center; }
+    .prazo .dia strong { font-family: 'Gabarito'; font-size: 1.3rem; }
+    .prazo .dia small { color: var(--cinza); font-size: 0.7rem; }
+    .prazo h3 { font-family: 'Figtree'; font-size: 1rem; font-weight: 700; letter-spacing: 0; }
+    .prazo p { color: var(--cinza); font-size: 0.9rem; }
+    .lembrar { display: inline-flex; align-items: center; gap: 0.35rem; min-height: 2.6rem; padding: 0.4rem 0.8rem; border: 1px solid var(--linha); border-radius: 8px; background: #fff; color: var(--tinta); font-weight: 600; cursor: pointer; transition: border-color 0.2s, background-color 0.2s, color 0.2s; }
+    .lembrar .ic { width: 1rem; height: 1rem; }
+    .lembrar:hover { border-color: var(--verde); }
+    .lembrar[aria-pressed='true'] { border-color: var(--verde); background: var(--verde); color: #fff; }
+    .prazos-acao { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+    .prazos-acao p { color: var(--cinza); font-size: 0.9rem; }
+    .observacao { margin-top: 1rem; color: var(--cinza); font-size: 0.85rem; }
+
+    .duvidas { max-width: 46rem; border-top: 1px solid var(--linha); }
+    .duvidas details { border-bottom: 1px solid var(--linha); }
+    .duvidas summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.2rem; font-weight: 600; cursor: pointer; list-style: none; }
+    .duvidas summary::-webkit-details-marker { display: none; }
+    .duvidas summary .ic { flex: none; width: 1.1rem; height: 1.1rem; transition: transform 0.2s; }
+    .duvidas details[open] summary .ic { transform: rotate(180deg); }
+    .duvidas details p { padding-bottom: 1.2rem; color: var(--cinza); }
+
+    .chamada { display: grid; gap: 1.5rem; padding: clamp(2rem, 1.5rem + 3vw, 3.5rem); border-radius: 20px 20px 20px 4px; background: var(--azul); color: #fff; }
+    @media (min-width: 56em) { .chamada { grid-template-columns: 1fr auto; align-items: center; } }
+    .chamada h2 { font-size: clamp(1.7rem, 1.2rem + 2vw, 2.5rem); line-height: 1.1; }
+    .chamada p { margin-top: 0.5rem; color: #C9D3E2; }
+    .chamada .botao { background: #fff; color: var(--azul); }
+
+    .rodape { padding-block: 2rem 4.5rem; border-top: 1px solid var(--linha); color: var(--cinza); font-size: 0.875rem; }
+    .rodape .caixa { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+    .whats-fixo { position: fixed; right: 1rem; bottom: 1rem; z-index: 80; display: grid; place-items: center; width: 3.4rem; height: 3.4rem; border-radius: 50%; background: var(--verde); color: #fff; box-shadow: 0 6px 18px rgba(24, 32, 43, 0.22); }
+    .whats-fixo .ic { width: 1.5rem; height: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="aviso">
+    <div class="caixa">
+      <span><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#clock"></use></svg>Seg a sex, 8h às 18h</span>
+      <span><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#map-pin"></use></svg>Rua Exemplo, 45 · Centro · atendimento online também</span>
+    </div>
+  </div>
+
+  <header class="menu-topo">
+    <div class="caixa">
+      <a class="logo" href="#inicio"><span class="logo-marca" aria-hidden="true">P</span><span><strong>Prisma</strong><small>Contabilidade</small></span></a>
+      <nav class="links" aria-label="Menu"><a href="#servicos">Serviços</a><a href="#trocar">Trocar de contador</a><a href="#prazos">Prazos</a><a href="#duvidas">Dúvidas</a></nav>
+      <a class="botao botao-cheio" href="#" data-whats="Oi! Vi o site da Contábil Prisma e quero falar com um contador.">Falar com um contador</a>
+      <button class="menu-celular-botao" type="button" data-menu-botao aria-expanded="false" aria-controls="gaveta" aria-label="Abrir menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#menu"></use></svg></button>
+    </div>
+    <nav class="gaveta" id="gaveta" data-menu aria-label="Menu do celular"><a href="#servicos">Serviços</a><a href="#trocar">Trocar de contador</a><a href="#prazos">Prazos</a><a href="#duvidas">Dúvidas</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="caixa">
+        <div>
+          <small class="local">Contabilidade para pequenos negócios</small>
+          <h1>Seus impostos em dia, sem você virar contador.</h1>
+          <p class="linha">MEI, empresas do Simples e profissionais liberais. Você manda os documentos pelo WhatsApp e a gente cuida dos prazos.</p>
+          <div class="acoes">
+            <a class="botao botao-cheio" href="#servicos">Ver o que fazemos por você</a>
+            <a class="botao botao-linha" href="#trocar">Quero trocar de contador</a>
+          </div>
+          <div class="confianca">
+            <span><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#shield-check"></use></svg>CRC 000000 (exemplo)</span>
+            <span><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#message-circle"></use></svg>Documentos pelo WhatsApp</span>
+            <span><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#bell"></use></svg>Lembrete de cada prazo</span>
+          </div>
+        </div>
+        <div class="hero-foto">
+          <img src="fotos/escritorio.jpg" alt="Contadora sorrindo na mesa de trabalho com calculadora" width="1100" height="1100">
+          <div class="cartao-flutuante" aria-hidden="true"><strong><svg class="ic" focusable="false"><use href="../../assets/icones.svg#check"></use></svg>DAS de outubro pago</strong><span>Lembrete enviado no dia 15</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao-nevoa" id="servicos">
+      <div class="caixa">
+        <div class="titulo revela">
+          <h2>Qual é o seu caso?</h2>
+          <p>Escolha e veja o que entra no serviço. Valores de exemplo.</p>
+        </div>
+        <div class="casos">
+          <div class="casos-lista" role="tablist" aria-label="Tipo de cliente" data-casos></div>
+          <div role="tabpanel" data-caso aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="trocar">
+      <div class="caixa">
+        <div class="titulo revela">
+          <h2>Trocar de contador é mais simples do que parece</h2>
+          <p>Você não para de funcionar e não precisa ir a lugar nenhum.</p>
+        </div>
+        <ol class="passos" role="list">
+          <li class="revela"><h3>Você chama no WhatsApp</h3><p>Conta o tipo de empresa e o que está incomodando hoje.</p></li>
+          <li class="revela"><h3>A gente pede os documentos</h3><p>O pedido ao contador atual sai daqui, com a sua autorização.</p></li>
+          <li class="revela"><h3>Conferimos tudo</h3><p>Você recebe por escrito o que estava pendente, se houver.</p></li>
+          <li class="revela"><h3>Pronto</h3><p>A partir do próximo mês, os prazos e as guias ficam com a gente.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="secao secao-nevoa" id="prazos">
+      <div class="caixa prazos-grade">
+        <img src="fotos/documentos.jpg" alt="Mãos com calculadora, notas e comprovantes sobre a mesa" width="1000" height="750" loading="lazy">
+        <div>
+          <div class="titulo revela">
+            <h2>Os prazos do mês, lembrados por você</h2>
+            <p>Marque os lembretes que quer receber. A mensagem vai pronta para o escritório.</p>
+          </div>
+          <div class="prazos" data-prazos></div>
+          <div class="prazos-acao">
+            <button class="botao botao-cheio" type="button" data-pedir-lembretes><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>Quero esses lembretes</button>
+            <p data-contagem aria-live="polite"></p>
+          </div>
+          <p class="observacao">Datas gerais, só para exemplo. O escritório confirma o que vale para o seu caso.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="duvidas">
+      <div class="caixa">
+        <div class="titulo revela"><h2>Dúvidas</h2></div>
+        <div class="duvidas" data-duvidas></div>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-top:0">
+      <div class="caixa">
+        <div class="chamada revela">
+          <div>
+            <h2>Mande uma mensagem e tire a dúvida hoje.</h2>
+            <p>Resposta em horário comercial. Sem compromisso.</p>
+          </div>
+          <a class="botao" href="#" data-whats="Oi! Vi o site da Contábil Prisma e quero tirar uma dúvida sobre a minha empresa."><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape"><div class="caixa"><span>© <span data-ano>2026</span> Contábil Prisma (nome fictício)</span><span>Site feito pela Atalho Studio</span></div></footer>
+
+  <a class="whats-fixo" href="#" aria-label="Falar no WhatsApp do escritório" data-whats="Oi! Vi o site da Contábil Prisma e quero falar com um contador."><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg></a>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

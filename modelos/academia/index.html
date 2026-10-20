@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Academia Pulso | Modelo de demonstração</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../kit.css">
+  <style>
+    :root {
+      --carvao: #1B1C1A;
+      --carvao-2: #262724;
+      --osso: #F2F0EA;
+      --mostarda: #C8962E;
+      --mostarda-escura: #A87A1D;
+      --tinta: #1B1C1A;
+      --cinza: #5E5F5A;
+      --linha: #E2E0D9;
+    }
+
+    body { background: var(--osso); color: var(--tinta); }
+    h1, h2, h3 { font-family: 'Gabarito', system-ui, sans-serif; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; }
+
+    .botao { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3.1rem; padding: 0.75rem 1.4rem; border: 1px solid transparent; border-radius: 6px; font-weight: 700; text-decoration: none; cursor: pointer; transition: background-color 0.2s, border-color 0.2s, transform 0.2s; }
+    .botao:hover { transform: translateY(-2px); }
+    .botao-cheio { background: var(--mostarda); color: var(--carvao); }
+    .botao-cheio:hover { background: #D9A846; }
+    .botao-escuro { background: var(--carvao); color: #fff; }
+    .botao-escuro:hover { background: #3A3B37; }
+    .botao-linha { border-color: rgba(255, 255, 255, 0.45); color: #fff; }
+    .botao-linha:hover { border-color: #fff; }
+
+    .menu-topo { position: sticky; top: 0; z-index: 40; background: var(--carvao); color: #fff; }
+    .menu-topo .caixa { display: flex; align-items: center; gap: 2rem; min-height: 4.25rem; }
+    .logo { display: inline-flex; align-items: center; gap: 0.55rem; margin-right: auto; color: #fff; text-decoration: none; }
+    .logo .ic { width: 1.6rem; height: 1.6rem; color: var(--mostarda); }
+    .logo strong { font-family: 'Gabarito'; font-size: 1.45rem; font-weight: 900; letter-spacing: 0.04em; }
+    .links { display: none; gap: 1.75rem; }
+    .links a { color: #C8C6BF; text-decoration: none; }
+    .links a:hover { color: #fff; }
+    .menu-topo .botao { display: none; min-height: 2.6rem; padding: 0.5rem 1.1rem; }
+    .menu-celular-botao { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid #45463F; border-radius: 6px; background: transparent; color: #fff; cursor: pointer; }
+    .gaveta { display: none; border-top: 1px solid #333430; }
+    .gaveta.aberto { display: grid; }
+    .gaveta a { padding: 1rem clamp(1rem, 0.5rem + 2.5vw, 2rem); border-bottom: 1px solid #333430; color: #fff; text-decoration: none; }
+    @media (min-width: 56em) {
+      .links, .menu-topo .botao { display: inline-flex; }
+      .menu-celular-botao, .gaveta, .gaveta.aberto { display: none; }
+    }
+    :focus-visible { outline-color: var(--mostarda); }
+
+    .hero { position: relative; display: grid; min-height: min(88vh, 46rem); align-items: end; overflow: hidden; background: var(--carvao); color: #fff; }
+    .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(27, 28, 26, 0.35) 0%, rgba(27, 28, 26, 0.55) 45%, rgba(27, 28, 26, 0.92) 100%); }
+    .hero .caixa { position: relative; z-index: 1; padding-block: 6rem clamp(2.5rem, 2rem + 3vw, 4.5rem); }
+    .hero small { color: var(--mostarda); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .hero h1 { max-width: 15ch; margin-top: 0.75rem; font-size: clamp(2.6rem, 1.3rem + 5.4vw, 5.4rem); line-height: 0.95; }
+    .hero p.linha { max-width: 32rem; margin-top: 1.25rem; color: #DAD8D1; font-size: 1.15rem; }
+    .hero .acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+    .numeros { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; margin-top: 2.75rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+    .numeros strong { display: block; font-family: 'Gabarito'; font-size: 1.5rem; font-weight: 800; }
+    .numeros span { color: #C8C6BF; font-size: 0.875rem; }
+
+    .secao { padding-block: clamp(3.5rem, 2.5rem + 4vw, 6.5rem); }
+    .secao-branca { background: #fff; }
+    .secao-escura { background: var(--carvao); color: #fff; }
+    .titulo { max-width: 40rem; margin-bottom: 2.5rem; }
+    .titulo small { color: var(--mostarda-escura); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .secao-escura .titulo small { color: var(--mostarda); }
+    .titulo h2 { margin-top: 0.4rem; font-size: clamp(2rem, 1.2rem + 3vw, 3.3rem); line-height: 1; }
+    .titulo p { margin-top: 0.75rem; color: var(--cinza); font-size: 1.08rem; }
+    .secao-escura .titulo p { color: #C8C6BF; }
+
+    .modalidades { display: grid; gap: 1.25rem; }
+    @media (min-width: 52em) { .modalidades { grid-template-columns: repeat(3, 1fr); } }
+    .modalidade { position: relative; overflow: hidden; border-radius: 10px; background: var(--carvao); color: #fff; }
+    .modalidade img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 0.6s ease; }
+    .modalidade:hover img { transform: scale(1.05); }
+    .modalidade div { position: absolute; inset: auto 0 0; padding: 4rem 1.25rem 1.25rem; background: linear-gradient(180deg, transparent, rgba(27, 28, 26, 0.92)); }
+    .modalidade h3 { font-size: 1.5rem; }
+    .modalidade p { margin-top: 0.3rem; color: #DAD8D1; font-size: 0.95rem; }
+    .extras { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .extras span { padding: 0.45rem 0.9rem; border: 1px solid var(--linha); border-radius: 999px; background: #fff; font-size: 0.9rem; font-weight: 600; }
+
+    .dias { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 0.4rem; }
+    .dias button { flex: none; min-width: 4.2rem; min-height: 3rem; padding: 0.4rem 0.9rem; border: 1px solid #45463F; border-radius: 6px; background: transparent; color: #DAD8D1; font-weight: 700; cursor: pointer; transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
+    .dias button:hover { border-color: #fff; color: #fff; }
+    .dias button[aria-selected='true'] { border-color: var(--mostarda); background: var(--mostarda); color: var(--carvao); }
+    .grade-aulas { display: grid; margin-top: 1.25rem; border-top: 1px solid #333430; }
+    .aula { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 1rem; align-items: center; padding-block: 1rem; border-bottom: 1px solid #333430; animation: aparecer 0.35s ease both; }
+    .aula time { font-family: 'Gabarito'; font-size: 1.3rem; font-weight: 800; }
+    .aula strong { display: block; }
+    .aula span { color: #A9A79F; font-size: 0.875rem; }
+    .aula button { min-height: 2.6rem; padding: 0.4rem 0.9rem; border: 1px solid #45463F; border-radius: 6px; background: transparent; color: #fff; font-weight: 600; cursor: pointer; }
+    .aula button:hover { border-color: var(--mostarda); color: var(--mostarda); }
+    @keyframes aparecer { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    .periodo { display: inline-flex; margin-bottom: 1.75rem; padding: 0.25rem; border-radius: 8px; background: #E6E3DB; }
+    .periodo button { min-height: 2.6rem; padding: 0 1.1rem; border: 0; border-radius: 6px; background: transparent; color: var(--cinza); font-weight: 700; cursor: pointer; }
+    .periodo button[aria-pressed='true'] { background: var(--carvao); color: #fff; }
+    .planos { display: grid; gap: 1.25rem; }
+    @media (min-width: 52em) { .planos { grid-template-columns: repeat(3, 1fr); align-items: stretch; } }
+    .plano { display: flex; flex-direction: column; gap: 0.9rem; padding: 1.75rem; border: 1px solid var(--linha); border-radius: 10px; background: #fff; }
+    .plano.destaque { border: 2px solid var(--carvao); }
+    .plano small { align-self: start; padding: 0.2rem 0.6rem; border-radius: 4px; background: var(--carvao); color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    .plano h3 { font-size: 1.4rem; }
+    .plano .valor { font-family: 'Gabarito'; font-size: 2.6rem; font-weight: 800; line-height: 1; transition: opacity 0.2s; }
+    .plano .valor span { color: var(--cinza); font-family: 'Figtree'; font-size: 0.95rem; font-weight: 500; }
+    .plano .total { color: var(--cinza); font-size: 0.875rem; min-height: 1.3em; }
+    .plano ul { display: grid; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+    .plano li { display: flex; gap: 0.5rem; }
+    .plano li .ic { flex: none; width: 1.1rem; height: 1.1rem; margin-top: 0.2rem; color: var(--mostarda-escura); }
+    .plano .botao { margin-top: auto; }
+    .pagamento { margin-top: 1.25rem; color: var(--cinza); font-size: 0.9rem; }
+
+    .experimental { display: grid; gap: 2.5rem; align-items: start; }
+    @media (min-width: 56em) { .experimental { grid-template-columns: 1fr 0.9fr; gap: 4rem; } }
+    .experimental img { display: block; width: 100%; max-height: 34rem; border-radius: 10px; object-fit: cover; }
+    .formulario { display: grid; gap: 1.1rem; }
+    .campo { display: grid; gap: 0.4rem; }
+    .campo label, .campo legend { font-size: 0.9rem; font-weight: 700; }
+    .campo input, .campo select { min-height: 3rem; padding: 0.6rem 0.9rem; border: 1px solid #C9C6BD; border-radius: 6px; background: #fff; color: var(--tinta); }
+    fieldset.campo { margin: 0; padding: 0; border: 0; }
+    .opcoes { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .opcoes label { position: relative; }
+    .opcoes input { position: absolute; opacity: 0; }
+    .opcoes span { display: inline-flex; padding: 0.55rem 1.1rem; border: 1px solid #C9C6BD; border-radius: 6px; font-weight: 600; cursor: pointer; }
+    .opcoes input:checked + span { border-color: var(--carvao); background: var(--carvao); color: #fff; }
+    .opcoes input:focus-visible + span { outline: 2px solid var(--carvao); outline-offset: 2px; }
+    .previa { display: grid; gap: 0.6rem; padding: 1.1rem; border-radius: 10px; background: #EFEAE2; }
+    .previa > p { color: #54656F; font-size: 0.85rem; }
+    .previa .bolha { justify-self: end; max-width: 95%; padding: 0.7rem 0.85rem; border-radius: 12px 0 12px 12px; background: #D9FDD3; color: #111B21; white-space: pre-line; box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13); }
+
+    .duvidas { max-width: 46rem; border-top: 1px solid var(--linha); }
+    .duvidas details { border-bottom: 1px solid var(--linha); }
+    .duvidas summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.2rem; font-weight: 700; cursor: pointer; list-style: none; }
+    .duvidas summary::-webkit-details-marker { display: none; }
+    .duvidas summary .ic { flex: none; width: 1.1rem; height: 1.1rem; transition: transform 0.2s; }
+    .duvidas details[open] summary .ic { transform: rotate(180deg); }
+    .duvidas details p { padding-bottom: 1.2rem; color: var(--cinza); }
+
+    .rodape { padding-block: 2.5rem 4.5rem; background: var(--carvao); color: #A9A79F; font-size: 0.875rem; }
+    .rodape .caixa { display: grid; gap: 1.5rem; }
+    @media (min-width: 48em) { .rodape .caixa { grid-template-columns: repeat(3, 1fr) auto; align-items: center; } }
+    .rodape div { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; }
+    .rodape .ic { color: var(--mostarda); }
+    .rodape strong { display: block; color: #fff; }
+    .rodape .base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; grid-column: 1 / -1; padding-top: 1.5rem; border-top: 1px solid #333430; }
+
+    .whats-fixo { position: fixed; right: 1rem; bottom: 1rem; z-index: 80; display: grid; place-items: center; width: 3.4rem; height: 3.4rem; border-radius: 50%; background: var(--mostarda); color: var(--carvao); box-shadow: 0 6px 18px rgba(27, 28, 26, 0.3); }
+    .whats-fixo .ic { width: 1.5rem; height: 1.5rem; }
+  </style>
+</head>
+<body>
+  <header class="menu-topo">
+    <div class="caixa">
+      <a class="logo" href="#inicio"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#activity"></use></svg><strong>PULSO</strong></a>
+      <nav class="links" aria-label="Menu"><a href="#modalidades">Modalidades</a><a href="#horarios">Horários</a><a href="#planos">Planos</a><a href="#aula-gratis">Aula grátis</a></nav>
+      <a class="botao botao-cheio" href="#aula-gratis">Agendar aula grátis</a>
+      <button class="menu-celular-botao" type="button" data-menu-botao aria-expanded="false" aria-controls="gaveta" aria-label="Abrir menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#menu"></use></svg></button>
+    </div>
+    <nav class="gaveta" id="gaveta" data-menu aria-label="Menu do celular"><a href="#modalidades">Modalidades</a><a href="#horarios">Horários</a><a href="#planos">Planos</a><a href="#aula-gratis">Aula grátis</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <img src="fotos/salao.jpg" alt="Salão da academia com esteiras e aparelhos" width="1400" height="933">
+      <div class="caixa">
+        <small>Academia no bairro</small>
+        <h1>Treine perto de casa, no seu horário.</h1>
+        <p class="linha">Musculação, funcional e aulas coletivas das 6h às 22h. A primeira aula é por nossa conta.</p>
+        <div class="acoes">
+          <a class="botao botao-cheio" href="#aula-gratis">Agendar aula grátis</a>
+          <a class="botao botao-linha" href="#planos">Ver planos</a>
+        </div>
+        <div class="numeros">
+          <div><strong>6h às 22h</strong><span>de segunda a sexta</span></div>
+          <div><strong>20 aulas</strong><span>coletivas por semana</span></div>
+          <div><strong>Avaliação</strong><span>física no primeiro mês</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="modalidades">
+      <div class="caixa">
+        <div class="titulo revela">
+          <small>Modalidades</small>
+          <h2>Escolha como você quer treinar</h2>
+        </div>
+        <div class="modalidades">
+          <article class="modalidade revela"><img src="fotos/musculacao.jpg" alt="Área de pesos com bolas medicinais" width="900" height="600" loading="lazy"><div><h3>Musculação</h3><p>Ficha montada pelo professor e revisada todo mês.</p></div></article>
+          <article class="modalidade revela"><img src="fotos/aulas.jpg" alt="Turma fazendo alongamento em sala clara" width="900" height="600" loading="lazy"><div><h3>Aulas coletivas</h3><p>Alongamento, funcional, ritmos e abdominal.</p></div></article>
+          <article class="modalidade revela"><img src="fotos/acompanhamento.jpg" alt="Professor orientando aluna no remo" width="900" height="1000" loading="lazy"><div><h3>Acompanhamento</h3><p>Professor no salão o dia todo para corrigir e ajudar.</p></div></article>
+        </div>
+        <div class="extras" aria-label="Também tem"><span>Avaliação física</span><span>Vestiário com chuveiro</span><span>Estacionamento</span><span>Aplicativo de treino</span></div>
+      </div>
+    </section>
+
+    <section class="secao secao-escura" id="horarios">
+      <div class="caixa">
+        <div class="titulo revela">
+          <small>Horários</small>
+          <h2>Grade de aulas</h2>
+          <p>Escolha o dia e toque em "Reservar". A mensagem vai pronta para a recepção.</p>
+        </div>
+        <div class="dias" role="tablist" aria-label="Dia da semana" data-dias></div>
+        <div class="grade-aulas" role="tabpanel" data-grade aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="secao" id="planos">
+      <div class="caixa">
+        <div class="titulo revela">
+          <small>Planos</small>
+          <h2>Quanto mais tempo, menos você paga</h2>
+          <p>Troque o período para ver o valor por mês.</p>
+        </div>
+        <div class="periodo" role="group" aria-label="Período do plano" data-periodo>
+          <button type="button" data-meses="1" aria-pressed="true">Mensal</button>
+          <button type="button" data-meses="3" aria-pressed="false">Trimestral</button>
+          <button type="button" data-meses="12" aria-pressed="false">Anual</button>
+        </div>
+        <div class="planos" data-planos></div>
+        <p class="pagamento">Pagamento no Pix automático ou no cartão. Valores de exemplo.</p>
+      </div>
+    </section>
+
+    <section class="secao secao-branca" id="aula-gratis">
+      <div class="caixa experimental">
+        <div>
+          <div class="titulo revela">
+            <small>Aula experimental</small>
+            <h2>Venha conhecer sem pagar nada</h2>
+            <p>Escolha a modalidade e o período. A recepção confirma o dia com você pelo WhatsApp.</p>
+          </div>
+          <form class="formulario" data-formulario novalidate>
+            <div class="campo"><label for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="off" placeholder="Ex.: Juliana"></div>
+            <div class="campo"><label for="modalidade">Modalidade</label><select id="modalidade" name="modalidade"><option>Musculação</option><option>Funcional</option><option>Alongamento</option><option>Ritmos</option></select></div>
+            <fieldset class="campo">
+              <legend>Período</legend>
+              <div class="opcoes">
+                <label><input type="radio" name="periodo" value="manhã" checked><span>Manhã</span></label>
+                <label><input type="radio" name="periodo" value="tarde"><span>Tarde</span></label>
+                <label><input type="radio" name="periodo" value="noite"><span>Noite</span></label>
+              </div>
+            </fieldset>
+            <div class="previa" aria-live="polite"><p>Mensagem que vai para a academia</p><p class="bolha" data-previa></p></div>
+            <div><button class="botao botao-escuro" type="submit"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>Enviar pelo WhatsApp</button></div>
+          </form>
+        </div>
+        <img src="fotos/acompanhamento.jpg" alt="" width="900" height="1000" loading="lazy">
+      </div>
+    </section>
+
+    <section class="secao" id="duvidas">
+      <div class="caixa">
+        <div class="titulo revela"><small>Dúvidas</small><h2>Perguntas frequentes</h2></div>
+        <div class="duvidas" data-duvidas></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="caixa">
+      <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#map-pin"></use></svg><p><strong>Endereço</strong>Rua Exemplo, 900 · Centro</p></div>
+      <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#clock"></use></svg><p><strong>Horário</strong>Seg a sex, 6h às 22h · Sáb, 8h às 12h</p></div>
+      <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#phone"></use></svg><p><strong>Telefone</strong>(33) 0000-0000</p></div>
+      <a class="botao botao-cheio" href="#" data-whats="Oi! Vi o site da Academia Pulso e quero tirar uma dúvida."><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>WhatsApp</a>
+      <p class="base"><span>© <span data-ano>2026</span> Academia Pulso (nome fictício)</span><span>Site feito pela Atalho Studio</span></p>
+    </div>
+  </footer>
+
+  <a class="whats-fixo" href="#" aria-label="Falar no WhatsApp da academia" data-whats="Oi! Vi o site da Academia Pulso e quero saber dos planos."><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg></a>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

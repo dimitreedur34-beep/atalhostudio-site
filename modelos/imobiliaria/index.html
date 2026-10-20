@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morada Imóveis | Modelo de demonstração</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../kit.css">
+  <style>
+    :root {
+      --petroleo: #1F4447;
+      --petroleo-escuro: #163235;
+      --creme: #F4F1EA;
+      --latao: #9A7440;
+      --tinta: #1A2224;
+      --cinza: #5B6667;
+      --linha: #DFE2DE;
+    }
+
+    body { background: #fff; color: var(--tinta); }
+    h1, h2, h3 { font-family: 'Gabarito', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.03em; }
+
+    .botao { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3rem; padding: 0.7rem 1.3rem; border: 1px solid transparent; border-radius: 10px; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color 0.2s, border-color 0.2s, transform 0.2s; }
+    .botao:hover { transform: translateY(-1px); }
+    .botao-cheio { background: var(--petroleo); color: #fff; }
+    .botao-cheio:hover { background: var(--petroleo-escuro); }
+    .botao-linha { border-color: var(--linha); background: #fff; color: var(--tinta); }
+    .botao-linha:hover { border-color: var(--tinta); }
+
+    .aviso { background: var(--petroleo-escuro); color: #C9D6D4; font-size: 0.85rem; }
+    .aviso .caixa { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem; padding-block: 0.5rem; }
+    .aviso span { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .aviso .ic { width: 1rem; height: 1rem; }
+
+    .menu-topo { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--linha); background: rgba(255, 255, 255, 0.96); }
+    .menu-topo .caixa { display: flex; align-items: center; gap: 2rem; min-height: 4.25rem; }
+    .logo { display: inline-flex; align-items: center; gap: 0.6rem; margin-right: auto; color: var(--tinta); text-decoration: none; }
+    .logo .ic { width: 1.8rem; height: 1.8rem; color: var(--petroleo); }
+    .logo strong { display: block; font-family: 'Gabarito'; font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+    .logo small { color: var(--cinza); font-size: 0.75rem; }
+    .links { display: none; gap: 1.75rem; }
+    .links a { color: var(--cinza); text-decoration: none; }
+    .links a:hover { color: var(--tinta); }
+    .contador-favoritos { display: inline-flex; align-items: center; gap: 0.35rem; min-height: 2.6rem; padding: 0 0.9rem; border: 1px solid var(--linha); border-radius: 999px; background: #fff; color: var(--tinta); font-weight: 600; cursor: pointer; }
+    .contador-favoritos .ic { width: 1rem; height: 1rem; }
+    .contador-favoritos[aria-pressed='true'] { border-color: var(--petroleo); background: var(--petroleo); color: #fff; }
+    .menu-topo .botao { display: none; min-height: 2.6rem; padding: 0.5rem 1.1rem; }
+    .menu-celular-botao { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid var(--linha); border-radius: 10px; background: #fff; cursor: pointer; }
+    .gaveta { display: none; border-top: 1px solid var(--linha); }
+    .gaveta.aberto { display: grid; }
+    .gaveta a { padding: 1rem clamp(1rem, 0.5rem + 2.5vw, 2rem); border-bottom: 1px solid var(--linha); color: var(--tinta); text-decoration: none; }
+    @media (min-width: 60em) {
+      .links, .menu-topo .botao { display: inline-flex; }
+      .menu-celular-botao, .gaveta, .gaveta.aberto { display: none; }
+    }
+
+    .hero { background: var(--creme); }
+    .hero .caixa { display: grid; gap: 2.5rem; align-items: center; padding-block: clamp(2.5rem, 1.5rem + 5vw, 5.5rem); }
+    @media (min-width: 60em) { .hero .caixa { grid-template-columns: 1fr 1fr; gap: 3.5rem; } }
+    .hero small.local { display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 1rem; color: var(--cinza); }
+    .hero small.local .ic { width: 1rem; height: 1rem; }
+    .hero h1 { font-size: clamp(2.4rem, 1.4rem + 4vw, 4.2rem); line-height: 1.02; }
+    .hero p.linha { max-width: 30rem; margin-top: 1rem; color: var(--cinza); font-size: 1.12rem; }
+    .hero-foto { position: relative; }
+    .hero-foto img { display: block; width: 100%; height: clamp(18rem, 12rem + 20vw, 31rem); border-radius: 18px 18px 18px 4px; object-fit: cover; }
+    .hero-selo { position: absolute; left: 1rem; bottom: 1rem; display: grid; gap: 0.1rem; padding: 0.8rem 1rem; border-radius: 12px; background: #fff; box-shadow: 0 10px 30px -12px rgba(26, 34, 36, 0.35); }
+    .hero-selo strong { font-family: 'Gabarito'; font-size: 1.3rem; }
+    .hero-selo span { color: var(--cinza); font-size: 0.85rem; }
+
+    .busca { display: grid; gap: 0.9rem; margin-top: 1.75rem; padding: 1.1rem; border: 1px solid var(--linha); border-radius: 16px; background: #fff; }
+    .busca-modo { display: inline-flex; justify-self: start; padding: 0.25rem; border-radius: 999px; background: var(--creme); }
+    .busca-modo label { position: relative; }
+    .busca-modo input { position: absolute; opacity: 0; }
+    .busca-modo span { display: inline-flex; min-height: 2.4rem; align-items: center; padding: 0 1.1rem; border-radius: 999px; color: var(--cinza); font-weight: 600; cursor: pointer; transition: background-color 0.2s, color 0.2s; }
+    .busca-modo input:checked + span { background: var(--petroleo); color: #fff; }
+    .busca-modo input:focus-visible + span { outline: 2px solid var(--tinta); outline-offset: 2px; }
+    .busca-campos { display: grid; gap: 0.6rem; grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr)); }
+    .busca-campos label { display: grid; gap: 0.3rem; color: var(--cinza); font-size: 0.8rem; font-weight: 600; }
+    select, input { min-height: 2.9rem; padding: 0.5rem 0.75rem; border: 1px solid #C8CCC8; border-radius: 10px; background: #fff; color: var(--tinta); font-size: 1rem; }
+
+    .secao { padding-block: clamp(3.5rem, 2.5rem + 4vw, 6rem); }
+    .secao-creme { background: var(--creme); }
+    .titulo { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+    .titulo h2 { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 2.8rem); line-height: 1.05; }
+    .titulo p { margin-top: 0.5rem; color: var(--cinza); }
+    .resultado-linha { color: var(--cinza); font-weight: 600; }
+
+    .imoveis { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(min(19rem, 100%), 1fr)); }
+    .imovel { display: grid; overflow: hidden; border: 1px solid var(--linha); border-radius: 16px 16px 16px 4px; background: #fff; transition: transform 0.3s, box-shadow 0.3s; }
+    .imovel:hover { transform: translateY(-4px); box-shadow: 0 18px 34px -22px rgba(26, 34, 36, 0.5); }
+    .imovel-foto { position: relative; }
+    .imovel-foto img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .etiqueta { position: absolute; left: 0.75rem; top: 0.75rem; padding: 0.25rem 0.6rem; border-radius: 999px; background: #fff; font-size: 0.78rem; font-weight: 700; }
+    .favorito { position: absolute; right: 0.6rem; top: 0.6rem; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.95); color: var(--tinta); cursor: pointer; transition: transform 0.2s; }
+    .favorito:hover { transform: scale(1.08); }
+    .favorito .ic { width: 1.2rem; height: 1.2rem; }
+    .favorito[aria-pressed='true'] { color: #B23A3A; }
+    .favorito[aria-pressed='true'] .ic { fill: currentColor; }
+    .imovel-corpo { display: grid; gap: 0.5rem; padding: 1.1rem 1.15rem 1.25rem; }
+    .imovel-corpo small { color: var(--cinza); }
+    .imovel-corpo h3 { font-size: 1.15rem; line-height: 1.25; }
+    .imovel-bairro { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--cinza); font-size: 0.9rem; }
+    .imovel-bairro .ic { width: 0.95rem; height: 0.95rem; }
+    .imovel-dados { display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; padding-block: 0.6rem; border-block: 1px solid var(--linha); color: var(--cinza); font-size: 0.85rem; }
+    .imovel-rodape { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; margin-top: 0.25rem; }
+    .preco { font-family: 'Gabarito'; font-size: 1.35rem; font-weight: 700; }
+    .preco small { color: var(--cinza); font-family: 'Figtree'; font-size: 0.8rem; font-weight: 500; }
+    .imovel .botao { min-height: 2.6rem; padding: 0.45rem 0.95rem; font-size: 0.92rem; }
+    .vazio { display: grid; justify-items: start; gap: 0.9rem; padding: 2rem; border: 1px dashed #C8CCC8; border-radius: 16px; }
+    .exemplo { margin-top: 1.5rem; color: var(--cinza); font-size: 0.85rem; }
+
+    .motivos { display: grid; gap: 2rem; }
+    @media (min-width: 48em) { .motivos { grid-template-columns: repeat(3, 1fr); } }
+    .motivos div { padding-top: 1.1rem; border-top: 2px solid var(--petroleo); }
+    .motivos .ic { width: 1.6rem; height: 1.6rem; color: var(--latao); }
+    .motivos h3 { margin-top: 0.8rem; font-size: 1.2rem; }
+    .motivos p { margin-top: 0.4rem; color: var(--cinza); }
+
+    .anuncie { display: grid; gap: 2.5rem; align-items: start; }
+    @media (min-width: 60em) { .anuncie { grid-template-columns: 0.9fr 1.1fr; gap: 4rem; } }
+    .anuncie img { display: block; width: 100%; height: 100%; max-height: 30rem; border-radius: 18px 18px 18px 4px; object-fit: cover; }
+    .formulario { display: grid; gap: 1rem; }
+    .formulario .linha2 { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr)); }
+    .campo { display: grid; gap: 0.4rem; }
+    .campo label, .campo legend { font-size: 0.9rem; font-weight: 600; }
+    fieldset.campo { margin: 0; padding: 0; border: 0; }
+    .opcoes { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .opcoes label { position: relative; }
+    .opcoes input { position: absolute; opacity: 0; }
+    .opcoes span { display: inline-flex; padding: 0.55rem 1.1rem; border: 1px solid #C8CCC8; border-radius: 999px; cursor: pointer; }
+    .opcoes input:checked + span { border-color: var(--petroleo); background: var(--petroleo); color: #fff; }
+    .opcoes input:focus-visible + span { outline: 2px solid var(--tinta); outline-offset: 2px; }
+    .previa { display: grid; gap: 0.6rem; padding: 1.1rem; border-radius: 14px; background: #EFEAE2; }
+    .previa > p { color: #54656F; font-size: 0.85rem; }
+    .previa .bolha { justify-self: end; max-width: 95%; padding: 0.7rem 0.85rem; border-radius: 12px 0 12px 12px; background: #D9FDD3; color: #111B21; white-space: pre-line; box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13); }
+
+    .duvidas { max-width: 46rem; border-top: 1px solid var(--linha); }
+    .duvidas details { border-bottom: 1px solid var(--linha); }
+    .duvidas summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.2rem; font-weight: 600; cursor: pointer; list-style: none; }
+    .duvidas summary::-webkit-details-marker { display: none; }
+    .duvidas summary .ic { flex: none; width: 1.1rem; height: 1.1rem; transition: transform 0.2s; }
+    .duvidas details[open] summary .ic { transform: rotate(180deg); }
+    .duvidas details p { padding-bottom: 1.2rem; color: var(--cinza); }
+
+    .contato { display: grid; gap: 2rem; }
+    @media (min-width: 48em) { .contato { grid-template-columns: repeat(3, 1fr) auto; align-items: center; } }
+    .contato div { display: grid; grid-template-columns: auto 1fr; gap: 0.7rem; }
+    .contato .ic { margin-top: 0.15rem; color: var(--petroleo); }
+    .contato strong { display: block; font-size: 0.9rem; }
+    .contato span { color: var(--cinza); }
+
+    .rodape { padding-block: 2rem 4.5rem; background: var(--petroleo-escuro); color: #C9D6D4; font-size: 0.875rem; }
+    .rodape .caixa { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+    .whats-fixo { position: fixed; right: 1rem; bottom: 1rem; z-index: 80; display: grid; place-items: center; width: 3.4rem; height: 3.4rem; border-radius: 50%; background: var(--petroleo); color: #fff; box-shadow: 0 6px 18px rgba(26, 34, 36, 0.25); }
+    .whats-fixo .ic { width: 1.5rem; height: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="aviso">
+    <div class="caixa">
+      <span><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#clock"></use></svg>Seg a sex, 8h às 18h · Sáb, 9h às 13h</span>
+      <span><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#shield-check"></use></svg>CRECI 00000-J (exemplo)</span>
+    </div>
+  </div>
+
+  <header class="menu-topo">
+    <div class="caixa">
+      <a class="logo" href="#inicio"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#house"></use></svg><span><strong>Morada</strong><small>Imóveis</small></span></a>
+      <nav class="links" aria-label="Menu"><a href="#imoveis">Imóveis</a><a href="#anunciar">Anunciar</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+      <button class="contador-favoritos" type="button" data-so-favoritos aria-pressed="false"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#heart"></use></svg><span data-total-favoritos>0</span><span class="oculto"> imóveis favoritos. Mostrar só os favoritos</span></button>
+      <a class="botao botao-cheio" href="#" data-whats="Oi! Vi o site da Morada Imóveis e quero falar com um corretor.">Falar com corretor</a>
+      <button class="menu-celular-botao" type="button" data-menu-botao aria-expanded="false" aria-controls="gaveta" aria-label="Abrir menu"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#menu"></use></svg></button>
+    </div>
+    <nav class="gaveta" id="gaveta" data-menu aria-label="Menu do celular"><a href="#imoveis">Imóveis</a><a href="#anunciar">Anunciar meu imóvel</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="caixa">
+        <div>
+          <small class="local"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#map-pin"></use></svg>Governador Valadares e região</small>
+          <h1>O imóvel certo, sem perder fim de semana procurando.</h1>
+          <p class="linha">Casas e apartamentos para comprar ou alugar. Filtre aqui, guarde os favoritos e marque a visita pelo WhatsApp.</p>
+          <form class="busca" data-busca>
+            <div class="busca-modo" role="radiogroup" aria-label="Comprar ou alugar">
+              <label><input type="radio" name="modo" value="todos" checked><span>Todos</span></label>
+              <label><input type="radio" name="modo" value="venda"><span>Comprar</span></label>
+              <label><input type="radio" name="modo" value="aluguel"><span>Alugar</span></label>
+            </div>
+            <div class="busca-campos">
+              <label>Tipo
+                <select name="tipo"><option value="">Todos</option><option value="casa">Casa</option><option value="apartamento">Apartamento</option><option value="studio">Studio</option></select>
+              </label>
+              <label>Bairro
+                <select name="bairro"><option value="">Todos</option><option>Centro</option><option>Vila Bretas</option><option>Grã-Duquesa</option><option>São Pedro</option></select>
+              </label>
+              <label>Quartos
+                <select name="quartos"><option value="0">Qualquer</option><option value="1">1 ou mais</option><option value="2">2 ou mais</option><option value="3">3 ou mais</option></select>
+              </label>
+            </div>
+            <div><button class="botao botao-cheio" type="submit">Ver imóveis <svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#arrow-right"></use></svg></button></div>
+          </form>
+        </div>
+        <div class="hero-foto">
+          <img src="fotos/fachada.jpg" alt="Casa branca moderna com jardim" width="1200" height="1000">
+          <div class="hero-selo"><strong>Visita no seu horário</strong><span>Inclusive aos sábados</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="imoveis">
+      <div class="caixa">
+        <div class="titulo revela">
+          <div>
+            <h2>Imóveis disponíveis</h2>
+            <p>Toque no coração para guardar e em "Agendar visita" para marcar.</p>
+          </div>
+          <p class="resultado-linha" data-resultado aria-live="polite"></p>
+        </div>
+        <div class="imoveis" data-imoveis></div>
+        <p class="exemplo">Imóveis, fotos e valores de exemplo.</p>
+      </div>
+    </section>
+
+    <section class="secao secao-creme">
+      <div class="caixa">
+        <div class="titulo revela"><h2>Por que a Morada</h2></div>
+        <div class="motivos">
+          <div class="revela"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#shield-check"></use></svg><h3>Corretores com CRECI</h3><p>Quem mostra o imóvel conhece o bairro e acompanha você até a assinatura.</p></div>
+          <div class="revela"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#calendar"></use></svg><h3>Visita no seu horário</h3><p>Durante a semana ou no sábado. A confirmação chega pelo WhatsApp.</p></div>
+          <div class="revela"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#file-text"></use></svg><h3>Documentação acompanhada</h3><p>Contrato, vistoria e papéis do financiamento com orientação em cada passo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="anunciar">
+      <div class="caixa anuncie">
+        <img src="fotos/anuncie.jpg" alt="Mão segurando uma casinha de madeira" width="1000" height="750" loading="lazy">
+        <div>
+          <div class="titulo revela" style="display:block">
+            <h2>Quer vender ou alugar o seu imóvel?</h2>
+            <p>Conte o básico. A mensagem vai pronta para um corretor, que retorna para combinar a avaliação.</p>
+          </div>
+          <form class="formulario" data-anuncie novalidate>
+            <div class="linha2">
+              <div class="campo"><label for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="off" placeholder="Ex.: Roberto"></div>
+              <div class="campo"><label for="tipo-imovel">Tipo do imóvel</label><select id="tipo-imovel" name="tipo"><option>Casa</option><option>Apartamento</option><option>Lote</option><option>Sala comercial</option></select></div>
+            </div>
+            <div class="campo"><label for="bairro-imovel">Bairro</label><select id="bairro-imovel" name="bairro"><option>Centro</option><option>Vila Bretas</option><option>Grã-Duquesa</option><option>São Pedro</option><option>Outro bairro</option></select></div>
+            <fieldset class="campo">
+              <legend>Você quer</legend>
+              <div class="opcoes">
+                <label><input type="radio" name="objetivo" value="vender" checked><span>Vender</span></label>
+                <label><input type="radio" name="objetivo" value="alugar"><span>Alugar</span></label>
+              </div>
+            </fieldset>
+            <div class="previa" aria-live="polite"><p>Mensagem que vai para a imobiliária</p><p class="bolha" data-previa></p></div>
+            <div><button class="botao botao-cheio" type="submit"><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>Enviar pelo WhatsApp</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao-creme" id="duvidas">
+      <div class="caixa">
+        <div class="titulo revela"><h2>Dúvidas</h2></div>
+        <div class="duvidas" data-duvidas></div>
+      </div>
+    </section>
+
+    <section class="secao" id="contato">
+      <div class="caixa contato">
+        <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#map-pin"></use></svg><p><strong>Endereço</strong><span>Av. Exemplo, 500 · Centro</span></p></div>
+        <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#clock"></use></svg><p><strong>Horário</strong><span>Seg a sex, 8h às 18h · Sáb, 9h às 13h</span></p></div>
+        <div><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#phone"></use></svg><p><strong>Telefone</strong><span>(33) 0000-0000</span></p></div>
+        <a class="botao botao-cheio" href="#" data-whats="Oi! Vi o site da Morada Imóveis e quero tirar uma dúvida."><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg>Falar no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape"><div class="caixa"><span>© <span data-ano>2026</span> Morada Imóveis (nome fictício)</span><span>Site feito pela Atalho Studio</span></div></footer>
+
+  <a class="whats-fixo" href="#" aria-label="Falar no WhatsApp da imobiliária" data-whats="Oi! Vi o site da Morada Imóveis e quero ajuda para encontrar um imóvel."><svg class="ic" aria-hidden="true" focusable="false"><use href="../../assets/icones.svg#whatsapp"></use></svg></a>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

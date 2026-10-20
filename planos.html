@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fora do Google até os dados [PREENCHER] estarem prontos: tirar esta linha no lançamento -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Planos e dúvidas | Atalho Studio</title>
+  <meta name="description" content="Planos a partir de: site, site com WhatsApp automático e sistema sob medida. Perguntas frequentes.">
+  <meta name="theme-color" content="#F6F4F0">
+  <link rel="icon" href="assets/logo/atalho-simbolo-escuro.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fontes/gabarito-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fontes/figtree-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body class="pagina" data-pagina="planos">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header data-topo></header>
+
+  <main id="conteudo">
+    <section class="topo-pagina secao-areia">
+      <div class="recipiente cabeca cabeca-centro">
+        <h1 class="titulo-pagina revelar">Escolha por onde começar</h1>
+        <p class="linha-pagina revelar revelar-2">Valores de entrada. O preço final sai na proposta, por escrito, depois da conversa.</p>
+      </div>
+    </section>
+
+    <section class="secao secao-areia" style="padding-top:1rem" aria-label="Planos">
+      <div class="recipiente">
+        <ul class="planos" role="list">
+          <li class="plano revelar">
+            <span class="plano-servico">Site</span>
+            <h2 style="font-size:1.75rem" data-plano-nome="inicio"></h2>
+            <p class="plano-preco">a partir de <strong data-plano-preco="inicio"></strong></p>
+            <ul class="itens-lista" role="list">
+              <li>Site rápido no celular</li>
+              <li>Botão de WhatsApp com mensagem pronta</li>
+              <li>Seus serviços, preços e horários</li>
+            </ul>
+            <a class="botao botao-contorno" href="#contato" data-wa="plano" data-plano="inicio" data-posicao="planos"><span>Quero o <span data-plano-nome="inicio"></span></span></a>
+          </li>
+          <li class="plano plano-destaque revelar revelar-2">
+            <span class="plano-etiqueta">Recomendado</span>
+            <span class="plano-servico">Site + WhatsApp automático</span>
+            <h2 style="font-size:1.75rem" data-plano-nome="atendimento"></h2>
+            <p class="plano-preco">a partir de <strong data-plano-preco="atendimento"></strong></p>
+            <ul class="itens-lista" role="list">
+              <li>Tudo do plano Início</li>
+              <li>Atendimento automático no WhatsApp, 24h</li>
+              <li>Passa a conversa para uma pessoa quando o cliente pede</li>
+            </ul>
+            <a class="botao botao-cobre" href="#contato" data-wa="plano" data-plano="atendimento" data-posicao="planos"><span>Quero o <span data-plano-nome="atendimento"></span></span></a>
+          </li>
+          <li class="plano revelar revelar-3">
+            <span class="plano-servico">Sistema</span>
+            <h2 style="font-size:1.75rem" data-plano-nome="sobmedida"></h2>
+            <p class="plano-preco">a partir de <strong data-plano-preco="sobmedida"></strong></p>
+            <ul class="itens-lista" role="list">
+              <li>Painel com cadastros e relatórios</li>
+              <li>Feito para o jeito que o seu negócio trabalha</li>
+              <li>Nota fiscal por um serviço integrado, quando o negócio precisa</li>
+            </ul>
+            <a class="botao botao-contorno" href="#contato" data-wa="plano" data-plano="sobmedida" data-posicao="planos"><span>Quero o <span data-plano-nome="sobmedida"></span></span></a>
+          </li>
+        </ul>
+        <p class="cuidado revelar">Cuidado mensal (opcional): ajustes, suporte e hospedagem, <strong data-plano-preco="cuidado"></strong>.</p>
+      </div>
+    </section>
+
+    <section class="secao secao-pedra" aria-labelledby="como-titulo">
+      <div class="recipiente">
+        <div class="cabeca cabeca-centro revelar">
+          <h2 id="como-titulo">Como funciona</h2>
+        </div>
+        <ol class="passos" role="list">
+          <li class="revelar"><h3>Conversa</h3><p>Você conta como o seu negócio atende hoje. Pode ser pelo WhatsApp.</p></li>
+          <li class="revelar revelar-2"><h3>Proposta</h3><p>Você recebe por escrito o que vai ser feito, o preço e o prazo.</p></li>
+          <li class="revelar revelar-3">
+            <h3>Entrega</h3>
+            <p>Entregue funcionando.</p>
+            <p data-se-preenchido="prazos.entrega">Prazo: <span data-config="prazos.entrega"></span>.</p>
+            <p data-se-preenchido="prazos.pagamento">Pagamento: <span data-config="prazos.pagamento"></span>.</p>
+          </li>
+          <li class="revelar revelar-3">
+            <h3>Suporte</h3>
+            <p data-se-preenchido="prazos.ajustes">Ajustes incluídos por <span data-config="prazos.ajustes"></span>.</p>
+            <p>Depois, o cuidado mensal é opcional.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="secao secao-linha" id="duvidas" aria-labelledby="duvidas-titulo">
+      <div class="recipiente">
+        <div class="cabeca cabeca-centro revelar">
+          <h2 id="duvidas-titulo">Perguntas frequentes</h2>
+        </div>
+        <div class="perguntas">
+          <details class="pergunta"><summary>Vocês atendem qualquer tipo de negócio?</summary><div class="resposta"><p>As demonstrações mostram algumas áreas como exemplo. O que for feito para você parte de como o seu negócio funciona hoje.</p></div></details>
+          <details class="pergunta"><summary>Quem cuida do site depois que fica pronto?</summary><div class="resposta"><p data-se-preenchido="prazos.ajustes">Os ajustes ficam incluídos por <span data-config="prazos.ajustes"></span> depois da entrega.</p><p>Se quiser, você pode contratar o cuidado mensal, com ajustes, suporte e hospedagem.</p></div></details>
+          <details class="pergunta"><summary>E se eu não gostar?</summary><div class="resposta"><p>Tudo começa com uma proposta por escrito: o que vai ser feito, o preço e o prazo. Você só fecha se estiver de acordo.</p><p>[PREENCHER: o que acontece se o cliente quiser desistir no meio do projeto]</p></div></details>
+          <details class="pergunta"><summary>Preciso ter domínio?</summary><div class="resposta"><p>Não precisa ter antes. O domínio é o endereço do site, como seunegocio.com.br, e é registrado no Registro.br. O ideal é ele ficar no nome do seu negócio, para o endereço ser seu.</p></div></details>
+          <details class="pergunta"><summary>Fica no meu número de WhatsApp?</summary><div class="resposta"><p>Depende de como o seu WhatsApp está hoje. Isso é visto na primeira conversa, antes da proposta, e fica escrito nela.</p></div></details>
+          <details class="pergunta"><summary>O cliente sabe que está falando com um atendimento automático?</summary><div class="resposta"><p>Sim. Ele se apresenta como assistente automático, e uma pessoa entra quando o cliente pede.</p></div></details>
+          <details class="pergunta"><summary>O atendimento dá orientação médica, jurídica ou tributária?</summary><div class="resposta"><p>Não. Ele só responde o que você aprovou. Dúvida que precisa de um profissional vai para uma pessoa da sua equipe.</p></div></details>
+          <details class="pergunta"><summary>Por que não usar a IA do próprio WhatsApp Business?</summary><div class="resposta"><p>[PREENCHER: resposta escrita depois de testar a ferramenta da Meta]</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="recipiente">
+        <div class="chamada revelar">
+          <h2>Ficou alguma dúvida?</h2>
+          <p>Pergunte no WhatsApp. A resposta vem de uma pessoa.</p>
+          <div class="acoes">
+            <a class="botao botao-whats" href="#contato" data-wa="geral" data-posicao="planos-chamada"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#whatsapp"></use></svg>Falar no WhatsApp</a>
+            <a class="botao botao-contorno" href="#contato" data-wa="geral" data-wa-mensagem="Oi! Quero o diagnóstico grátis do atendimento do meu negócio no WhatsApp. Meu negócio é ___." data-posicao="diagnostico" data-mostrar-se="diagnostico.ativo" hidden>Quero o diagnóstico grátis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-rodape></footer>
+</body>
+</html>
