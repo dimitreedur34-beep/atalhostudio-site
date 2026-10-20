@@ -4426,3 +4426,70 @@ a.servico.em-foco .icone {
 .video-deitado {
   margin-top: var(--e-6);
 }
+
+/* ===== Retorno 9: menos cor, títulos com respiro no celular, símbolo no lugar ===== */
+/* Cor só em detalhe pequeno: palavra em destaque, ícones e botão. Linhas e números ficam neutros. */
+.fatos div:nth-child(n) { border-top: 1px solid var(--texto); }
+.numeros-impacto > div:nth-child(n) strong { color: #fff; }
+.servico { border-top: 1px solid var(--texto); }
+.servico .icone { background: var(--fundo-2); color: var(--texto); }
+a.servico:hover .icone,
+a.servico.em-foco .icone { background: var(--texto); color: #fff; }
+.argumentos > div:nth-child(n) { border-top: 1px solid var(--texto); }
+.argumentos .icone { color: var(--cobre-escuro); }
+.planos-resumo div:nth-child(n) { border-top: 0; }
+.passos li:nth-child(n) { border-top: 1px solid var(--linha-forte); }
+.faixa-trilho li:nth-child(n) .icone { color: var(--texto-2); }
+.recursos .icone,
+.controle-lista .icone { background: var(--papel); color: var(--cobre-escuro); }
+.recursos li:hover .icone,
+.recursos li.em-foco .icone,
+.controle-lista li:hover .icone,
+.controle-lista li.em-foco .icone { background: var(--texto); color: #fff; }
+.etapas li:nth-child(n) { --cor-etapa: var(--aco); }
+.etapas::after,
+.etapas.visivel::after { background: var(--cobre); }
+@media (min-width: 56em) {
+  .etapas::after { background: var(--cobre); }
+}
+.kpi:nth-child(n) { --cor-kpi: var(--texto); }
+.dg-barra span { background: var(--texto); }
+.relatorio-detalhe { background: var(--fundo); }
+.barra-cheia { background: #D6D0C5; }
+.barra:hover .barra-cheia { background: #B9B2A6; }
+.barra[aria-pressed='true'] .barra-cheia { background: var(--aco); }
+
+/* Títulos no celular: mais altura de linha para os acentos não encostarem na linha de cima */
+@media (max-width: 48em) {
+  .pagina h1,
+  .pagina h2,
+  .titulo-pagina,
+  .cabeca h2,
+  .frase-efeito {
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 {
+    line-height: 1.1;
+  }
+}
+
+/* A cortina de entrada das frases não corta acento nem a perna do g */
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.sem-js) .frase-efeito.revelar.visivel {
+    clip-path: inset(-0.3em -0.2em -0.3em -0.2em);
+  }
+}
+
+/* Símbolo da marca no celular: acima do título, inteiro e no lugar */
+@media (max-width: 61.99em) {
+  .hero-simbolo {
+    position: static;
+    order: -1;
+    justify-self: start;
+    width: 4.75rem;
+    margin-bottom: calc(var(--e-5) * -1);
+    opacity: 1;
+  }
+}
