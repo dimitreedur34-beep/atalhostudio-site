@@ -9,7 +9,8 @@ const MODULOS = {
   sites: './pagina-sites.js',
   ver: './ver.js',
   whatsapp: './pagina-whatsapp.js',
-  sistemas: './painel.js'
+  sistemas: './painel.js',
+  planos: './pagina-planos.js'
 };
 
 const PENDENTE = '[PREENCHER';
