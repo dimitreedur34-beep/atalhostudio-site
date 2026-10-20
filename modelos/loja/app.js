@@ -6,14 +6,14 @@ const TAMANHOS = ['P', 'M', 'G', 'GG'];
 
 // [tipo, nome, preço, foto, cores, tamanhos esgotados, etiqueta]
 const PECAS = [
-  ['Vestidos', 'Vestido de alça floral', 189.9, 'vestido-midi.jpg', ['Verde', 'Preto'], ['GG'], 'Novo'],
-  ['Vestidos', 'Vestido de festa', 259.9, 'vestido-linho.jpg', ['Preto'], ['P'], ''],
-  ['Vestidos', 'Vestido floral vintage', 229.9, 'vestido-longo.jpg', ['Vinho', 'Preto'], [], 'Mais pedido'],
-  ['Calças', 'Calça jeans reta', 169.9, 'calca-jeans.jpg', ['Azul'], ['G'], ''],
-  ['Calças', 'Calça jeans escura', 179.9, 'calca-jeans-2.jpg', ['Azul', 'Preto'], [], 'Novo'],
-  ['Blusas', 'Camiseta básica', 69.9, 'camisa-linho.jpg', ['Vinho', 'Terracota', 'Off'], [], ''],
-  ['Blusas', 'Camiseta listrada', 89.9, 'camisa-listrada.jpg', ['Preto'], ['P'], ''],
-  ['Blusas', 'Suéter de tricô', 149.9, 'sueter.jpg', ['Caramelo', 'Off'], [], '']
+  ['Vestidos', 'Vestido de alça floral', 189.9, 'vestido-midi.webp', ['Verde', 'Preto'], ['GG'], 'Novo'],
+  ['Vestidos', 'Vestido de festa', 259.9, 'vestido-linho.webp', ['Preto'], ['P'], ''],
+  ['Vestidos', 'Vestido floral vintage', 229.9, 'vestido-longo.webp', ['Vinho', 'Preto'], [], 'Mais pedido'],
+  ['Calças', 'Calça jeans reta', 169.9, 'calca-jeans.webp', ['Azul'], ['G'], ''],
+  ['Calças', 'Calça jeans escura', 179.9, 'calca-jeans-2.webp', ['Azul', 'Preto'], [], 'Novo'],
+  ['Blusas', 'Camiseta básica', 69.9, 'camisa-linho.webp', ['Vinho', 'Terracota', 'Off'], [], ''],
+  ['Blusas', 'Camiseta listrada', 89.9, 'camisa-listrada.webp', ['Preto'], ['P'], ''],
+  ['Blusas', 'Suéter de tricô', 149.9, 'sueter.webp', ['Caramelo', 'Off'], [], '']
 ];
 
 iniciarModelo({ negocio: NEGOCIO });

@@ -32,7 +32,7 @@ function link(classe, href, texto) {
 
 function foto(tipo, alt, classe) {
   const img = el('img', classe);
-  img.src = `fotos/${id}-${tipo}.jpg`;
+  img.src = `fotos/${id}-${tipo}.webp`;
   img.alt = alt;
   img.width = tipo === 'capa' ? 1400 : 900;
   img.height = tipo === 'capa' ? 933 : 700;

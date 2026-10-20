@@ -1,5 +1,5 @@
 // Negócios do molde de site. Cada um vira um site completo em modelos/molde/index.html?negocio=<id>.
-// Fotos em fotos/<id>-capa.jpg e fotos/<id>-apoio.jpg. Nomes, números e avaliações são de exemplo.
+// Fotos em fotos/<id>-capa.webp e fotos/<id>-apoio.webp. Nomes, números e avaliações são de exemplo.
 //
 // layout: 'dividido' (texto e foto lado a lado), 'foto' (foto de fundo) ou 'cartao' (bloco colorido com foto).
 // modo: 'agenda' (pedido de horário), 'pedido' (carrinho com total) ou 'orcamento' (pedido de orçamento).

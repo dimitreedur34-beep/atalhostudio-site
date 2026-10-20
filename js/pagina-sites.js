@@ -1,4 +1,5 @@
-// Página Sites: galeria com uma prévia ao vivo de cada modelo (site/modelos/<id>/).
+// Página Sites: galeria com uma prévia de cada modelo (site/modelos/<id>/).
+// A prévia é uma foto leve em assets/previas/ (gerada por tools/otimizar/previas.js), não o site inteiro.
 import { MODELOS, CATEGORIAS } from './dados.js';
 import { icone } from './icones.js';
 
@@ -15,11 +16,6 @@ function link(classe, href, texto) {
   return a;
 }
 
-// A prévia é o próprio modelo, desenhado em 1280 px e encolhido para caber no cartão.
-function ajustarEscala(tela) {
-  const iframe = tela.querySelector('iframe');
-  if (iframe) iframe.style.transform = `scale(${tela.clientWidth / 1280})`;
-}
 
 // Filtro por tipo de negócio: só os cartões da categoria escolhida ficam visíveis (e só eles carregam).
 function montarFiltro(cartoes) {
@@ -56,15 +52,16 @@ export function iniciar() {
     cartao.dataset.categoria = modelo.categoria;
 
     const tela = el('div', 'modelo-tela');
-    const iframe = el('iframe');
-    iframe.src = modelo.caminho || `modelos/${modelo.id}/index.html`;
-    iframe.title = `Prévia do modelo ${modelo.nome}`;
-    iframe.loading = 'lazy';
-    iframe.tabIndex = -1;
-    iframe.setAttribute('aria-hidden', 'true');
+    const previa = el('img');
+    previa.src = `assets/previas/${modelo.id}.webp`;
+    previa.alt = '';
+    previa.width = 800;
+    previa.height = 550;
+    previa.loading = 'lazy';
+    previa.decoding = 'async';
     const abrir = link('', `ver.html?modelo=${modelo.id}`);
     abrir.setAttribute('aria-label', `Abrir o modelo ${modelo.nome}`);
-    tela.append(iframe, abrir);
+    tela.append(previa, abrir);
 
     const corpo = el('div', 'modelo-corpo');
     const area = el('span', 'modelo-area');
@@ -84,14 +81,4 @@ export function iniciar() {
 
   galeria.prepend(...cartoes);
   galeria.before(montarFiltro(cartoes));
-
-  const telas = galeria.querySelectorAll('.modelo-tela');
-  const reajustar = () => telas.forEach(ajustarEscala);
-  reajustar();
-  if ('ResizeObserver' in window) {
-    const observador = new ResizeObserver(reajustar);
-    telas.forEach((tela) => observador.observe(tela));
-  } else {
-    addEventListener('resize', reajustar);
-  }
 }

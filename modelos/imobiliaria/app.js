@@ -34,7 +34,7 @@ function cartao([codigo, titulo, tipo, modo, bairro, quartos, banheiros, vagas, 
 
   const capa = el('div', 'imovel-foto');
   const img = el('img');
-  img.src = `fotos/${foto}.jpg`;
+  img.src = `fotos/${foto}.webp`;
   img.alt = alt;
   img.width = 900;
   img.height = 675;

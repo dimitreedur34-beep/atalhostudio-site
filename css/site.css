@@ -984,15 +984,12 @@ a.servico:hover .link-seta .icone {
   border-color: var(--linha-forte);
 }
 
-.modelo-tela iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1280px;
-  height: 880px;
-  border: 0;
-  transform-origin: 0 0;
-  pointer-events: none;
+.modelo-tela img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .modelo-tela a {
