@@ -279,6 +279,12 @@ export const NEGOCIOS = {
 
   salao: {
     nome: 'Salão Flor de Lis', curto: 'Flor de Lis', tipo: 'Salão de beleza', icone: 'scissors',
+    fonte: ['Playfair Display', '500;600'],
+    sobre: {
+      titulo: 'Um salão onde você é ouvida antes da tesoura.',
+      texto: 'Antes de cortar ou colorir, a gente conversa sobre o que você quer, o seu tipo de cabelo e a sua rotina. O horário é respeitado e cada detalhe é combinado com você.',
+      pontos: ['Conversa antes de cada serviço', 'Produtos profissionais', 'Horário marcado, sem espera']
+    },
     cores: ['#A35C66', '#844852', '#F7EBEC'], layout: 'foto', serif: true,
     horario: 'Ter a sáb, 9h às 19h', endereco: 'Rua Exemplo, 45 · Centro',
     selo: 'Salão de beleza',
@@ -325,6 +331,12 @@ export const NEGOCIOS = {
 
   barbearia: {
     nome: 'Barbearia Navalha', curto: 'Navalha', tipo: 'Barbearia', icone: 'scissors',
+    fonte: ['Oswald', '500;600'],
+    sobre: {
+      titulo: 'Barbearia de bairro, com hora marcada.',
+      texto: 'Aqui você chega no horário e já senta na cadeira. Corte na tesoura ou na máquina, barba com toalha quente e acabamento na navalha, sem pressa e sem fila.',
+      pontos: ['Hora marcada pelo WhatsApp', 'Toalha quente e lâmina descartável', 'Café e ambiente climatizado']
+    },
     cores: ['#8C6531', '#6E4F26', '#F4EEE4'], layout: 'foto', reto: true, escuro: true,
     horario: 'Ter a sáb, 9h às 20h', endereco: 'Rua Exemplo, 12 · Centro',
     selo: 'Barbearia',
@@ -372,6 +384,12 @@ export const NEGOCIOS = {
 
   estetica: {
     nome: 'Essência Estética', curto: 'Essência', tipo: 'Estética', icone: 'flower-2',
+    fonte: ['Cormorant Garamond', '600;700'],
+    sobre: {
+      titulo: 'Cuidado com a pele, sem promessa milagrosa.',
+      texto: 'Todo tratamento começa por uma avaliação, para indicar só o que faz sentido para a sua pele. Cada sessão fica registrada na sua ficha, com o que foi feito e o que vem a seguir.',
+      pontos: ['Avaliação antes de qualquer tratamento', 'Materiais descartáveis e esterilizados', 'Ficha com o histórico das sessões']
+    },
     cores: ['#86694C', '#6B533B', '#F5EFE8'], layout: 'cartao', serif: true,
     horario: 'Seg a sáb, 9h às 19h', endereco: 'Rua Exemplo, 150 · Centro',
     selo: 'Estética facial e corporal',
