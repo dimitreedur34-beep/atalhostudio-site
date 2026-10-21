@@ -591,6 +591,12 @@ export const NEGOCIOS = {
 
   oficina: {
     nome: 'Auto Center Torque', curto: 'Torque', tipo: 'Oficina mecânica', icone: 'wrench',
+    fonte: ['Barlow Condensed', '600;700'],
+    sobre: {
+      titulo: 'Você aprova o orçamento antes de qualquer serviço.',
+      texto: 'O carro passa por diagnóstico, você recebe o orçamento pelo WhatsApp com fotos das peças e só depois o serviço começa. Nada é trocado sem a sua aprovação.',
+      pontos: ['Orçamento por escrito antes do serviço', 'Fotos das peças trocadas', 'Garantia de 90 dias no serviço, como manda o Código do Consumidor']
+    },
     cores: ['#2A4A73', '#1E3655', '#E8EEF6'], layout: 'foto', reto: true, escuro: true,
     horario: 'Seg a sex, 8h às 18h · Sáb, 8h às 12h', endereco: 'Av. Exemplo, 2.300 · Distrito Industrial',
     selo: 'Oficina mecânica',
@@ -637,6 +643,13 @@ export const NEGOCIOS = {
 
   advocacia: {
     nome: 'Prado Advocacia', curto: 'Prado', tipo: 'Advocacia', icone: 'scale',
+    fonte: ['Libre Baskerville', '400;700'],
+    sobre: {
+      titulo: 'Atendimento jurídico com clareza e discrição.',
+      texto: 'Na primeira consulta, você entende a sua situação, os caminhos possíveis e os custos envolvidos. Cada caso é tratado com sigilo, como determina o Código de Ética da OAB.',
+      pontos: ['Sigilo profissional', 'Explicação em linguagem simples', 'Andamento do processo informado pelo WhatsApp'],
+      assinatura: 'Advogada · OAB/MG 000.000 (exemplo)'
+    },
     cores: ['#1F4D3F', '#173B30', '#EAF1EE'], layout: 'dividido', serif: true, reto: true,
     horario: 'Seg a sex, 9h às 18h', endereco: 'Av. Exemplo, 1.500 · sala 804 · Centro',
     selo: 'Advocacia · OAB/MG 000.000 (exemplo)',
@@ -682,6 +695,12 @@ export const NEGOCIOS = {
 
   idiomas: {
     nome: 'Fala Bem Idiomas', curto: 'Fala Bem', tipo: 'Escola de idiomas', icone: 'languages',
+    fonte: ['Manrope', '600;700;800'],
+    sobre: {
+      titulo: 'Turmas pequenas, para todo mundo falar na aula.',
+      texto: 'Com poucos alunos por turma, o professor ouve cada um e corrige na hora. As aulas usam situações do dia a dia: viagem, trabalho e conversa de verdade.',
+      pontos: ['Turmas pequenas', 'Conversação desde a primeira aula', 'Aula experimental gratuita']
+    },
     cores: ['#2F5DA8', '#244A86', '#EAF0FA'], layout: 'cartao',
     horario: 'Seg a sex, 8h às 21h · Sáb, 8h às 12h', endereco: 'Rua Exemplo, 400 · Centro',
     selo: 'Escola de idiomas',
@@ -728,6 +747,12 @@ export const NEGOCIOS = {
 
   autoescola: {
     nome: 'Autoescola Rota Certa', curto: 'Rota Certa', tipo: 'Autoescola', icone: 'car-front',
+    fonte: ['Space Grotesk', '600;700'],
+    sobre: {
+      titulo: 'Aprender a dirigir, sem pressão.',
+      texto: 'As aulas são marcadas no seu horário, com instrutores credenciados pelo Detran. Para quem tem medo de dirigir, há aulas extras com calma e no seu ritmo.',
+      pontos: ['Instrutores credenciados pelo Detran', 'Aula marcada pelo WhatsApp', 'Aulas para quem já tem carteira']
+    },
     cores: ['#2E6B4A', '#225238', '#E6F1EA'], layout: 'foto', reto: true, escuro: true,
     horario: 'Seg a sex, 7h às 19h · Sáb, 7h às 12h', endereco: 'Av. Exemplo, 700 · Centro',
     selo: 'Autoescola',
