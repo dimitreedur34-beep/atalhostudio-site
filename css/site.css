@@ -4907,3 +4907,287 @@ a.servico.em-foco .icone { background: var(--texto); color: #fff; }
 @media (max-width: 30em) {
   .modelo-tela .modelo-exemplo { font-size: 0.66rem; }
 }
+
+/* ---------- Sistemas: específico ou completo, exemplos e integrações ---------- */
+.duas-opcoes {
+  display: grid;
+  gap: var(--e-5);
+  margin-top: var(--e-7);
+}
+
+@media (min-width: 52em) {
+  .duas-opcoes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.opcao-sis {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  padding: var(--e-6);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: var(--papel);
+}
+
+.opcao-sis > .icone {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.opcao-sis small {
+  color: var(--texto-2);
+  font-size: var(--t-pequeno);
+}
+
+.opcao-sis h3 {
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.opcao-sis > p {
+  color: var(--texto-2);
+}
+
+.opcao-sis-completo {
+  border-color: var(--grafite);
+  box-shadow: 0 0 0 1px var(--grafite);
+}
+
+.nota-sis {
+  max-width: 44rem;
+  margin-top: var(--e-6);
+  color: var(--texto-2);
+}
+
+.cartoes-sis {
+  display: grid;
+  gap: var(--e-4);
+  margin-top: var(--e-7);
+}
+
+@media (min-width: 40em) {
+  .cartoes-sis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64em) {
+  .cartoes-sis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.cartoes-sis li {
+  display: grid;
+  align-content: start;
+  gap: var(--e-2);
+  padding: var(--e-5);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: var(--papel);
+}
+
+.cartoes-sis .icone {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: var(--e-2);
+}
+
+.cartoes-sis h3 {
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.cartoes-sis small,
+.cartoes-sis p {
+  color: var(--texto-2);
+}
+
+.cartoes-sis small {
+  font-size: var(--t-pequeno);
+}
+
+.cartoes-sis .precisa {
+  margin-top: var(--e-2);
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--linha);
+  font-size: var(--t-pequeno);
+}
+
+.cartoes-sis .precisa strong {
+  color: var(--texto);
+}
+
+/* ---------- Planos: detalhe de cada produto e descontos ---------- */
+.planos-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--e-3) var(--e-6);
+  margin-top: var(--e-4);
+}
+
+.detalhes-planos {
+  display: grid;
+  gap: var(--e-5);
+  margin-top: var(--e-7);
+}
+
+.detalhe {
+  display: grid;
+  gap: var(--e-5);
+  padding: var(--e-6);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: var(--papel);
+}
+
+@media (min-width: 60em) {
+  .detalhe {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    gap: var(--e-5) var(--e-7);
+  }
+}
+
+.detalhe-cabeca {
+  display: grid;
+  align-content: start;
+  gap: var(--e-3);
+}
+
+.detalhe h3 {
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+.detalhe-cabeca > p {
+  color: var(--texto-2);
+}
+
+.detalhe-para strong {
+  display: block;
+  color: var(--texto);
+}
+
+.detalhe-listas {
+  display: grid;
+  gap: var(--e-5);
+}
+
+@media (min-width: 40em) {
+  .detalhe-listas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.detalhe h4 {
+  margin-bottom: var(--e-3);
+  color: var(--texto-2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.detalhe-parte li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--texto-2);
+}
+
+.detalhe-parte li + li {
+  margin-top: 0.6rem;
+}
+
+.detalhe-parte li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+}
+
+.detalhe-ia {
+  grid-column: 1 / -1;
+  padding: var(--e-4) var(--e-5);
+  border-left: 2px solid var(--cobre);
+  background: var(--fundo-2);
+}
+
+.detalhe-ia a {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+.descontos {
+  display: grid;
+  gap: var(--e-4);
+  margin-top: var(--e-7);
+}
+
+@media (min-width: 48em) {
+  .descontos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 72em) {
+  .descontos {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.desconto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+  padding: var(--e-6) var(--e-5);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: var(--papel);
+}
+
+.desconto-valor {
+  font-family: var(--fonte-titulo);
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.desconto-sobre {
+  margin-bottom: var(--e-3);
+  color: var(--texto-2);
+  font-size: var(--t-pequeno);
+}
+
+.desconto h3 {
+  font-size: 1.2rem;
+}
+
+.desconto p {
+  color: var(--texto-2);
+}
+
+.desconto p strong,
+.desconto p span {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+.desconto .link-seta {
+  margin-top: auto;
+  padding-top: var(--e-3);
+}
+
+.desconto-destaque {
+  border-color: var(--grafite);
+  box-shadow: 0 0 0 1px var(--grafite);
+}
+
+.descontos-nota {
+  margin-top: var(--e-5);
+  color: var(--texto-2);
+  font-size: var(--t-pequeno);
+  text-align: center;
+}

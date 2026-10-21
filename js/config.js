@@ -23,6 +23,17 @@ export const CONFIG = {
     { id: 'pacote', nome: 'Site + WhatsApp', aPartirDe: 'R$ 749 + R$ 97 por mês', confirmado: true },
     { id: 'cuidado', nome: 'Cuidado mensal', aPartirDe: 'de R$ 39 a R$ 149 por mês', confirmado: true }
   ],
+  // Descontos: SUGESTÃO de 21/10/2026, ainda não aprovada pelo dono. Troque os valores e mude confirmado para true.
+  // Aparecem na página Planos (seção Descontos) por data-config="descontos.<nome>".
+  descontos: {
+    pacoteCompleto: '15%',
+    indicacao: '1 mês grátis',
+    indicado: '10%',
+    fundador: '20%',
+    fundadorVagas: '10',
+    anual: '2 meses grátis',
+    confirmado: false
+  },
   prazos: {
     entrega: '[PREENCHER: prazo de entrega que cumpre]',
     ajustes: '[PREENCHER: dias de ajustes depois da entrega]',
