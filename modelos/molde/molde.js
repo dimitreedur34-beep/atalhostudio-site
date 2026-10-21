@@ -18,6 +18,23 @@ if (n.reto) document.body.classList.add('cantos-retos');
 if (n.escuro) document.body.classList.add('tom-escuro');
 document.title = `${n.nome} | Modelo de demonstração`;
 
+// Fonte dos títulos própria do negócio (Google Fonts): fonte: ['Nome da fonte', 'pesos'].
+if (n.fonte) {
+  const [familia, pesos = '500;600;700'] = n.fonte;
+  for (const [href, cruzado] of [['https://fonts.googleapis.com', false], ['https://fonts.gstatic.com', true]]) {
+    const pre = el('link');
+    pre.rel = 'preconnect';
+    pre.href = href;
+    if (cruzado) pre.crossOrigin = '';
+    document.head.append(pre);
+  }
+  const folha = el('link');
+  folha.rel = 'stylesheet';
+  folha.href = `https://fonts.googleapis.com/css2?family=${familia.replaceAll(' ', '+')}:wght@${pesos}&display=swap`;
+  document.head.append(folha);
+  document.body.style.setProperty('--fonte-titulo', `'${familia}', ${n.serif ? 'Georgia, serif' : 'system-ui, sans-serif'}`);
+}
+
 function comIcone(nome, texto, tag = 'span', classe = null) {
   const item = el(tag, classe);
   item.append(ic(nome), document.createTextNode(texto));
@@ -66,6 +83,7 @@ document.querySelector('[data-logo]').append(ic(n.icone), nomeLogo);
 
 const LINKS = [
   ['#servicos', n.servicosTitulo],
+  ...(n.sobre ? [['#sobre', 'Sobre']] : []),
   ['#acao', ehPedido ? 'Seu pedido' : n.acao.botao],
   ['#duvidas', 'Dúvidas'],
   ['#contato', 'Contato']
@@ -106,6 +124,14 @@ if (n.layout === 'foto') {
 }
 hero.append(heroGrade);
 main.append(hero);
+
+/* ---------- Faixa com os serviços correndo ---------- */
+const faixa = el('div', 'faixa');
+faixa.setAttribute('aria-hidden', 'true');
+const trilho = el('div', 'faixa-trilho');
+for (let volta = 0; volta < 2; volta += 1) for (const servico of n.servicos) trilho.append(el('span', null, servico[1]));
+faixa.append(trilho);
+main.append(faixa);
 
 /* ---------- Serviços ou cardápio ---------- */
 const caixaServicos = secao('servicos', '', n.servicosTitulo, n.servicosLinha);
@@ -161,6 +187,21 @@ for (const [icone, nome, descricao, preco] of n.servicos) {
   gradeServicos.append(cartao);
 }
 caixaServicos.append(gradeServicos);
+
+/* ---------- Sobre (foto grande, texto e compromissos) ---------- */
+if (n.sobre) {
+  const caixaSobre = secao('sobre', 'secao-sobre');
+  caixaSobre.classList.add('sobre');
+  const quadro = el('figure', 'sobre-foto revela revela-foto');
+  quadro.append(foto('apoio', n.altApoio));
+  if (n.sobre.assinatura) quadro.append(el('figcaption', null, n.sobre.assinatura));
+  const texto = el('div', 'sobre-texto revela');
+  const pontos = el('ul', 'sobre-pontos');
+  pontos.setAttribute('role', 'list');
+  for (const ponto of n.sobre.pontos) pontos.append(comIcone('check', ponto, 'li'));
+  texto.append(el('small', 'sobre-selo', n.tipo), el('h2', null, n.sobre.titulo), el('p', null, n.sobre.texto), pontos);
+  caixaSobre.append(quadro, texto);
+}
 
 /* ---------- Diferenciais ---------- */
 const caixaDiferenciais = secao(null, 'secao-clara');
@@ -355,7 +396,30 @@ if (n.nota) dados.append(comIcone('info', n.nota, 'p', 'nota'));
 const linhaFalar = el('p');
 linhaFalar.append(falar);
 dados.append(linhaFalar);
-caixaContato.append(dados, foto('apoio', n.altApoio, 'contato-foto'));
+// Com a seção Sobre, a foto de apoio já apareceu: aqui entra um mapa ilustrativo.
+function mapa() {
+  const quadro = el('figure', 'mapa revela revela-foto');
+  const desenho = el('div', 'mapa-desenho');
+  desenho.setAttribute('aria-hidden', 'true');
+  desenho.innerHTML = `<svg viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice">
+    <rect width="600" height="420" class="mapa-fundo"/>
+    <rect x="352" y="40" width="150" height="110" rx="14" class="mapa-praca"/>
+    <path d="M-20 300 C 120 250, 260 330, 420 270 S 620 230, 640 250" class="mapa-rio"/>
+    <g class="mapa-ruas">
+      <path d="M0 175 H600"/><path d="M0 380 H600"/><path d="M120 0 V420"/><path d="M300 0 V420"/><path d="M530 0 V420"/>
+      <path d="M0 70 H330"/><path d="M210 175 V420"/><path d="M420 175 V420"/>
+    </g>
+    <path d="M-10 420 L260 0" class="mapa-avenida"/>
+  </svg>`;
+  const pino = el('div', 'mapa-pino');
+  pino.append(ic('map-pin'));
+  const etiqueta = el('p', 'mapa-etiqueta');
+  etiqueta.append(el('strong', null, n.curto), el('span', null, n.endereco));
+  desenho.append(pino, etiqueta);
+  quadro.append(desenho, el('figcaption', null, 'Mapa ilustrativo. No site de verdade, entra o mapa do Google com a sua localização.'));
+  return quadro;
+}
+caixaContato.append(dados, n.sobre ? mapa() : foto('apoio', n.altApoio, 'contato-foto'));
 
 /* ---------- Rodapé e botão fixo ---------- */
 document.querySelector('[data-rodape-nome]').textContent = `${n.nome} (nome fictício)`;

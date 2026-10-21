@@ -1038,6 +1038,260 @@ fieldset.campo {
   object-fit: cover;
 }
 
+/* Faixa com os serviços correndo (anima igual no computador e no celular) */
+.faixa {
+  overflow: hidden;
+  padding-block: 1.1rem;
+  border-block: 1px solid var(--linha);
+  background: var(--papel);
+}
+
+.faixa-trilho {
+  display: flex;
+  width: max-content;
+  animation: faixa-correr 45s linear infinite;
+}
+
+.faixa span {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.2rem;
+  padding-right: 2.2rem;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.35rem);
+  white-space: nowrap;
+}
+
+.faixa span::after {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--cor);
+}
+
+@keyframes faixa-correr {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Sobre: foto grande ao lado do texto */
+.sobre {
+  display: grid;
+  gap: clamp(2rem, 1rem + 4vw, 4.5rem);
+  align-items: center;
+}
+
+@media (min-width: 56em) {
+  .sobre {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  }
+}
+
+.sobre-foto {
+  position: relative;
+  margin: 0;
+}
+
+.sobre-foto img {
+  display: block;
+  width: 100%;
+  height: clamp(20rem, 14rem + 22vw, 34rem);
+  border-radius: var(--raio);
+  object-fit: cover;
+}
+
+.sobre-foto figcaption {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  max-width: calc(100% - 2rem);
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--raio-pequeno);
+  background: var(--papel);
+  color: var(--tinta);
+  font-size: 0.85rem;
+  box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.35);
+}
+
+.sobre-texto {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.sobre-selo {
+  color: var(--cor-escura);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sobre-texto h2 {
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.sobre-texto > p {
+  color: var(--cinza);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.sobre-pontos {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sobre-pontos li {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--linha);
+}
+
+.sobre-pontos .ic {
+  flex: none;
+  margin-top: 0.15rem;
+  color: var(--cor);
+}
+
+/* Mapa ilustrativo no contato */
+.mapa {
+  margin: 0;
+}
+
+.mapa-desenho {
+  position: relative;
+  height: clamp(18rem, 14rem + 12vw, 26rem);
+  overflow: hidden;
+  border-radius: var(--raio);
+}
+
+.mapa-desenho svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mapa-fundo {
+  fill: var(--cor-clara);
+}
+
+.mapa-praca {
+  fill: color-mix(in srgb, var(--cor) 14%, var(--cor-clara));
+}
+
+.mapa-rio {
+  fill: none;
+  stroke: color-mix(in srgb, var(--cor) 22%, #fff);
+  stroke-width: 26;
+}
+
+.mapa-ruas path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 12;
+}
+
+.mapa-avenida {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 22;
+}
+
+.mapa-pino {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50% 50% 50% 0;
+  background: var(--cor);
+  color: #fff;
+  transform: translate(-50%, -100%) rotate(-45deg);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.45);
+}
+
+.mapa-pino .ic {
+  transform: rotate(45deg);
+}
+
+.mapa-etiqueta {
+  position: absolute;
+  top: calc(44% + 0.6rem);
+  left: 50%;
+  display: grid;
+  margin: 0;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--raio-pequeno);
+  background: var(--papel);
+  font-size: 0.85rem;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.35);
+}
+
+.mapa-etiqueta span {
+  color: var(--cinza);
+  font-size: 0.8rem;
+}
+
+.mapa figcaption {
+  margin-top: 0.6rem;
+  color: var(--cinza);
+  font-size: 0.8rem;
+}
+
+/* Foto que se revela ao rolar (cortina de baixo para cima) */
+@media (prefers-reduced-motion: no-preference) {
+  .revela.revela-foto {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(18% 0 0 0 round var(--raio));
+    transition: clip-path 1.1s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .revela.revela-foto img,
+  .revela.revela-foto svg {
+    transform: scale(1.08);
+    transition: transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .revela-foto.visivel {
+    clip-path: inset(0 0 0 0 round var(--raio));
+  }
+
+  .revela-foto.visivel img,
+  .revela-foto.visivel svg {
+    transform: none;
+  }
+
+  .servicos .revela:nth-child(3n + 2),
+  .diferenciais .revela:nth-child(3n + 2) {
+    transition-delay: 0.08s;
+  }
+
+  .servicos .revela:nth-child(3n),
+  .diferenciais .revela:nth-child(3n) {
+    transition-delay: 0.16s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faixa-trilho {
+    animation: none;
+  }
+}
+
 /* Rodapé e botão fixo */
 .rodape {
   padding-block: 2rem 4.5rem;

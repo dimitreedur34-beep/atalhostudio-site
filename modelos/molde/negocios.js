@@ -6,6 +6,8 @@
 // servicos: [ícone, nome, descrição, preço ou detalhe]. No modo 'pedido' o preço é um número.
 // campos do formulário: { tipo: 'servico' | 'opcoes' | 'lista', nome, rotulo, opcoes }.
 // Profissões com regras de publicidade (saúde, psicologia, advocacia) não mostram preço nem promessa de resultado.
+// fonte (opcional): fonte dos títulos no Google Fonts, ['Nome', 'pesos']. sobre (opcional): seção Sobre com a foto
+// de apoio ({ titulo, texto, pontos, assinatura }); com ela, o contato mostra um mapa ilustrativo no lugar da foto.
 
 const DIAS = ['segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
 const DIAS_TER_SAB = DIAS.slice(1);
@@ -13,6 +15,13 @@ const DIAS_TER_SAB = DIAS.slice(1);
 export const NEGOCIOS = {
   medica: {
     nome: 'Clínica Vida Plena', curto: 'Vida Plena', tipo: 'Clínica médica', icone: 'stethoscope',
+    fonte: ['Plus Jakarta Sans', '600;700'],
+    sobre: {
+      titulo: 'Uma clínica de bairro, com estrutura de centro médico.',
+      texto: 'Consultas, exames e vacinas no mesmo endereço, para você resolver mais com menos idas. A equipe conhece os pacientes pelo nome e acompanha cada caso de perto.',
+      pontos: ['Médicos com registro no CRM', 'Coleta de exames no próprio local', 'Prontuário organizado e sigiloso'],
+      assinatura: 'Responsável técnico: Dr. Nome Sobrenome · CRM-MG 00000 (exemplo)'
+    },
     cores: ['#2F6E8C', '#235670', '#E7F1F5'], layout: 'dividido',
     horario: 'Seg a sex, 7h às 19h · Sáb, 7h às 12h', endereco: 'Rua Exemplo, 210 · Centro',
     selo: 'Clínica geral e especialidades',
@@ -60,6 +69,13 @@ export const NEGOCIOS = {
 
   psicologo: {
     nome: 'Espaço Escuta Psicologia', curto: 'Espaço Escuta', tipo: 'Psicologia', icone: 'brain',
+    fonte: ['Fraunces', '500;600'],
+    sobre: {
+      titulo: 'Um lugar seguro para conversar.',
+      texto: 'Atendimento com psicóloga registrada no Conselho Regional de Psicologia, com escuta sem julgamento e sigilo profissional. O ritmo é o seu: o processo é construído junto, sessão a sessão.',
+      pontos: ['Sigilo garantido pelo Código de Ética', 'Presencial ou online, com a mesma atenção', 'Primeira conversa para entender o que você busca'],
+      assinatura: 'Psicóloga · CRP 00/00000 (exemplo)'
+    },
     cores: ['#9A5A44', '#7C4835', '#F6ECE6'], layout: 'cartao', serif: true,
     horario: 'Seg a sex, 8h às 20h', endereco: 'Rua Exemplo, 88 · sala 3 · Centro',
     selo: 'Psicóloga · CRP 00/00000 (exemplo)',
@@ -104,6 +120,13 @@ export const NEGOCIOS = {
 
   fisioterapia: {
     nome: 'Movimento Fisioterapia', curto: 'Movimento', tipo: 'Fisioterapia e pilates', icone: 'activity',
+    fonte: ['Outfit', '600;700'],
+    sobre: {
+      titulo: 'Tratamento acompanhado de perto, do primeiro ao último dia.',
+      texto: 'Cada paciente passa por avaliação antes de começar. O plano de exercícios é pensado para a sua rotina, e o fisioterapeuta acompanha a evolução em todas as sessões.',
+      pontos: ['Avaliação antes de começar', 'Turmas pequenas no pilates', 'Exercícios para fazer em casa'],
+      assinatura: 'Fisioterapeuta · CREFITO-4 000000-F (exemplo)'
+    },
     cores: ['#2F7F72', '#23645A', '#E4F2EF'], layout: 'dividido', reto: true,
     horario: 'Seg a sex, 6h às 20h', endereco: 'Av. Exemplo, 1.200 · Centro',
     selo: 'Fisioterapia e pilates',
@@ -150,6 +173,13 @@ export const NEGOCIOS = {
 
   nutricionista: {
     nome: 'Nutri Equilíbrio', curto: 'Equilíbrio', tipo: 'Nutricionista', icone: 'apple',
+    fonte: ['Bricolage Grotesque', '600;700'],
+    sobre: {
+      titulo: 'Um plano que cabe na sua rotina, não o contrário.',
+      texto: 'A consulta começa pelo que você come hoje, pelo seu horário e pelo seu orçamento. O plano sai simples, com comida de verdade, e as dúvidas do dia a dia são respondidas pelo WhatsApp.',
+      pontos: ['Plano alimentar no celular', 'Dúvidas pelo WhatsApp entre as consultas', 'Presencial ou online'],
+      assinatura: 'Nutricionista · CRN-9 00000 (exemplo)'
+    },
     cores: ['#5C7A33', '#475F27', '#EEF3E4'], layout: 'cartao',
     horario: 'Seg a sex, 8h às 19h', endereco: 'Rua Exemplo, 77 · Centro',
     selo: 'Nutricionista · CRN 0000 (exemplo)',
@@ -195,6 +225,13 @@ export const NEGOCIOS = {
 
   veterinaria: {
     nome: 'Clínica Veterinária Bicho Bom', curto: 'Bicho Bom', tipo: 'Clínica veterinária', icone: 'paw-print',
+    fonte: ['Nunito', '700;800'],
+    sobre: {
+      titulo: 'Seu pet atendido com calma, por quem gosta de bicho.',
+      texto: 'Consultório separado para gatos, para eles chegarem menos estressados. A ficha de cada pet fica guardada, com o histórico de vacinas e o lembrete da próxima dose pelo WhatsApp.',
+      pontos: ['Médicos-veterinários com registro no CRMV', 'Espaço separado para gatos', 'Lembrete de vacina pelo WhatsApp'],
+      assinatura: 'Responsável técnico · CRMV-MG 00000 (exemplo)'
+    },
     cores: ['#3B6EA5', '#2D5683', '#E8EFF7'], layout: 'dividido',
     horario: 'Seg a sáb, 8h às 20h', endereco: 'Rua Exemplo, 640 · Centro',
     selo: 'Cães e gatos',
