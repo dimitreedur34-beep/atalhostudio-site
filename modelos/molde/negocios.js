@@ -20,7 +20,7 @@ export const NEGOCIOS = {
       titulo: 'Uma clínica de bairro, com estrutura de centro médico.',
       texto: 'Consultas, exames e vacinas no mesmo endereço, para você resolver mais com menos idas. A equipe conhece os pacientes pelo nome e acompanha cada caso de perto.',
       pontos: ['Médicos com registro no CRM', 'Coleta de exames no próprio local', 'Prontuário organizado e sigiloso'],
-      assinatura: 'Responsável técnico: Dr. Nome Sobrenome · CRM-MG 00000 (exemplo)'
+      assinatura: 'Responsável técnico · CRM-MG 00000 (exemplo)'
     },
     cores: ['#2F6E8C', '#235670', '#E7F1F5'], layout: 'dividido',
     horario: 'Seg a sex, 7h às 19h · Sáb, 7h às 12h', endereco: 'Rua Exemplo, 210 · Centro',
@@ -648,7 +648,7 @@ export const NEGOCIOS = {
       titulo: 'Atendimento jurídico com clareza e discrição.',
       texto: 'Na primeira consulta, você entende a sua situação, os caminhos possíveis e os custos envolvidos. Cada caso é tratado com sigilo, como determina o Código de Ética da OAB.',
       pontos: ['Sigilo profissional', 'Explicação em linguagem simples', 'Andamento do processo informado pelo WhatsApp'],
-      assinatura: 'Advogada · OAB/MG 000.000 (exemplo)'
+      assinatura: 'Sociedade de advogados · OAB/MG 0.000 (exemplo)'
     },
     cores: ['#1F4D3F', '#173B30', '#EAF1EE'], layout: 'dividido', serif: true, reto: true,
     horario: 'Seg a sex, 9h às 18h', endereco: 'Av. Exemplo, 1.500 · sala 804 · Centro',
