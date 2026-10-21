@@ -436,6 +436,12 @@ export const NEGOCIOS = {
 
   confeitaria: {
     nome: 'Doce Fornada', curto: 'Doce Fornada', tipo: 'Confeitaria e padaria', icone: 'cake-slice',
+    fonte: ['DM Serif Display', '400'],
+    sobre: {
+      titulo: 'Feito aqui, no dia, com receita de casa.',
+      texto: 'Bolos, doces e salgados saem da nossa cozinha, sem massa pronta. As encomendas são preparadas para chegar fresquinhas na data da sua festa.',
+      pontos: ['Massa feita aqui, todo dia', 'Retirada ou entrega na data marcada', 'Valor confirmado antes de começar']
+    },
     cores: ['#7A4B32', '#5F3A27', '#F8EFE6'], layout: 'cartao', serif: true,
     horario: 'Seg a sáb, 6h às 20h · Dom, 7h às 12h', endereco: 'Rua Exemplo, 300 · Centro',
     selo: 'Confeitaria e padaria',
@@ -481,6 +487,12 @@ export const NEGOCIOS = {
 
   pizzaria: {
     nome: 'Bella Massa Pizzaria', curto: 'Bella Massa', tipo: 'Pizzaria e delivery', icone: 'pizza',
+    fonte: ['Archivo', '700;800'],
+    sobre: {
+      titulo: 'Pizza artesanal, do forno direto para a sua casa.',
+      texto: 'A massa descansa por muitas horas antes de ir para o forno a lenha. É isso que deixa a borda leve e crocante, do jeito que pizza tem de ser.',
+      pontos: ['Massa de longa fermentação', 'Forno a lenha', 'Pedido direto pelo WhatsApp, sem aplicativo no meio']
+    },
     cores: ['#B23A2E', '#8E2E25', '#FBEDEA'], layout: 'foto', reto: true, escuro: true,
     horario: 'Ter a dom, 18h às 23h30', endereco: 'Av. Exemplo, 900 · Centro',
     selo: 'Pizzaria e delivery',
@@ -526,6 +538,12 @@ export const NEGOCIOS = {
 
   petshop: {
     nome: 'Pet Amigo', curto: 'Pet Amigo', tipo: 'Pet shop, banho e tosa', icone: 'dog',
+    fonte: ['Baloo 2', '600;700'],
+    sobre: {
+      titulo: 'Banho e tosa com carinho e sem pressa.',
+      texto: 'Cada pet é atendido no seu tempo, com produtos próprios para a pele dele. Quando fica pronto, você recebe uma foto pelo WhatsApp e combina a busca.',
+      pontos: ['Produtos próprios para cada pelagem', 'Busca e entrega em casa', 'Foto pelo WhatsApp quando fica pronto']
+    },
     cores: ['#A8621F', '#874E18', '#FBF1E4'], layout: 'dividido',
     horario: 'Seg a sáb, 8h às 18h', endereco: 'Rua Exemplo, 520 · Centro',
     selo: 'Pet shop, banho e tosa',
