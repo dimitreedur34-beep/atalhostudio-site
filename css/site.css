@@ -1387,18 +1387,189 @@ input.wa-campo:focus-visible {
   margin-bottom: 0;
 }
 
-.ia-diferenca {
-  display: grid;
-  gap: var(--e-4);
+.ia-ver a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--texto);
+  font-weight: 600;
+  text-underline-offset: 0.2em;
 }
 
-.ia-diferenca li {
-  display: grid;
-  gap: 0.2rem;
+.ia-ver .icone {
+  width: 1rem;
+  height: 1rem;
 }
 
-.ia-diferenca span {
+/* Comparação Sem IA x Com IA: a coluna "Com IA" fica em destaque */
+.comparar {
+  margin-top: var(--e-8);
+  scroll-margin-top: calc(var(--altura-topo) + 1rem);
+}
+
+.comparar-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.comparar-tabela {
+  width: 100%;
+  margin-top: var(--e-6);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.comparar-tabela th,
+.comparar-tabela td {
+  padding: var(--e-4) var(--e-5);
+  border-bottom: 1px solid var(--linha);
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparar-tabela thead th {
+  position: relative;
+  border-bottom: 0;
+  font: 600 1.15rem/1.2 var(--fonte-titulo);
+  vertical-align: bottom;
+}
+
+.comparar-tabela thead small {
+  display: block;
+  margin-top: 0.25rem;
   color: var(--texto-2);
+  font: 500 var(--t-pequeno)/1.3 var(--fonte-texto);
+}
+
+.comparar-tabela tbody th {
+  width: 24%;
+  font-weight: 600;
+}
+
+.comparar-tabela td {
+  color: var(--texto-2);
+}
+
+.comparar-tabela td .icone {
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 0.5rem;
+  vertical-align: -0.2em;
+}
+
+.comparar-tabela td.comparar-ia {
+  border-inline: 2px solid var(--grafite);
+  background: var(--papel);
+  color: var(--texto);
+}
+
+.comparar-tabela td.comparar-ia .icone {
+  color: var(--cobre);
+}
+
+.comparar-tabela thead th.comparar-ia {
+  padding-top: var(--e-5);
+  border-radius: 14px 14px 0 0;
+  background: var(--grafite);
+  color: #fff;
+}
+
+.comparar-tabela thead th.comparar-ia small {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.comparar-tabela tbody tr:last-child td.comparar-ia {
+  border-bottom: 2px solid var(--grafite);
+  border-radius: 0 0 14px 14px;
+}
+
+.comparar-selo {
+  position: absolute;
+  top: var(--e-4);
+  right: var(--e-4);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--grafite);
+  font: 700 0.68rem/1.2 var(--fonte-texto);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.comparar-fecho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-5);
+  margin-top: var(--e-6);
+}
+
+.comparar-fecho p {
+  max-width: 34rem;
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem);
+  line-height: 1.4;
+}
+
+/* No celular, cada tópico vira um cartão com "Sem IA" e "Com IA" um embaixo do outro */
+@media (max-width: 47.99em) {
+  .comparar-tabela,
+  .comparar-tabela tbody,
+  .comparar-tabela tr,
+  .comparar-tabela th,
+  .comparar-tabela td {
+    display: block;
+    width: auto;
+  }
+
+  .comparar-tabela thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .comparar-tabela tr {
+    padding-block: var(--e-5);
+    border-bottom: 1px solid var(--linha);
+  }
+
+  .comparar-tabela tbody th {
+    width: auto;
+    padding: 0 0 var(--e-3);
+    border: 0;
+  }
+
+  .comparar-tabela td {
+    padding: 0.7rem 0.85rem;
+    border: 0;
+  }
+
+  .comparar-tabela td::before {
+    content: attr(data-rotulo);
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--texto-2);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .comparar-tabela td.comparar-ia,
+  .comparar-tabela tbody tr:last-child td.comparar-ia {
+    margin-top: 0.4rem;
+    border: 2px solid var(--grafite);
+    border-radius: 12px;
+  }
+
+  .comparar-tabela td.comparar-ia::before {
+    color: var(--grafite);
+  }
 }
 
 .explica-lista {
