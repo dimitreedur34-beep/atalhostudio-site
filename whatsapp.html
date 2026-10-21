@@ -52,8 +52,47 @@
       </div>
     </section>
 
+    <!-- Demonstração com IA (simulada, js/conversa-ia.js) -->
+    <section class="secao" aria-labelledby="ia-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="ia-titulo">Com IA, o cliente escreve do jeito dele</h2>
+          <p>Pergunte como um cliente perguntaria, com abreviação e tudo. Depois troque para "Sem IA" e mande a mesma pergunta.</p>
+        </div>
+
+        <div class="ia-controles revelar">
+          <div class="filtro-modelos" role="group" aria-label="Área da demonstração" data-ia-areas></div>
+          <div class="segmentos" role="group" aria-label="Tipo de atendimento" data-ia-modo>
+            <button type="button" aria-pressed="false" data-valor="sem">Sem IA</button>
+            <button type="button" aria-pressed="true" data-valor="com">Com IA</button>
+          </div>
+        </div>
+
+        <div class="palco-whats">
+          <div class="palco-celular">
+            <div class="celular" data-whats="ia"></div>
+            <p class="legenda">Demonstração simulada · dados fictícios</p>
+          </div>
+
+          <div class="explica">
+            <div class="explica-cartao" aria-live="polite">
+              <small data-ia-titulo>Com IA</small>
+              <p data-ia-nota>Escreva uma pergunta no celular, do jeito que um cliente escreveria.</p>
+            </div>
+            <ul class="ia-diferenca" role="list">
+              <li><strong>Sem IA</strong><span>Entende só os botões. O que o cliente escreve cai no "não entendi".</span></li>
+              <li><strong>Com IA</strong><span>Entende a pergunta escrita e responde só com o que você aprovou. Quando não sabe, diz isso e passa para uma pessoa.</span></li>
+            </ul>
+            <div class="acoes" style="margin-top:0">
+              <a class="botao botao-whats" href="#contato" data-wa="geral" data-wa-mensagem="Oi! Testei o atendimento com IA no site da Atalho Studio e quero saber como fica no meu WhatsApp." data-posicao="whatsapp-ia"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#whatsapp"></use></svg>Quero com IA no meu WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Vídeo de demonstração -->
-    <section class="secao" aria-labelledby="video-whats-titulo">
+    <section class="secao secao-areia" aria-labelledby="video-whats-titulo">
       <div class="recipiente video-grade">
         <div class="cabeca revelar">
           <h2 id="video-whats-titulo">Prefere assistir? 30 segundos de atendimento</h2>

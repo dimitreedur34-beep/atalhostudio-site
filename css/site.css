@@ -865,6 +865,73 @@ a.servico:hover .link-seta .icone {
   cursor: pointer;
 }
 
+input.wa-campo {
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 1rem; /* 16px: o iPhone não dá zoom ao tocar no campo */
+}
+
+input.wa-campo::placeholder {
+  color: #8696A0;
+}
+
+input.wa-campo:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--wa-botao);
+}
+
+.wa-sugestoes {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.45rem 0.55rem 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.wa-sugestoes::-webkit-scrollbar {
+  display: none;
+}
+
+.wa-sugestoes button {
+  flex: none;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid rgba(11, 20, 26, 0.1);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--wa-texto);
+  font: 500 0.8rem/1.2 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.wa-sugestoes button:hover:not(:disabled) {
+  background: #F2F7F5;
+}
+
+.wa-sugestoes button:disabled {
+  color: #8696A0;
+  cursor: default;
+}
+
+.wa-sugestoes button:focus-visible {
+  outline: 2px solid var(--wa-botao);
+  outline-offset: -2px;
+}
+
+.wa-evento {
+  align-self: center;
+  margin-top: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: var(--wa-hora);
+  font-size: 0.74rem;
+  text-align: center;
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+  animation: wa-chega 0.25s ease-out;
+}
+
 .wa-enviar:disabled {
   background: #A8B3B9;
   cursor: default;
@@ -1279,6 +1346,7 @@ a.servico:hover .link-seta .icone {
 
 .palco-celular {
   display: grid;
+  grid-template-columns: minmax(0, 1fr); /* a fileira de sugestões não estica a coluna */
   justify-items: center;
   gap: var(--e-4);
 }
@@ -1303,6 +1371,34 @@ a.servico:hover .link-seta .icone {
   font-size: clamp(1.2rem, 1.05rem + 0.5vw, 1.45rem);
   line-height: 1.4;
   letter-spacing: -0.01em;
+}
+
+/* Demonstração com IA (simulada) */
+.ia-controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-4);
+  margin-top: var(--e-7);
+}
+
+.ia-controles .filtro-modelos {
+  margin-bottom: 0;
+}
+
+.ia-diferenca {
+  display: grid;
+  gap: var(--e-4);
+}
+
+.ia-diferenca li {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.ia-diferenca span {
+  color: var(--texto-2);
 }
 
 .explica-lista {

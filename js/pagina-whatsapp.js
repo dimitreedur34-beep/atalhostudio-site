@@ -3,6 +3,7 @@ import { AREAS, CATEGORIAS } from './dados.js';
 import { criarCelular, rodarConversa } from './conversa-whats.js';
 import { icone } from './icones.js';
 import { iniciarFluxo, iniciarControleWhats } from './controle.js';
+import { iniciarDemoIA } from './conversa-ia.js';
 
 function el(tag, classe, texto) {
   const elemento = document.createElement(tag);
@@ -14,6 +15,7 @@ function el(tag, classe, texto) {
 export function iniciar({ atualizarLink }) {
   iniciarFluxo();
   iniciarControleWhats();
+  iniciarDemoIA();
   const grade = document.querySelector('[data-areas]');
   const alvo = document.querySelector('[data-whats="pagina"]');
   if (!grade || !alvo) return;

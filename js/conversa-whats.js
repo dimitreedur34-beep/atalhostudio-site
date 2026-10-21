@@ -1,4 +1,5 @@
 // Celular com WhatsApp: monta a tela e roda uma conversa de demonstração com botões.
+// Com { escrever: true }, o campo vira de verdade e o visitante digita (demonstração com IA, conversa-ia.js).
 // Texto sempre por textContent.
 import { icone } from './icones.js';
 const reduzirMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -11,7 +12,7 @@ function el(tag, classe, texto) {
   return elemento;
 }
 
-export function criarCelular(raiz) {
+export function criarCelular(raiz, { escrever = false } = {}) {
   const wa = el('div', 'wa');
   const topo = el('div', 'wa-topo');
   const voltar = icone('chevron-left', 'wa-voltar');
@@ -27,21 +28,29 @@ export function criarCelular(raiz) {
   conversa.setAttribute('role', 'log');
   conversa.setAttribute('aria-label', 'Conversa de demonstração no WhatsApp');
 
-  const rodape = el('div', 'wa-rodape');
-  const campo = el('div', 'wa-campo wa-vazio', 'Mensagem');
-  campo.setAttribute('aria-hidden', 'true');
+  const rodape = el(escrever ? 'form' : 'div', 'wa-rodape');
+  const campo = escrever ? el('input', 'wa-campo') : el('div', 'wa-campo wa-vazio', 'Mensagem');
+  if (escrever) {
+    Object.assign(campo, { type: 'text', placeholder: 'Escreva sua pergunta', autocomplete: 'off', maxLength: 140, enterKeyHint: 'send' });
+    campo.setAttribute('aria-label', 'Escreva uma mensagem');
+  } else campo.setAttribute('aria-hidden', 'true');
   const enviar = el('button', 'wa-enviar');
-  enviar.type = 'button';
+  enviar.type = escrever ? 'submit' : 'button';
   enviar.append(icone('send-horizontal'));
   enviar.disabled = true;
   enviar.setAttribute('aria-label', 'Enviar mensagem');
   rodape.append(campo, enviar);
 
-  wa.append(topo, conversa, rodape);
+  const sugestoes = el('div', 'wa-sugestoes');
+  sugestoes.setAttribute('role', 'group');
+  sugestoes.setAttribute('aria-label', 'Sugestões de pergunta');
+  wa.append(topo, conversa, ...(escrever ? [sugestoes] : []), rodape);
   raiz.replaceChildren(wa);
 
   let ultimo = null;
   let aoEnviar = null;
+  let aoEscrever = null;
+  let travado = false;
   let hora = 7;
 
   const rolar = () => {
@@ -61,21 +70,37 @@ export function criarCelular(raiz) {
     rolar();
   }
 
-  enviar.addEventListener('click', () => aoEnviar && aoEnviar());
+  const atualizarEnviar = () => {
+    const temTexto = Boolean(campo.value.trim());
+    enviar.disabled = travado || !temTexto;
+    enviar.classList.toggle('wa-chamando', temTexto && !travado);
+  };
+
+  if (escrever) {
+    campo.addEventListener('input', atualizarEnviar);
+    rodape.addEventListener('submit', (evento) => {
+      evento.preventDefault();
+      const texto = campo.value.trim();
+      if (!texto || travado || !aoEscrever) return;
+      campo.value = '';
+      aoEscrever(texto);
+    });
+  } else enviar.addEventListener('click', () => aoEnviar && aoEnviar());
 
   return {
     rodada: 0,
-    limpar(area) {
+    limpar(area, aviso = 'Demonstração com dados fictícios') {
       wa.style.setProperty('--cor', area.cor);
       nome.textContent = area.negocio;
       avatar.textContent = area.negocio.charAt(0);
       status.textContent = 'online';
       ultimo = null;
       hora = 7;
-      conversa.replaceChildren(el('div', 'wa-data', 'Hoje'), el('div', 'wa-aviso', 'Demonstração com dados fictícios'));
+      conversa.replaceChildren(el('div', 'wa-data', 'Hoje'), el('div', 'wa-aviso', aviso));
       this.sugerir(null);
     },
     sugerir(texto, acao) {
+      if (escrever) return;
       aoEnviar = acao || null;
       campo.textContent = texto || 'Mensagem';
       campo.classList.toggle('wa-vazio', !texto);
@@ -129,6 +154,36 @@ export function criarCelular(raiz) {
     },
     avancarHora() {
       hora = Math.min(hora + 1, 59);
+    },
+    // Só no modo escrever:
+    aoEscrever(acao) {
+      aoEscrever = acao;
+    },
+    preencher(texto) {
+      campo.value = texto || '';
+      atualizarEnviar();
+    },
+    travar(sim) {
+      travado = sim;
+      sugestoes.querySelectorAll('button').forEach((botao) => (botao.disabled = sim));
+      atualizarEnviar();
+    },
+    sugestoes(lista, aoEscolher) {
+      sugestoes.replaceChildren(
+        ...lista.map((texto) => {
+          const botao = el('button', null, texto);
+          botao.type = 'button';
+          botao.addEventListener('click', () => !travado && aoEscolher(texto));
+          return botao;
+        })
+      );
+      sugestoes.scrollLeft = 0;
+    },
+    // Linha do sistema no meio da conversa (ex.: "Conversa passada para a recepção").
+    evento(texto) {
+      conversa.append(el('div', 'wa-evento', texto));
+      ultimo = null;
+      rolar();
     }
   };
 }
