@@ -191,7 +191,7 @@ export function responderComIA(areaBruta, textoOriginal, estado) {
 }
 
 // Sem IA: só entende "oi" e os botões.
-function responderSemIA(areaBruta, textoOriginal, estado) {
+export function responderSemIA(areaBruta, textoOriginal, estado) {
   const area = preparada(areaBruta);
   const texto = normalizar(textoOriginal);
   const tokens = texto.trim().split(' ').filter(Boolean);
