@@ -1,4 +1,4 @@
-// Profundidade (3D): telas que ficam de pé ao rolar, cartões que inclinam com o mouse e o símbolo que flutua.
+// Profundidade (3D): telas que ficam de pé ao rolar e o símbolo que flutua.
 // Usa as propriedades individuais rotate/scale/translate, que se somam ao transform do .revelar
 // sem brigar com ele. Nada disso roda com "reduzir movimento" ligado.
 const parado = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -49,29 +49,6 @@ function iniciarTelasEmPe() {
   addEventListener('resize', agendar);
 }
 
-// Cartões que inclinam na direção do mouse (só onde existe mouse).
-const CARTOES = '.plano, .modelo, a.servico, .fatos li, .recursos li, .papel';
-
-function iniciarInclinar() {
-  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-  for (const cartao of document.querySelectorAll(CARTOES)) {
-    if (cartao.parentElement) cartao.parentElement.style.perspective = '1200px';
-    cartao.classList.add('inclina');
-    cartao.addEventListener('pointermove', (evento) => {
-      const caixa = cartao.getBoundingClientRect();
-      const x = (evento.clientX - caixa.left) / caixa.width - 0.5;
-      const y = (evento.clientY - caixa.top) / caixa.height - 0.5;
-      const angulo = Math.min(7, Math.hypot(x, y) * 12);
-      cartao.style.rotate = `${(-y).toFixed(3)} ${x.toFixed(3)} 0 ${angulo.toFixed(2)}deg`;
-      cartao.style.translate = '0 -4px';
-    });
-    cartao.addEventListener('pointerleave', () => {
-      cartao.style.rotate = '';
-      cartao.style.translate = '';
-    });
-  }
-}
-
 // Símbolo do topo: flutua devagar e acompanha o mouse, como se estivesse um pouco à frente da página.
 function iniciarSimbolo() {
   const simbolo = document.querySelector('.hero-simbolo');
@@ -95,6 +72,5 @@ export function iniciarProfundidade() {
   if (parado() || !('IntersectionObserver' in window) || document.body.dataset.pagina === 'ver') return;
   document.documentElement.classList.add('com-3d');
   iniciarTelasEmPe();
-  iniciarInclinar();
   iniciarSimbolo();
 }
