@@ -8,6 +8,7 @@
 // Profissões com regras de publicidade (saúde, psicologia, advocacia) não mostram preço nem promessa de resultado.
 // fonte (opcional): fonte dos títulos no Google Fonts, ['Nome', 'pesos']. sobre (opcional): seção Sobre com a foto
 // de apoio ({ titulo, texto, pontos, assinatura }); com ela, o contato mostra um mapa ilustrativo no lugar da foto.
+// galeria (opcional): textos alternativos das fotos fotos/<id>-galeria-1.webp, -2 e -3 (Unsplash, ver fotos/CREDITOS.txt).
 
 const DIAS = ['segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
 const DIAS_TER_SAB = DIAS.slice(1);
@@ -15,6 +16,7 @@ const DIAS_TER_SAB = DIAS.slice(1);
 export const NEGOCIOS = {
   medica: {
     nome: 'Clínica Vida Plena', curto: 'Vida Plena', tipo: 'Clínica médica', icone: 'stethoscope',
+    galeria: ['Recepção da clínica', 'Médico conversando com um paciente no consultório', 'Estetoscópio sobre a mesa'],
     fonte: ['Plus Jakarta Sans', '600;700'],
     sobre: {
       titulo: 'Uma clínica de bairro, com estrutura de centro médico.',
@@ -69,6 +71,7 @@ export const NEGOCIOS = {
 
   psicologo: {
     nome: 'Espaço Escuta Psicologia', curto: 'Espaço Escuta', tipo: 'Psicologia', icone: 'brain',
+    galeria: ['Sala de atendimento com sofá e mesa de madeira', 'Duas pessoas conversando sentadas', 'Sala de espera com cadeiras brancas e plantas'],
     fonte: ['Fraunces', '500;600'],
     sobre: {
       titulo: 'Um lugar seguro para conversar.',
@@ -120,6 +123,7 @@ export const NEGOCIOS = {
 
   fisioterapia: {
     nome: 'Movimento Fisioterapia', curto: 'Movimento', tipo: 'Fisioterapia e pilates', icone: 'activity',
+    galeria: ['Fisioterapeuta examinando a perna de um paciente', 'Massagem terapêutica no ombro', 'Exercício com bola de pilates'],
     fonte: ['Outfit', '600;700'],
     sobre: {
       titulo: 'Tratamento acompanhado de perto, do primeiro ao último dia.',
@@ -173,6 +177,7 @@ export const NEGOCIOS = {
 
   nutricionista: {
     nome: 'Nutri Equilíbrio', curto: 'Equilíbrio', tipo: 'Nutricionista', icone: 'apple',
+    galeria: ['Tigela de salada colorida', 'Iogurte com frutas no café da manhã', 'Marmitas de vidro com refeições prontas'],
     fonte: ['Bricolage Grotesque', '600;700'],
     sobre: {
       titulo: 'Um plano que cabe na sua rotina, não o contrário.',
@@ -225,6 +230,7 @@ export const NEGOCIOS = {
 
   veterinaria: {
     nome: 'Clínica Veterinária Bicho Bom', curto: 'Bicho Bom', tipo: 'Clínica veterinária', icone: 'paw-print',
+    galeria: ['Gatinho sendo examinado pelo veterinário', 'Veterinário segurando um cachorro pequeno', 'Gato no colo durante a consulta'],
     fonte: ['Nunito', '700;800'],
     sobre: {
       titulo: 'Seu pet atendido com calma, por quem gosta de bicho.',
@@ -279,6 +285,7 @@ export const NEGOCIOS = {
 
   salao: {
     nome: 'Salão Flor de Lis', curto: 'Flor de Lis', tipo: 'Salão de beleza', icone: 'scissors',
+    galeria: ['Escova com secador no salão', 'Salão com cadeiras pretas e espelhos redondos', 'Escovas, tesoura e pincel de coloração'],
     fonte: ['Playfair Display', '500;600'],
     sobre: {
       titulo: 'Um salão onde você é ouvida antes da tesoura.',
@@ -331,6 +338,7 @@ export const NEGOCIOS = {
 
   barbearia: {
     nome: 'Barbearia Navalha', curto: 'Navalha', tipo: 'Barbearia', icone: 'scissors',
+    galeria: ['Cadeira de barbeiro perto da parede de tijolos', 'Barbeiro cortando o cabelo de um cliente', 'Máquinas, tesoura e pente sobre a bancada'],
     fonte: ['Oswald', '500;600'],
     sobre: {
       titulo: 'Barbearia de bairro, com hora marcada.',
@@ -384,6 +392,7 @@ export const NEGOCIOS = {
 
   estetica: {
     nome: 'Essência Estética', curto: 'Essência', tipo: 'Estética', icone: 'flower-2',
+    galeria: ['Cliente recebendo máscara facial', 'Tratamento facial de cuidado com a pele', 'Toalhas e produtos na sala de estética'],
     fonte: ['Cormorant Garamond', '600;700'],
     sobre: {
       titulo: 'Cuidado com a pele, sem promessa milagrosa.',
@@ -436,6 +445,7 @@ export const NEGOCIOS = {
 
   confeitaria: {
     nome: 'Doce Fornada', curto: 'Doce Fornada', tipo: 'Confeitaria e padaria', icone: 'cake-slice',
+    galeria: ['Vitrine com bolos e tortas', 'Bolo com morangos', 'Cupcakes de chocolate na prateleira'],
     fonte: ['DM Serif Display', '400'],
     sobre: {
       titulo: 'Feito aqui, no dia, com receita de casa.',
@@ -487,6 +497,7 @@ export const NEGOCIOS = {
 
   pizzaria: {
     nome: 'Bella Massa Pizzaria', curto: 'Bella Massa', tipo: 'Pizzaria e delivery', icone: 'pizza',
+    galeria: ['Pizza assando no forno a lenha', 'Pizzaiolo com a pá ao lado do forno', 'Fatia de pizza servida na tábua'],
     fonte: ['Archivo', '700;800'],
     sobre: {
       titulo: 'Pizza artesanal, do forno direto para a sua casa.',
@@ -538,6 +549,7 @@ export const NEGOCIOS = {
 
   petshop: {
     nome: 'Pet Amigo', curto: 'Pet Amigo', tipo: 'Pet shop, banho e tosa', icone: 'dog',
+    galeria: ['Tosa com tesoura em um cachorro branco', 'Escovação do pelo de um cachorro', 'Cachorro enrolado na toalha depois do banho'],
     fonte: ['Baloo 2', '600;700'],
     sobre: {
       titulo: 'Banho e tosa com carinho e sem pressa.',
@@ -591,6 +603,7 @@ export const NEGOCIOS = {
 
   oficina: {
     nome: 'Auto Center Torque', curto: 'Torque', tipo: 'Oficina mecânica', icone: 'wrench',
+    galeria: ['Mecânico inspecionando o motor', 'Oficina com carros em manutenção', 'Mãos trabalhando no motor com uma chave'],
     fonte: ['Barlow Condensed', '600;700'],
     sobre: {
       titulo: 'Você aprova o orçamento antes de qualquer serviço.',
@@ -643,6 +656,7 @@ export const NEGOCIOS = {
 
   advocacia: {
     nome: 'Prado Advocacia', curto: 'Prado', tipo: 'Advocacia', icone: 'scale',
+    galeria: ['Estante com livros', 'Assinatura de documento em reunião', 'Pessoa escrevendo à mesa'],
     fonte: ['Libre Baskerville', '400;700'],
     sobre: {
       titulo: 'Atendimento jurídico com clareza e discrição.',
@@ -695,6 +709,7 @@ export const NEGOCIOS = {
 
   idiomas: {
     nome: 'Fala Bem Idiomas', curto: 'Fala Bem', tipo: 'Escola de idiomas', icone: 'languages',
+    galeria: ['Professora apresentando para a turma', 'Alunos conversando na sala de aula', 'Blocos de letras sobre a mesa de estudo'],
     fonte: ['Manrope', '600;700;800'],
     sobre: {
       titulo: 'Turmas pequenas, para todo mundo falar na aula.',
@@ -747,6 +762,7 @@ export const NEGOCIOS = {
 
   autoescola: {
     nome: 'Autoescola Rota Certa', curto: 'Rota Certa', tipo: 'Autoescola', icone: 'car-front',
+    galeria: ['Instrutor com prancheta durante a aula prática', 'Mãos no volante durante a direção', 'Aluna sentada ao volante'],
     fonte: ['Space Grotesk', '600;700'],
     sobre: {
       titulo: 'Aprender a dirigir, sem pressão.',

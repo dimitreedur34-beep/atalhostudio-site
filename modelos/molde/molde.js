@@ -203,6 +203,24 @@ if (n.sobre) {
   caixaSobre.append(quadro, texto);
 }
 
+/* ---------- Galeria: uma foto grande e duas menores ---------- */
+if (n.galeria) {
+  const caixaGaleria = secao('galeria', '', 'Por dentro', 'Um pouco do dia a dia.');
+  const grade = el('div', 'galeria');
+  n.galeria.forEach((alt, i) => {
+    const quadro = el('figure', 'galeria-item revela revela-foto');
+    const img = el('img');
+    img.src = `fotos/${id}-galeria-${i + 1}.webp`;
+    img.alt = alt;
+    img.width = 1100;
+    img.height = 733;
+    img.loading = 'lazy';
+    quadro.append(img);
+    grade.append(quadro);
+  });
+  caixaGaleria.append(grade);
+}
+
 /* ---------- Diferenciais ---------- */
 const caixaDiferenciais = secao(null, 'secao-clara');
 const diferenciais = el('div', 'diferenciais');
