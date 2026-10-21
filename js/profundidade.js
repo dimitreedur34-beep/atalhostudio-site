@@ -1,4 +1,4 @@
-// Profundidade (3D) e títulos que entram palavra por palavra.
+// Profundidade (3D): telas que ficam de pé ao rolar, cartões que inclinam com o mouse e o símbolo que flutua.
 // Usa as propriedades individuais rotate/scale/translate, que se somam ao transform do .revelar
 // sem brigar com ele. Nada disso roda com "reduzir movimento" ligado.
 const parado = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -90,56 +90,10 @@ function iniciarSimbolo() {
   );
 }
 
-// Títulos das seções: cada palavra sobe girando, uma depois da outra.
-function iniciarTitulos() {
-  const titulos = document.querySelectorAll('#hero-titulo, .cabeca h2, .titulo-pagina');
-  if (!titulos.length || !('IntersectionObserver' in window)) return;
-  for (const titulo of titulos) {
-    if (titulo.closest('.frase-efeito') || titulo.dataset.palavras) continue;
-    titulo.dataset.palavras = 'sim';
-    let i = 0;
-    for (const no of [...titulo.childNodes]) {
-      if (no.nodeType === Node.TEXT_NODE) {
-        const pedacos = no.textContent.split(/(\s+)/);
-        const fragmento = document.createDocumentFragment();
-        for (const pedaco of pedacos) {
-          if (!pedaco) continue;
-          if (/^\s+$/.test(pedaco)) {
-            fragmento.append(document.createTextNode(pedaco));
-          } else {
-            const palavra = document.createElement('span');
-            palavra.className = 'palavra';
-            palavra.style.setProperty('--i', String(i++));
-            palavra.textContent = pedaco;
-            fragmento.append(palavra);
-          }
-        }
-        no.replaceWith(fragmento);
-      } else if (no.nodeType === Node.ELEMENT_NODE && no.tagName !== 'BR') {
-        no.classList.add('palavra');
-        no.style.setProperty('--i', String(i++));
-      }
-    }
-    titulo.classList.add('titulo-3d');
-  }
-  const observador = new IntersectionObserver(
-    (entradas) => {
-      for (const entrada of entradas) {
-        if (!entrada.isIntersecting) continue;
-        entrada.target.classList.add('palavras-dentro');
-        observador.unobserve(entrada.target);
-      }
-    },
-    { rootMargin: '0px 0px -8% 0px' }
-  );
-  document.querySelectorAll('.titulo-3d').forEach((titulo) => observador.observe(titulo));
-}
-
 export function iniciarProfundidade() {
   // O visualizador de modelos (ver.html) fica de fora: lá a tela precisa ficar parada.
   if (parado() || !('IntersectionObserver' in window) || document.body.dataset.pagina === 'ver') return;
   document.documentElement.classList.add('com-3d');
-  iniciarTitulos();
   iniciarTelasEmPe();
   iniciarInclinar();
   iniciarSimbolo();

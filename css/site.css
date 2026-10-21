@@ -4603,7 +4603,7 @@ a.servico.em-foco .icone { background: var(--texto); color: #fff; }
   .pedido .botao { justify-self: stretch; justify-content: center; }
 }
 
-/* ===== Retorno 11: 3D e títulos palavra por palavra (js/profundidade.js) ===== */
+/* ===== Retorno 11: 3D (js/profundidade.js) ===== */
 .com-3d .em-3d {
   transform-origin: 50% 100%;
   will-change: rotate, scale;
@@ -4630,24 +4630,6 @@ a.servico.em-foco .icone { background: var(--texto); color: #fff; }
 @keyframes simbolo-flutua {
   0%, 100% { translate: 0 0; rotate: y -10deg; }
   50% { translate: 0 -10px; rotate: y 10deg; }
-}
-
-.com-3d .titulo-3d {
-  perspective: 700px;
-}
-
-.com-3d .titulo-3d .palavra {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(0.45em) rotateX(-80deg);
-  transform-origin: 50% 100%;
-  transition: opacity 0.5s ease, transform 0.75s cubic-bezier(0.2, 0.75, 0.25, 1);
-  transition-delay: calc(var(--i, 0) * 55ms + 0.1s);
-}
-
-.com-3d .titulo-3d.palavras-dentro .palavra {
-  opacity: 1;
-  transform: none;
 }
 
 /* Prévia dos modelos na galeria: etiqueta de exemplo */
