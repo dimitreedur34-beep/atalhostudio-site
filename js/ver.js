@@ -11,7 +11,7 @@ export function iniciar() {
 
   document.title = `${modelo.nome} | Modelo da Atalho Studio`;
   document.querySelector('[data-modelo-nome]').textContent = modelo.nome;
-  document.querySelector('[data-modelo-area]').textContent = `Exemplo de ${modelo.area.toLowerCase()} · o seu é feito do seu jeito`;
+  document.querySelector('[data-modelo-area]').textContent = `Exemplo de ${modelo.area.toLowerCase()} · preços fictícios`;
 
   const iframe = document.querySelector('[data-quadro]');
   iframe.src = modelo.caminho || `modelos/${modelo.id}/index.html`;

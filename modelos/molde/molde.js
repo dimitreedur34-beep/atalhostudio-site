@@ -161,7 +161,6 @@ for (const [icone, nome, descricao, preco] of n.servicos) {
   gradeServicos.append(cartao);
 }
 caixaServicos.append(gradeServicos);
-if (n.servicos.some((s) => s[3])) caixaServicos.append(el('p', 'exemplo', 'Valores de exemplo.'));
 
 /* ---------- Diferenciais ---------- */
 const caixaDiferenciais = secao(null, 'secao-clara');

@@ -61,7 +61,7 @@ export function iniciar() {
     previa.decoding = 'async';
     const abrir = link('', `ver.html?modelo=${modelo.id}`);
     abrir.setAttribute('aria-label', `Abrir o modelo ${modelo.nome}`);
-    tela.append(previa, abrir);
+    tela.append(previa, el('span', 'modelo-exemplo', 'Exemplo · preços fictícios'), abrir);
 
     const corpo = el('div', 'modelo-corpo');
     const area = el('span', 'modelo-area');

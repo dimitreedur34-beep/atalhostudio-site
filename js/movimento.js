@@ -1,6 +1,8 @@
 // Movimento do site: a cor do fundo acompanha a seção que está no meio da tela, as faixas grafite
 // escurecem ao chegar, os números contam até o valor, a faixa de áreas anda e o "antes e depois" se conta sozinho.
-// Sem JavaScript tudo aparece parado e com as cores normais de cada seção.
+// Sem JavaScript tudo aparece parado e com as cores normais de cada seção. O 3D fica em profundidade.js.
+import { iniciarProfundidade } from './profundidade.js';
+
 const parado = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const temObservador = 'IntersectionObserver' in window;
 
@@ -199,4 +201,5 @@ export function iniciarMovimento() {
   iniciarContraste();
   iniciarEtapas();
   iniciarFocoNoToque();
+  iniciarProfundidade();
 }

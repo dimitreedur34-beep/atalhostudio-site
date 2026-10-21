@@ -58,10 +58,24 @@ export function mostrarWhats(negocio, mensagem) {
   fechar.focus();
 }
 
+// Aviso pequeno no fim de cada seção que mostra preço: quem vê o modelo não confunde com preço de verdade.
+function marcarPrecos() {
+  for (const secao of document.querySelectorAll('main > section')) {
+    if (!secao.textContent.includes('R$') || secao.querySelector('.aviso-precos')) continue;
+    const aviso = el('div', 'caixa aviso-precos');
+    aviso.append(el('span', null, 'Preços de exemplo, só para demonstração'));
+    // Seção em grade ou flex: o aviso vai logo depois dela, para não virar mais uma coluna.
+    if (getComputedStyle(secao).display === 'block') secao.append(aviso);
+    else secao.after(aviso);
+  }
+}
+
 export function iniciarModelo({ negocio }) {
   // Selo fixo de demonstração
-  const selo = el('span', 'selo-demo', 'Exemplo · o seu fica do seu jeito');
+  const selo = el('span', 'selo-demo', 'Site de exemplo · preços fictícios');
   document.body.append(selo);
+  // Depois que a página monta os preços, cada parte com "R$" ganha o aviso de preço de exemplo.
+  setTimeout(marcarPrecos, 0);
 
   // Qualquer [data-whats] mostra a mensagem pronta (texto em data-whats)
   document.addEventListener('click', (evento) => {
