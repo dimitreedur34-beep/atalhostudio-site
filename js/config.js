@@ -14,25 +14,26 @@ export const CONFIG = {
     instagram: '[PREENCHER: @ do Instagram]'
   },
   // As áreas das demonstrações (clínica, loja...) ficam em js/dados-demo.js.
-  // Valores "a partir de" do dono (20/10/2026): preço de entrada, do básico do básico.
+  // Valores aprovados pelo dono em 22/10/2026 (docs/12-plano-de-precificacao.md). Implantação: Pix à vista
+  // ou até 3x no cartão com a taxa da operadora repassada. Mensalidade: Pix ou boleto.
   planos: [
-    { id: 'inicio', nome: 'Site', aPartirDe: 'R$ 339', confirmado: true },
-    { id: 'atendimento', nome: 'WhatsApp automático', aPartirDe: 'R$ 497 + R$ 97 por mês', confirmado: true },
-    { id: 'sistema', nome: 'Sistema pronto', aPartirDe: 'R$ 597 + R$ 79 por mês', confirmado: true },
-    { id: 'sobmedida', nome: 'Sob medida', aPartirDe: 'R$ 1.490', confirmado: true },
-    { id: 'pacote', nome: 'Site + WhatsApp', aPartirDe: 'R$ 749 + R$ 97 por mês', confirmado: true },
-    { id: 'cuidado', nome: 'Cuidado mensal', aPartirDe: 'de R$ 39 a R$ 149 por mês', confirmado: true }
+    { id: 'inicio', nome: 'Site', aPartirDe: 'R$ 439', confirmado: true },
+    { id: 'atendimento', nome: 'WhatsApp automático', aPartirDe: 'R$ 597 + R$ 149 por mês', confirmado: true },
+    { id: 'sistema', nome: 'Sistema', aPartirDe: 'R$ 900 + R$ 149 por mês', confirmado: true },
+    { id: 'sobmedida', nome: 'Sistema sob medida', aPartirDe: 'R$ 5.000 + R$ 199 por mês', confirmado: true },
+    { id: 'pacote', nome: 'Os três juntos', aPartirDe: 'R$ 3.500 + R$ 498 por mês', confirmado: true },
+    { id: 'cuidado', nome: 'Cuidado mensal', aPartirDe: 'R$ 49 por mês', confirmado: true },
+    { id: 'assinatura', nome: 'Site por assinatura', aPartirDe: 'R$ 200 + R$ 100 por mês', confirmado: true }
   ],
-  // Descontos: SUGESTÃO de 21/10/2026, ainda não aprovada pelo dono. Troque os valores e mude confirmado para true.
-  // Aparecem na página Planos (seção Descontos) por data-config="descontos.<nome>".
+  // Descontos aprovados em 22/10/2026. Aparecem na página Planos (seção Descontos) por data-config="descontos.<nome>".
   descontos: {
-    pacoteCompleto: '15%',
+    pacoteCompleto: 'R$ 487',
     indicacao: '1 mês grátis',
     indicado: '10%',
     fundador: '20%',
     fundadorVagas: '10',
     anual: '2 meses grátis',
-    confirmado: false
+    confirmado: true
   },
   prazos: {
     entrega: '[PREENCHER: prazo de entrega que cumpre]',
