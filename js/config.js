@@ -20,7 +20,7 @@ export const CONFIG = {
     { id: 'inicio', nome: 'Site', aPartirDe: 'R$ 439', confirmado: true },
     { id: 'atendimento', nome: 'WhatsApp automático', aPartirDe: 'R$ 597 + R$ 149 por mês', confirmado: true },
     { id: 'sistema', nome: 'Sistema', aPartirDe: 'R$ 900 + R$ 149 por mês', confirmado: true },
-    { id: 'sobmedida', nome: 'Sistema sob medida', aPartirDe: 'R$ 3.000 + R$ 199 por mês', confirmado: true },
+    { id: 'sobmedida', nome: 'Sistema sob medida', aPartirDe: 'R$ 2.499 + R$ 199 por mês', confirmado: true },
     { id: 'pacote', nome: 'Os três juntos', aPartirDe: 'R$ 3.500 + R$ 498 por mês', confirmado: true },
     { id: 'cuidado', nome: 'Cuidado mensal', aPartirDe: 'R$ 49 por mês', confirmado: true },
     { id: 'assinatura', nome: 'Site por assinatura', aPartirDe: 'R$ 200 + R$ 100 por mês', confirmado: true }
