@@ -5351,3 +5351,31 @@ a.servico.em-foco .icone { background: var(--texto); color: #fff; }
   color: var(--texto);
   font-weight: 600;
 }
+
+/* ---------- Planos: nota no cartão e bloco "site sem cuidado" ---------- */
+.plano-nota {
+  color: var(--texto-2);
+  font-size: var(--t-pequeno);
+}
+
+.sem-cuidado {
+  display: grid;
+  gap: var(--e-3);
+  margin-top: var(--e-5);
+  padding: var(--e-5) var(--e-6);
+  border-left: 2px solid var(--cobre);
+  border-radius: var(--raio);
+  background: var(--papel);
+}
+
+.sem-cuidado h3 {
+  font-size: 1.25rem;
+}
+
+.sem-cuidado > p {
+  color: var(--texto-2);
+}
+
+.sem-cuidado > p strong {
+  color: var(--texto);
+}

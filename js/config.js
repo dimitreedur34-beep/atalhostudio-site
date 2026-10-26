@@ -14,20 +14,17 @@ export const CONFIG = {
     instagram: '[PREENCHER: @ do Instagram]'
   },
   // As áreas das demonstrações (clínica, loja...) ficam em js/dados-demo.js.
-  // Valores aprovados pelo dono em 22/10/2026 (docs/12-plano-de-precificacao.md). Implantação: Pix à vista
+  // Valores aprovados pelo dono em 26/10/2026 (versão enxuta) (docs/12-plano-de-precificacao.md). Implantação: Pix à vista
   // ou até 3x no cartão com a taxa da operadora repassada. Mensalidade: Pix ou boleto.
   planos: [
-    { id: 'inicio', nome: 'Site', aPartirDe: 'R$ 439', confirmado: true },
-    { id: 'atendimento', nome: 'WhatsApp automático', aPartirDe: 'R$ 597 + R$ 149 por mês', confirmado: true },
-    { id: 'sistema', nome: 'Sistema', aPartirDe: 'R$ 900 + R$ 149 por mês', confirmado: true },
-    { id: 'sobmedida', nome: 'Sistema sob medida', aPartirDe: 'R$ 2.499 + R$ 199 por mês', confirmado: true },
-    { id: 'pacote', nome: 'Os três juntos', aPartirDe: 'R$ 3.500 + R$ 498 por mês', confirmado: true },
-    { id: 'cuidado', nome: 'Cuidado mensal', aPartirDe: 'R$ 49 por mês', confirmado: true },
-    { id: 'assinatura', nome: 'Site por assinatura', aPartirDe: 'R$ 200 + R$ 100 por mês', confirmado: true }
+    { id: 'inicio', nome: 'Site com cuidado mensal', aPartirDe: 'R$ 439 + R$ 100 por mês', confirmado: true },
+    { id: 'atendimento', nome: 'WhatsApp automático', aPartirDe: 'R$ 597 + R$ 110 por mês', confirmado: true },
+    { id: 'sistema', nome: 'Sistema sob medida', aPartirDe: 'R$ 2.499 + R$ 249 por mês', confirmado: true },
+    { id: 'cuidado', nome: 'Cuidado mensal', aPartirDe: 'R$ 100 por mês', confirmado: true }
   ],
   // Descontos aprovados em 22/10/2026. Aparecem na página Planos (seção Descontos) por data-config="descontos.<nome>".
   descontos: {
-    pacoteCompleto: 'R$ 487',
+    maisDeUm: '10%',
     indicacao: '1 mês grátis',
     indicado: '10%',
     fundador: '20%',
@@ -37,8 +34,8 @@ export const CONFIG = {
   },
   prazos: {
     entrega: '[PREENCHER: prazo de entrega que cumpre]',
-    ajustes: '[PREENCHER: dias de ajustes depois da entrega]',
-    pagamento: '[PREENCHER: forma de pagamento]'
+    ajustes: '90 dias para corrigir o que foi combinado',
+    pagamento: 'Pix à vista ou até 3x no cartão (com a taxa da operadora)'
   },
   // Caso da imobiliária: só aparece com autorização do cliente (nome e telas com dados borrados).
   casoReal: { autorizado: false, nome: '' },
