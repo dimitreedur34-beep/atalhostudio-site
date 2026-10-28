@@ -3,15 +3,16 @@
 export const CONFIG = {
   marca: {
     nome: 'Atalho Studio',
-    primeiroNome: '[PREENCHER: primeiro nome]',
+    primeiroNome: 'Dimitre Eduardo',
     cidade: 'Governador Valadares',
     uf: 'MG'
   },
   contato: {
     // Só dígitos: 55 + DDD (GV é 33) + número. Ex.: 5533999990000
     whatsapp: '[PREENCHER: número do WhatsApp do negócio]',
-    email: '[PREENCHER: e-mail profissional]',
-    instagram: '[PREENCHER: @ do Instagram]'
+    email: 'atalhostudios@gmail.com',
+    // Vazio: o negócio ainda não tem Instagram próprio (o rodapé esconde a linha).
+    instagram: ''
   },
   // As áreas das demonstrações (clínica, loja...) ficam em js/dados-demo.js.
   // Valores aprovados pelo dono em 26/10/2026 (versão enxuta) (docs/12-plano-de-precificacao.md). Implantação: Pix à vista

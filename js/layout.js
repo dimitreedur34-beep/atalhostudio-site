@@ -71,7 +71,7 @@ export function montarLayout() {
             <h2>Contato</h2>
             <ul role="list">
               <li>Fale com <span data-config="marca.primeiroNome"></span></li>
-              <li><a data-link="instagram"></a></li>
+              <li data-opcional="contato.instagram"><a data-link="instagram"></a></li>
               <li><a data-link="email"></a></li>
             </ul>
           </div>
