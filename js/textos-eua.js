@@ -91,11 +91,11 @@ export const UI = {
     'Hablan español?'
   ],
 
-  modelosTitulo: L('Sites prontos para ver', 'Sample websites to explore', 'Sitios de ejemplo para explorar'),
+  modelosTitulo: L('Exemplos de modelos de site', 'Sample website templates', 'Ejemplos de modelos de sitio'),
   modelosLinha: L(
-    'Três modelos para negócios como o seu, em 3 línguas. Abra no celular ou no computador. Nomes e preços são fictícios.',
-    'Three samples for businesses like yours, in 3 languages. Open them on your phone or computer. Names and prices are made up.',
-    'Tres modelos para negocios como el tuyo, en 3 idiomas. Ábrelos en el celular o la computadora. Nombres y precios son ficticios.'
+    'Estes três são só exemplos, para você ver como pode ficar. O seu site é montado do jeito que você quiser: suas cores, suas fotos, seus serviços, seus textos e as línguas que você escolher. Nomes e preços dos exemplos são fictícios.',
+    'These three are just examples, so you can see how it could look. Your website is built the way you want it: your colors, your photos, your services, your words and the languages you choose. Names and prices in the examples are made up.',
+    'Estos tres son solo ejemplos, para que veas cómo podría quedar. Tu sitio se arma como tú quieras: tus colores, tus fotos, tus servicios, tus textos y los idiomas que elijas. Los nombres y precios de los ejemplos son ficticios.'
   ),
   modelosAbrir: L('Abrir em', 'Open in', 'Abrir en'),
 
@@ -142,6 +142,7 @@ export const UI = {
       servico: L('Para ser encontrado', 'To be found', 'Para que te encuentren'),
       nome: L('Site em 3 línguas', 'Website in 3 languages', 'Sitio web en 3 idiomas'),
       itens: [
+        L('Feito do jeito que você quiser: os modelos são só exemplos', 'Built the way you want: the templates are just examples', 'Hecho a tu manera: los modelos son solo ejemplos'),
         L('Português, inglês e espanhol num site só', 'Portuguese, English and Spanish in one site', 'Español, inglés y portugués en un solo sitio'),
         L('Fotos, serviços, horário e botão de WhatsApp com mensagem pronta', 'Photos, services, hours and a WhatsApp button with a ready-made message', 'Fotos, servicios, horario y botón de WhatsApp con mensaje listo'),
         L('Pode sair sem o seu endereço de casa', 'Can go live without your home address', 'Puede salir sin tu dirección de casa')
@@ -193,6 +194,8 @@ export const UI = {
   faq: [
     [L('Você mora no Brasil. Como funciona?', "You're in Brazil. How does this work?", 'Vives en Brasil. ¿Cómo funciona?'),
       [L('Tudo é feito à distância, por WhatsApp e vídeo. A diferença de horário é de 1 a 2 horas. Não precisa de reunião presencial.', 'Everything is done remotely, by WhatsApp and video call. The time difference is 1 to 2 hours. No in-person meeting is needed.', 'Todo se hace a distancia, por WhatsApp y videollamada. La diferencia horaria es de 1 a 2 horas. No hace falta reunión presencial.')]],
+    [L('O meu site vai ser igual a esses modelos?', 'Will my website look like these templates?', '¿Mi sitio va a ser igual a estos modelos?'),
+      [L('Não. Os modelos são só exemplos para você ver como pode ficar. O seu é montado do jeito que você quiser: cores, fotos, serviços, textos e as línguas que escolher. Você aprova cada etapa antes de ir ao ar.', 'No. The templates are just examples so you can see how it could look. Yours is built the way you want: colors, photos, services, words and the languages you choose. You approve each step before it goes live.', 'No. Los modelos son solo ejemplos para que veas cómo podría quedar. El tuyo se arma como tú quieras: colores, fotos, servicios, textos y los idiomas que elijas. Apruebas cada etapa antes de publicarlo.')]],
     [L('Você pede documento ou pergunta sobre situação migratória?', 'Do you ask for documents or about immigration status?', '¿Pides documentos o preguntas por el estatus migratorio?'),
       [L('Não. Eu não peço documento seu nem pergunto sobre isso. Algumas etapas, como a verificação da conta de WhatsApp, são da Meta, e você decide o que informar a ela.', "No. I don't ask for your documents or about that. Some steps, like WhatsApp account verification, belong to Meta, and you decide what to share with them.", 'No. No pido tus documentos ni pregunto sobre eso. Algunas etapas, como la verificación de la cuenta de WhatsApp, son de Meta, y tú decides qué informarle.')]],
     [L('Funciona com número americano (+1)?', 'Does it work with a U.S. (+1) number?', '¿Funciona con un número de EE. UU. (+1)?'),

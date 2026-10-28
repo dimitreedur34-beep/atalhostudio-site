@@ -32,10 +32,10 @@ export const CONFIG = {
     anual: '2 meses grátis',
     confirmado: true
   },
-  // Página EUA (eua.html): preços em dólar sugeridos em 27/10/2026 (docs/14), [implantação, mensal]. Aguardam o dono confirmar.
+  // Página EUA (eua.html): preços em dólar aprovados pelo dono em 28/10/2026 (docs/14), [implantação, mensal].
   eua: {
-    confirmado: false,
-    precos: { site: [497, 39], zap: [397, 39], zapIA: [597, 69], sistema: [997, 79] },
+    confirmado: true,
+    precos: { site: [647, 89], zap: [497, 89], zapIA: [697, 119], sistema: [1097, 129] },
     maisDeUm: '10%',
     pagamento: ['Wise', 'PayPal']
   },

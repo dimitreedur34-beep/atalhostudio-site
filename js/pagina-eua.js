@@ -43,7 +43,10 @@ export function iniciar({ atualizarLink }) {
   let lang = lerIdioma();
   const eua = CONFIG.eua;
   const tr = (valor) => t(valor, lang);
-  const dolar = (valor) => (lang === 'en' ? `$${valor}` : `US$ ${valor}`);
+  const dolar = (valor) => {
+    const numero = valor.toLocaleString({ pt: 'pt-BR', en: 'en-US', es: 'es-US' }[lang]);
+    return lang === 'en' ? `$${numero}` : `US$ ${numero}`;
+  };
 
   /* ---------- Seletor de idioma ---------- */
   const seletor = document.querySelector('[data-idiomas]');
