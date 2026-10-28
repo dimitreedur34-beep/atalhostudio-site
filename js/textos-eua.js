@@ -319,3 +319,27 @@ export function areaDemo(id, lang) {
   }
   return { negocio: n.negocio, cor: n.cor, sugestao: t(n.sugestao, lang), passos };
 }
+
+// Modelos de site da página EUA (modelos/molde/negocios-eua.js), abertos com ?lang=.
+export const MODELOS_EUA = [
+  { id: 'faxina-us', nome: 'Casa Limpa Cleaning', tipo: L('Limpeza de casas', 'House cleaning', 'Limpieza de casas') },
+  { id: 'pintura-us', nome: 'Silva Painting', tipo: L('Pintura e reformas', 'Painting & remodeling', 'Pintura y remodelación') },
+  { id: 'mercado-us', nome: 'Sabor do Brasil Market', tipo: L('Mercado brasileiro', 'Brazilian market', 'Mercado brasileño') }
+];
+
+// Menu do topo traduzido na página EUA (as outras páginas são só em português).
+export const MENU = {
+  'index.html': L('Início', 'Home', 'Inicio'),
+  'sites.html': L('Sites', 'Websites', 'Sitios'),
+  'whatsapp.html': L('WhatsApp', 'WhatsApp', 'WhatsApp'),
+  'sistemas.html': L('Sistemas', 'Systems', 'Sistemas'),
+  'planos.html': L('Planos e dúvidas', 'Plans & FAQ', 'Planes y dudas'),
+  'eua.html': L('EUA', 'U.S.', 'EE. UU.')
+};
+
+// Textos fixos do celular de demonstração (conversa-whats.js).
+export const ROTULOS_WA = {
+  pt: { hoje: 'Hoje', online: 'online', digitando: 'digitando…', voce: 'Você', recomecar: 'Recomeçar conversa', mensagem: 'Mensagem' },
+  en: { hoje: 'Today', online: 'online', digitando: 'typing…', voce: 'You', recomecar: 'Restart chat', mensagem: 'Message' },
+  es: { hoje: 'Hoy', online: 'en línea', digitando: 'escribiendo…', voce: 'Tú', recomecar: 'Reiniciar conversación', mensagem: 'Mensaje' }
+};

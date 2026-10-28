@@ -7,7 +7,8 @@ const PAGINAS = [
   ['sites', 'sites.html', 'Sites'],
   ['whatsapp', 'whatsapp.html', 'WhatsApp'],
   ['sistemas', 'sistemas.html', 'Sistemas'],
-  ['planos', 'planos.html', 'Planos e dúvidas']
+  ['planos', 'planos.html', 'Planos e dúvidas'],
+  ['eua', 'eua.html', 'EUA']
 ];
 
 const marca = (versao) => `

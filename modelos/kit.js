@@ -24,6 +24,17 @@ export function ic(nome, classe = 'ic') {
 
 let janela;
 
+// Textos da janela e dos selos. O molde troca por inglês ou espanhol nos modelos da página EUA.
+const PADRAO = {
+  titulo: (negocio) => `WhatsApp de ${negocio}`,
+  explica: 'No site de verdade, este botão abre o WhatsApp do negócio já com esta mensagem escrita:',
+  nada: 'Isto é uma demonstração: nada foi enviado.',
+  entendi: 'Entendi',
+  selo: 'Site de exemplo · preços fictícios',
+  precos: 'Preços de exemplo, só para demonstração'
+};
+let textos = PADRAO;
+
 export function mostrarWhats(negocio, mensagem) {
   if (!janela) {
     janela = el('dialog', 'janela-demo');
@@ -36,19 +47,19 @@ export function mostrarWhats(negocio, mensagem) {
 
   const topo = el('div', 'janela-topo');
   const icone = ic('whatsapp');
-  const titulo = el('strong', null, `WhatsApp de ${negocio}`);
+  const titulo = el('strong', null, textos.titulo(negocio));
   titulo.id = 'janela-demo-titulo';
   topo.append(icone, titulo);
 
   const corpo = el('div', 'janela-corpo');
   corpo.append(
-    el('p', null, 'No site de verdade, este botão abre o WhatsApp do negócio já com esta mensagem escrita:'),
+    el('p', null, textos.explica),
     el('p', 'janela-bolha', mensagem),
-    el('p', 'janela-nota', 'Isto é uma demonstração: nada foi enviado.')
+    el('p', 'janela-nota', textos.nada)
   );
 
   const acoes = el('div', 'janela-acoes');
-  const fechar = el('button', null, 'Entendi');
+  const fechar = el('button', null, textos.entendi);
   fechar.type = 'button';
   fechar.addEventListener('click', () => janela.close());
   acoes.append(fechar);
@@ -61,18 +72,19 @@ export function mostrarWhats(negocio, mensagem) {
 // Aviso pequeno no fim de cada seção que mostra preço: quem vê o modelo não confunde com preço de verdade.
 function marcarPrecos() {
   for (const secao of document.querySelectorAll('main > section')) {
-    if (!secao.textContent.includes('R$') || secao.querySelector('.aviso-precos')) continue;
+    if (!secao.textContent.includes('$') || secao.querySelector('.aviso-precos')) continue;
     const aviso = el('div', 'caixa aviso-precos');
-    aviso.append(el('span', null, 'Preços de exemplo, só para demonstração'));
+    aviso.append(el('span', null, textos.precos));
     // Seção em grade ou flex: o aviso vai logo depois dela, para não virar mais uma coluna.
     if (getComputedStyle(secao).display === 'block') secao.append(aviso);
     else secao.after(aviso);
   }
 }
 
-export function iniciarModelo({ negocio }) {
+export function iniciarModelo({ negocio, textos: proprios = {} }) {
+  textos = { ...PADRAO, ...proprios };
   // Selo fixo de demonstração
-  const selo = el('span', 'selo-demo', 'Site de exemplo · preços fictícios');
+  const selo = el('span', 'selo-demo', textos.selo);
   document.body.append(selo);
   // Depois que a página monta os preços, cada parte com "R$" ganha o aviso de preço de exemplo.
   setTimeout(marcarPrecos, 0);

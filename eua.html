@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fora do Google até os dados [PREENCHER] estarem prontos: tirar esta linha no lançamento -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>EUA | Atalho Studio</title>
+  <meta name="description" content="Site, WhatsApp automático e sistema para negócios de brasileiros e latinos nos EUA, em português, inglês e espanhol.">
+  <meta name="theme-color" content="#F6F4F0">
+  <link rel="icon" href="assets/logo/atalho-simbolo-escuro.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fontes/gabarito-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fontes/figtree-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body class="pagina" data-pagina="eua">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header data-topo></header>
+
+  <!-- Todos os textos vêm de js/textos-eua.js (data-t), nas 3 línguas. -->
+  <main id="conteudo">
+    <section class="topo-pagina secao-areia">
+      <div class="recipiente cabeca">
+        <div class="segmentos eua-idiomas revelar" role="group" aria-label="Idioma da página" data-idiomas></div>
+        <p class="eua-selo revelar" data-t="eyebrow"></p>
+        <h1 class="titulo-pagina revelar" data-t="h1"></h1>
+        <p class="linha-pagina revelar revelar-2" data-t="sub"></p>
+        <div class="acoes revelar revelar-3">
+          <a class="botao botao-cobre" href="#demo" data-t="verConversa"></a>
+          <a class="botao botao-whats" href="#contato" data-wa="geral" data-posicao="eua-topo" data-t-texto="whats"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#whatsapp"></use></svg></a>
+        </div>
+        <p class="aviso-exemplo revelar revelar-3"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#info"></use></svg><span data-t="aviso"></span></p>
+      </div>
+    </section>
+
+    <section class="secao" aria-labelledby="beneficios-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="beneficios-titulo" data-t="beneficiosTitulo"></h2>
+          <p data-t="beneficiosLinha"></p>
+        </div>
+        <ul class="cartoes-sis cartoes-eua" role="list" data-lista="beneficios"></ul>
+      </div>
+    </section>
+
+    <section class="secao secao-areia" id="demo" aria-labelledby="demo-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="demo-titulo" data-t="demoTitulo"></h2>
+          <p data-t="demoLinha"></p>
+        </div>
+        <div class="areas areas-eua" role="group" data-demo-negocios></div>
+        <div class="palco-whats">
+          <div class="palco-celular">
+            <div class="celular" data-whats="eua"></div>
+            <p class="legenda" data-t="demoLegenda"></p>
+          </div>
+          <div class="explica">
+            <div class="explica-cartao" aria-live="polite">
+              <small data-nota-titulo></small>
+              <p data-nota></p>
+            </div>
+            <div class="acoes" style="margin-top:0">
+              <a class="botao botao-whats" href="#contato" data-wa="geral" data-quero-whats data-posicao="eua-demo" data-t-texto="demoQuero"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#whatsapp"></use></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demonstração com IA (simulada, js/ia-eua.js): responde na língua em que o visitante escreveu -->
+    <section class="secao" aria-labelledby="ia-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="ia-titulo" data-t="iaTitulo"></h2>
+          <p data-t="iaLinha"></p>
+        </div>
+        <div class="ia-controles revelar">
+          <div class="segmentos" role="group" data-ia-modo>
+            <button type="button" aria-pressed="false" data-valor="sem">Sem IA</button>
+            <button type="button" aria-pressed="true" data-valor="com">Com IA</button>
+          </div>
+        </div>
+        <div class="palco-whats">
+          <div class="palco-celular">
+            <div class="celular" data-whats="ia"></div>
+            <p class="legenda" data-t="iaAviso"></p>
+          </div>
+          <div class="explica">
+            <div class="explica-cartao" aria-live="polite">
+              <small data-ia-titulo></small>
+              <p data-ia-nota></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao-areia" aria-labelledby="modelos-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="modelos-titulo" data-t="modelosTitulo"></h2>
+          <p data-t="modelosLinha"></p>
+        </div>
+        <ul class="modelos-eua" role="list" data-lista="modelos"></ul>
+      </div>
+    </section>
+
+    <section class="secao secao-pedra" aria-labelledby="distancia-titulo">
+      <div class="recipiente">
+        <div class="cabeca cabeca-centro revelar">
+          <h2 id="distancia-titulo" data-t="distTitulo"></h2>
+          <p data-t="distLinha"></p>
+        </div>
+        <ol class="passos" role="list" data-lista="passos"></ol>
+      </div>
+    </section>
+
+    <section class="secao secao-areia" id="precos" aria-labelledby="precos-titulo">
+      <div class="recipiente">
+        <div class="cabeca revelar">
+          <h2 id="precos-titulo" data-t="precosTitulo"></h2>
+          <p data-t="precosLinha"></p>
+        </div>
+        <ul class="planos planos-eua" role="list" data-lista="planos"></ul>
+        <p class="eua-precos-nota" data-precos-nota></p>
+        <p class="eua-precos-comparar" data-t="precosComparar"></p>
+      </div>
+    </section>
+
+    <section class="secao secao-linha" aria-labelledby="duvidas-titulo">
+      <div class="recipiente">
+        <div class="cabeca cabeca-centro revelar">
+          <h2 id="duvidas-titulo" data-t="faqTitulo"></h2>
+        </div>
+        <div class="perguntas" data-lista="faq"></div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="recipiente">
+        <div class="chamada revelar">
+          <h2 data-t="finalTitulo"></h2>
+          <p data-t="finalLinha"></p>
+          <div class="acoes">
+            <a class="botao botao-whats" href="#contato" data-wa="geral" data-posicao="eua-chamada" data-t-texto="whats"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#whatsapp"></use></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-rodape></footer>
+</body>
+</html>

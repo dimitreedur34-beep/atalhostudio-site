@@ -1,7 +1,7 @@
 // Demonstração com IA da página EUA: o cliente escreve em português, inglês ou espanhol e a resposta sai na mesma língua.
 // Simulação local (palavras-chave e detecção de idioma): nada é enviado e não há IA de verdade. Texto sempre por textContent.
 import { criarCelular } from './conversa-whats.js';
-import { NEGOCIOS_DEMO, UI, t } from './textos-eua.js';
+import { NEGOCIOS_DEMO, UI, ROTULOS_WA, t } from './textos-eua.js';
 
 const L = (pt, en, es) => ({ pt, en, es });
 
@@ -256,6 +256,7 @@ export function iniciarDemoIAEUA(langInicial) {
     grupoModo.setAttribute('aria-label', t(UI.iaModoLabel, lang));
     if (campo) campo.placeholder = t(UI.iaPlaceholder, lang);
     titulo.textContent = t(modo === 'com' ? UI.iaCom : UI.iaSem, lang);
+    celular.traduzir(ROTULOS_WA[lang]);
     celular.limpar({ negocio: negocio.negocio, cor: negocio.cor }, t(UI.iaAviso, lang));
     celular.sugestoes(UI.iaSugestoes, mandar);
     celular.travar(false);

@@ -45,3 +45,20 @@ idiomas-galeria-3.webp  https://images.unsplash.com/photo-1673515334717-da4d85aa
 autoescola-galeria-1.webp  https://images.unsplash.com/photo-1630406144797-821be1f35d75
 autoescola-galeria-2.webp  https://images.unsplash.com/photo-1764588224022-ef99db06bde0
 autoescola-galeria-3.webp  https://images.unsplash.com/photo-1578041262130-633307b3bfd6
+
+Modelos da página EUA (capa, apoio e galeria), Unsplash, baixadas em 27/10/2026:
+faxina-us-capa.webp  https://images.unsplash.com/photo-1758273238415-01ec03d9ef27
+faxina-us-apoio.webp  https://images.unsplash.com/photo-1646980241033-cd7abda2ee88
+faxina-us-galeria-1.webp  https://images.unsplash.com/photo-1757387240036-d7eb9b096c40
+faxina-us-galeria-2.webp  https://images.unsplash.com/photo-1563453392212-326f5e854473
+faxina-us-galeria-3.webp  https://images.unsplash.com/photo-1686178827149-6d55c72d81df
+pintura-us-capa.webp  https://images.unsplash.com/photo-1742900280861-32bed068938b
+pintura-us-apoio.webp  https://images.unsplash.com/photo-1717281234297-3def5ae3eee1
+pintura-us-galeria-1.webp  https://images.unsplash.com/photo-1742900280864-bcc27353ceba
+pintura-us-galeria-2.webp  https://images.unsplash.com/photo-1560184897-ae75f418493e
+pintura-us-galeria-3.webp  https://images.unsplash.com/photo-1554995207-c18c203602cb
+mercado-us-capa.webp  https://images.unsplash.com/photo-1670684684445-a4504dca0bbc
+mercado-us-apoio.webp  https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8
+mercado-us-galeria-1.webp  https://images.unsplash.com/photo-1784217066854-f2d84aa49532
+mercado-us-galeria-2.webp  https://images.unsplash.com/photo-1559141680-d0bd7bc5af84
+mercado-us-galeria-3.webp  https://images.unsplash.com/photo-1759701787895-d0d63aa2acba

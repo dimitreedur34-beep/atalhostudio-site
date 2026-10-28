@@ -13,6 +13,8 @@ function el(tag, classe, texto) {
 }
 
 export function criarCelular(raiz, { escrever = false } = {}) {
+  // Textos fixos do celular; a página EUA troca de língua com celular.traduzir().
+  const rotulos = { hoje: 'Hoje', online: 'online', digitando: 'digitando…', voce: 'Você', recomecar: 'Recomeçar conversa', mensagem: 'Mensagem' };
   const wa = el('div', 'wa');
   const topo = el('div', 'wa-topo');
   const voltar = icone('chevron-left', 'wa-voltar');
@@ -20,7 +22,7 @@ export function criarCelular(raiz, { escrever = false } = {}) {
   avatar.setAttribute('aria-hidden', 'true');
   const nomes = el('div', 'wa-nome');
   const nome = el('strong');
-  const status = el('span', null, 'online');
+  const status = el('span', null, rotulos.online);
   nomes.append(nome, status);
   topo.append(voltar, avatar, nomes);
 
@@ -29,7 +31,7 @@ export function criarCelular(raiz, { escrever = false } = {}) {
   conversa.setAttribute('aria-label', 'Conversa de demonstração no WhatsApp');
 
   const rodape = el(escrever ? 'form' : 'div', 'wa-rodape');
-  const campo = escrever ? el('input', 'wa-campo') : el('div', 'wa-campo wa-vazio', 'Mensagem');
+  const campo = escrever ? el('input', 'wa-campo') : el('div', 'wa-campo wa-vazio', rotulos.mensagem);
   if (escrever) {
     Object.assign(campo, { type: 'text', placeholder: 'Escreva sua pergunta', autocomplete: 'off', maxLength: 140, enterKeyHint: 'send' });
     campo.setAttribute('aria-label', 'Escreva uma mensagem');
@@ -60,7 +62,7 @@ export function criarCelular(raiz, { escrever = false } = {}) {
   function bolha(lado, texto) {
     const msg = el('p', `wa-msg ${lado === 'saida' ? 'wa-saida' : 'wa-entrada'}`);
     if (ultimo === lado) msg.classList.add('wa-seguida');
-    msg.append(el('span', 'visualmente-oculto', lado === 'saida' ? 'Você: ' : `${nome.textContent}: `));
+    msg.append(el('span', 'visualmente-oculto', lado === 'saida' ? `${rotulos.voce}: ` : `${nome.textContent}: `));
     msg.append(document.createTextNode(texto));
     const horario = el('span', 'wa-hora', `22:${String(hora).padStart(2, '0')}`);
     if (lado === 'saida') horario.append(icone('check-check', 'wa-vistos'));
@@ -89,20 +91,23 @@ export function criarCelular(raiz, { escrever = false } = {}) {
 
   return {
     rodada: 0,
+    traduzir(novos) {
+      Object.assign(rotulos, novos);
+    },
     limpar(area, aviso = 'Demonstração com dados fictícios') {
       wa.style.setProperty('--cor', area.cor);
       nome.textContent = area.negocio;
       avatar.textContent = area.negocio.charAt(0);
-      status.textContent = 'online';
+      status.textContent = rotulos.online;
       ultimo = null;
       hora = 7;
-      conversa.replaceChildren(el('div', 'wa-data', 'Hoje'), el('div', 'wa-aviso', aviso));
+      conversa.replaceChildren(el('div', 'wa-data', rotulos.hoje), el('div', 'wa-aviso', aviso));
       this.sugerir(null);
     },
     sugerir(texto, acao) {
       if (escrever) return;
       aoEnviar = acao || null;
-      campo.textContent = texto || 'Mensagem';
+      campo.textContent = texto || rotulos.mensagem;
       campo.classList.toggle('wa-vazio', !texto);
       enviar.disabled = !texto;
       enviar.classList.toggle('wa-chamando', Boolean(texto));
@@ -112,7 +117,7 @@ export function criarCelular(raiz, { escrever = false } = {}) {
       if (aoEnviar) aoEnviar();
     },
     async digitar(ms) {
-      status.textContent = 'digitando…';
+      status.textContent = rotulos.digitando;
       const pontos = el('div', 'wa-digitando');
       pontos.setAttribute('aria-hidden', 'true');
       pontos.append(el('span'), el('span'), el('span'));
@@ -120,7 +125,7 @@ export function criarCelular(raiz, { escrever = false } = {}) {
       rolar();
       await esperar(ms);
       pontos.remove();
-      status.textContent = 'online';
+      status.textContent = rotulos.online;
     },
     enviar(texto) {
       bolha('saida', texto);
@@ -146,7 +151,7 @@ export function criarCelular(raiz, { escrever = false } = {}) {
       return botoes;
     },
     recomecar(acao) {
-      const botao = el('button', 'wa-recomecar', 'Recomeçar conversa');
+      const botao = el('button', 'wa-recomecar', rotulos.recomecar);
       botao.type = 'button';
       botao.addEventListener('click', acao);
       conversa.append(botao);

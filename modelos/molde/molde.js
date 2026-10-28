@@ -2,11 +2,29 @@
 // Nada é enviado: os botões de WhatsApp só mostram a mensagem pronta (kit.js).
 import { iniciarModelo, mostrarWhats, el, ic } from '../kit.js';
 import { NEGOCIOS } from './negocios.js';
+import { NEGOCIOS_EUA } from './negocios-eua.js';
+import { TEXTOS } from './textos-molde.js';
 
-const pedido = new URLSearchParams(location.search).get('negocio');
-const id = Object.hasOwn(NEGOCIOS, pedido) ? pedido : Object.keys(NEGOCIOS)[0]; // só aceita negócios da lista
-const n = NEGOCIOS[id];
-const reais = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+const parametros = new URLSearchParams(location.search);
+const pedido = parametros.get('negocio');
+const TODOS = { ...NEGOCIOS, ...NEGOCIOS_EUA };
+const id = Object.hasOwn(TODOS, pedido) ? pedido : Object.keys(NEGOCIOS)[0]; // só aceita negócios da lista
+// Negócios da página EUA têm texto em 3 línguas ({ pt, en, es }); ?lang= escolhe qual. Os do Brasil ficam em português.
+const IDIOMAS = ['pt', 'en', 'es'];
+const multilingue = Object.hasOwn(NEGOCIOS_EUA, id);
+const lang = multilingue && IDIOMAS.includes(parametros.get('lang')) ? parametros.get('lang') : 'pt';
+const ehTraducao = (v) => v && typeof v === 'object' && !Array.isArray(v) && 'pt' in v && 'en' in v && 'es' in v;
+const traduzir = (v) => {
+  if (Array.isArray(v)) return v.map(traduzir);
+  if (ehTraducao(v)) return v[lang];
+  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, traduzir(x)]));
+  return v;
+};
+const n = traduzir(TODOS[id]);
+const TX = TEXTOS[lang];
+const LOCAL = { pt: 'pt-BR', en: 'en-US', es: 'es-US' }[lang];
+const reais = new Intl.NumberFormat(LOCAL, { style: 'currency', currency: n.moeda || 'BRL' });
+document.documentElement.lang = LOCAL;
 const ehPedido = n.modo === 'pedido';
 
 // Cores e estilo do negócio
@@ -16,7 +34,7 @@ document.body.classList.add(`layout-${n.layout}`);
 if (n.serif) document.body.classList.add('titulo-serif');
 if (n.reto) document.body.classList.add('cantos-retos');
 if (n.escuro) document.body.classList.add('tom-escuro');
-document.title = `${n.nome} | Modelo de demonstração`;
+document.title = `${n.nome} | ${TX.tituloPagina}`;
 
 // Fonte dos títulos própria do negócio (Google Fonts): fonte: ['Nome da fonte', 'pesos'].
 if (n.fonte) {
@@ -75,7 +93,19 @@ function secao(idSecao, classe, titulo, linha) {
 }
 
 /* ---------- Faixa de aviso e topo ---------- */
-document.querySelector('[data-aviso]').append(comIcone('clock', n.horario), comIcone('map-pin', n.endereco));
+const aviso = document.querySelector('[data-aviso]');
+aviso.append(comIcone('clock', n.horario), comIcone('map-pin', n.endereco));
+if (multilingue) {
+  const idiomas = el('nav', 'idiomas');
+  idiomas.setAttribute('aria-label', TX.idiomas);
+  for (const codigo of IDIOMAS) {
+    const a = link(null, `?negocio=${id}&lang=${codigo}`, codigo.toUpperCase());
+    a.lang = codigo;
+    if (codigo === lang) a.setAttribute('aria-current', 'true');
+    idiomas.append(a);
+  }
+  aviso.append(idiomas);
+}
 
 const nomeLogo = el('span');
 nomeLogo.append(el('strong', null, n.curto), el('small', null, n.tipo));
@@ -83,10 +113,10 @@ document.querySelector('[data-logo]').append(ic(n.icone), nomeLogo);
 
 const LINKS = [
   ['#servicos', n.servicosTitulo],
-  ...(n.sobre ? [['#sobre', 'Sobre']] : []),
-  ['#acao', ehPedido ? 'Seu pedido' : n.acao.botao],
-  ['#duvidas', 'Dúvidas'],
-  ['#contato', 'Contato']
+  ...(n.sobre ? [['#sobre', TX.sobre]] : []),
+  ['#acao', ehPedido ? TX.seuPedido : n.acao.botao],
+  ['#duvidas', TX.duvidas],
+  ['#contato', TX.contato]
 ];
 for (const menu of document.querySelectorAll('[data-links], [data-menu]')) {
   menu.append(...LINKS.map(([href, texto]) => link(null, href, texto)));
@@ -99,7 +129,7 @@ hero.id = 'inicio';
 const heroGrade = el('div', 'caixa hero-grade');
 const heroTexto = el('div', 'hero-texto');
 const acoesHero = el('div', 'acoes');
-acoesHero.append(link('botao botao-cheio', '#acao', n.acao.botao), link('botao botao-linha', '#servicos', `Ver ${n.servicosTitulo.toLowerCase()}`));
+acoesHero.append(link('botao botao-cheio', '#acao', n.acao.botao), link('botao botao-linha', '#servicos', `${TX.ver} ${n.servicosTitulo.toLowerCase()}`));
 const fatos = el('div', 'fatos');
 for (const [forte, fraco] of n.fatos) {
   const fato = el('div');
@@ -117,7 +147,7 @@ if (n.layout === 'foto') {
   const cartao = el('div', 'hero-cartao');
   cartao.setAttribute('aria-hidden', 'true');
   const textos = el('div');
-  textos.append(el('strong', null, 'Peça pelo WhatsApp'), el('span', null, 'a qualquer hora, até de noite'));
+  textos.append(el('strong', null, TX.pecaWhats), el('span', null, TX.qualquerHora));
   cartao.append(ic('whatsapp'), textos);
   quadro.append(cartao);
   heroGrade.append(heroTexto, quadro);
@@ -149,13 +179,13 @@ for (const [icone, nome, descricao, preco] of n.servicos) {
     const quantidade = el('div', 'quantidade');
     const menos = el('button');
     menos.type = 'button';
-    menos.setAttribute('aria-label', `Tirar um ${nome}`);
+    menos.setAttribute('aria-label', TX.tirar(nome));
     menos.append(ic('minus'));
     const valor = el('output', null, '0');
-    valor.setAttribute('aria-label', `Quantidade de ${nome}`);
+    valor.setAttribute('aria-label', TX.quantidade(nome));
     const mais = el('button');
     mais.type = 'button';
-    mais.setAttribute('aria-label', `Pôr mais um ${nome}`);
+    mais.setAttribute('aria-label', TX.mais(nome));
     mais.append(ic('plus'));
     const mudar = (passo) => {
       const nova = Math.max(0, Math.min(20, (carrinho.get(nome) || 0) + passo));
@@ -171,7 +201,7 @@ for (const [icone, nome, descricao, preco] of n.servicos) {
     rodape.append(quantidade);
   } else {
     if (preco) rodape.append(el('span', 'preco', preco));
-    const quero = el('button', 'quero', n.modo === 'orcamento' && !preco ? 'Falar sobre isso' : 'Quero esse');
+    const quero = el('button', 'quero', n.modo === 'orcamento' && !preco ? TX.falarSobre : TX.queroEsse);
     quero.type = 'button';
     quero.append(ic('arrow-right'));
     quero.addEventListener('click', () => {
@@ -205,7 +235,7 @@ if (n.sobre) {
 
 /* ---------- Galeria: uma foto grande e duas menores ---------- */
 if (n.galeria) {
-  const caixaGaleria = secao('galeria', '', 'Por dentro', 'Um pouco do dia a dia.');
+  const caixaGaleria = secao('galeria', '', TX.porDentro, TX.diaADia);
   const grade = el('div', 'galeria');
   n.galeria.forEach((alt, i) => {
     const quadro = el('figure', 'galeria-item revela revela-foto');
@@ -250,13 +280,13 @@ const form = el('form', 'formulario');
 form.noValidate = true;
 
 const campoNomeBloco = el('div', 'campo');
-const rotuloNome = el('label', null, 'Seu nome');
+const rotuloNome = el('label', null, TX.seuNome);
 rotuloNome.htmlFor = 'nome';
 campoNome = el('input');
 campoNome.id = 'nome';
 campoNome.name = 'nome';
 campoNome.autocomplete = 'off';
-campoNome.placeholder = 'Ex.: Ana';
+campoNome.placeholder = TX.exNome;
 campoNomeBloco.append(rotuloNome, campoNome);
 form.append(campoNomeBloco);
 
@@ -295,7 +325,7 @@ for (const campo of n.acao.campos) {
 
 const enviar = el('button', 'botao botao-cheio');
 enviar.type = 'submit';
-enviar.append(ic('whatsapp'), document.createTextNode('Enviar pelo WhatsApp'));
+enviar.append(ic('whatsapp'), document.createTextNode(TX.enviarWhats));
 const linhaEnviar = el('div');
 linhaEnviar.append(enviar);
 form.append(linhaEnviar);
@@ -304,7 +334,7 @@ ladoForm.append(form);
 const previa = el('aside', 'previa');
 previa.setAttribute('aria-live', 'polite');
 const bolha = el('p', 'bolha');
-previa.append(el('p', null, `Mensagem que vai para ${n.curto}`), bolha);
+previa.append(el('p', null, TX.mensagemPara(n.curto)), bolha);
 caixaAcao.append(ladoForm, previa);
 
 function totalPedido() {
@@ -316,14 +346,14 @@ function totalPedido() {
 function mensagem() {
   const dados = new FormData(form);
   const nome = String(dados.get('nome') || '').trim();
-  const abertura = nome ? `Sou ${nome} e ${n.acao.abertura}` : n.acao.abertura.charAt(0).toUpperCase() + n.acao.abertura.slice(1);
-  const linhas = [`Oi! ${abertura}${ehPedido ? ':' : '.'}`];
+  const abertura = nome ? TX.sou(nome, n.acao.abertura) : n.acao.abertura.charAt(0).toUpperCase() + n.acao.abertura.slice(1);
+  const linhas = [`${TX.oi} ${abertura}${ehPedido ? ':' : '.'}`];
   if (ehPedido) {
     for (const [item, qtd] of carrinho) {
       const preco = n.servicos.find((s) => s[1] === item)[3];
       linhas.push(`${qtd}x ${item} (${reais.format(preco * qtd)})`);
     }
-    linhas.push(`Total: ${reais.format(totalPedido())}`);
+    linhas.push(`${TX.total}: ${reais.format(totalPedido())}`);
   }
   for (const campo of n.acao.campos) linhas.push(`${campo.rotulo}: ${dados.get(campo.nome || 'servico')}`);
   return linhas.join('\n');
@@ -335,13 +365,13 @@ function atualizar() {
       const lista = el('ul');
       for (const [item, qtd] of carrinho) lista.append(el('li', null, `${qtd}x ${item}`));
       const total = el('p', 'total');
-      total.append(el('span', null, 'Total'), el('strong', null, reais.format(totalPedido())));
+      total.append(el('span', null, TX.total), el('strong', null, reais.format(totalPedido())));
       resumo.replaceChildren(lista, total);
     } else {
-      resumo.replaceChildren(el('p', 'vazio', `Seu pedido está vazio. Use o + no ${n.servicosTitulo.toLowerCase()} acima.`));
+      resumo.replaceChildren(el('p', 'vazio', TX.vazio(n.servicosTitulo.toLowerCase())));
     }
   }
-  bolha.textContent = ehPedido && !carrinho.size ? 'Escolha pelo menos um item para montar a mensagem.' : mensagem();
+  bolha.textContent = ehPedido && !carrinho.size ? TX.escolhaItem : mensagem();
 }
 
 form.addEventListener('input', atualizar);
@@ -368,14 +398,14 @@ caixaPassos.append(passos);
 
 /* ---------- Avaliações (só onde a profissão permite) ---------- */
 if (n.avaliacoes) {
-  const caixaAvaliacoes = secao(null, '', 'O que dizem');
-  const exemplo = el('p', 'exemplo', 'Exemplo: aqui entram as avaliações reais dos seus clientes.');
+  const caixaAvaliacoes = secao(null, '', TX.oQueDizem);
+  const exemplo = el('p', 'exemplo', TX.exemploAvaliacoes);
   const grade = el('div', 'avaliacoes');
   for (const texto of n.avaliacoes) {
     const cartao = el('figure', 'avaliacao revela');
     const estrelas = el('div', 'estrelas');
     estrelas.setAttribute('role', 'img');
-    estrelas.setAttribute('aria-label', '5 estrelas');
+    estrelas.setAttribute('aria-label', TX.estrelas);
     for (let i = 0; i < 5; i += 1) estrelas.append(ic('star'));
     cartao.append(estrelas, el('blockquote', null, `“${texto}”`), el('figcaption', null, n.quem));
     grade.append(cartao);
@@ -384,7 +414,7 @@ if (n.avaliacoes) {
 }
 
 /* ---------- Dúvidas ---------- */
-const caixaDuvidas = secao('duvidas', 'secao-clara', 'Dúvidas');
+const caixaDuvidas = secao('duvidas', 'secao-clara', TX.duvidas);
 const duvidas = el('div', 'duvidas');
 for (const [pergunta, resposta] of n.duvidas) {
   const item = el('details');
@@ -406,10 +436,10 @@ const dado = (icone, titulo, texto) => {
   linha.append(ic(icone), textos);
   return linha;
 };
-const falar = link('botao botao-cheio', '#', 'Falar no WhatsApp');
+const falar = link('botao botao-cheio', '#', TX.falarWhats);
 falar.prepend(ic('whatsapp'));
 falar.dataset.whats = n.whats;
-dados.append(el('h2', null, 'Onde estamos'), dado('map-pin', 'Endereço', n.endereco), dado('clock', 'Horário', n.horario), dado('phone', 'Telefone', '(33) 0000-0000'));
+dados.append(el('h2', null, TX.ondeEstamos), dado('map-pin', n.enderecoRotulo || TX.endereco, n.endereco), dado('clock', TX.horario, n.horario), dado('phone', TX.telefone, n.telefone || '(33) 0000-0000'));
 if (n.nota) dados.append(comIcone('info', n.nota, 'p', 'nota'));
 const linhaFalar = el('p');
 linhaFalar.append(falar);
@@ -434,16 +464,16 @@ function mapa() {
   const etiqueta = el('p', 'mapa-etiqueta');
   etiqueta.append(el('strong', null, n.curto), el('span', null, n.endereco));
   desenho.append(pino, etiqueta);
-  quadro.append(desenho, el('figcaption', null, 'Mapa ilustrativo. No site de verdade, entra o mapa do Google com a sua localização.'));
+  quadro.append(desenho, el('figcaption', null, TX.mapa));
   return quadro;
 }
 caixaContato.append(dados, n.sobre ? mapa() : foto('apoio', n.altApoio, 'contato-foto'));
 
 /* ---------- Rodapé e botão fixo ---------- */
-document.querySelector('[data-rodape-nome]').textContent = `${n.nome} (nome fictício)`;
+document.querySelector('[data-rodape-nome]').textContent = `${n.nome} (${TX.nomeFicticio})`;
 const fixo = document.querySelector('[data-whats-fixo]');
 fixo.dataset.whats = n.whats;
-fixo.setAttribute('aria-label', `Falar no WhatsApp de ${n.nome}`);
+fixo.setAttribute('aria-label', TX.falarWhatsDe(n.nome));
 
 atualizar();
-iniciarModelo({ negocio: n.nome });
+iniciarModelo({ negocio: n.nome, textos: TX.kit });
