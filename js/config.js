@@ -9,7 +9,7 @@ export const CONFIG = {
   },
   contato: {
     // Só dígitos: 55 + DDD (GV é 33) + número. Ex.: 5533999990000
-    whatsapp: '[PREENCHER: número do WhatsApp do negócio]',
+    whatsapp: '5533998105829',
     email: 'atalhostudios@gmail.com',
     // Vazio: o negócio ainda não tem Instagram próprio (o rodapé esconde a linha).
     instagram: ''
@@ -41,7 +41,7 @@ export const CONFIG = {
     pagamento: ['Wise', 'PayPal']
   },
   prazos: {
-    entrega: '[PREENCHER: prazo de entrega que cumpre]',
+    entrega: 'site em até 7 dias úteis; sistema sob medida, combinado no orçamento',
     ajustes: '90 dias para corrigir o que foi combinado',
     pagamento: 'Pix à vista ou até 3x no cartão (com a taxa da operadora)'
   },
