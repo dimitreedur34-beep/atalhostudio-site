@@ -49,6 +49,6 @@ export const CONFIG = {
   casoReal: { autorizado: false, nome: '' },
   diagnostico: { ativo: false },
   medicao: { ga4Id: '', pixelId: '' },
-  dominio: '',
+  dominio: 'https://www.atalhostudio.com.br',
   cnpj: ''
 };
