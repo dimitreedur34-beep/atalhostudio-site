@@ -14,6 +14,16 @@ const MODULOS = {
   eua: './pagina-eua.js'
 };
 
+// Medição de visitas (Vercel Web Analytics): sem cookies e sem dados pessoais. Só no site publicado, nunca no preview local.
+function iniciarMedicao() {
+  if (!CONFIG.medicao.vercel || location.hostname.endsWith('localhost') || modoDev) return;
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  const script = document.createElement('script');
+  script.defer = true;
+  script.src = '/_vercel/insights/script.js';
+  document.head.append(script);
+}
+
 const PENDENTE = '[PREENCHER';
 const ehPendente = (valor) => typeof valor === 'string' && valor.includes(PENDENTE);
 const modoDev = new URLSearchParams(location.search).has('dev');
@@ -117,3 +127,4 @@ marcarPendencias();
 iniciarWhatsApp();
 iniciarRevelar();
 iniciarMovimento();
+iniciarMedicao();

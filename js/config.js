@@ -48,7 +48,7 @@ export const CONFIG = {
   // Caso da imobiliária: só aparece com autorização do cliente (nome e telas com dados borrados).
   casoReal: { autorizado: false, nome: '' },
   diagnostico: { ativo: false },
-  medicao: { ga4Id: '', pixelId: '' },
+  medicao: { vercel: true, ga4Id: '', pixelId: '' },
   dominio: 'https://www.atalhostudio.com.br',
   cnpj: ''
 };
