@@ -16,7 +16,7 @@
   --wa-saida: #D9FDD3;
   --wa-entrada: #FFFFFF;
   --wa-texto: #111B21;
-  --wa-hora: #667781;
+  --wa-hora: #54656F; /* um tom mais escuro que o do WhatsApp: contraste de 5,5:1 no balão verde (o Google pede 4,5:1) */
   --wa-azul: #53BDEB;
   --wa-botao: #008069;
   --wa-enviar: #00A884;
@@ -857,7 +857,7 @@ a.servico:hover .link-seta .icone {
 }
 
 .wa-campo.wa-vazio {
-  color: #8696A0;
+  color: #667781;
 }
 
 .wa-enviar {
@@ -5652,4 +5652,43 @@ a.servico.em-foco .icone { background: var(--texto); color: #fff; }
 .modelo-testar .icone {
   width: 1rem;
   height: 1rem;
+}
+
+/* ---------- Sem "pulo" enquanto a página carrega (PageSpeed, 06/11/2026) ---------- */
+/* O topo é montado pelo layout.js: o espaço dele fica reservado desde o começo. */
+header[data-topo]:empty {
+  display: block;
+  min-height: 73px;
+}
+
+/* Os tipos de sistema são montados pelo painel.js: altura reservada até chegarem (1, 2, 3 e 4 colunas). */
+.tipos:empty {
+  min-height: 38.5rem;
+}
+
+@media (min-width: 32.5em) {
+  .tipos:empty {
+    min-height: 24rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .tipos:empty {
+    min-height: 18rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .tipos:empty {
+    min-height: 13rem;
+  }
+}
+
+/* Vídeos: proporção fixa antes de a capa carregar */
+.video-deitado video {
+  aspect-ratio: 16 / 9;
+}
+
+.video-em-pe video {
+  aspect-ratio: 9 / 16;
 }
