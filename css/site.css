@@ -5514,3 +5514,142 @@ a.servico.em-foco .icone { background: var(--texto); color: #fff; }
   color: var(--texto-2);
   font-size: var(--t-pequeno);
 }
+
+/* ---------- "Teste agora": deixa claro que dá para mexer nas demonstrações (WhatsApp, Sites, Sistemas) ---------- */
+.teste-agora {
+  display: grid;
+  gap: var(--e-4);
+  max-width: 46rem;
+  margin-top: var(--e-6);
+  padding: var(--e-5);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-recebida);
+  background: var(--papel);
+}
+
+.cabeca .teste-titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  margin: 0;
+  color: var(--texto);
+  font: 700 var(--t-h3)/1.2 var(--fonte-titulo);
+}
+
+.teste-titulo .icone {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--cobre-escuro);
+}
+
+.teste-passos {
+  display: grid;
+  gap: var(--e-3);
+  counter-reset: passo;
+}
+
+.teste-passos li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--e-3);
+  color: var(--texto);
+  line-height: 1.45;
+  counter-increment: passo;
+}
+
+.teste-passos li::before {
+  content: counter(passo);
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--grafite);
+  color: #fff;
+  font: 700 0.85rem/1 var(--fonte-titulo);
+}
+
+@media (min-width: 48em) {
+  .teste-passos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.teste-rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-3) var(--e-5);
+}
+
+.teste-rodape p.aviso-exemplo {
+  margin-top: 0;
+}
+
+/* Etiqueta em cima da demonstração; some depois do primeiro toque (main.js, [data-testar]) */
+.dica-toque {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  justify-self: center;
+  margin: 0;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--raio-recebida);
+  background: var(--grafite);
+  color: #fff;
+  font: 600 0.9375rem/1.2 var(--fonte-texto);
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.dica-toque .icone {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dica-toque {
+    animation: dica-toque 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes dica-toque {
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.testou .dica-toque {
+  visibility: hidden;
+  opacity: 0;
+  animation: none;
+}
+
+.dica-painel {
+  margin-bottom: var(--e-3);
+}
+
+/* Sites: "Abrir e testar" em cada prévia */
+.modelo-tela .modelo-testar {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--raio-recebida);
+  background: var(--grafite);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.modelo-testar .icone {
+  width: 1rem;
+  height: 1rem;
+}

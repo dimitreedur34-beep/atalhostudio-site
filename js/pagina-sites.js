@@ -61,7 +61,10 @@ export function iniciar() {
     previa.decoding = 'async';
     const abrir = link('', `ver.html?modelo=${modelo.id}`);
     abrir.setAttribute('aria-label', `Abrir o modelo ${modelo.nome}`);
-    tela.append(previa, el('span', 'modelo-exemplo', 'Exemplo · preços fictícios'), abrir);
+    const testar = el('span', 'modelo-testar', 'Abrir e testar');
+    testar.setAttribute('aria-hidden', 'true');
+    testar.prepend(icone('mouse-pointer-click'));
+    tela.append(previa, el('span', 'modelo-exemplo', 'Exemplo · preços fictícios'), testar, abrir);
 
     const corpo = el('div', 'modelo-corpo');
     const area = el('span', 'modelo-area');
@@ -69,7 +72,7 @@ export function iniciar() {
     const acoes = el('div', 'acoes');
     const quero = link('link-seta', '#contato', 'Quero um assim');
     quero.append(icone('arrow-right'));
-    acoes.append(link('botao botao-escuro botao-pequeno', `ver.html?modelo=${modelo.id}`, 'Abrir e mexer'), quero);
+    acoes.append(link('botao botao-escuro botao-pequeno', `ver.html?modelo=${modelo.id}`, 'Testar este site'), quero);
     quero.dataset.wa = 'geral';
     quero.dataset.waMensagem = `Oi! Vi o modelo de site "${modelo.nome}" (${modelo.area.toLowerCase()}) no site da Atalho Studio e quero um parecido para o meu negócio.`;
     quero.dataset.posicao = 'galeria';

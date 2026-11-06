@@ -109,6 +109,15 @@ function marcarPendencias() {
   }
 }
 
+// Etiqueta "Toque para testar" ([data-testar] .dica-toque): some depois do primeiro toque na demonstração.
+function iniciarDicasDeToque() {
+  for (const area of document.querySelectorAll('[data-testar]')) {
+    const marcar = () => area.classList.add('testou');
+    area.addEventListener('pointerdown', marcar, { once: true });
+    area.addEventListener('keydown', marcar, { once: true });
+  }
+}
+
 document.documentElement.classList.remove('sem-js');
 montarLayout();
 preencherConfig();
@@ -126,5 +135,6 @@ if (modulo) {
 marcarPendencias();
 iniciarWhatsApp();
 iniciarRevelar();
+iniciarDicasDeToque();
 iniciarMovimento();
 iniciarMedicao();

@@ -34,16 +34,28 @@
       <div class="recipiente cabeca">
         <h1 class="titulo-pagina revelar">Seu WhatsApp respondendo na hora, até às 22h de um domingo</h1>
         <p class="linha-pagina revelar revelar-2">Escolha uma área e converse como se fosse o cliente. Ao lado, você vê o que acontece por trás de cada resposta.</p>
-        <p class="aviso-exemplo revelar revelar-3"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#info"></use></svg>Conversa de exemplo, com dados fictícios · pode tocar nos botões</p>
+        <div class="teste-agora revelar revelar-3">
+          <p class="teste-titulo"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#mouse-pointer-click"></use></svg>Teste agora, aqui mesmo</p>
+          <ol class="teste-passos" role="list">
+            <li>Escolha a área do seu negócio</li>
+            <li>No celular, toque em enviar e depois nos botões</li>
+            <li>Veja ao lado o que acontece por trás</li>
+          </ol>
+          <div class="teste-rodape">
+            <a class="botao botao-cobre" href="#testar">Testar agora<svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#chevron-down"></use></svg></a>
+            <p class="aviso-exemplo"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#info"></use></svg>Conversa de exemplo, com dados fictícios</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="secao secao-areia" style="padding-top:0" aria-label="Teste uma conversa">
+    <section class="secao secao-areia" style="padding-top:0" aria-label="Teste uma conversa" id="testar">
       <div class="recipiente">
         <div class="areas revelar" role="group" aria-label="Escolha a área" data-areas></div>
 
         <div class="palco-whats" data-palco-whats>
-          <div class="palco-celular">
+          <div class="palco-celular" data-testar>
+            <p class="dica-toque"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#mouse-pointer-click"></use></svg>Toque no celular para testar</p>
             <div class="celular" data-whats="pagina"></div>
             <p class="legenda">Demonstração com dados fictícios.</p>
           </div>
@@ -78,7 +90,8 @@
         </div>
 
         <div class="palco-whats">
-          <div class="palco-celular">
+          <div class="palco-celular" data-testar>
+            <p class="dica-toque"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#mouse-pointer-click"></use></svg>Escreva aqui, do jeito do cliente</p>
             <div class="celular" data-whats="ia"></div>
             <p class="legenda">Demonstração simulada · dados fictícios</p>
           </div>

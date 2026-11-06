@@ -34,13 +34,25 @@
       <div class="recipiente cabeca">
         <h1 class="titulo-pagina revelar">Um sistema para cada tipo de negócio</h1>
         <p class="linha-pagina revelar revelar-2">Escolha o tipo de sistema e mexa no painel: avance pedidos, envie lembretes, simule vendas. O seu pode resolver uma coisa só ou juntar várias.</p>
-        <p class="aviso-exemplo revelar revelar-3"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#info"></use></svg>Painel de exemplo, com dados fictícios · pode clicar em tudo</p>
+        <div class="teste-agora revelar revelar-3">
+          <p class="teste-titulo"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#mouse-pointer-click"></use></svg>Teste agora, aqui mesmo</p>
+          <ol class="teste-passos" role="list">
+            <li>Escolha o tipo de sistema</li>
+            <li>Toque nos botões do painel: avance um pedido, envie um lembrete</li>
+            <li>Veja o painel mudar na hora</li>
+          </ol>
+          <div class="teste-rodape">
+            <a class="botao botao-cobre" href="#testar">Testar agora<svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#chevron-down"></use></svg></a>
+            <p class="aviso-exemplo"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#info"></use></svg>Painel de exemplo, com dados fictícios</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="secao secao-pedra" style="padding-top:0" aria-label="Painel de demonstração">
-      <div class="recipiente">
+    <section class="secao secao-pedra" style="padding-top:0" aria-label="Painel de demonstração" id="testar">
+      <div class="recipiente" data-testar>
         <div class="tipos" role="group" aria-label="Tipos de sistema" data-tipos></div>
+        <p class="dica-toque dica-painel"><svg class="icone" aria-hidden="true" focusable="false"><use href="assets/icones.svg#mouse-pointer-click"></use></svg>Toque nos botões do painel para testar</p>
         <div class="janela">
           <div class="janela-barra" aria-hidden="true">
             <span class="janela-pontos"><i></i><i></i><i></i></span>
