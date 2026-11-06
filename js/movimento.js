@@ -2,6 +2,7 @@
 // escurecem ao chegar, os números contam até o valor, a faixa de áreas anda e o "antes e depois" se conta sozinho.
 // Sem JavaScript tudo aparece parado e com as cores normais de cada seção. O 3D fica em profundidade.js.
 import { iniciarProfundidade } from './profundidade.js';
+import { iconeHTML } from './icones.js';
 
 const parado = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const temObservador = 'IntersectionObserver' in window;
@@ -176,21 +177,18 @@ function iniciarFocoNoToque() {
   itens.forEach((item) => observador.observe(item));
 }
 
-// Vídeos de demonstração: tocam sem som quando aparecem na tela e pausam quando saem.
-// Não tocam sozinhos com "reduzir movimento" ligado nem no modo de economia de dados.
+// Vídeos de demonstração: só baixam e tocam quando a pessoa aperta "Assistir" (docs/06: nenhum vídeo baixa antes
+// do toque; poupa o 4G de quem não quer ver). Depois do primeiro toque valem os controles do próprio vídeo.
 function iniciarVideos() {
-  const videos = document.querySelectorAll('[data-video-auto]');
-  if (!videos.length || !temObservador || parado() || navigator.connection?.saveData) return;
-  const observador = new IntersectionObserver(
-    (entradas) => {
-      for (const entrada of entradas) {
-        if (entrada.isIntersecting) entrada.target.play().catch(() => {});
-        else entrada.target.pause();
-      }
-    },
-    { threshold: 0.5 }
-  );
-  videos.forEach((video) => observador.observe(video));
+  for (const video of document.querySelectorAll('[data-video]')) {
+    const botao = document.createElement('button');
+    botao.type = 'button';
+    botao.className = 'video-play';
+    botao.innerHTML = `${iconeHTML('play')}Assistir o vídeo`;
+    botao.addEventListener('click', () => video.play().catch(() => {}));
+    video.addEventListener('play', () => { botao.hidden = true; });
+    video.after(botao);
+  }
 }
 
 export function iniciarMovimento() {

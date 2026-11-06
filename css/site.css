@@ -5692,3 +5692,35 @@ header[data-topo]:empty {
 .video-em-pe video {
   aspect-ratio: 9 / 16;
 }
+
+/* Vídeos: botão "Assistir o vídeo" no meio da capa (movimento.js); o vídeo só baixa depois do toque */
+.video-moldura {
+  position: relative;
+}
+
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  padding: 0.85rem 1.35rem;
+  border: 0;
+  border-radius: var(--raio-botao);
+  background: rgba(27, 27, 26, 0.88);
+  color: #fff;
+  font: 600 1rem/1.2 var(--fonte-texto);
+  white-space: nowrap;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.video-play:hover {
+  background: var(--grafite);
+}
+
+.video-play .icone {
+  width: 1.2rem;
+  height: 1.2rem;
+}
