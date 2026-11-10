@@ -2,258 +2,352 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dr. William José de Sousa Santos | Advogado em Itambacuri (MG)</title>
-<meta name="description" content="Advogado em Itambacuri (MG), com atuação na área criminal (Tribunal do Júri, habeas corpus, defesas e audiências) e em Direito Civil, do Consumidor, de Família, Público e Administrativo.">
+<meta name="description" content="Advocacia e Consultoria Jurídica em Itambacuri (MG). Área criminal (Tribunal do Júri, habeas corpus, defesas e audiências) e áreas cível, de família, do consumidor, previdenciária, trabalhista, administrativa e eleitoral. OAB/MG 172.254.">
 <!-- Prévia para aprovação do cliente: fora do Google até ele aprovar -->
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0C1B2E">
+<meta name="theme-color" content="#0F1F38">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Dr. William José de Sousa Santos | Advogado em Itambacuri (MG)">
-<meta property="og:description" content="Prévia do site: áreas de atuação, como falar com o escritório e endereço.">
+<meta property="og:description" content="Advocacia e Consultoria Jurídica. Área criminal, Tribunal do Júri e habeas corpus. OAB/MG 172.254.">
 <meta property="og:url" content="https://www.atalhostudio.com.br/previas/dr-william/">
 <meta property="og:image" content="https://www.atalhostudio.com.br/previas/dr-william/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Dr. William José de Sousa Santos, de terno, em fundo azul com detalhes dourados">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 2.5l18.6 10.75v21.5L24 45.5 5.4 34.75v-21.5z' fill='%230C1B2E' stroke='%23C9A45C' stroke-width='2.5'/%3E%3Ctext x='24' y='32' text-anchor='middle' font-family='Georgia,serif' font-size='21' font-weight='700' fill='%23C9A45C'%3EW%3C/text%3E%3C/svg%3E">
+<meta property="og:image:alt" content="Dr. William José de Sousa Santos no escritório">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F1F38'/%3E%3Cpath d='M18 20h28M22 24v20M28 24v20M36 24v20M42 24v20M16 48h32' stroke='%23D4B67E' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,500;0,600;1,500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="preload" as="image" href="img/hero-poster.webp" fetchpriority="high">
+<script>document.documentElement.classList.add('js');</script>
 <style>
 :root {
-  --noite: #0C1B2E;
-  --noite-funda: #08131F;
-  --ouro: #C9A45C;
-  --ouro-claro: #D8B66E;
-  --ouro-escuro: #7A5A1F;
-  --papel: #F2F4F7;
+  --azul: #0F1F38;
+  --azul-2: #172B4A;
+  --azul-3: #0A1628;
+  --dourado: #B8955A;
+  --dourado-claro: #D4B67E;
+  --dourado-escuro: #8A6A33;
   --branco: #FFFFFF;
-  --tinta: #13233A;
-  --tinta-suave: #4A5568;
-  --marfim: #EEF1F5;
-  --nevoa: #A9B6C6;
-  --linha-clara: #D5DBE3;
-  --linha-ouro: rgba(201, 164, 92, 0.24);
-  --serif: "Libre Bodoni", Georgia, "Times New Roman", serif;
-  --sans: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --largura: 1120px;
-  --respiro: clamp(3.5rem, 8vw, 6rem);
+  --cinza: #F3F4F6;
+  --linha: #E2E5EA;
+  --texto: #1B2433;
+  --texto-2: #5A6475;
+  --claro: #E9EDF3;
+  --claro-2: #B4BFCE;
+  --verde: #1EAA52;
+  --verde-hover: #178F44;
+  --titulo: "Playfair Display", Georgia, "Times New Roman", serif;
+  --corpo: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --largura: 1180px;
+  --respiro: clamp(4.5rem, 9vw, 7.5rem);
+  --sombra: 0 22px 48px -22px rgba(10, 22, 40, 0.45);
+  --curva: cubic-bezier(0.2, 0.65, 0.2, 1);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  background: var(--papel);
-  color: var(--tinta);
-  font-family: var(--sans);
-  font-size: 1.125rem;
-  line-height: 1.6;
-}
-img, iframe { display: block; max-width: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 84px; }
+body { margin: 0; background: var(--branco); color: var(--texto); font-family: var(--corpo); font-size: 1.0625rem; line-height: 1.7; }
+img, video, iframe { display: block; max-width: 100%; }
+img { height: auto; }
 a { color: inherit; }
 p { margin: 0; }
+h1, h2, h3 { margin: 0; }
+button { font: inherit; color: inherit; }
 
-.abertura h1, .titulo, .frase blockquote p, .lista-criminal h3, .sigilo h3, .numero, .marca span { word-spacing: 0.1em; }
-.ico { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ico { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 .ico-cheio { width: 24px; height: 24px; fill: currentColor; stroke: none; flex: none; }
-
 .envolve { width: min(100% - 40px, var(--largura)); margin-inline: auto; }
+.secao { padding-block: var(--respiro); }
 
-/* Acessibilidade */
-.pular {
-  position: absolute; left: -9999px; top: 0; z-index: 100;
-  background: var(--ouro); color: var(--noite); padding: 0.7rem 1rem; font-weight: 600; text-decoration: none;
-}
+.pular { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--verde); color: #fff; padding: 0.7rem 1rem; font-weight: 700; text-decoration: none; }
 .pular:focus { left: 16px; top: 16px; }
-a:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; border-radius: 2px; }
-.claro a:focus-visible { outline-color: var(--ouro-escuro); }
+:focus-visible { outline: 3px solid var(--dourado-claro); outline-offset: 3px; }
+.claro :focus-visible { outline-color: var(--dourado-escuro); }
 
-/* Faixa de prévia */
-.previa {
-  background: var(--noite-funda); color: var(--nevoa);
-  font-size: 0.875rem; line-height: 1.45; text-align: center; padding: 0.55rem 16px;
-}
-.previa a { color: var(--ouro); }
-
-/* Topo */
-.topo { background: var(--noite); color: var(--marfim); border-bottom: 1px solid var(--linha-ouro); }
-.topo .envolve { display: flex; align-items: center; gap: 2rem; min-height: 76px; }
-.marca { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
-.marca svg { width: 42px; height: 42px; flex: none; }
-.marca span { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; line-height: 1.2; word-spacing: 0.1em; }
-.menu { margin-left: auto; display: flex; gap: 1.75rem; }
-.menu a { color: var(--nevoa); text-decoration: none; font-size: 1rem; }
-.menu a:hover { color: var(--marfim); }
+/* Títulos */
+.rotulo { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; font-weight: 600; color: var(--dourado-escuro); margin-bottom: 1rem; }
+.rotulo::before { content: ""; width: 34px; height: 1px; background: currentColor; }
+.escuro .rotulo { color: var(--dourado-claro); }
+.titulo { font-family: var(--titulo); font-weight: 600; font-size: clamp(2.1rem, 4.4vw, 3.25rem); line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance; }
+.titulo em { font-style: italic; font-weight: 500; }
+.intro { color: var(--texto-2); font-size: 1.125rem; max-width: 40em; margin-top: 1.1rem; }
+.escuro { background: var(--azul); color: var(--claro); }
+.escuro .intro { color: var(--claro-2); }
 
 /* Botões */
 .botao {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.65rem;
-  min-height: 52px; padding: 0.8rem 1.35rem; border-radius: 4px;
-  font-family: var(--sans); font-size: 1.0625rem; font-weight: 600; line-height: 1.2;
-  text-decoration: none; transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.7rem;
+  min-height: 56px; padding: 0.85rem 1.6rem; border-radius: 999px; border: 0; cursor: pointer;
+  font-family: var(--corpo); font-size: 1.1875rem; font-weight: 700; line-height: 1.2; text-decoration: none;
+  transition: background-color 0.25s, transform 0.25s var(--curva), box-shadow 0.25s, border-color 0.25s;
 }
-.botao .ico, .botao .ico-cheio { width: 20px; height: 20px; }
-.botao-ouro { background: var(--ouro); color: var(--noite); }
-.botao-ouro:hover { background: var(--ouro-claro); }
-.botao-linha { border: 1px solid rgba(201, 164, 92, 0.65); color: var(--marfim); }
-.botao-linha:hover { border-color: var(--ouro); background: rgba(201, 164, 92, 0.1); }
-.botao-escuro { background: var(--noite); color: var(--marfim); }
-.botao-escuro:hover { background: #18304F; }
+.botao:hover { transform: translateY(-2px); }
+.botao .ico, .botao .ico-cheio { width: 22px; height: 22px; }
+.botao-whats { background: var(--verde); color: #fff; box-shadow: 0 12px 28px -12px rgba(30, 170, 82, 0.7); }
+.botao-whats:hover { background: var(--verde-hover); }
+.botao-vazado { border: 1.5px solid rgba(255, 255, 255, 0.55); color: #fff; background: rgba(255, 255, 255, 0.04); }
+.botao-vazado:hover { border-color: #fff; background: rgba(255, 255, 255, 0.12); }
+.botao-escuro { background: var(--azul); color: #fff; }
+.botao-escuro:hover { background: var(--azul-2); }
 
-/* Fio dourado com losango, o mesmo das artes do escritório */
-.fio { display: block; position: relative; width: 136px; height: 12px; }
-.fio::before {
-  content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px;
-  background: linear-gradient(90deg, var(--ouro) 0 42%, transparent 42% 58%, var(--ouro) 58% 100%);
-}
-.fio::after {
-  content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px;
-  background: var(--ouro); transform: translate(-50%, -50%) rotate(45deg);
-}
+/* Faixa de prévia */
+.previa { position: relative; z-index: 60; background: var(--azul-3); color: var(--claro-2); font-size: 0.8125rem; line-height: 1.4; text-align: center; padding: 0.5rem 16px; }
+.previa a { color: var(--dourado-claro); }
 
-/* Abertura */
-.abertura { position: relative; background: var(--noite); color: var(--marfim); overflow: hidden; }
-.abertura::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='90' viewBox='0 0 34.64 60'%3E%3Cpath d='M17.32 0L34.64 10V30L17.32 40L0 30V10Z M17.32 40V60' fill='none' stroke='%23C9A45C' stroke-opacity='.2' stroke-width='.55'/%3E%3C/svg%3E");
-  background-size: 52px 90px;
-  -webkit-mask-image: linear-gradient(100deg, transparent 28%, #000 78%);
-  mask-image: linear-gradient(100deg, transparent 28%, #000 78%);
-}
-.abertura .envolve { position: relative; display: grid; grid-template-columns: 1.08fr 0.92fr; align-items: end; gap: 2.5rem; }
-.abertura-texto { padding-block: clamp(3rem, 8vw, 6.5rem); }
-.local { display: flex; align-items: center; gap: 0.55rem; color: var(--nevoa); font-size: 1rem; margin-bottom: 1.4rem; }
-.local .ico { width: 20px; height: 20px; color: var(--ouro); }
-.abertura h1 {
-  font-family: var(--serif); font-weight: 600;
-  font-size: clamp(2.6rem, 6.2vw, 4.5rem); line-height: 1.04; letter-spacing: -0.015em; word-spacing: 0.08em;
-  margin: 0; text-wrap: balance;
-}
-.abertura .fio { margin: 1.7rem 0 1.6rem; animation: tracar 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s both; }
-@keyframes tracar { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
-.resumo { font-size: clamp(1.125rem, 1.6vw, 1.25rem); color: #D3DBE5; max-width: 33em; margin-bottom: 2.1rem; }
-.acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-.retrato { margin: 0; align-self: end; }
-.retrato img {
-  width: 100%; height: auto;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 76%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 86%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 76%, transparent 100%), linear-gradient(to right, transparent 0, #000 16%, #000 86%, transparent 100%);
-  mask-composite: intersect;
-}
+/* Topo */
+.topo { position: sticky; top: 0; z-index: 50; transition: background-color 0.35s, box-shadow 0.35s; }
+.topo .envolve { display: flex; align-items: center; gap: 2rem; min-height: 80px; }
+.topo.solido { background: rgba(15, 31, 56, 0.97); box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5); }
+.marca-topo { display: flex; align-items: center; gap: 0.8rem; flex: none; color: #fff; text-decoration: none; }
+.marca-icone { width: 66px; height: 42px; flex: none; background: var(--dourado-claro); -webkit-mask: url(img/logo-icone.png) center / contain no-repeat; mask: url(img/logo-icone.png) center / contain no-repeat; }
+.marca-texto strong { display: block; font-family: var(--titulo); font-size: 1.22rem; font-weight: 600; line-height: 1.15; }
+.marca-texto small { display: block; font-size: 0.75rem; line-height: 1.3; color: var(--claro-2); letter-spacing: 0.02em; }
+.marca { display: block; flex: none; background: #fff; -webkit-mask: url(img/logo.png) left center / contain no-repeat; mask: url(img/logo.png) left center / contain no-repeat; }
+.menu { margin-left: auto; display: flex; align-items: center; gap: 1.8rem; }
+.menu a { color: rgba(255, 255, 255, 0.86); text-decoration: none; font-size: 0.97rem; font-weight: 500; position: relative; }
+.menu a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1.5px; background: var(--dourado-claro); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--curva); }
+.menu a:hover { color: #fff; }
+.menu a:hover::after { transform: scaleX(1); }
+.topo .botao { min-height: 46px; padding: 0.6rem 1.15rem; font-size: 1rem; }
+.abre-menu { display: none; margin-left: auto; background: none; border: 0; color: #fff; padding: 10px; cursor: pointer; }
+.abre-menu .ico { width: 28px; height: 28px; }
+.menu-celular { display: none; }
 
-/* Seções */
-.secao { padding-block: var(--respiro); }
-.titulo {
-  font-family: var(--serif); font-weight: 600;
-  font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.1; letter-spacing: -0.01em; word-spacing: 0.06em;
-  margin: 0 0 0.8rem; text-wrap: balance;
+/* Abertura com vídeo */
+.abertura { position: relative; margin-top: -80px; min-height: 100svh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; background: var(--azul-3); }
+.abertura-fundo { position: absolute; inset: 0; }
+.abertura-fundo video, .abertura-fundo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
+.abertura-fundo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(10, 22, 40, 0.92) 0%, rgba(10, 22, 40, 0.72) 42%, rgba(10, 22, 40, 0.25) 75%, rgba(10, 22, 40, 0.15) 100%), linear-gradient(0deg, rgba(10, 22, 40, 0.85) 0%, rgba(10, 22, 40, 0) 45%);
 }
-.intro { color: var(--tinta-suave); max-width: 36em; margin-bottom: 2.5rem; }
+.abertura-conteudo { position: relative; padding-top: 150px; padding-bottom: clamp(3.5rem, 9vh, 6.5rem); }
+.abertura .rotulo { color: var(--dourado-claro); }
+.abertura h1 { font-family: var(--titulo); font-weight: 600; font-size: clamp(2.7rem, 6.6vw, 5.4rem); line-height: 1.04; letter-spacing: -0.015em; max-width: 11.5em; text-wrap: balance; }
+.abertura .resumo { font-size: clamp(1.1rem, 1.7vw, 1.3rem); line-height: 1.6; color: rgba(255, 255, 255, 0.88); max-width: 36em; margin-top: 1.5rem; }
+.selos { display: flex; flex-wrap: wrap; gap: 0.6rem 1.6rem; margin-top: 1.3rem; }
+.abertura .oab { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 600; color: var(--dourado-claro); letter-spacing: 0.01em; }
+.abertura .oab .ico { width: 22px; height: 22px; }
+.abertura .acoes { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2.2rem; }
+.rolar { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; text-decoration: none; }
+.rolar span { width: 22px; height: 36px; border: 1.5px solid rgba(255, 255, 255, 0.6); border-radius: 12px; position: relative; }
+.rolar span::after { content: ""; position: absolute; left: 50%; top: 7px; width: 3px; height: 7px; margin-left: -1.5px; border-radius: 2px; background: #fff; animation: rola 1.8s ease-in-out infinite; }
+@keyframes rola { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(12px); } }
+.entra { animation: entra 1s var(--curva) both; animation-delay: var(--d, 0s); }
+@keyframes entra { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
 
-/* Frase */
-.frase { background: var(--branco); }
-.frase blockquote { margin: 0; max-width: 960px; }
-.frase blockquote p {
-  font-family: var(--serif); font-style: italic; font-weight: 500;
-  font-size: clamp(1.75rem, 3.7vw, 2.65rem); line-height: 1.28; color: var(--tinta); text-wrap: balance;
-}
-.frase .fio { margin-top: 2rem; }
+/* Faixa de áreas que corre */
+.faixa { background: var(--azul-3); color: var(--claro); overflow: hidden; border-block: 1px solid rgba(212, 182, 126, 0.18); }
+.faixa-trilho { display: flex; width: max-content; animation: corre 46s linear infinite; }
+.faixa:hover .faixa-trilho { animation-play-state: paused; }
+.faixa ul { display: flex; list-style: none; margin: 0; padding: 1.15rem 0; }
+.faixa li { display: flex; align-items: center; gap: 2.2rem; padding-right: 2.2rem; white-space: nowrap; font-family: var(--titulo); font-size: 1.25rem; font-style: italic; }
+.faixa li::after { content: ""; width: 7px; height: 7px; background: var(--dourado); transform: rotate(45deg); }
+@keyframes corre { to { transform: translateX(-50%); } }
+
+/* Animações ao rolar */
+.js [data-revela] { opacity: 0; transform: translateY(34px); transition: opacity 0.9s var(--curva), transform 0.9s var(--curva); transition-delay: var(--atraso, 0s); }
+.js [data-revela].visivel { opacity: 1; transform: none; }
+.js [data-revela="cortina"] { opacity: 1; transform: none; position: relative; }
+.js [data-revela="cortina"]::after { content: ""; position: absolute; inset: 0; z-index: 3; border-radius: inherit; background: var(--azul); transform-origin: top; transition: transform 1.1s cubic-bezier(0.7, 0, 0.2, 1); transition-delay: var(--atraso, 0s); pointer-events: none; }
+.js [data-revela="cortina"].visivel::after { transform: scaleY(0); }
+
+/* Sobre */
+.sobre .envolve { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center; }
+.sobre-foto { position: relative; margin: 0; }
+.sobre-foto::before { content: ""; position: absolute; inset: 28px -28px -28px 28px; border: 1.5px solid var(--dourado); border-radius: 6px; z-index: -1; }
+.sobre-foto img { width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; object-position: 30% center; border-radius: 6px; box-shadow: var(--sombra); }
+.sobre-texto p + p { margin-top: 1.1rem; }
+.sobre-texto .intro { margin-bottom: 1.4rem; }
+.fatos { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; }
+.fatos li { display: flex; gap: 0.8rem; align-items: center; font-weight: 600; font-size: 1rem; line-height: 1.35; }
+.fatos .ico { width: 40px; height: 40px; padding: 9px; border-radius: 50%; background: #F4EEE3; color: var(--dourado-escuro); }
 
 /* Área criminal */
-.lista-criminal { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 3.5rem; }
-.lista-criminal li { display: grid; grid-template-columns: 44px 1fr; gap: 1.1rem; padding: 1.8rem 0; border-top: 1px solid var(--linha-clara); }
-.lista-criminal .ico { width: 34px; height: 34px; color: var(--ouro-escuro); margin-top: 0.15rem; stroke-width: 1.4; }
-.lista-criminal h3 { font-family: var(--serif); font-weight: 600; font-size: 1.55rem; line-height: 1.2; margin: 0 0 0.45rem; }
-.lista-criminal p { color: var(--tinta-suave); }
+.criminal { position: relative; overflow: hidden; }
+.criminal::before { content: ""; position: absolute; right: -10%; top: 10%; width: 60%; height: 90%; background: radial-gradient(closest-side, rgba(184, 149, 90, 0.22), transparent); pointer-events: none; }
+.criminal .envolve { position: relative; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 3rem; align-items: center; }
+.criminal-lista { list-style: none; padding: 0; margin: 2.6rem 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.criminal-lista li { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(212, 182, 126, 0.2); border-radius: 10px; padding: 1.5rem 1.4rem; transition: border-color 0.3s, background-color 0.3s, transform 0.3s var(--curva); }
+.criminal-lista li:hover { border-color: rgba(212, 182, 126, 0.55); background: rgba(255, 255, 255, 0.07); transform: translateY(-4px); }
+.criminal-lista .ico { width: 34px; height: 34px; color: var(--dourado-claro); margin-bottom: 0.9rem; stroke-width: 1.5; }
+.criminal-lista h3 { font-family: var(--titulo); font-weight: 600; font-size: 1.4rem; line-height: 1.25; margin-bottom: 0.45rem; color: #fff; }
+.criminal-lista p { color: var(--claro-2); font-size: 1rem; line-height: 1.6; }
+.criminal-foto { margin: 0; align-self: end; }
+.criminal-foto img { width: 100%; max-width: 440px; margin-left: auto; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.45)); }
 
 /* Outras áreas */
-.areas { background: var(--noite); color: var(--marfim); }
-.areas .intro { color: var(--nevoa); }
-.lista-areas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 2.75rem; }
-.lista-areas li { padding: 1.6rem 0 1.7rem; border-top: 1px solid var(--linha-ouro); }
-.lista-areas .ico { width: 28px; height: 28px; color: var(--ouro); margin-bottom: 0.8rem; stroke-width: 1.5; }
-.lista-areas h3 { font-size: 1.125rem; font-weight: 600; line-height: 1.3; margin: 0 0 0.35rem; }
-.lista-areas p { color: var(--nevoa); font-size: 1rem; line-height: 1.55; }
+.areas { background: var(--cinza); }
+.areas-grade { list-style: none; padding: 0; margin: 3rem 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.areas-grade li { background: var(--branco); border-radius: 10px; padding: 1.7rem 1.6rem; border-top: 3px solid transparent; box-shadow: 0 1px 0 var(--linha); transition: transform 0.35s var(--curva), box-shadow 0.35s, border-color 0.35s; }
+.areas-grade li:hover { transform: translateY(-6px); box-shadow: var(--sombra); border-top-color: var(--dourado); }
+.areas-grade .ico { width: 30px; height: 30px; color: var(--dourado-escuro); margin-bottom: 1rem; stroke-width: 1.6; }
+.areas-grade h3 { font-size: 1.125rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.4rem; }
+.areas-grade p { color: var(--texto-2); font-size: 0.98rem; line-height: 1.6; }
+.areas-chamada { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem; margin-top: 2.4rem; padding: 1.6rem 1.8rem; border-radius: 12px; background: var(--azul); color: #fff; }
+.areas-chamada p { font-size: 1.125rem; font-weight: 600; max-width: 34em; }
 
-/* Como falar */
-.como .envolve { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: start; }
-.passos { list-style: none; counter-reset: passo; margin: 0 0 2.2rem; padding: 0; }
-.passos li {
-  counter-increment: passo; display: grid; grid-template-columns: 3rem 1fr; align-items: baseline;
-  padding: 1.15rem 0; border-top: 1px solid var(--linha-clara);
-}
-.passos li::before { content: counter(passo); font-family: var(--serif); font-size: 2.1rem; line-height: 1; color: var(--ouro-escuro); }
-.passos a { font-weight: 600; text-decoration-color: var(--ouro); text-underline-offset: 3px; }
-.sigilo { border-left: 2px solid var(--ouro); padding: 0.3rem 0 0.3rem 1.4rem; margin-top: 4.2rem; }
-.sigilo .ico { width: 30px; height: 30px; color: var(--ouro-escuro); margin-bottom: 0.7rem; stroke-width: 1.5; }
-.sigilo h3 { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; line-height: 1.2; margin: 0 0 0.45rem; }
-.sigilo p { color: var(--tinta-suave); }
+/* Vídeo do escritório */
+.filme { position: relative; min-height: min(78vh, 720px); display: grid; place-items: center; text-align: center; color: #fff; overflow: hidden; background: var(--azul-3); }
+.filme > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 1.6s var(--curva); }
+.filme.visivel > img { transform: scale(1); }
+.filme::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 22, 40, 0.55), rgba(10, 22, 40, 0.75)); }
+.filme-conteudo { position: relative; z-index: 1; padding: 4rem 20px; }
+.filme .titulo { color: #fff; }
+.filme p { color: rgba(255, 255, 255, 0.85); margin-top: 0.9rem; font-size: 1.125rem; }
+.tocar { position: relative; width: 104px; height: 104px; margin: 0 auto 2rem; border-radius: 50%; border: 0; background: #fff; color: var(--azul); display: grid; place-items: center; cursor: pointer; transition: transform 0.3s var(--curva); }
+.tocar::before, .tocar::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.7); animation: onda 2.4s ease-out infinite; }
+.tocar::after { animation-delay: 1.2s; }
+.tocar:hover { transform: scale(1.06); }
+.tocar .ico-cheio { width: 34px; height: 34px; margin-left: 6px; }
+@keyframes onda { from { transform: scale(1); opacity: 0.8; } to { transform: scale(1.7); opacity: 0; } }
 
-/* Escritório */
-.escritorio { background: var(--branco); }
-.escritorio .envolve { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 3.5rem; align-items: start; }
-.endereco { font-style: normal; font-size: 1.3rem; line-height: 1.5; margin: 0 0 1.8rem; }
-.mapa { width: 100%; height: 380px; border: 0; border-radius: 4px; background: #DDE3EA; }
+/* Escritório e galeria */
+.galeria { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 210px; gap: 14px; margin-top: 3rem; }
+.foto { position: relative; margin: 0; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: var(--cinza); cursor: zoom-in; text-align: left; }
+.foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s var(--curva); }
+.foto:hover img { transform: scale(1.06); }
+.foto figcaption, .foto .legenda { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.2rem 1rem 0.9rem; color: #fff; font-size: 0.92rem; font-weight: 600; line-height: 1.35; background: linear-gradient(0deg, rgba(10, 22, 40, 0.85), transparent); }
+.g-alta { grid-row: span 2; }
+.g-larga { grid-column: span 2; }
+.cartao-video { position: relative; border-radius: 10px; overflow: hidden; background: #000; }
+.cartao-video video { width: 100%; height: 100%; object-fit: cover; }
+.cartao-video .legenda { pointer-events: none; transition: opacity 0.3s; }
+.cartao-video.tocando .legenda { opacity: 0; }
+.escritorio-info { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; }
+.endereco-curto { display: flex; gap: 0.7rem; align-items: flex-start; font-weight: 600; margin-top: 1.4rem; }
+.endereco-curto .ico { color: var(--dourado-escuro); margin-top: 3px; }
+
+/* Atuação e participação */
+.participacao { background: var(--cinza); }
+.participacao .galeria { grid-auto-rows: 250px; }
+
+/* YouTube */
+.videos-grade { list-style: none; padding: 0; margin: 3rem 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem 1.4rem; }
+.yt { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: 10px; overflow: hidden; aspect-ratio: 16 / 9; background: #000; cursor: pointer; }
+.yt img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--curva), opacity 0.3s; }
+.yt:hover img { transform: scale(1.05); opacity: 0.85; }
+.yt .botao-yt { position: absolute; left: 50%; top: 50%; width: 68px; height: 48px; margin: -24px 0 0 -34px; border-radius: 12px; background: #FF0000; display: grid; place-items: center; color: #fff; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); transition: transform 0.3s var(--curva); }
+.yt:hover .botao-yt { transform: scale(1.1); }
+.yt .botao-yt .ico-cheio { width: 22px; height: 22px; margin-left: 3px; }
+.yt-quadro { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 10px; }
+.videos-grade h3 { font-size: 1.03rem; font-weight: 700; line-height: 1.4; margin-top: 0.85rem; color: #fff; }
+.videos-rodape { margin-top: 2.6rem; }
+
+/* Dúvidas */
+.duvidas .envolve { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.lista-duvidas { border-top: 1px solid var(--linha); }
+.lista-duvidas details { border-bottom: 1px solid var(--linha); }
+.lista-duvidas summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.35rem 0; cursor: pointer; font-size: 1.125rem; font-weight: 700; line-height: 1.4; }
+.lista-duvidas summary::-webkit-details-marker { display: none; }
+.lista-duvidas summary .ico { width: 26px; height: 26px; color: var(--dourado-escuro); transition: transform 0.35s var(--curva); }
+.lista-duvidas details[open] summary .ico { transform: rotate(45deg); }
+.lista-duvidas details p { color: var(--texto-2); padding: 0 2.6rem 1.5rem 0; }
+.lista-duvidas details[open] p { animation: entra 0.5s var(--curva) both; }
+
+/* Localização */
+.local { position: relative; color: #fff; background: var(--azul-3) url(img/cidade.webp) center / cover no-repeat; }
+.local::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 22, 40, 0.92), rgba(10, 22, 40, 0.6)); }
+.local .envolve { position: relative; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: center; }
+.local .titulo { color: #fff; }
+.local address { font-style: normal; font-size: 1.3rem; line-height: 1.55; margin: 1.4rem 0 2rem; }
+.mapa { width: 100%; height: 400px; border: 0; border-radius: 12px; box-shadow: var(--sombra); background: #DDE3EA; }
 
 /* Contato */
-.contato { background: var(--noite); color: var(--marfim); }
-.contato .envolve { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-.contato .intro { color: var(--nevoa); }
-.numero { font-family: var(--serif); font-size: clamp(1.9rem, 3.4vw, 2.5rem); line-height: 1.1; margin: 0 0 1.6rem; }
+.contato .envolve { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
+.numero { display: block; font-family: var(--titulo); font-size: clamp(2.2rem, 4.4vw, 3.2rem); line-height: 1.1; color: #fff; text-decoration: none; margin: 1.6rem 0 1.8rem; }
 .canais { list-style: none; margin: 0; padding: 0; }
-.canais li { border-top: 1px solid var(--linha-ouro); }
-.canais li:last-child { border-bottom: 1px solid var(--linha-ouro); }
-.canais a { display: grid; grid-template-columns: 30px 1fr; gap: 0.9rem; align-items: center; padding: 1rem 0; text-decoration: none; }
-.canais a:hover span { text-decoration: underline; text-decoration-color: var(--ouro); text-underline-offset: 3px; }
-.canais .ico, .canais .ico-cheio { width: 22px; height: 22px; color: var(--ouro); }
-.canais small { display: block; color: var(--nevoa); font-size: 0.9rem; line-height: 1.3; }
-.canais span { overflow-wrap: anywhere; }
+.canais li { border-bottom: 1px solid rgba(212, 182, 126, 0.2); }
+.canais li:first-child { border-top: 1px solid rgba(212, 182, 126, 0.2); }
+.canais a { display: grid; grid-template-columns: 44px 1fr; gap: 0.9rem; align-items: center; padding: 1rem 0; text-decoration: none; transition: padding-left 0.3s var(--curva); }
+.canais a:hover { padding-left: 8px; }
+.canais .ico, .canais .ico-cheio { width: 44px; height: 44px; padding: 11px; border-radius: 50%; background: rgba(212, 182, 126, 0.12); color: var(--dourado-claro); }
+.canais small { display: block; color: var(--claro-2); font-size: 0.85rem; line-height: 1.3; }
+.canais span { font-weight: 600; overflow-wrap: anywhere; }
+.alerta { display: flex; gap: 1rem; margin-top: 2rem; padding: 1.3rem 1.4rem; border-radius: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 182, 126, 0.3); }
+.alerta .ico { color: var(--dourado-claro); width: 28px; height: 28px; }
+.alerta strong { display: block; color: #fff; margin-bottom: 0.25rem; }
+.alerta p { color: var(--claro-2); font-size: 0.98rem; line-height: 1.55; }
 
 /* Rodapé */
-.rodape { background: var(--noite-funda); color: var(--nevoa); font-size: 0.95rem; line-height: 1.55; padding-block: 2.6rem; }
-.rodape .envolve { display: grid; gap: 0.35rem; }
-.rodape strong { color: var(--marfim); font-weight: 600; }
-.rodape a { color: var(--ouro); }
-.pendente { color: var(--ouro); border-bottom: 1px dashed var(--ouro); }
-.rodape .aviso { margin-top: 0.9rem; max-width: 52em; }
+.rodape { background: var(--azul-3); color: var(--claro-2); font-size: 0.93rem; line-height: 1.6; padding: 3.5rem 0 2.5rem; }
+.rodape .envolve { display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: start; }
+.rodape .marca { width: 210px; height: 134px; }
+.rodape strong { color: #fff; font-weight: 700; }
+.rodape p + p { margin-top: 0.35rem; }
+.rodape .aviso { margin-top: 1rem; max-width: 60em; }
+.rodape a { color: var(--dourado-claro); }
 
-/* Botão fixo do WhatsApp no celular */
-.flutuante {
-  position: fixed; right: 16px; bottom: 16px; z-index: 50;
-  width: 58px; height: 58px; border-radius: 50%;
-  display: none; align-items: center; justify-content: center;
-  background: var(--ouro); color: var(--noite); box-shadow: 0 6px 18px rgba(8, 19, 31, 0.35);
-}
-.flutuante .ico-cheio { width: 28px; height: 28px; }
+/* Botão flutuante do WhatsApp */
+.flutuante { position: fixed; right: 18px; bottom: 18px; z-index: 70; width: 62px; height: 62px; border-radius: 50%; display: grid; place-items: center; background: var(--verde); color: #fff; box-shadow: 0 10px 24px rgba(10, 22, 40, 0.35); transition: transform 0.3s var(--curva); }
+.flutuante::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--verde); animation: pulsa 2.2s ease-out infinite; z-index: -1; }
+.flutuante:hover { transform: scale(1.07); }
+.flutuante .ico-cheio { width: 32px; height: 32px; }
+@keyframes pulsa { from { transform: scale(1); opacity: 0.55; } to { transform: scale(1.65); opacity: 0; } }
 
-@media (max-width: 980px) {
-  .lista-areas { grid-template-columns: repeat(2, 1fr); }
-  .como .envolve, .escritorio .envolve, .contato .envolve { grid-template-columns: 1fr; gap: 2.5rem; }
-  .sigilo { margin-top: 0; }
+/* Janelas (vídeo e fotos) */
+dialog { border: 0; padding: 0; background: transparent; max-width: min(1100px, 94vw); width: 100%; }
+dialog::backdrop { background: rgba(5, 10, 20, 0.88); }
+dialog[open] { animation: entra 0.45s var(--curva) both; }
+.fechar { position: absolute; top: -52px; right: 0; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: var(--azul); display: grid; place-items: center; cursor: pointer; }
+.modal-video video { width: 100%; border-radius: 10px; background: #000; }
+.modal-foto figure { margin: 0; }
+.modal-foto img { max-height: 78vh; width: auto; margin: 0 auto; border-radius: 8px; }
+.modal-foto figcaption { color: #fff; text-align: center; margin-top: 0.9rem; font-weight: 600; }
+.passar { position: absolute; top: 50%; width: 48px; height: 48px; margin-top: -24px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, 0.92); color: var(--azul); display: grid; place-items: center; cursor: pointer; }
+.passar.anterior { left: -8px; }
+.passar.proxima { right: -8px; }
+
+/* Celular e tablet */
+@media (max-width: 1080px) {
+  .menu, .topo .botao { display: none; }
+  .abre-menu { display: block; }
+  .menu-celular { display: block; position: fixed; inset: 0 0 auto 0; z-index: 49; padding: 96px 24px 28px; background: var(--azul); transform: translateY(-105%); transition: transform 0.45s var(--curva); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+  .menu-celular.aberto { transform: none; }
+  .menu-celular a { display: block; color: #fff; text-decoration: none; font-family: var(--titulo); font-size: 1.6rem; padding: 0.55rem 0; }
+  .menu-celular .botao { width: 100%; margin-top: 1rem; font-family: var(--corpo); font-size: 1.1875rem; }
+  .areas-grade { grid-template-columns: repeat(2, 1fr); }
+  .videos-grade { grid-template-columns: repeat(2, 1fr); }
+  .galeria { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 860px) {
-  .menu, .topo .botao { display: none; }
-  .flutuante { display: flex; }
-  .rodape { padding-bottom: 6.5rem; }
-  .abertura .envolve { grid-template-columns: 1fr; gap: 0; }
-  .abertura-texto { padding-bottom: 1rem; }
-  .retrato { max-width: 520px; width: 100%; margin-inline: auto; }
+  .sobre .envolve, .criminal .envolve, .duvidas .envolve, .local .envolve, .contato .envolve { grid-template-columns: 1fr; }
+  .sobre-foto { margin-right: 28px; }
+  .criminal-foto img { margin: 0 auto; max-width: 320px; }
+  .escritorio-info { grid-template-columns: 1fr; }
+  .rodape .envolve { grid-template-columns: 1fr; gap: 1.5rem; }
 }
-@media (max-width: 680px) {
-  .lista-criminal, .lista-areas { grid-template-columns: 1fr; }
-  .acoes .botao { width: 100%; }
-  .marca span { font-size: 1.125rem; }
+@media (max-width: 640px) {
+  .topo .envolve { min-height: 68px; }
+  .abertura { margin-top: -68px; }
+  .marca-icone { width: 54px; height: 36px; }
+  .marca-texto strong { font-size: 1.08rem; }
+  .marca-texto small { font-size: 0.7rem; }
+  .abertura-fundo::after { background: linear-gradient(0deg, rgba(10, 22, 40, 0.96) 8%, rgba(10, 22, 40, 0.55) 55%, rgba(10, 22, 40, 0.35) 100%); }
+  .abertura .acoes .botao { width: 100%; }
+  .rolar { display: none; }
+  .fatos, .criminal-lista, .areas-grade, .videos-grade { grid-template-columns: 1fr; }
+  .galeria, .participacao .galeria { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; gap: 10px; }
+  .g-larga { grid-column: span 2; }
+  .areas-chamada .botao { width: 100%; }
   .mapa { height: 300px; }
+  .lista-duvidas details p { padding-right: 0; }
+  .passar { display: none; }
+}
+@media (min-width: 1081px) and (prefers-reduced-motion: no-preference) {
+  .local { background-attachment: fixed; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .abertura .fio { animation: none; }
-  .botao { transition: none; }
+  .entra, .faixa-trilho, .rolar span::after, .tocar::before, .tocar::after, .flutuante::before, dialog[open] { animation: none; }
+  .js [data-revela], .js [data-revela="cortina"] { opacity: 1; transform: none; transition: none; }
+  .js [data-revela="cortina"]::after { display: none; }
+  .filme > img { transform: none; }
 }
 </style>
 </head>
@@ -261,11 +355,9 @@ a:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; border-ra
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
     <symbol id="i-martelo" viewBox="0 0 24 24"><path d="m14.5 12.5-8 8a2.119 2.119 0 1 1-3-3l8-8"/><path d="m16 16 6-6"/><path d="m8 8 6-6"/><path d="m9 7 8 8"/><path d="m21 11-8-8"/></symbol>
     <symbol id="i-cadeado" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
     <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
-    <symbol id="i-escudo-ok" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
     <symbol id="i-forum" viewBox="0 0 24 24"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M12 2l8 5H4z"/></symbol>
     <symbol id="i-documento" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
     <symbol id="i-sacola" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
@@ -276,6 +368,10 @@ a:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; border-ra
     <symbol id="i-maleta" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
     <symbol id="i-urna" viewBox="0 0 24 24"><path d="m9 12 2 2 4-4"/><path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z"/><path d="M22 19H2"/></symbol>
     <symbol id="i-casa" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-selo" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-capelo" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-pino" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-microfone" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
     <symbol id="i-telefone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
     <symbol id="i-email" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
@@ -283,6 +379,13 @@ a:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; border-ra
     <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
     <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
     <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.6v16.8a1 1 0 0 0 1.5.86l13.6-8.4a1 1 0 0 0 0-1.72L7.5 2.74A1 1 0 0 0 6 3.6Z"/></symbol>
+    <symbol id="i-mais" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+    <symbol id="i-esquerda" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-direita" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-alerta" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
   </defs>
 </svg>
 
@@ -290,198 +393,270 @@ a:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; border-ra
 
 <div class="previa">Prévia do site, feita pela <a href="https://www.atalhostudio.com.br">Atalho Studio</a> para o Dr. William avaliar.</div>
 
-<header class="topo">
+<header class="topo" id="topo">
   <div class="envolve">
-    <a class="marca" href="#conteudo" aria-label="Dr. William José, início da página">
-      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 2.5l18.6 10.75v21.5L24 45.5 5.4 34.75v-21.5z" fill="none" stroke="#C9A45C" stroke-width="1.5"/><text x="24" y="31.5" text-anchor="middle" font-family="Libre Bodoni, Georgia, serif" font-size="20" font-weight="600" fill="#C9A45C">W</text></svg>
-      <span>Dr. William José</span>
+    <a class="marca-topo" href="#conteudo" aria-label="Dr. William Sousa, Advocacia e Consultoria Jurídica, início da página">
+      <span class="marca-icone" aria-hidden="true"></span>
+      <span class="marca-texto"><strong>Dr. William Sousa</strong><small>Advocacia e Consultoria Jurídica</small></span>
     </a>
     <nav class="menu" aria-label="Seções do site">
-      <a href="#atuacao">Áreas de atuação</a>
-      <a href="#como-falar">Como falar</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#atuacao">Atuação</a>
       <a href="#escritorio">Escritório</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#duvidas">Dúvidas</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a class="botao botao-ouro" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa.">
-      <svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>Conversar no WhatsApp
-    </a>
+    <a class="botao botao-whats" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa."><svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+    <button class="abre-menu" type="button" aria-expanded="false" aria-controls="menu-celular" aria-label="Abrir o menu"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></button>
   </div>
 </header>
+
+<nav class="menu-celular" id="menu-celular" aria-label="Seções do site">
+  <a href="#sobre">Sobre</a>
+  <a href="#atuacao">Atuação</a>
+  <a href="#escritorio">Escritório</a>
+  <a href="#videos">Vídeos</a>
+  <a href="#duvidas">Dúvidas</a>
+  <a href="#contato">Contato</a>
+  <a class="botao botao-whats" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa."><svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
+</nav>
 
 <main id="conteudo">
 
   <section class="abertura" aria-labelledby="nome">
-    <div class="envolve">
-      <div class="abertura-texto">
-        <p class="local"><svg class="ico" aria-hidden="true"><use href="#i-pino"/></svg>Advogado em Itambacuri (MG)</p>
-        <h1 id="nome">Dr. William José de Sousa Santos</h1>
-        <span class="fio" aria-hidden="true"></span>
-        <p class="resumo">Atuação na área criminal: Tribunal do Júri, habeas corpus, defesas e audiências. Também em Direito Civil, do Consumidor, de Família, Público e Administrativo.</p>
-        <div class="acoes">
-          <a class="botao botao-ouro" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa.">
-            <svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>Conversar no WhatsApp
-          </a>
-          <a class="botao botao-linha" href="#atuacao">Ver áreas de atuação</a>
-        </div>
+    <div class="abertura-fundo">
+      <video id="video-abertura" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.webp" aria-hidden="true">
+        <source src="video/abertura.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="envolve abertura-conteudo">
+      <p class="rotulo entra" style="--d:.1s">Advocacia e Consultoria Jurídica em Itambacuri (MG)</p>
+      <h1 id="nome" class="entra" style="--d:.25s">Dr. William José de Sousa Santos</h1>
+      <p class="resumo entra" style="--d:.45s">Advogado com atuação na área criminal, no Tribunal do Júri, em habeas corpus, defesas e audiências, e também nas áreas cível, de família, do consumidor, previdenciária, trabalhista, administrativa e eleitoral.</p>
+      <div class="selos entra" style="--d:.6s">
+        <p class="oab"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg>OAB/MG 172.254</p>
+        <p class="oab"><svg class="ico" aria-hidden="true"><use href="#i-capelo"/></svg>Pós-graduado em Direito Criminal e Direito Público</p>
       </div>
-      <figure class="retrato">
-        <img src="img/retrato.webp" width="780" height="675" fetchpriority="high"
-             alt="Dr. William José de Sousa Santos, de terno e gravata azul, de braços cruzados">
+      <div class="acoes entra" style="--d:.75s">
+        <a class="botao botao-whats" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa."><svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
+        <button class="botao botao-vazado" type="button" data-abre-video><svg class="ico-cheio" aria-hidden="true"><use href="#i-play"/></svg>Assistir ao vídeo do escritório</button>
+      </div>
+    </div>
+    <a class="rolar" href="#sobre" aria-label="Rolar para conhecer"><span></span>Conheça</a>
+  </section>
+
+  <div class="faixa" aria-label="Áreas de atuação">
+    <div class="faixa-trilho">
+      <ul><li>Tribunal do Júri</li><li>Habeas corpus</li><li>Defesa criminal</li><li>Audiências</li><li>Direito Civil</li><li>Direito de Família</li><li>Direito do Consumidor</li><li>Direito Previdenciário</li><li>Direito Trabalhista</li><li>Direito Administrativo</li><li>Direito Eleitoral</li><li>Direito Imobiliário</li></ul>
+      <ul aria-hidden="true"><li>Tribunal do Júri</li><li>Habeas corpus</li><li>Defesa criminal</li><li>Audiências</li><li>Direito Civil</li><li>Direito de Família</li><li>Direito do Consumidor</li><li>Direito Previdenciário</li><li>Direito Trabalhista</li><li>Direito Administrativo</li><li>Direito Eleitoral</li><li>Direito Imobiliário</li></ul>
+    </div>
+  </div>
+
+  <section class="sobre secao claro" id="sobre" aria-labelledby="t-sobre">
+    <div class="envolve">
+      <figure class="sobre-foto" data-revela="cortina">
+        <img src="img/sobre.webp" width="1400" height="933" loading="lazy" alt="Dr. William José de Sousa Santos, de terno cinza, na mesa do escritório com o notebook">
+      </figure>
+      <div class="sobre-texto">
+        <p class="rotulo" data-revela>Sobre</p>
+        <h2 class="titulo" id="t-sobre" data-revela>Advocacia feita de perto, em <em>Itambacuri</em></h2>
+        <p class="intro" data-revela>O Dr. William José de Sousa Santos é advogado inscrito na OAB/MG sob o nº 172.254, pós-graduado em Direito Criminal e em Direito Público, com escritório próprio na Rua Horácio Luz, 1199, no Centro de Itambacuri (MG).</p>
+        <p data-revela>Atua principalmente na área criminal, com defesas no Tribunal do Júri, pedidos de habeas corpus e acompanhamento em audiências. Também atende questões cíveis, de família, do consumidor, previdenciárias, trabalhistas, administrativas e eleitorais.</p>
+        <p data-revela>Na advocacia local, é secretário-geral e conselheiro de Ética da 219ª Subseção da OAB/MG, em Itambacuri. Fora dos processos, mantém um canal no YouTube com vídeos que explicam temas do Direito e faz palestras educativas em escolas e entidades.</p>
+        <ul class="fatos">
+          <li data-revela style="--atraso:.05s"><svg class="ico" aria-hidden="true"><use href="#i-capelo"/></svg>Pós-graduação em Direito Criminal e Direito Público</li>
+          <li data-revela style="--atraso:.12s"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg>OAB/MG 172.254</li>
+          <li data-revela style="--atraso:.19s"><svg class="ico" aria-hidden="true"><use href="#i-forum"/></svg>219ª Subseção da OAB/MG, Itambacuri</li>
+          <li data-revela style="--atraso:.26s"><svg class="ico" aria-hidden="true"><use href="#i-pino"/></svg>Escritório no Centro de Itambacuri</li>
+          <li data-revela style="--atraso:.33s"><svg class="ico" aria-hidden="true"><use href="#i-youtube"/></svg>Canal jurídico no YouTube</li>
+          <li data-revela style="--atraso:.4s"><svg class="ico" aria-hidden="true"><use href="#i-microfone"/></svg>Palestras em escolas e entidades</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="criminal secao escuro" id="atuacao" aria-labelledby="t-criminal">
+    <div class="envolve">
+      <div>
+        <p class="rotulo" data-revela>Área principal</p>
+        <h2 class="titulo" id="t-criminal" data-revela>Área criminal</h2>
+        <p class="intro" data-revela>A maior parte do trabalho do escritório está na defesa criminal, do inquérito ao Tribunal do Júri.</p>
+        <ul class="criminal-lista">
+          <li data-revela style="--atraso:.05s"><svg class="ico" aria-hidden="true"><use href="#i-martelo"/></svg><h3>Tribunal do Júri</h3><p>Os crimes dolosos contra a vida, como o homicídio, são julgados por sete jurados da comunidade. O advogado conduz a defesa no processo e no dia do julgamento.</p></li>
+          <li data-revela style="--atraso:.15s"><svg class="ico" aria-hidden="true"><use href="#i-cadeado"/></svg><h3>Habeas corpus</h3><p>Pedido feito à Justiça para proteger a liberdade de quem está preso, ou ameaçado de prisão, de forma ilegal.</p></li>
+          <li data-revela style="--atraso:.25s"><svg class="ico" aria-hidden="true"><use href="#i-escudo"/></svg><h3>Defesa criminal</h3><p>Defesa de quem é investigado pela polícia ou responde a um processo criminal.</p></li>
+          <li data-revela style="--atraso:.35s"><svg class="ico" aria-hidden="true"><use href="#i-forum"/></svg><h3>Audiências</h3><p>Presença do advogado nas audiências do processo, como a de custódia e a de instrução.</p></li>
+        </ul>
+      </div>
+      <figure class="criminal-foto" data-revela>
+        <img src="img/toga-livro.webp" width="680" height="1024" loading="lazy" alt="Dr. William de beca, lendo um livro sobre o Tribunal do Júri">
       </figure>
     </div>
   </section>
 
-  <section class="frase secao claro" aria-label="Frase do escritório">
+  <section class="areas secao claro" aria-labelledby="t-areas">
     <div class="envolve">
-      <blockquote>
-        <p>“Não basta que todos sejam iguais perante a lei. É preciso que a lei seja igual perante todos.”</p>
-      </blockquote>
-      <span class="fio" aria-hidden="true"></span>
-    </div>
-  </section>
-
-  <section class="criminal secao claro" id="atuacao" aria-labelledby="t-criminal">
-    <div class="envolve">
-      <h2 class="titulo" id="t-criminal">Área criminal</h2>
-      <p class="intro">É a principal área de atuação do escritório.</p>
-      <ul class="lista-criminal">
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-martelo"/></svg>
-          <div>
-            <h3>Tribunal do Júri</h3>
-            <p>Os crimes dolosos contra a vida, como o homicídio, são julgados por um júri de cidadãos. O advogado conduz a defesa ao longo do processo e no dia do julgamento.</p>
-          </div>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-cadeado"/></svg>
-          <div>
-            <h3>Habeas corpus</h3>
-            <p>Pedido feito à Justiça para proteger a liberdade de quem está preso, ou ameaçado de prisão, de forma ilegal.</p>
-          </div>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-escudo"/></svg>
-          <div>
-            <h3>Defesa criminal</h3>
-            <p>Defesa de quem é investigado pela polícia ou responde a um processo criminal.</p>
-          </div>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-forum"/></svg>
-          <div>
-            <h3>Audiências</h3>
-            <p>Presença do advogado nas audiências do processo, como a audiência de custódia e a de instrução.</p>
-          </div>
-        </li>
+      <p class="rotulo" data-revela>Outras áreas</p>
+      <h2 class="titulo" id="t-areas" data-revela>Outras áreas de atuação</h2>
+      <p class="intro" data-revela>Além da área criminal, o escritório atende questões destas áreas.</p>
+      <ul class="areas-grade">
+        <li data-revela style="--atraso:.0s"><svg class="ico" aria-hidden="true"><use href="#i-documento"/></svg><h3>Direito Civil e das Obrigações</h3><p>Contratos, dívidas, indenizações e outras questões entre pessoas e empresas.</p></li>
+        <li data-revela style="--atraso:.08s"><svg class="ico" aria-hidden="true"><use href="#i-familia"/></svg><h3>Direito de Família</h3><p>Divórcio, pensão alimentícia, guarda dos filhos e partilha de bens.</p></li>
+        <li data-revela style="--atraso:.16s"><svg class="ico" aria-hidden="true"><use href="#i-sacola"/></svg><h3>Direito do Consumidor</h3><p>Cobranças indevidas, produtos com defeito e problemas com bancos, lojas e serviços.</p></li>
+        <li data-revela style="--atraso:.0s"><svg class="ico" aria-hidden="true"><use href="#i-guarda-chuva"/></svg><h3>Direito Previdenciário</h3><p>Aposentadorias, auxílios e outros benefícios do INSS.</p></li>
+        <li data-revela style="--atraso:.08s"><svg class="ico" aria-hidden="true"><use href="#i-maleta"/></svg><h3>Direito Trabalhista</h3><p>Questões entre empregado e empregador, como verbas da rescisão e horas extras.</p></li>
+        <li data-revela style="--atraso:.16s"><svg class="ico" aria-hidden="true"><use href="#i-prancheta"/></svg><h3>Direito Administrativo</h3><p>Servidores públicos, concursos, licitações e processos administrativos.</p></li>
+        <li data-revela style="--atraso:.0s"><svg class="ico" aria-hidden="true"><use href="#i-predio"/></svg><h3>Direito Público</h3><p>Questões que envolvem a prefeitura, o estado e outros órgãos públicos.</p></li>
+        <li data-revela style="--atraso:.08s"><svg class="ico" aria-hidden="true"><use href="#i-urna"/></svg><h3>Direito Eleitoral</h3><p>Candidaturas, prestação de contas de campanha e processos na Justiça Eleitoral.</p></li>
+        <li data-revela style="--atraso:.16s"><svg class="ico" aria-hidden="true"><use href="#i-casa"/></svg><h3>Direito Imobiliário</h3><p>Compra e venda de imóveis, aluguel, usucapião e regularização.</p></li>
       </ul>
+      <div class="areas-chamada" data-revela>
+        <p>Não encontrou o seu caso? Conte em poucas palavras pelo WhatsApp.</p>
+        <a class="botao botao-whats" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa."><svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
+      </div>
     </div>
   </section>
 
-  <section class="areas secao" aria-labelledby="t-areas">
+  <section class="filme" data-revela-classe aria-labelledby="t-filme">
+    <img src="img/filme.webp" width="1600" height="900" loading="lazy" alt="">
+    <div class="filme-conteudo">
+      <button class="tocar" type="button" data-abre-video aria-label="Assistir ao vídeo do escritório"><svg class="ico-cheio" aria-hidden="true"><use href="#i-play"/></svg></button>
+      <h2 class="titulo" id="t-filme">Conheça o escritório</h2>
+      <p>Um minuto de vídeo, de Itambacuri vista de cima até a mesa do Dr. William.</p>
+    </div>
+  </section>
+
+  <section class="secao claro" id="escritorio" aria-labelledby="t-escritorio">
     <div class="envolve">
-      <h2 class="titulo" id="t-areas">Outras áreas de atuação</h2>
-      <p class="intro">Além da área criminal, o escritório atende questões destas áreas.</p>
-      <ul class="lista-areas">
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-documento"/></svg>
-          <h3>Direito Civil e das Obrigações</h3>
-          <p>Contratos, dívidas, indenizações e outras questões entre pessoas e empresas.</p>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-sacola"/></svg>
-          <h3>Direito do Consumidor</h3>
-          <p>Cobranças indevidas, produtos com defeito e problemas com bancos, lojas e serviços.</p>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-familia"/></svg>
-          <h3>Direito de Família</h3>
-          <p>Divórcio, pensão alimentícia, guarda dos filhos e partilha de bens.</p>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-predio"/></svg>
-          <h3>Direito Público</h3>
-          <p>Questões que envolvem a prefeitura, o estado e outros órgãos públicos.</p>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-prancheta"/></svg>
-          <h3>Direito Administrativo</h3>
-          <p>Servidores públicos, concursos, licitações e processos administrativos.</p>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-guarda-chuva"/></svg>
-          <h3>Direito Previdenciário</h3>
-          <p>Aposentadorias, auxílios e outros benefícios do INSS.</p>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-maleta"/></svg>
-          <h3>Direito Trabalhista</h3>
-          <p>Questões entre empregado e empregador, como verbas da rescisão e horas extras.</p>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-urna"/></svg>
-          <h3>Direito Eleitoral</h3>
-          <p>Candidaturas, prestação de contas de campanha e processos na Justiça Eleitoral.</p>
-        </li>
-        <li>
-          <svg class="ico" aria-hidden="true"><use href="#i-casa"/></svg>
-          <h3>Direito Imobiliário</h3>
-          <p>Compra e venda de imóveis, aluguel, usucapião e regularização.</p>
-        </li>
+      <div class="escritorio-info">
+        <div>
+          <p class="rotulo" data-revela>O escritório</p>
+          <h2 class="titulo" id="t-escritorio" data-revela>Um espaço pensado para receber você</h2>
+          <p class="endereco-curto" data-revela><svg class="ico" aria-hidden="true"><use href="#i-pino"/></svg>Rua Horácio Luz, 1199, 2º andar, Centro, Itambacuri (MG)</p>
+        </div>
+      </div>
+      <div class="galeria" data-galeria>
+        <button class="foto g-alta" type="button" data-revela="cortina" data-grande="img/predio.webp" data-legenda="Fachada do prédio do escritório, na Rua Horácio Luz, 1199"><img src="img/predio.webp" loading="lazy" alt="Fachada do prédio do escritório"><span class="legenda">Fachada do prédio, na Rua Horácio Luz</span></button>
+        <button class="foto g-larga" type="button" data-revela="cortina" style="--atraso:.1s" data-grande="img/aperto-mao.webp" data-legenda="Atendimento no escritório"><img src="img/aperto-mao.webp" loading="lazy" alt="Dr. William cumprimenta uma pessoa no escritório"><span class="legenda">Atendimento no escritório</span></button>
+        <div class="cartao-video g-alta" data-revela="cortina" style="--atraso:.2s">
+          <video controls playsinline preload="none" poster="img/tour-poster.webp" aria-label="Vídeo: tour pelo escritório">
+            <source src="video/tour.mp4" type="video/mp4">
+          </video>
+          <span class="legenda">Tour pelo escritório (43 s)</span>
+        </div>
+        <button class="foto" type="button" data-revela="cortina" style="--atraso:.15s" data-grande="img/certificados.webp" data-legenda="Certificados e diplomas na parede do escritório"><img src="img/certificados.webp" loading="lazy" alt="Parede com certificados e diplomas"><span class="legenda">Certificados e diplomas</span></button>
+        <button class="foto" type="button" data-revela="cortina" style="--atraso:.25s" data-grande="img/assinando.webp" data-legenda="Análise de documentos"><img src="img/assinando.webp" loading="lazy" alt="Dr. William assinando documentos na mesa"><span class="legenda">Análise de documentos</span></button>
+        <button class="foto g-larga" type="button" data-revela="cortina" style="--atraso:.1s" data-grande="img/lendo.webp" data-legenda="Estudo de processos"><img src="img/lendo.webp" loading="lazy" alt="Dr. William lendo um livro de Direito na mesa"><span class="legenda">Estudo de processos</span></button>
+        <button class="foto g-larga" type="button" data-revela="cortina" style="--atraso:.2s" data-grande="img/sala.webp" data-legenda="Sala do escritório"><img src="img/sala.webp" loading="lazy" alt="Sala do escritório com mesa e computador"><span class="legenda">Sala do escritório</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="participacao secao claro" aria-labelledby="t-participacao">
+    <div class="envolve">
+      <p class="rotulo" data-revela>Na prática</p>
+      <h2 class="titulo" id="t-participacao" data-revela>Atuação e participação</h2>
+      <p class="intro" data-revela>Do plenário do júri às atividades da OAB e às palestras em escolas.</p>
+      <div class="galeria" data-galeria>
+        <button class="foto g-alta" type="button" data-revela="cortina" data-grande="img/juri.webp" data-legenda="Tribunal do Júri, Comarca de Itambacuri (MG)"><img src="img/juri.webp" loading="lazy" alt="Advogados de beca no plenário do Tribunal do Júri"><span class="legenda">Tribunal do Júri, Comarca de Itambacuri</span></button>
+        <button class="foto g-larga" type="button" data-revela="cortina" style="--atraso:.1s" data-grande="img/oab-posse.webp" data-legenda="Posse da nova diretoria da 219ª Subseção da OAB/MG (triênio 2025-2027)"><img src="img/oab-posse.webp" loading="lazy" alt="Posse da diretoria da 219ª Subseção da OAB/MG"><span class="legenda">Posse da diretoria da 219ª Subseção da OAB/MG</span></button>
+        <div class="cartao-video g-alta" data-revela="cortina" style="--atraso:.2s">
+          <video controls playsinline preload="none" poster="img/palestra-poster.webp" aria-label="Vídeo: palestra sobre drogas na Escola Madre Serafina de Jesus">
+            <source src="video/palestra.mp4" type="video/mp4">
+          </video>
+          <span class="legenda">Palestra “Drogas, um caminho obscuro e perigoso”</span>
+        </div>
+        <button class="foto g-larga" type="button" data-revela="cortina" style="--atraso:.15s" data-grande="img/oab-carteiras.webp" data-legenda="Entrega de carteiras profissionais na 219ª Subseção da OAB/MG"><img src="img/oab-carteiras.webp" loading="lazy" alt="Entrega de carteiras profissionais na OAB de Itambacuri"><span class="legenda">Entrega de carteiras na OAB de Itambacuri</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao escuro" id="videos" aria-labelledby="t-videos">
+    <div class="envolve">
+      <p class="rotulo" data-revela>Canal no YouTube</p>
+      <h2 class="titulo" id="t-videos" data-revela>O Direito explicado em vídeo</h2>
+      <p class="intro" data-revela>No canal, o Dr. William explica temas do Direito com exemplos do dia a dia. Toque para assistir aqui mesmo.</p>
+      <ul class="videos-grade">
+        <li data-revela style="--atraso:.0s"><button class="yt" type="button" data-id="FBNeVbiJcb4" aria-label="Assistir: Lei de Drogas, considerações importantes"><img src="img/yt-FBNeVbiJcb4.webp" loading="lazy" alt=""><span class="botao-yt"><svg class="ico-cheio" aria-hidden="true"><use href="#i-play"/></svg></span></button><h3>Lei de Drogas: considerações importantes</h3></li>
+        <li data-revela style="--atraso:.1s"><button class="yt" type="button" data-id="m6_vf_IqX4k" aria-label="Assistir: considerações jurídicas sobre a prisão do jogador Daniel Alves"><img src="img/yt-m6_vf_IqX4k.webp" loading="lazy" alt=""><span class="botao-yt"><svg class="ico-cheio" aria-hidden="true"><use href="#i-play"/></svg></span></button><h3>A prisão do jogador Daniel Alves na ótica do Direito Penal</h3></li>
+        <li data-revela style="--atraso:.2s"><button class="yt" type="button" data-id="ryyini01WWE" aria-label="Assistir: relacionamento tóxico e a Lei Maria da Penha"><img src="img/yt-ryyini01WWE.webp" loading="lazy" alt=""><span class="botao-yt"><svg class="ico-cheio" aria-hidden="true"><use href="#i-play"/></svg></span></button><h3>Relacionamento tóxico e a Lei Maria da Penha</h3></li>
+        <li data-revela style="--atraso:.0s"><button class="yt" type="button" data-id="kOl5JAb_J7s" aria-label="Assistir: pensão alimentícia e multiparentalidade"><img src="img/yt-kOl5JAb_J7s.webp" loading="lazy" alt=""><span class="botao-yt"><svg class="ico-cheio" aria-hidden="true"><use href="#i-play"/></svg></span></button><h3>Pensão alimentícia e multiparentalidade</h3></li>
+        <li data-revela style="--atraso:.1s"><button class="yt" type="button" data-id="ZJeN191TbLA" aria-label="Assistir: alienação parental"><img src="img/yt-ZJeN191TbLA.webp" loading="lazy" alt=""><span class="botao-yt"><svg class="ico-cheio" aria-hidden="true"><use href="#i-play"/></svg></span></button><h3>Alienação parental: proteção ou violação de direitos?</h3></li>
+        <li data-revela style="--atraso:.2s"><button class="yt" type="button" data-id="bluPIBVG1HA" aria-label="Assistir: usucapião extrajudicial"><img src="img/yt-bluPIBVG1HA.webp" loading="lazy" alt=""><span class="botao-yt"><svg class="ico-cheio" aria-hidden="true"><use href="#i-play"/></svg></span></button><h3>Usucapião extrajudicial</h3></li>
       </ul>
+      <div class="videos-rodape" data-revela>
+        <a class="botao botao-vazado" href="https://www.youtube.com/@dr.williamjosedesousa770"><svg class="ico" aria-hidden="true"><use href="#i-youtube"/></svg>Ver o canal no YouTube</a>
+      </div>
     </div>
   </section>
 
-  <section class="como secao claro" id="como-falar" aria-labelledby="t-como">
+  <section class="duvidas secao claro" id="duvidas" aria-labelledby="t-duvidas">
     <div class="envolve">
       <div>
-        <h2 class="titulo" id="t-como">Como falar com o escritório</h2>
-        <ol class="passos">
-          <li><p>Chame no WhatsApp: <a href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa.">(33) 99127-9785</a>.</p></li>
-          <li><p>Conte em poucas palavras o que aconteceu.</p></li>
-          <li><p>Combine o dia da conversa com o Dr. William.</p></li>
-        </ol>
-        <a class="botao botao-escuro" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa.">
-          <svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>Conversar no WhatsApp
-        </a>
+        <p class="rotulo" data-revela>Dúvidas frequentes</p>
+        <h2 class="titulo" id="t-duvidas" data-revela>Perguntas que muita gente faz</h2>
+        <p class="intro" data-revela>Respostas gerais, para informação. Cada caso precisa ser conversado com o advogado.</p>
       </div>
-      <aside class="sigilo" aria-labelledby="t-sigilo">
-        <svg class="ico" aria-hidden="true"><use href="#i-escudo-ok"/></svg>
-        <h3 id="t-sigilo">Sigilo profissional</h3>
-        <p>O que você conta ao advogado fica protegido pelo sigilo profissional, previsto em lei.</p>
-      </aside>
+      <div class="lista-duvidas" data-revela>
+        <details>
+          <summary>Um familiar foi preso. O que fazer primeiro?<svg class="ico" aria-hidden="true"><use href="#i-mais"/></svg></summary>
+          <p>Procure um advogado o quanto antes. Depois de uma prisão em flagrante, a lei prevê a audiência de custódia em até 24 horas, quando o juiz avalia se a prisão foi legal e se a pessoa pode responder ao processo em liberdade.</p>
+        </details>
+        <details>
+          <summary>O que é o Tribunal do Júri?<svg class="ico" aria-hidden="true"><use href="#i-mais"/></svg></summary>
+          <p>É onde são julgados os crimes dolosos contra a vida, como o homicídio e a tentativa de homicídio. Quem decide são sete jurados, cidadãos sorteados da comunidade.</p>
+        </details>
+        <details>
+          <summary>Quando cabe um habeas corpus?<svg class="ico" aria-hidden="true"><use href="#i-mais"/></svg></summary>
+          <p>Quando alguém sofre, ou está ameaçado de sofrer, prisão ou restrição ilegal da sua liberdade de ir e vir. O pedido é feito à Justiça.</p>
+        </details>
+        <details>
+          <summary>A pessoa presa pode ficar em silêncio?<svg class="ico" aria-hidden="true"><use href="#i-mais"/></svg></summary>
+          <p>Sim. A Constituição garante ao preso o direito de permanecer calado e de ter a assistência de um advogado.</p>
+        </details>
+        <details>
+          <summary>O que eu contar ao advogado fica em segredo?<svg class="ico" aria-hidden="true"><use href="#i-mais"/></svg></summary>
+          <p>Sim. O sigilo profissional é um dever do advogado, previsto no Estatuto da Advocacia e no Código de Ética da OAB.</p>
+        </details>
+        <details>
+          <summary>Como marco uma conversa com o Dr. William?<svg class="ico" aria-hidden="true"><use href="#i-mais"/></svg></summary>
+          <p>Chame no WhatsApp (33) 99127-9785, conte em poucas palavras o que aconteceu e combine o dia da conversa.</p>
+        </details>
+      </div>
     </div>
   </section>
 
-  <section class="escritorio secao claro" id="escritorio" aria-labelledby="t-escritorio">
+  <section class="local secao" aria-labelledby="t-local">
     <div class="envolve">
       <div>
-        <h2 class="titulo" id="t-escritorio">Onde fica o escritório</h2>
-        <address class="endereco">Rua Horácio Luz, 1199, 2º andar<br>Itambacuri (MG)</address>
-        <a class="botao botao-escuro" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Hor%C3%A1cio+Luz%2C+1199%2C+Itambacuri+-+MG">
-          <svg class="ico" aria-hidden="true"><use href="#i-pino"/></svg>Abrir no Google Maps
-        </a>
+        <p class="rotulo" data-revela>Onde fica</p>
+        <h2 class="titulo" id="t-local" data-revela>No Centro de Itambacuri</h2>
+        <address data-revela>Rua Horácio Luz, 1199, 2º andar<br>Centro, Itambacuri (MG)</address>
+        <a class="botao botao-vazado" data-revela href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Hor%C3%A1cio+Luz%2C+1199%2C+Itambacuri+-+MG"><svg class="ico" aria-hidden="true"><use href="#i-pino"/></svg>Abrir no Google Maps</a>
       </div>
-      <iframe class="mapa" title="Mapa com o endereço do escritório: Rua Horácio Luz, 1199, Itambacuri (MG)"
-              src="https://www.google.com/maps?q=Rua+Hor%C3%A1cio+Luz,+1199,+Itambacuri+-+MG&amp;output=embed"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe class="mapa" data-revela title="Mapa com o endereço do escritório: Rua Horácio Luz, 1199, Itambacuri (MG)" src="https://www.google.com/maps?q=Rua+Hor%C3%A1cio+Luz,+1199,+Itambacuri+-+MG&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
 
-  <section class="contato secao" id="contato" aria-labelledby="t-contato">
+  <section class="contato secao escuro" id="contato" aria-labelledby="t-contato">
     <div class="envolve">
       <div>
-        <h2 class="titulo" id="t-contato">Contato</h2>
-        <p class="intro">O jeito mais rápido é o WhatsApp.</p>
-        <p class="numero">(33) 99127-9785</p>
-        <a class="botao botao-ouro" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa.">
-          <svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>Conversar no WhatsApp
-        </a>
+        <p class="rotulo" data-revela>Contato</p>
+        <h2 class="titulo" id="t-contato" data-revela>Fale com o escritório</h2>
+        <p class="intro" data-revela>O jeito mais rápido é o WhatsApp. Conte em poucas palavras o que aconteceu.</p>
+        <a class="numero" data-revela href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa.">(33) 99127-9785</a>
+        <a class="botao botao-whats" data-revela href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa."><svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>Falar no WhatsApp</a>
+        <div class="alerta" data-revela>
+          <svg class="ico" aria-hidden="true"><use href="#i-alerta"/></svg>
+          <div><strong>Cuidado com golpes</strong><p>O único WhatsApp do escritório é o (33) 99127-9785. Desconfie de mensagens de outros números que peçam dinheiro ou dados em nome do Dr. William.</p></div>
+        </div>
       </div>
-      <ul class="canais">
+      <ul class="canais" data-revela>
         <li><a href="tel:+5533991279785"><svg class="ico" aria-hidden="true"><use href="#i-telefone"/></svg><span><small>Telefone</small>(33) 99127-9785</span></a></li>
         <li><a href="mailto:williadvity@outlook.com"><svg class="ico" aria-hidden="true"><use href="#i-email"/></svg><span><small>E-mail</small>williadvity@outlook.com</span></a></li>
         <li><a href="https://www.instagram.com/willian172254/"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg><span><small>Instagram</small>@willian172254</span></a></li>
-        <li><a href="https://www.youtube.com/@dr.williamjosedesousa770"><svg class="ico" aria-hidden="true"><use href="#i-youtube"/></svg><span><small>YouTube</small>Dr. William José de Sousa</span></a></li>
+        <li><a href="https://www.youtube.com/@dr.williamjosedesousa770"><svg class="ico" aria-hidden="true"><use href="#i-youtube"/></svg><span><small>YouTube</small>Canal jurídico do Dr. William</span></a></li>
         <li><a href="https://www.facebook.com/share/15vwakYRac/"><svg class="ico" aria-hidden="true"><use href="#i-facebook"/></svg><span><small>Facebook</small>William Sousa</span></a></li>
         <li><a href="https://www.tiktok.com/@williamsousa316"><svg class="ico-cheio" aria-hidden="true"><use href="#i-tiktok"/></svg><span><small>TikTok</small>@williamsousa316</span></a></li>
       </ul>
@@ -492,16 +667,105 @@ a:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; border-ra
 
 <footer class="rodape">
   <div class="envolve">
-    <p><strong>Dr. William José de Sousa Santos</strong>, advogado. OAB/MG nº <span class="pendente">[a preencher]</span></p>
-    <p>Rua Horácio Luz, 1199, 2º andar, Itambacuri (MG)</p>
-    <p class="aviso">Conteúdo de caráter informativo, conforme o Código de Ética e Disciplina da OAB e o Provimento nº 205/2021 do Conselho Federal da OAB.</p>
-    <p>Prévia feita pela <a href="https://www.atalhostudio.com.br">Atalho Studio</a>.</p>
+    <span class="marca" aria-hidden="true"></span>
+    <div>
+      <p><strong>Dr. William José de Sousa Santos</strong>, advogado. OAB/MG 172.254.</p>
+      <p>Rua Horácio Luz, 1199, 2º andar, Centro, Itambacuri (MG). WhatsApp (33) 99127-9785.</p>
+      <p class="aviso">Conteúdo de caráter informativo, conforme o Código de Ética e Disciplina da OAB e o Provimento nº 205/2021 do Conselho Federal da OAB.</p>
+      <p>Prévia feita pela <a href="https://www.atalhostudio.com.br">Atalho Studio</a>.</p>
+    </div>
   </div>
 </footer>
 
-<a class="flutuante" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa." aria-label="Conversar no WhatsApp">
-  <svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-</a>
+<a class="flutuante" href="https://wa.me/5533991279785?text=Ol%C3%A1%2C%20Dr.%20William!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20conversa." aria-label="Falar no WhatsApp"><svg class="ico-cheio" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
 
+<dialog class="modal-video" id="modal-video" aria-label="Vídeo do escritório">
+  <button class="fechar" type="button" data-fecha aria-label="Fechar o vídeo"><svg class="ico" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+  <video controls playsinline preload="none" poster="img/filme.webp">
+    <source src="video/escritorio.mp4" type="video/mp4">
+  </video>
+</dialog>
+
+<dialog class="modal-foto" id="modal-foto" aria-label="Foto ampliada">
+  <button class="fechar" type="button" data-fecha aria-label="Fechar a foto"><svg class="ico" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+  <figure><img src="" alt=""><figcaption></figcaption></figure>
+  <button class="passar anterior" type="button" aria-label="Foto anterior"><svg class="ico" aria-hidden="true"><use href="#i-esquerda"/></svg></button>
+  <button class="passar proxima" type="button" aria-label="Próxima foto"><svg class="ico" aria-hidden="true"><use href="#i-direita"/></svg></button>
+</dialog>
+
+<script>
+(() => {
+  const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const economia = navigator.connection && navigator.connection.saveData;
+
+  // Vídeo da abertura: sem movimento para quem pediu menos animação ou economia de dados
+  const abertura = document.getElementById('video-abertura');
+  if (abertura && (calmo || economia)) { abertura.removeAttribute('autoplay'); abertura.pause(); abertura.preload = 'none'; }
+
+  // Topo sólido ao rolar
+  const topo = document.getElementById('topo');
+  const marcaTopo = () => topo.classList.toggle('solido', scrollY > 40);
+  addEventListener('scroll', marcaTopo, { passive: true }); marcaTopo();
+
+  // Menu do celular
+  const botaoMenu = document.querySelector('.abre-menu');
+  const menu = document.getElementById('menu-celular');
+  const fechaMenu = () => { menu.classList.remove('aberto'); botaoMenu.setAttribute('aria-expanded', 'false'); };
+  botaoMenu.addEventListener('click', () => { const aberto = menu.classList.toggle('aberto'); botaoMenu.setAttribute('aria-expanded', String(aberto)); });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', fechaMenu));
+
+  // Animações ao rolar
+  const alvos = document.querySelectorAll('[data-revela], .filme');
+  if ('IntersectionObserver' in window && !calmo) {
+    const io = new IntersectionObserver((entradas) => {
+      entradas.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visivel'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -5% 0px', threshold: 0.06 });
+    alvos.forEach(a => io.observe(a));
+  } else { alvos.forEach(a => a.classList.add('visivel')); }
+
+  // Janela do vídeo do escritório
+  const modalVideo = document.getElementById('modal-video');
+  const filme = modalVideo.querySelector('video');
+  document.querySelectorAll('[data-abre-video]').forEach(b => b.addEventListener('click', () => { modalVideo.showModal(); filme.play().catch(() => {}); }));
+  modalVideo.addEventListener('close', () => filme.pause());
+
+  // Janela das fotos
+  const modalFoto = document.getElementById('modal-foto');
+  const fotoGrande = modalFoto.querySelector('img');
+  const legenda = modalFoto.querySelector('figcaption');
+  let grupo = [], atual = 0;
+  const mostra = (i) => { atual = (i + grupo.length) % grupo.length; const b = grupo[atual]; fotoGrande.src = b.dataset.grande; fotoGrande.alt = b.querySelector('img').alt; legenda.textContent = b.dataset.legenda; };
+  document.querySelectorAll('[data-galeria]').forEach(g => {
+    const fotos = [...g.querySelectorAll('.foto')];
+    fotos.forEach((b, i) => b.addEventListener('click', () => { grupo = fotos; mostra(i); modalFoto.showModal(); }));
+  });
+  modalFoto.querySelector('.anterior').addEventListener('click', () => mostra(atual - 1));
+  modalFoto.querySelector('.proxima').addEventListener('click', () => mostra(atual + 1));
+  modalFoto.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') mostra(atual - 1); if (e.key === 'ArrowRight') mostra(atual + 1); });
+
+  // Fechar janelas no botão ou clicando fora
+  document.querySelectorAll('dialog').forEach(d => {
+    d.querySelector('[data-fecha]').addEventListener('click', () => d.close());
+    d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
+  });
+
+  // Vídeos verticais: esconde a legenda enquanto toca
+  document.querySelectorAll('.cartao-video video').forEach(v => {
+    v.addEventListener('play', () => v.parentElement.classList.add('tocando'));
+    v.addEventListener('pause', () => v.parentElement.classList.remove('tocando'));
+  });
+
+  // YouTube: só carrega o vídeo quando a pessoa toca
+  document.querySelectorAll('.yt').forEach(b => b.addEventListener('click', () => {
+    const quadro = document.createElement('iframe');
+    quadro.className = 'yt-quadro';
+    quadro.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+    quadro.title = b.getAttribute('aria-label');
+    quadro.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    quadro.allowFullscreen = true;
+    b.replaceWith(quadro);
+  }));
+})();
+</script>
 </body>
 </html>
