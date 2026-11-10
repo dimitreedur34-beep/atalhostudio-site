@@ -291,10 +291,10 @@ button { font: inherit; color: inherit; }
 @keyframes pulsa { from { transform: scale(1); opacity: 0.55; } to { transform: scale(1.65); opacity: 0; } }
 
 /* Janelas (vídeo e fotos) */
-dialog { border: 0; padding: 0; background: transparent; max-width: min(1100px, 94vw); width: 100%; }
+dialog { border: 0; padding: 58px 0 0; background: transparent; max-width: min(1100px, 94vw); width: 100%; overflow: visible; }
 dialog::backdrop { background: rgba(5, 10, 20, 0.88); }
 dialog[open] { animation: entra 0.45s var(--curva) both; }
-.fechar { position: absolute; top: -52px; right: 0; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: var(--azul); display: grid; place-items: center; cursor: pointer; }
+.fechar { position: absolute; top: 0; right: 0; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: var(--azul); display: grid; place-items: center; cursor: pointer; }
 .modal-video video { width: 100%; border-radius: 10px; background: #000; }
 .modal-foto figure { margin: 0; }
 .modal-foto img { max-height: 78vh; width: auto; margin: 0 auto; border-radius: 8px; }
