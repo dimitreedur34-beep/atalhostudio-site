@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abreu | Mol Advogadas: INSS, família e consumidor em Marilac (MG)</title>
+<meta name="description" content="Escritório de advocacia de Marilac e São José da Safira (MG). Orientação sobre benefícios do INSS, direito de família e do consumidor, com atendimento presencial e on-line.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#6B5F5D">
+<link rel="icon" type="image/png" href="img/icone.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Abreu | Mol Advogadas">
+<meta property="og:description" content="Benefícios do INSS, direito de família e do consumidor. Atendimento presencial em Marilac e São José da Safira (MG) e on-line.">
+<meta property="og:url" content="https://www.atalhostudio.com.br/previas/abreu-mol/">
+<meta property="og:image" content="https://www.atalhostudio.com.br/previas/abreu-mol/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/abertura.webp" fetchpriority="high">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Cores e fontes tiradas das artes do próprio escritório (Instagram @abreumol.adv) */
+:root {
+  --taupe: #6B5F5D;
+  --taupe-2: #5E5351;
+  --taupe-escuro: #463D3B;
+  --tinta: #3A3231;
+  --texto: #574D4B;
+  --rosa: #D8979F;
+  --rosa-claro: #F0C6CC;
+  --creme: #F8EEEB;
+  --papel: #FFFBF9;
+  --vinho: #9B4C59;
+  --linha: rgba(107, 95, 93, .22);
+  --verde: #1EAA52;
+  --verde-hover: #178F44;
+  --serif: "Cormorant Garamond", "Times New Roman", serif;
+  --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --suave: cubic-bezier(.2, .7, .2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--texto);
+  background: var(--papel);
+  -webkit-font-smoothing: antialiased;
+}
+img, video, iframe { max-width: 100%; display: block; }
+img { height: auto; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.08; margin: 0; color: var(--tinta); text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+button { font: inherit; color: inherit; }
+::selection { background: var(--rosa-claro); color: var(--tinta); }
+:focus-visible { outline: 3px solid var(--rosa); outline-offset: 3px; border-radius: 6px; }
+.wrap { width: min(1180px, 100% - 2.5rem); margin-inline: auto; }
+.so-leitor { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.i { width: 1.25em; height: 1.25em; flex: none; }
+section[id] { scroll-margin-top: 84px; }
+
+.pular { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: #fff; color: var(--tinta); padding: .7rem 1rem; border-radius: 8px; }
+.pular:focus { top: 1rem; }
+
+/* Faixa de prévia */
+.previa { background: var(--taupe-escuro); color: #E6D8D5; font-size: .8rem; line-height: 1.45; text-align: center; padding: .55rem 1rem; }
+.previa a { color: #fff; }
+
+/* Botões */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  font: 600 1rem/1.1 var(--sans); text-decoration: none; text-align: center;
+  border: 0; border-radius: 999px; padding: 1.05rem 1.6rem; cursor: pointer;
+  transition: transform .25s var(--suave), background .25s, box-shadow .25s;
+}
+.btn-zap { background: var(--verde); color: #fff; box-shadow: 0 10px 24px rgba(30, 170, 82, .28); }
+.btn-zap:hover { background: var(--verde-hover); transform: translateY(-2px); box-shadow: 0 14px 28px rgba(30, 170, 82, .34); }
+.btn-linha { color: #fff; box-shadow: inset 0 0 0 1.5px rgba(240, 198, 204, .75); }
+.btn-linha:hover { background: rgba(240, 198, 204, .14); }
+.btn-p { padding: .74rem 1.1rem; font-size: .92rem; box-shadow: none; }
+
+/* Topo */
+.topo { position: sticky; top: 0; z-index: 50; background: var(--taupe); transition: box-shadow .3s, background .3s; }
+.topo.rolou { background: rgba(98, 87, 85, .96); box-shadow: 0 12px 30px rgba(40, 30, 28, .22); backdrop-filter: blur(8px); }
+.topo-in { display: flex; align-items: center; gap: 1.4rem; min-height: 78px; }
+.logo { flex: none; display: block; }
+.logo img { width: 158px; }
+.menu { margin-left: auto; display: flex; gap: 1.55rem; }
+.menu a { white-space: nowrap; position: relative; color: #F4E9E6; text-decoration: none; font-size: .92rem; font-weight: 500; padding: .45rem 0; }
+.menu a::after { content: ""; position: absolute; inset: auto 0 0 0; height: 1px; background: var(--rosa-claro); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--suave); }
+.menu a:hover::after { transform: scaleX(1); }
+.menu-botao { display: none; width: 46px; height: 46px; place-items: center; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .1); color: #fff; cursor: pointer; }
+.menu-botao .i { width: 1.4rem; height: 1.4rem; }
+
+/* Abertura */
+.abertura { position: relative; overflow: hidden; background: var(--taupe); color: #fff; }
+.abertura::before, .abertura::after { content: ""; position: absolute; border: 1px solid rgba(240, 198, 204, .26); border-radius: 50%; pointer-events: none; }
+.abertura::before { width: 600px; height: 600px; left: -250px; bottom: -330px; }
+.abertura::after { width: 300px; height: 300px; right: -110px; top: -150px; }
+.abertura-grade { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; padding-block: clamp(3rem, 6.5vw, 5.5rem) clamp(4rem, 8vw, 6.5rem); }
+.local { display: flex; align-items: center; gap: .55rem; font-size: .92rem; font-weight: 500; color: var(--rosa-claro); }
+.abertura h1 { margin-top: 1.2rem; color: #fff; font-size: clamp(2.7rem, 5.6vw, 4.7rem); line-height: 1.03; letter-spacing: -.012em; max-width: 12.5em; }
+.lead { margin-top: 1.5rem; max-width: 34rem; font-size: 1.1rem; color: #F1E6E3; }
+.acoes { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2.1rem; }
+.placa { display: flex; margin-top: 2.6rem; }
+.placa div { padding-inline: 1.5rem; }
+.placa div:first-child { padding-left: 0; border-right: 1px solid rgba(255, 255, 255, .45); }
+.placa dt { font-size: .95rem; font-weight: 500; color: #fff; }
+.placa dd { font-size: .86rem; letter-spacing: .04em; color: var(--rosa-claro); }
+
+.arco { position: relative; justify-self: end; width: min(100%, 430px); }
+.arco::before { content: ""; position: absolute; inset: -18px -18px 18px 18px; border: 1px solid rgba(240, 198, 204, .6); border-radius: 50% 50% 18px 18px / 40% 40% 18px 18px; pointer-events: none; }
+.arco-foto { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 50% 50% 18px 18px / 40% 40% 18px 18px; background: var(--taupe-2); box-shadow: 0 30px 60px rgba(40, 30, 28, .3); }
+.arco-foto img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 40%; animation: respira 20s ease-in-out infinite alternate; }
+.arco figcaption { margin-top: 1rem; font-size: .86rem; color: #EADCD9; text-align: center; }
+@keyframes respira { from { transform: scale(1); } to { transform: scale(1.045); } }
+@keyframes sobe { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+.js .abertura-texto > * { opacity: 0; animation: sobe .95s var(--suave) forwards; }
+.js .abertura-texto > :nth-child(1) { animation-delay: .08s; }
+.js .abertura-texto > :nth-child(2) { animation-delay: .18s; }
+.js .abertura-texto > :nth-child(3) { animation-delay: .32s; }
+.js .abertura-texto > :nth-child(4) { animation-delay: .44s; }
+.js .abertura-texto > :nth-child(5) { animation-delay: .56s; }
+.js .arco { opacity: 0; animation: sobe 1.2s .25s var(--suave) forwards; }
+
+/* Seções */
+.sec { padding-block: clamp(4rem, 9vw, 7.25rem); }
+.sec-cab { max-width: 46rem; margin-bottom: clamp(2rem, 5vw, 3.4rem); }
+.sec-cab h2 { font-size: clamp(2.15rem, 4.2vw, 3.3rem); letter-spacing: -.008em; }
+.sec-cab p { margin-top: 1rem; max-width: 38rem; }
+.creme { background: var(--creme); }
+.elo { display: inline-flex; align-items: center; gap: .45rem; font-weight: 600; font-size: .95rem; color: var(--vinho); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.elo .i { width: 1.05rem; height: 1.05rem; transition: transform .3s var(--suave); }
+.elo:hover .i { transform: translate(3px, -3px); }
+
+.js [data-r] { opacity: 0; transform: translateY(24px); transition: opacity .85s var(--suave) var(--d, 0s), transform .85s var(--suave) var(--d, 0s); }
+.js [data-r].visto { opacity: 1; transform: none; }
+
+/* Situações */
+.situ-grade { display: grid; grid-template-columns: minmax(0, 21rem) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.situ-grade .sec-cab { position: sticky; top: 112px; margin-bottom: 0; }
+.situ-grade .sec-cab .elo { margin-top: 1.6rem; }
+.grupo + .grupo { margin-top: 3.2rem; }
+.grupo-cab { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem 1rem; padding-bottom: 1rem; }
+.grupo-cab h3 { font-style: italic; font-size: 1.95rem; color: var(--vinho); }
+.grupo-cab p { font-size: .9rem; }
+.lista { list-style: none; border-top: 1px solid var(--linha); }
+.item { display: grid; grid-template-columns: 3.2rem minmax(0, 1fr) auto; gap: .3rem 1.4rem; align-items: center; padding: 1.35rem .8rem; border-bottom: 1px solid var(--linha); text-decoration: none; transition: background .3s; }
+.item:hover { background: var(--creme); }
+.ico { grid-row: span 2; width: 3.2rem; height: 3.2rem; display: grid; place-items: center; border-radius: 50%; color: var(--vinho); box-shadow: inset 0 0 0 1px rgba(155, 76, 89, .38); transition: background .3s, color .3s; }
+.ico .i { width: 1.45rem; height: 1.45rem; }
+.item:hover .ico { background: var(--vinho); color: #fff; }
+.item-t { font-family: var(--serif); font-weight: 600; font-size: 1.55rem; line-height: 1.15; color: var(--tinta); }
+.item-d { grid-column: 2; font-size: .97rem; line-height: 1.55; }
+.item-ir { grid-column: 3; grid-row: 1 / span 2; display: inline-flex; align-items: center; gap: .4rem; font-size: .88rem; font-weight: 600; color: var(--vinho); white-space: nowrap; }
+.item-ir .i { width: 1.1rem; height: 1.1rem; transition: transform .3s var(--suave); }
+.item:hover .item-ir .i { transform: translateX(5px); }
+
+/* Atendimento */
+.trilha { --p: 0; position: relative; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2rem; }
+.trilha::before, .trilha::after { content: ""; position: absolute; left: 1.6rem; right: 1.6rem; top: 1.6rem; height: 1px; background: var(--linha); }
+.trilha::after { background: var(--vinho); transform: scaleX(var(--p)); transform-origin: left; transition: transform .25s linear; }
+.num { position: relative; z-index: 1; width: 3.2rem; height: 3.2rem; display: grid; place-items: center; border-radius: 50%; background: var(--creme); box-shadow: inset 0 0 0 1px var(--vinho); font: 600 1.5rem/1 var(--serif); color: var(--vinho); transition: background .4s, color .4s; }
+.trilha li.feito .num { background: var(--vinho); color: #fff; }
+.trilha h3 { margin-top: 1.3rem; font-weight: 600; font-size: 1.45rem; line-height: 1.15; }
+.trilha p { margin-top: .6rem; font-size: .96rem; line-height: 1.55; }
+.horario { display: flex; align-items: center; gap: .7rem; margin-top: clamp(2.2rem, 5vw, 3.4rem); padding-top: 1.5rem; border-top: 1px solid var(--linha); font-size: .98rem; color: var(--tinta); }
+.horario .i { color: var(--vinho); }
+
+/* Cidades */
+.cidades { overflow: hidden; background: var(--taupe-escuro); color: var(--rosa-claro); padding-block: 1.5rem; }
+.cidades-trilho { display: flex; width: max-content; animation: corre 52s linear infinite; }
+.cidades ul { display: flex; flex: none; list-style: none; }
+.cidades li { display: flex; align-items: center; gap: 2.6rem; padding-left: 2.6rem; font: italic 500 clamp(1.45rem, 2.8vw, 2.1rem)/1.1 var(--serif); white-space: nowrap; }
+.cidades li::after { content: ""; width: .45rem; height: .45rem; border-radius: 50%; box-shadow: inset 0 0 0 1px currentColor; opacity: .75; }
+@keyframes corre { to { transform: translateX(-50%); } }
+
+/* Quem somos */
+.quem { position: relative; overflow: hidden; background: var(--taupe); color: #F1E6E3; }
+.quem::before { content: ""; position: absolute; width: 520px; height: 520px; right: -210px; bottom: -260px; border: 1px solid rgba(240, 198, 204, .24); border-radius: 50%; }
+.quem .wrap { position: relative; }
+.quem .sec-cab h2, .quem h3 { color: #fff; }
+.duas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.pessoa { display: grid; grid-template-columns: 11.5rem minmax(0, 1fr); gap: 1.8rem; align-items: start; }
+.pessoa + .pessoa { margin-top: 3.2rem; }
+.retrato { aspect-ratio: 4 / 5; overflow: hidden; border-radius: 50% 50% 14px 14px / 40% 40% 14px 14px; background: var(--taupe-2); box-shadow: 0 0 0 1px rgba(240, 198, 204, .5), 0 18px 36px rgba(40, 30, 28, .28); }
+.retrato img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--suave); }
+.pessoa:hover .retrato img { transform: scale(1.05); }
+.pessoa h3 { font-size: 2.05rem; }
+.oab { margin-top: .35rem; font-size: .86rem; letter-spacing: .04em; color: var(--rosa-claro); }
+.area { margin-top: .95rem; font-weight: 600; font-size: .98rem; color: #fff; }
+.pessoa .bio { margin-top: .55rem; font-size: .97rem; line-height: 1.6; }
+.pessoa .elo { margin-top: 1.1rem; color: var(--rosa-claro); }
+.frase { margin-top: clamp(3rem, 7vw, 5rem); padding-top: clamp(2rem, 5vw, 3rem); border-top: 1px solid rgba(255, 255, 255, .18); }
+.frase blockquote { margin: 0; max-width: 21em; font: italic 500 clamp(1.7rem, 3.4vw, 2.7rem)/1.2 var(--serif); color: #fff; text-wrap: balance; }
+.frase figcaption { margin-top: 1rem; font-size: .86rem; color: var(--rosa-claro); }
+
+/* Vídeos */
+.videos { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; }
+.video { display: block; width: 100%; padding: 0; border: 0; background: none; text-align: left; cursor: pointer; }
+.video-capa { position: relative; display: block; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 18px; background: var(--taupe-2); }
+.video-capa img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--suave); }
+.video-capa::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(40, 30, 28, .62), rgba(40, 30, 28, 0) 46%); }
+.video:hover .video-capa img { transform: scale(1.05); }
+.toca { position: absolute; z-index: 1; left: 1rem; bottom: 1rem; width: 3.3rem; height: 3.3rem; display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--vinho); transition: transform .3s var(--suave); }
+.toca .i { width: 1.2rem; height: 1.2rem; margin-left: 3px; fill: currentColor; }
+.video:hover .toca { transform: scale(1.1); }
+.tempo { position: absolute; z-index: 1; right: 1rem; bottom: 1.55rem; font-size: .82rem; font-weight: 600; color: #fff; }
+.video-t { display: block; margin-top: .9rem; font-family: var(--serif); font-weight: 600; font-size: 1.32rem; line-height: 1.2; color: var(--tinta); }
+.rodape-sec { margin-top: 2.2rem; }
+
+/* Publicações */
+.posts { list-style: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; }
+.post { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; overflow: hidden; border-radius: 12px; box-shadow: 0 0 0 1px var(--linha); }
+.post img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .8s var(--suave); }
+.post:hover img { transform: scale(1.05); }
+
+/* Unidades */
+.onde { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.fachada img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 18px; }
+.fachada figcaption { margin-top: .8rem; font-size: .86rem; }
+.unidades { list-style: none; border-top: 1px solid var(--linha); }
+.unidades li { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: .4rem 2rem; padding: 1.6rem 0; border-bottom: 1px solid var(--linha); }
+.unidades h3 { font-weight: 600; font-size: 1.6rem; }
+.unidades p { font-size: .98rem; }
+.unidades .quando { display: flex; align-items: center; gap: .5rem; margin-top: .45rem; color: var(--tinta); font-weight: 500; }
+.unidades .quando .i { color: var(--vinho); width: 1.1rem; height: 1.1rem; }
+.unidades .elo { margin-top: .9rem; font-size: .9rem; }
+.regiao { margin-top: 1.5rem; font-size: .95rem; }
+.mapa { margin-top: clamp(2rem, 5vw, 3.2rem); overflow: hidden; border-radius: 18px; box-shadow: 0 0 0 1px var(--linha); }
+.mapa iframe { width: 100%; height: 380px; border: 0; filter: saturate(.75); }
+
+/* Dúvidas */
+.duvidas { max-width: 54rem; border-top: 1px solid var(--linha); }
+.duvidas details { border-bottom: 1px solid var(--linha); }
+.duvidas summary { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.35rem .2rem; cursor: pointer; list-style: none; font-family: var(--serif); font-weight: 600; font-size: 1.45rem; line-height: 1.2; color: var(--tinta); }
+.duvidas summary::-webkit-details-marker { display: none; }
+.duvidas summary .i { width: 1.4rem; height: 1.4rem; color: var(--vinho); transition: transform .35s var(--suave); }
+.duvidas details[open] summary .i { transform: rotate(45deg); }
+.resposta { padding: 0 .2rem 1.5rem; max-width: 44rem; animation: sobe .5s var(--suave); }
+.resposta ul { margin-top: .7rem; padding-left: 1.2rem; }
+.resposta li { margin-top: .3rem; }
+.aviso { margin-top: 1.6rem; font-size: .9rem; }
+
+/* Contato */
+.contato { background: var(--taupe-escuro); color: #EADCD9; }
+.contato-grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2.5rem, 7vw, 6rem); align-items: start; }
+.contato h2 { color: #fff; font-size: clamp(2.2rem, 4.4vw, 3.5rem); }
+.contato .lead { margin-top: 1.2rem; font-size: 1.05rem; color: #EADCD9; }
+.contato .btn-zap { margin-top: 2rem; flex-direction: column; gap: .35rem; padding: 1.1rem 2rem; }
+.contato .btn-zap span { display: inline-flex; align-items: center; gap: .6rem; }
+.contato .btn-zap small { font-size: .86rem; font-weight: 500; opacity: .95; }
+.canais h3 { color: #fff; font-style: italic; font-size: 1.75rem; }
+.canais ul { list-style: none; margin-top: 1rem; border-top: 1px solid rgba(255, 255, 255, .16); }
+.canais li a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .95rem 0; border-bottom: 1px solid rgba(255, 255, 255, .16); text-decoration: none; transition: color .25s, padding .3s var(--suave); }
+.canais li a:hover { color: #fff; padding-left: .5rem; }
+.canais li strong { font-weight: 600; color: #fff; white-space: nowrap; }
+.alerta { display: flex; gap: .9rem; margin-top: 1.6rem; padding: 1.1rem 1.2rem; border-radius: 14px; background: rgba(240, 198, 204, .1); box-shadow: inset 0 0 0 1px rgba(240, 198, 204, .35); font-size: .93rem; line-height: 1.55; }
+.alerta .i { width: 1.5rem; height: 1.5rem; margin-top: .1rem; color: var(--rosa-claro); }
+.alerta strong { color: #fff; }
+
+/* Rodapé */
+.rodape { background: #3A3231; color: #CFC2BF; font-size: .88rem; padding-block: 3rem 5.5rem; }
+.rodape-grade { display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 1fr)); gap: 2.5rem; }
+.rodape img { width: 190px; }
+.rodape h3 { font-family: var(--sans); font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--rosa-claro); margin-bottom: .7rem; }
+.rodape p + p { margin-top: .35rem; }
+.rodape .fino { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, .12); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem 2rem; font-size: .82rem; }
+.rodape a { color: #fff; }
+
+/* WhatsApp flutuante */
+.flutua { position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 60px; height: 60px; display: grid; place-items: center; border-radius: 50%; background: var(--verde); color: #fff; box-shadow: 0 12px 28px rgba(20, 90, 45, .38); transform: translateY(140%); transition: transform .5s var(--suave), background .25s; }
+.flutua.mostra { transform: none; }
+.flutua:hover { background: var(--verde-hover); }
+.flutua .i { width: 30px; height: 30px; }
+.flutua::before { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 2px var(--verde); animation: pulsa 2.6s ease-out infinite; }
+@keyframes pulsa { from { transform: scale(1); opacity: .8; } to { transform: scale(1.75); opacity: 0; } }
+
+/* Janelas (vídeo e publicação) */
+dialog { border: 0; padding: 58px 0 0; background: transparent; color: #fff; max-width: min(94vw, 980px); max-height: 96vh; overflow: visible; }
+dialog::backdrop { background: rgba(40, 32, 30, .86); backdrop-filter: blur(5px); }
+.fechar { position: absolute; top: 0; right: 0; width: 46px; height: 46px; display: grid; place-items: center; border: 0; border-radius: 50%; background: #fff; color: var(--tinta); cursor: pointer; }
+.fechar .i { width: 1.3rem; height: 1.3rem; }
+#janela-video video { height: min(80vh, 860px); aspect-ratio: 9 / 16; max-width: 92vw; border-radius: 16px; background: #000; }
+#janela-foto img { max-height: 72vh; width: auto; margin-inline: auto; border-radius: 12px; }
+.legenda { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1.5rem; margin-top: .9rem; max-width: 44rem; font-size: .92rem; line-height: 1.5; }
+.legenda a { color: var(--rosa-claro); font-weight: 600; white-space: nowrap; }
+.passa { position: absolute; top: calc(50% + 10px); width: 46px; height: 46px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .92); color: var(--tinta); cursor: pointer; }
+.passa.ant { left: -58px; }
+.passa.prox { right: -58px; }
+.passa.prox .i { transform: scaleX(-1); }
+
+@media (max-width: 1100px) {
+  .passa.ant { left: 8px; }
+  .passa.prox { right: 8px; }
+  .posts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 980px) {
+  .menu { position: absolute; inset: 100% 0 auto 0; display: none; flex-direction: column; gap: 0; padding: .4rem 1.25rem 1.2rem; background: var(--taupe-2); box-shadow: 0 24px 30px rgba(40, 30, 28, .28); }
+  .menu.aberto { display: flex; }
+  .menu a { padding: .95rem 0; font-size: 1.02rem; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+  .menu a::after { display: none; }
+  .menu-botao { display: grid; }
+  .topo .btn-zap { margin-left: auto; }
+  .situ-grade, .onde, .contato-grade { grid-template-columns: minmax(0, 1fr); }
+  .situ-grade .sec-cab { position: static; }
+  .duas { grid-template-columns: minmax(0, 1fr); }
+  .videos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fachada { max-width: 26rem; }
+  .rodape-grade { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  body { font-size: 1rem; }
+  .topo-in { min-height: 66px; gap: .7rem; }
+  .logo img { width: 128px; }
+  .abertura-grade { grid-template-columns: minmax(0, 1fr); }
+  .arco { justify-self: center; width: min(84%, 340px); margin-top: 1rem; }
+  .acoes .btn { width: 100%; }
+  .placa div { padding-inline: 1rem; }
+  .placa dt { font-size: .88rem; }
+  .item { grid-template-columns: 2.8rem minmax(0, 1fr); padding: 1.2rem .2rem; }
+  .ico { grid-row: 1; width: 2.8rem; height: 2.8rem; }
+  .item-t { font-size: 1.4rem; }
+  .item-d { grid-column: 1 / -1; }
+  .item-ir { grid-column: 1 / -1; grid-row: auto; margin-top: .2rem; }
+  .trilha { grid-template-columns: minmax(0, 1fr); gap: 1.8rem; }
+  .trilha::before, .trilha::after { left: 1.6rem; right: auto; top: 1.6rem; bottom: 1.6rem; width: 1px; height: auto; }
+  .trilha::after { transform: scaleY(var(--p)); transform-origin: top; }
+  .trilha li { display: grid; grid-template-columns: 3.2rem minmax(0, 1fr); gap: 0 1.1rem; }
+  .trilha .num { grid-row: span 2; }
+  .trilha h3 { margin-top: .35rem; }
+  .pessoa { grid-template-columns: 7.2rem minmax(0, 1fr); gap: 1.2rem; }
+  .pessoa h3 { font-size: 1.75rem; }
+  .videos, .posts { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 62%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .8rem; margin-inline: -1.25rem; padding-inline: 1.25rem; scroll-padding-inline: 1.25rem; scrollbar-width: none; }
+  .videos::-webkit-scrollbar, .posts::-webkit-scrollbar { display: none; }
+  .videos > li, .posts > li { scroll-snap-align: start; }
+  .posts { grid-auto-columns: 58%; }
+  .unidades li { grid-template-columns: minmax(0, 1fr); }
+  .mapa iframe { height: 300px; }
+  .duvidas summary { font-size: 1.28rem; }
+  .rodape-grade { grid-template-columns: minmax(0, 1fr); }
+  dialog { padding-top: 54px; }
+  #janela-video video { height: min(74vh, 700px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .abertura-texto > *, .js .arco, .js [data-r] { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <symbol id="i-folha" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></g></symbol>
+    <symbol id="i-coracao" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></g></symbol>
+    <symbol id="i-bebe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></g></symbol>
+    <symbol id="i-mao" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/></g></symbol>
+    <symbol id="i-flor" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1"/><circle cx="12" cy="8" r="2"/><path d="M12 10v12"/><path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z"/><path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z"/></g></symbol>
+    <symbol id="i-poltrona" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M5 18v2"/><path d="M19 18v2"/></g></symbol>
+    <symbol id="i-papel" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></g></symbol>
+    <symbol id="i-maleta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></g></symbol>
+    <symbol id="i-familia" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g></symbol>
+    <symbol id="i-carteira" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></g></symbol>
+    <symbol id="i-casa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></g></symbol>
+    <symbol id="i-saude" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></g></symbol>
+    <symbol id="i-pino" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></g></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></g></symbol>
+    <symbol id="i-tocar" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+    <symbol id="i-seta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></g></symbol>
+    <symbol id="i-sai" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></g></symbol>
+    <symbol id="i-volta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></g></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></g></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></g></symbol>
+    <symbol id="i-escudo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></g></symbol>
+    <symbol id="i-mais" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></g></symbol>
+  </defs>
+</svg>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="previa">Prévia do site, feita pela <a href="https://www.atalhostudio.com.br">Atalho Studio</a> para a Abreu | Mol avaliar. Fotos, vídeos e textos vieram do Instagram do escritório.</div>
+
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="logo" href="#inicio" aria-label="Abreu | Mol Advogadas, voltar ao início">
+      <img src="img/logo.webp" width="520" height="200" alt="Abreu | Mol Advogadas">
+    </a>
+    <nav class="menu" id="menu" aria-label="Seções do site">
+      <a href="#situacoes">Como ajudamos</a>
+      <a href="#atendimento">Atendimento</a>
+      <a href="#quem-somos">Quem somos</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn-zap btn-p" href="https://wa.me/5533998740709" data-zap=""><svg class="i"><use href="#i-zap"/></svg>WhatsApp</a>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir o menu"><svg class="i"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="abertura" id="inicio">
+  <div class="wrap abertura-grade">
+    <div class="abertura-texto">
+      <p class="local"><svg class="i"><use href="#i-pino"/></svg>Marilac e São José da Safira, Minas Gerais</p>
+      <h1>Seus direitos merecem ser analisados com cuidado.</h1>
+      <p class="lead">Somos um escritório de duas advogadas. Orientamos quem precisa do INSS, quem vive uma questão de família e quem teve um direito de consumidor desrespeitado, em atendimento presencial ou on-line.</p>
+      <div class="acoes">
+        <a class="btn btn-zap" href="https://wa.me/5533998740709" data-zap=""><svg class="i"><use href="#i-zap"/></svg>Falar no WhatsApp</a>
+        <a class="btn btn-linha" href="#atendimento">Como funciona o atendimento</a>
+      </div>
+      <dl class="placa">
+        <div><dt>Antonieta F. de Abreu</dt><dd>OAB/MG 123.673</dd></div>
+        <div><dt>Vivian M. Mol Alves</dt><dd>OAB/MG 111.645</dd></div>
+      </dl>
+    </div>
+    <figure class="arco">
+      <div class="arco-foto">
+        <img src="img/abertura.webp" width="960" height="1200" fetchpriority="high" alt="As advogadas Antonieta Abreu e Vivian Mol sorrindo em frente à placa do escritório Abreu | Mol Advogadas">
+      </div>
+      <figcaption>Antonieta e Vivian, em frente ao escritório de Marilac.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="situacoes">
+  <div class="wrap situ-grade">
+    <header class="sec-cab" data-r>
+      <h2>Em que momento da vida você está?</h2>
+      <p>Escolha a situação mais parecida com a sua. A conversa começa pelo WhatsApp, e cada caso recebe uma análise individual.</p>
+      <a class="elo" href="https://wa.me/5533998740709" data-zap="uma situação que não está na lista do site">Minha situação é outra<svg class="i"><use href="#i-sai"/></svg></a>
+    </header>
+
+    <div>
+      <div class="grupo">
+        <div class="grupo-cab" data-r>
+          <h3>INSS e benefícios</h3>
+          <p>com a advogada Vivian Mol</p>
+        </div>
+        <ul class="lista" data-r-filhos>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="aposentadoria e benefícios de quem trabalha na roça">
+            <span class="ico"><svg class="i"><use href="#i-folha"/></svg></span>
+            <span class="item-t">Trabalho ou trabalhei na roça</span>
+            <span class="item-d">Aposentadoria rural, tempo de roça para completar a aposentadoria na cidade e salário-maternidade da trabalhadora rural. O ponto mais delicado costuma ser a prova do trabalho.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="benefício por doença ou acidente">
+            <span class="ico"><svg class="i"><use href="#i-coracao"/></svg></span>
+            <span class="item-t">Estou doente ou sofri um acidente</span>
+            <span class="item-d">Auxílio por incapacidade (o antigo auxílio-doença), auxílio-acidente para quem ficou com sequelas e aposentadoria por incapacidade permanente.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="salário-maternidade">
+            <span class="ico"><svg class="i"><use href="#i-bebe"/></svg></span>
+            <span class="item-t">Estou grávida ou tive bebê</span>
+            <span class="item-d">Salário-maternidade para quem tem carteira assinada, trabalha por conta própria, é do campo ou, em alguns casos, está desempregada.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="BPC/LOAS">
+            <span class="ico"><svg class="i"><use href="#i-mao"/></svg></span>
+            <span class="item-t">Sou idoso ou pessoa com deficiência, com pouca renda</span>
+            <span class="item-d">BPC/LOAS: um salário mínimo por mês para quem tem 65 anos ou mais, ou uma deficiência, e vive em família de baixa renda. Não exige contribuição ao INSS.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="pensão por morte">
+            <span class="ico"><svg class="i"><use href="#i-flor"/></svg></span>
+            <span class="item-t">Perdi um familiar</span>
+            <span class="item-d">Pensão por morte para cônjuge ou companheiro, filhos e, em algumas situações, pais e irmãos.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="aposentadoria">
+            <span class="ico"><svg class="i"><use href="#i-poltrona"/></svg></span>
+            <span class="item-t">Quero me aposentar</span>
+            <span class="item-d">Aposentadoria por idade (urbana, rural ou híbrida), por tempo de contribuição e da pessoa com deficiência, além de planejamento para quem ainda vai fazer o pedido.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="um benefício negado ou cortado pelo INSS">
+            <span class="ico"><svg class="i"><use href="#i-papel"/></svg></span>
+            <span class="item-t">O INSS negou ou cortou meu benefício</span>
+            <span class="item-d">Entender o motivo da decisão é o primeiro passo. Conforme o caso, cabe um novo pedido, um recurso no próprio INSS ou uma ação na Justiça.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="contribuição ao INSS como MEI, autônoma ou dona de casa">
+            <span class="ico"><svg class="i"><use href="#i-maleta"/></svg></span>
+            <span class="item-t">Sou MEI, autônoma ou dona de casa</span>
+            <span class="item-d">Como contribuir do jeito certo para ter acesso a aposentadoria, auxílio por incapacidade, salário-maternidade e pensão por morte.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="grupo">
+        <div class="grupo-cab" data-r>
+          <h3>Família, consumidor e questões cíveis</h3>
+          <p>com a advogada Antonieta Abreu</p>
+        </div>
+        <ul class="lista" data-r-filhos>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="uma questão de família (divórcio, pensão ou guarda)">
+            <span class="ico"><svg class="i"><use href="#i-familia"/></svg></span>
+            <span class="item-t">Separação, pensão e guarda</span>
+            <span class="item-d">Divórcio, pensão alimentícia, cobrança de pensão em atraso, guarda e direito de convivência.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="descontos ou empréstimos que não reconheço">
+            <span class="ico"><svg class="i"><use href="#i-carteira"/></svg></span>
+            <span class="item-t">Descontos e empréstimos que não reconheço</span>
+            <span class="item-d">Empréstimo consignado que você não pediu, desconto estranho no benefício, contrato bancário e nome negativado sem motivo.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="inventário ou regularização de imóvel">
+            <span class="ico"><svg class="i"><use href="#i-casa"/></svg></span>
+            <span class="item-t">Herança e imóveis</span>
+            <span class="item-d">Inventário, alvará e regularização de imóveis.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+          <li><a class="item" href="https://wa.me/5533998740709" data-zap="plano de saúde ou fornecimento de medicamento">
+            <span class="ico"><svg class="i"><use href="#i-saude"/></svg></span>
+            <span class="item-t">Plano de saúde e medicamentos</span>
+            <span class="item-d">Negativa de cobertura pelo plano de saúde e pedido de fornecimento de medicamento.</span>
+            <span class="item-ir">Conversar sobre isso<svg class="i"><use href="#i-seta"/></svg></span>
+          </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec creme" id="atendimento">
+  <div class="wrap">
+    <header class="sec-cab" data-r>
+      <h2>Como funciona o atendimento</h2>
+      <p>Presencial ou on-line, para que a distância não seja um obstáculo. São cinco passos, do primeiro contato ao acompanhamento do seu pedido.</p>
+    </header>
+    <ol class="trilha">
+      <li><span class="num">1</span><h3>Você chama no WhatsApp</h3><p>Conte, com as suas palavras, o que está acontecendo.</p></li>
+      <li><span class="num">2</span><h3>Pedimos os documentos básicos</h3><p>Com eles, fazemos a primeira análise do seu caso.</p></li>
+      <li><span class="num">3</span><h3>Conversamos com calma</h3><p>Em uma reunião presencial ou on-line, entendemos os detalhes e definimos o caminho.</p></li>
+      <li><span class="num">4</span><h3>Reunimos as provas</h3><p>Pedimos os documentos complementares e organizamos tudo o que o pedido precisa.</p></li>
+      <li><span class="num">5</span><h3>Acompanhamos o seu pedido</h3><p>Com transparência em cada etapa, do início ao fim.</p></li>
+    </ol>
+    <p class="horario"><svg class="i"><use href="#i-relogio"/></svg>Atendimento presencial de segunda a sexta. On-line também à noite, pelo WhatsApp.</p>
+  </div>
+</section>
+
+<div class="cidades" aria-hidden="true">
+  <div class="cidades-trilho">
+    <ul><li>Marilac</li><li>São José da Safira</li><li>Nacip Raydan</li><li>Virgolândia</li><li>Mathias Lobato</li><li>Frei Inocêncio</li><li>Coroaci</li><li>Itabirinha</li><li>Governador Valadares</li><li>On-line para todo o Brasil</li></ul>
+    <ul><li>Marilac</li><li>São José da Safira</li><li>Nacip Raydan</li><li>Virgolândia</li><li>Mathias Lobato</li><li>Frei Inocêncio</li><li>Coroaci</li><li>Itabirinha</li><li>Governador Valadares</li><li>On-line para todo o Brasil</li></ul>
+  </div>
+</div>
+
+<section class="sec quem" id="quem-somos">
+  <div class="wrap">
+    <header class="sec-cab" data-r>
+      <h2>Mais do que processos, pessoas.</h2>
+      <p>A Abreu | Mol reúne duas advogadas, cada uma dedicada à sua área, e uma mesma forma de trabalhar: atendimento com verdade, ética e responsabilidade, e transparência em cada etapa.</p>
+    </header>
+    <div class="duas">
+      <article class="pessoa" data-r>
+        <div class="retrato"><img loading="lazy" src="img/vivian.webp" width="600" height="750" alt="Retrato da advogada Vivian Mol"></div>
+        <div>
+          <h3>Vivian Mol</h3>
+          <p class="oab">Vivian M. Mol Alves, OAB/MG 111.645</p>
+          <p class="area">Direito Previdenciário</p>
+          <p class="bio">Responsável pelos pedidos e pelas ações que envolvem o INSS: aposentadorias, auxílios, salário-maternidade, BPC/LOAS, pensão por morte e revisões, com atenção especial a quem vive do trabalho no campo. Integra a Comissão de Direito Previdenciário da 43ª Subseção da OAB/MG, em Governador Valadares (triênio 2025/2027).</p>
+          <a class="elo" href="https://wa.me/5533988725629" data-num="5533988725629" data-zap="um benefício do INSS">Falar com a Vivian<svg class="i"><use href="#i-sai"/></svg></a>
+        </div>
+      </article>
+      <article class="pessoa" data-r style="--d:.12s">
+        <div class="retrato"><img loading="lazy" src="img/antonieta.webp" width="600" height="750" alt="Retrato da advogada Antonieta Abreu"></div>
+        <div>
+          <h3>Antonieta Abreu</h3>
+          <p class="oab">Antonieta F. de Abreu, OAB/MG 123.673</p>
+          <p class="area">Direito de Família, do Consumidor e Civil</p>
+          <p class="bio">Responsável pelas questões de família (divórcio, pensão alimentícia e guarda), de consumo (cobranças e empréstimos indevidos, contratos bancários e planos de saúde) e cíveis (contratos, indenizações, inventário e regularização de imóveis).</p>
+          <a class="elo" href="https://wa.me/5533999751415" data-num="5533999751415" data-zap="uma questão de família, de consumo ou cível">Falar com a Antonieta<svg class="i"><use href="#i-sai"/></svg></a>
+        </div>
+      </article>
+    </div>
+    <figure class="frase" data-r>
+      <blockquote>“Advogar não é só processar. É acolher quem está desacreditado.”</blockquote>
+      <figcaption>De uma publicação do escritório, em maio de 2025.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="videos">
+  <div class="wrap">
+    <header class="sec-cab" data-r>
+      <h2>Orientação em vídeo</h2>
+      <p>Em vídeos curtos, a Dra. Vivian responde a dúvidas que chegam todos os dias ao escritório.</p>
+    </header>
+    <ul class="videos" data-r-filhos>
+      <li><button class="video" type="button" data-video="video/provas-rurais.mp4" data-capa="img/capa-provas-rurais.webp">
+        <span class="video-capa"><img loading="lazy" src="img/capa-provas-rurais.webp" width="540" height="960" alt=""><span class="toca"><svg class="i"><use href="#i-tocar"/></svg></span><span class="tempo">1 min 30 s</span></span>
+        <span class="video-t">O que conta para provar o trabalho na roça</span>
+      </button></li>
+      <li><button class="video" type="button" data-video="video/reabilitacao.mp4" data-capa="img/capa-reabilitacao.webp">
+        <span class="video-capa"><img loading="lazy" src="img/capa-reabilitacao.webp" width="540" height="960" alt=""><span class="toca"><svg class="i"><use href="#i-tocar"/></svg></span><span class="tempo">47 s</span></span>
+        <span class="video-t">Auxílio-doença e reabilitação profissional</span>
+      </button></li>
+      <li><button class="video" type="button" data-video="video/unidade-safira.mp4" data-capa="img/capa-unidade.webp">
+        <span class="video-capa"><img loading="lazy" src="img/capa-unidade.webp" width="540" height="960" alt=""><span class="toca"><svg class="i"><use href="#i-tocar"/></svg></span><span class="tempo">1 min 30 s</span></span>
+        <span class="video-t">A nova unidade em São José da Safira</span>
+      </button></li>
+      <li><button class="video" type="button" data-video="video/ieprev.mp4" data-capa="img/capa-ieprev.webp">
+        <span class="video-capa"><img loading="lazy" src="img/capa-ieprev.webp" width="540" height="960" alt=""><span class="toca"><svg class="i"><use href="#i-tocar"/></svg></span><span class="tempo">20 s</span></span>
+        <span class="video-t">Estudo contínuo: no congresso do IEPREV</span>
+      </button></li>
+    </ul>
+    <p class="rodape-sec"><a class="elo" href="https://www.instagram.com/abreumol.adv/" target="_blank" rel="noopener"><svg class="i"><use href="#i-insta"/></svg>Mais vídeos no Instagram @abreumol.adv</a></p>
+  </div>
+</section>
+
+<section class="sec creme" id="publicacoes">
+  <div class="wrap">
+    <header class="sec-cab" data-r>
+      <h2>Informação para conhecer os seus direitos</h2>
+      <p>Conteúdo informativo publicado no Instagram do escritório. Toque em uma publicação para ampliar.</p>
+    </header>
+    <ul class="posts" data-r-filhos>
+      <li><button class="post" type="button" data-img="img/post-genero.webp" data-leg="Julgamento com perspectiva de gênero: o que é, onde se aplica e como pode influenciar a análise de um processo." data-link="https://www.instagram.com/p/DfmlIpZJdrV/"><img loading="lazy" src="img/post-genero.webp" width="864" height="1080" alt="Publicação: Julgamento com perspectiva de gênero"></button></li>
+      <li><button class="post" type="button" data-img="img/post-agricultora.webp" data-leg="Por que o INSS duvida mais do trabalho da mulher que é agricultora?" data-link="https://www.instagram.com/p/DTl-_seCmYI/"><img loading="lazy" src="img/post-agricultora.webp" width="864" height="1080" alt="Publicação: por que o INSS duvida mais do trabalho da mulher que é agricultora"></button></li>
+      <li><button class="post" type="button" data-img="img/post-tempo-rural.webp" data-leg="O tempo de trabalho rural pode antecipar a aposentadoria urbana." data-link="https://www.instagram.com/p/DSYP3k6ivog/"><img loading="lazy" src="img/post-tempo-rural.webp" width="864" height="1080" alt="Publicação: tempo de trabalho rural pode antecipar a aposentadoria urbana"></button></li>
+      <li><button class="post" type="button" data-img="img/post-bpc.webp" data-leg="BPC/LOAS para a pessoa com deficiência: o que a lei considera deficiência." data-link="https://www.instagram.com/p/DIUhJbAhOLx/"><img loading="lazy" src="img/post-bpc.webp" width="864" height="1080" alt="Publicação: BPC/LOAS para a pessoa com deficiência"></button></li>
+      <li><button class="post" type="button" data-img="img/post-rural-negado.webp" data-leg="Benefício rural negado: quais são os próximos passos." data-link="https://www.instagram.com/p/DH_6xmCu6Pm/"><img loading="lazy" src="img/post-rural-negado.webp" width="864" height="1080" alt="Publicação: meu benefício rural foi negado, e agora"></button></li>
+      <li><button class="post" type="button" data-img="img/post-dona-de-casa.webp" data-leg="Dona de casa também pode contribuir para o INSS e planejar a aposentadoria." data-link="https://www.instagram.com/p/DI1_fSrOY4D/"><img loading="lazy" src="img/post-dona-de-casa.webp" width="864" height="1080" alt="Publicação: toda dona de casa merece um futuro seguro"></button></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="unidades">
+  <div class="wrap">
+    <header class="sec-cab" data-r>
+      <h2>Onde atendemos</h2>
+      <p>Duas unidades no Leste de Minas e atendimento on-line para todo o Brasil.</p>
+    </header>
+    <div class="onde">
+      <figure class="fachada" data-r>
+        <img loading="lazy" src="img/fachada.webp" width="720" height="900" alt="Fachada do escritório Abreu | Mol Advogadas em Marilac, com a porta aberta">
+        <figcaption>A entrada do escritório de Marilac.</figcaption>
+      </figure>
+      <div data-r style="--d:.1s">
+        <ul class="unidades">
+          <li>
+            <h3>Marilac (MG)</h3>
+            <div>
+              <p>Rua Governador Valadares, 220, Centro</p>
+              <p class="quando"><svg class="i"><use href="#i-relogio"/></svg>Presencial, de segunda a sexta</p>
+              <a class="elo" href="https://www.google.com/maps/search/?api=1&query=Rua+Governador+Valadares%2C+220%2C+Marilac+MG" target="_blank" rel="noopener">Abrir no mapa<svg class="i"><use href="#i-sai"/></svg></a>
+            </div>
+          </li>
+          <li>
+            <h3>São José da Safira (MG)</h3>
+            <div>
+              <p>Rua Manoel Heliodoro, 120, Centro, ao lado da lotérica</p>
+              <p class="quando"><svg class="i"><use href="#i-relogio"/></svg>Presencial às quartas-feiras, a partir das 8h</p>
+              <a class="elo" href="https://www.google.com/maps/search/?api=1&query=Rua+Manoel+Heliodoro%2C+120%2C+S%C3%A3o+Jos%C3%A9+da+Safira+MG" target="_blank" rel="noopener">Abrir no mapa<svg class="i"><use href="#i-sai"/></svg></a>
+            </div>
+          </li>
+          <li>
+            <h3>On-line</h3>
+            <div>
+              <p>Pelo WhatsApp, de qualquer cidade do Brasil.</p>
+              <p class="quando"><svg class="i"><use href="#i-relogio"/></svg>À noite também</p>
+              <a class="elo" href="https://wa.me/5533998740709" data-zap="atendimento on-line">Chamar no WhatsApp<svg class="i"><use href="#i-sai"/></svg></a>
+            </div>
+          </li>
+        </ul>
+        <p class="regiao">Atendemos Marilac, São José da Safira e as cidades vizinhas, como Nacip Raydan, Virgolândia, Mathias Lobato, Frei Inocêncio, Coroaci, Itabirinha e Governador Valadares.</p>
+      </div>
+    </div>
+    <div class="mapa" data-r>
+      <iframe title="Mapa: escritório Abreu | Mol em Marilac" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua%20Governador%20Valadares%2C%20220%2C%20Marilac%20-%20MG&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="sec creme" id="duvidas">
+  <div class="wrap">
+    <header class="sec-cab" data-r>
+      <h2>Dúvidas frequentes</h2>
+    </header>
+    <div class="duvidas" data-r>
+      <details>
+        <summary>Preciso ir até o escritório para ser atendido?<svg class="i"><use href="#i-mais"/></svg></summary>
+        <div class="resposta"><p>Não. O atendimento pode ser presencial, em Marilac ou em São José da Safira, ou on-line. A primeira conversa é pelo WhatsApp.</p></div>
+      </details>
+      <details>
+        <summary>Preciso de advogado para pedir um benefício no INSS?<svg class="i"><use href="#i-mais"/></svg></summary>
+        <div class="resposta"><p>Não é obrigatório: o pedido pode ser feito por você mesmo, pelo Meu INSS ou pelo telefone 135. O advogado ajuda a conferir o CNIS, que é o extrato das suas contribuições, a encontrar falhas, a comprovar o tempo de trabalho, inclusive o rural, e a recorrer quando o pedido é negado.</p></div>
+      </details>
+      <details>
+        <summary>Trabalhei na roça sem carteira assinada. Posso me aposentar?<svg class="i"><use href="#i-mais"/></svg></summary>
+        <div class="resposta"><p>Quem trabalha no campo pode pedir a aposentadoria por idade rural aos 55 anos, no caso da mulher, e aos 60, no caso do homem, desde que comprove 180 meses (15 anos) de atividade rural. O ponto central é a prova desse trabalho.</p></div>
+      </details>
+      <details>
+        <summary>Quais documentos ajudam a provar o trabalho rural?<svg class="i"><use href="#i-mais"/></svg></summary>
+        <div class="resposta">
+          <p>O INSS analisa o conjunto das provas, e não um documento isolado. Costumam ajudar:</p>
+          <ul>
+            <li>notas fiscais de venda da produção e bloco de notas do produtor;</li>
+            <li>contratos de parceria ou de arrendamento;</li>
+            <li>certidão de casamento ou de nascimento dos filhos com a profissão de lavrador ou agricultora;</li>
+            <li>comprovante de inscrição no ITR e declaração de Imposto de Renda com atividade rural;</li>
+            <li>documentos de sindicato ou de associação de produtores;</li>
+            <li>ficha de posto de saúde e documentos escolares dos filhos.</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary>O INSS negou o meu pedido. E agora?<svg class="i"><use href="#i-mais"/></svg></summary>
+        <div class="resposta"><p>Uma negativa não encerra o assunto. O primeiro passo é descobrir o motivo. Conforme o caso, pode caber um novo pedido, um recurso no próprio INSS ou uma ação na Justiça.</p></div>
+      </details>
+      <details>
+        <summary>Estou grávida e sem carteira assinada. Posso receber o salário-maternidade?<svg class="i"><use href="#i-mais"/></svg></summary>
+        <div class="resposta"><p>Pode ser que sim. A trabalhadora rural e a desempregada que ainda está no período de proteção do INSS, o chamado período de graça, podem ter direito ao benefício. O ideal é organizar a documentação ainda durante a gestação.</p></div>
+      </details>
+      <details>
+        <summary>Quem pode receber o BPC/LOAS?<svg class="i"><use href="#i-mais"/></svg></summary>
+        <div class="resposta"><p>Pessoas com 65 anos ou mais e pessoas com deficiência, de qualquer idade, que vivem em família de baixa renda. Não é preciso ter contribuído para o INSS, mas o Cadastro Único tem de estar atualizado.</p></div>
+      </details>
+    </div>
+    <p class="aviso">Estas respostas são informativas e não substituem a análise individual do seu caso.</p>
+  </div>
+</section>
+
+<section class="sec contato" id="contato">
+  <div class="wrap contato-grade">
+    <div data-r>
+      <h2>Buscar informação é o primeiro passo.</h2>
+      <p class="lead">Conte o que está acontecendo. A primeira conversa é pelo WhatsApp.</p>
+      <a class="btn btn-zap" href="https://wa.me/5533998740709" data-zap=""><span><svg class="i"><use href="#i-zap"/></svg>Falar no WhatsApp</span><small>(33) 99874-0709</small></a>
+    </div>
+    <div class="canais" data-r style="--d:.1s">
+      <h3>Canais oficiais do escritório</h3>
+      <ul>
+        <li><a href="https://wa.me/5533998740709" data-zap="">Escritório<strong>(33) 99874-0709</strong></a></li>
+        <li><a href="https://wa.me/5533999751415" data-num="5533999751415" data-zap="">Antonieta Abreu<strong>(33) 99975-1415</strong></a></li>
+        <li><a href="https://wa.me/5533988725629" data-num="5533988725629" data-zap="">Vivian Mol<strong>(33) 98872-5629</strong></a></li>
+        <li><a href="https://www.instagram.com/abreumol.adv/" target="_blank" rel="noopener">Instagram<strong>@abreumol.adv</strong></a></li>
+      </ul>
+      <p class="alerta"><svg class="i"><use href="#i-escudo"/></svg><span><strong>Cuidado com golpes.</strong> O escritório fala somente por estes números. Não pedimos dinheiro por mensagem e não nos comunicamos por outras pessoas. Se outro número procurar você em nosso nome, denuncie e bloqueie.</span></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-grade">
+      <div>
+        <img loading="lazy" src="img/logo.webp" width="520" height="200" alt="Abreu | Mol Advogadas">
+      </div>
+      <div>
+        <h3>Advogadas</h3>
+        <p>Antonieta F. de Abreu, OAB/MG 123.673</p>
+        <p>Vivian M. Mol Alves, OAB/MG 111.645</p>
+      </div>
+      <div>
+        <h3>Unidades</h3>
+        <p>Marilac (MG): Rua Governador Valadares, 220, Centro</p>
+        <p>São José da Safira (MG): Rua Manoel Heliodoro, 120, Centro</p>
+      </div>
+    </div>
+    <div class="fino">
+      <p>Conteúdo informativo, nos termos do Provimento 205/2021 do CFOAB. Não substitui a análise individual do seu caso.</p>
+      <p>Prévia de site feita pela <a href="https://www.atalhostudio.com.br">Atalho Studio</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="flutua" href="https://wa.me/5533998740709" data-zap="" aria-label="Falar com o escritório no WhatsApp"><svg class="i"><use href="#i-zap"/></svg></a>
+
+<dialog id="janela-video" aria-label="Vídeo">
+  <button class="fechar" type="button" aria-label="Fechar o vídeo"><svg class="i"><use href="#i-x"/></svg></button>
+  <video controls playsinline preload="none"></video>
+</dialog>
+
+<dialog id="janela-foto" aria-label="Publicação ampliada">
+  <button class="fechar" type="button" aria-label="Fechar"><svg class="i"><use href="#i-x"/></svg></button>
+  <button class="passa ant" type="button" aria-label="Publicação anterior"><svg class="i"><use href="#i-volta"/></svg></button>
+  <button class="passa prox" type="button" aria-label="Próxima publicação"><svg class="i"><use href="#i-volta"/></svg></button>
+  <img alt="">
+  <p class="legenda"><span></span><a href="#" target="_blank" rel="noopener">Ver no Instagram</a></p>
+</dialog>
+
+<script>
+(function () {
+  var d = document;
+  var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Links do WhatsApp com a mensagem pronta
+  d.querySelectorAll('a[data-zap]').forEach(function (a) {
+    var numero = a.getAttribute('data-num') || '5533998740709';
+    var assunto = a.getAttribute('data-zap');
+    var texto = assunto
+      ? 'Olá! Vim pelo site da Abreu Mol e quero conversar sobre ' + assunto + '.'
+      : 'Olá! Vim pelo site da Abreu Mol e gostaria de uma orientação.';
+    a.href = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(texto);
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+
+  // Menu no celular
+  var menu = d.getElementById('menu');
+  var botao = d.querySelector('.menu-botao');
+  function fechaMenu() { menu.classList.remove('aberto'); botao.setAttribute('aria-expanded', 'false'); }
+  botao.addEventListener('click', function () {
+    var abriu = menu.classList.toggle('aberto');
+    botao.setAttribute('aria-expanded', abriu ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) fechaMenu(); });
+
+  // Topo, linha dos passos e botão flutuante acompanham a rolagem
+  var topo = d.querySelector('.topo');
+  var trilha = d.querySelector('.trilha');
+  var flutua = d.querySelector('.flutua');
+  var abertura = d.querySelector('.abertura');
+  var agendado = false;
+  function atualiza() {
+    agendado = false;
+    topo.classList.toggle('rolou', window.scrollY > 12);
+    flutua.classList.toggle('mostra', abertura.getBoundingClientRect().bottom < 120);
+    var r = trilha.getBoundingClientRect();
+    var p = reduz ? 1 : (window.innerHeight * 0.8 - r.top) / (r.height + window.innerHeight * 0.3);
+    p = Math.max(0, Math.min(1, p));
+    trilha.style.setProperty('--p', p.toFixed(3));
+    for (var i = 0; i < trilha.children.length; i++) {
+      trilha.children[i].classList.toggle('feito', p >= (i + 0.3) / trilha.children.length);
+    }
+  }
+  window.addEventListener('scroll', function () { if (!agendado) { agendado = true; requestAnimationFrame(atualiza); } }, { passive: true });
+  window.addEventListener('resize', atualiza);
+  atualiza();
+
+  // Entrada suave ao rolar
+  d.querySelectorAll('[data-r-filhos]').forEach(function (pai) {
+    Array.prototype.forEach.call(pai.children, function (filho, i) {
+      filho.setAttribute('data-r', '');
+      filho.style.setProperty('--d', Math.min(i * 0.07, 0.42) + 's');
+    });
+  });
+  var alvos = d.querySelectorAll('[data-r]');
+  if ('IntersectionObserver' in window && !reduz) {
+    var olho = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visto'); olho.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+    alvos.forEach(function (el) { olho.observe(el); });
+  } else {
+    alvos.forEach(function (el) { el.classList.add('visto'); });
+  }
+
+  // Janelas: fecham no botão, no fundo e no Esc
+  d.querySelectorAll('dialog').forEach(function (j) {
+    j.querySelector('.fechar').addEventListener('click', function () { j.close(); });
+    j.addEventListener('click', function (e) { if (e.target === j) j.close(); });
+  });
+
+  // Vídeos
+  var janelaVideo = d.getElementById('janela-video');
+  var video = janelaVideo.querySelector('video');
+  d.querySelectorAll('.video').forEach(function (b) {
+    b.addEventListener('click', function () {
+      video.poster = b.getAttribute('data-capa');
+      video.src = b.getAttribute('data-video');
+      janelaVideo.setAttribute('aria-label', 'Vídeo: ' + b.querySelector('.video-t').textContent);
+      janelaVideo.showModal();
+      var toca = video.play();
+      if (toca && toca.catch) toca.catch(function () {});
+    });
+  });
+  janelaVideo.addEventListener('close', function () { video.pause(); video.removeAttribute('src'); video.load(); });
+
+  // Publicações ampliadas
+  var janelaFoto = d.getElementById('janela-foto');
+  var foto = janelaFoto.querySelector('img');
+  var legenda = janelaFoto.querySelector('.legenda span');
+  var elo = janelaFoto.querySelector('.legenda a');
+  var posts = Array.prototype.slice.call(d.querySelectorAll('.post'));
+  var atual = 0;
+  function mostra(i) {
+    atual = (i + posts.length) % posts.length;
+    var b = posts[atual];
+    foto.src = b.getAttribute('data-img');
+    foto.alt = b.querySelector('img').alt;
+    legenda.textContent = b.getAttribute('data-leg');
+    elo.href = b.getAttribute('data-link');
+  }
+  posts.forEach(function (b, i) {
+    b.addEventListener('click', function () { mostra(i); janelaFoto.showModal(); });
+  });
+  janelaFoto.querySelector('.ant').addEventListener('click', function () { mostra(atual - 1); });
+  janelaFoto.querySelector('.prox').addEventListener('click', function () { mostra(atual + 1); });
+  janelaFoto.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') mostra(atual - 1);
+    if (e.key === 'ArrowRight') mostra(atual + 1);
+  });
+})();
+</script>
+</body>
+</html>
